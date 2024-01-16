@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.Identity.Busi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.Identity.API", "CarSharingApp.Identity.API\CarSharingApp.Identity.API.csproj", "{110C32C8-B1DE-42E1-BFD2-AC6C483E5862}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.Identity.Shared", "CarSharingApp.Identity.Shared\CarSharingApp.Identity.Shared.csproj", "{EF01240C-EEB0-42E5-9915-ECD7C68252FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.Identity.Shared", "CarSharingApp.Identity.Shared\CarSharingApp.Identity.Shared.csproj", "{2CE96456-F395-4AE1-8A26-27073C4BBFA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,9 +26,9 @@ Global
 		{110C32C8-B1DE-42E1-BFD2-AC6C483E5862}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{110C32C8-B1DE-42E1-BFD2-AC6C483E5862}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{110C32C8-B1DE-42E1-BFD2-AC6C483E5862}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF01240C-EEB0-42E5-9915-ECD7C68252FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF01240C-EEB0-42E5-9915-ECD7C68252FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF01240C-EEB0-42E5-9915-ECD7C68252FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF01240C-EEB0-42E5-9915-ECD7C68252FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CE96456-F395-4AE1-8A26-27073C4BBFA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CE96456-F395-4AE1-8A26-27073C4BBFA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CE96456-F395-4AE1-8A26-27073C4BBFA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CE96456-F395-4AE1-8A26-27073C4BBFA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
