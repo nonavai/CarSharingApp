@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.DealService.DataAccess", "CarSharingApp.DealService.DataAccess\CarSharingApp.DealService.DataAccess.csproj", "{AFCB4D77-E2AC-40F1-AF87-4675291E283E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.DealService.BusinessLogic", "CarSharingApp.DealService.BusinessLogic\CarSharingApp.DealService.BusinessLogic.csproj", "{683D04E3-8E48-4488-8E19-58457F0FDA32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.DealService.Shared", "CarSharingApp.DealService.Shared\CarSharingApp.DealService.Shared.csproj", "{7B2589F3-75A9-4684-89F2-06B8E11DECB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.DealService.API", "CarSharingApp.DealService.API\CarSharingApp.DealService.API.csproj", "{9B74F79F-0BCF-49CC-930B-C1431E079FEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFCB4D77-E2AC-40F1-AF87-4675291E283E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFCB4D77-E2AC-40F1-AF87-4675291E283E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFCB4D77-E2AC-40F1-AF87-4675291E283E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFCB4D77-E2AC-40F1-AF87-4675291E283E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{683D04E3-8E48-4488-8E19-58457F0FDA32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{683D04E3-8E48-4488-8E19-58457F0FDA32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{683D04E3-8E48-4488-8E19-58457F0FDA32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{683D04E3-8E48-4488-8E19-58457F0FDA32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B2589F3-75A9-4684-89F2-06B8E11DECB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B2589F3-75A9-4684-89F2-06B8E11DECB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B2589F3-75A9-4684-89F2-06B8E11DECB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B2589F3-75A9-4684-89F2-06B8E11DECB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B74F79F-0BCF-49CC-930B-C1431E079FEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B74F79F-0BCF-49CC-930B-C1431E079FEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B74F79F-0BCF-49CC-930B-C1431E079FEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B74F79F-0BCF-49CC-930B-C1431E079FEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

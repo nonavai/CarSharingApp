@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.Identity.DataAcces", "CarSharingApp.Identity.DataAcces\CarSharingApp.Identity.DataAcces.csproj", "{765CCE7F-E407-4EA6-A844-5BFDA3000D96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.Identity.BusinessLogic", "CarSharingApp.Identity.BusinessLogic\CarSharingApp.Identity.BusinessLogic.csproj", "{08286203-E244-4994-82D9-2ECE592DC7E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.Identity.API", "CarSharingApp.Identity.API\CarSharingApp.Identity.API.csproj", "{110C32C8-B1DE-42E1-BFD2-AC6C483E5862}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.Identity.Shared", "CarSharingApp.Identity.Shared\CarSharingApp.Identity.Shared.csproj", "{EF01240C-EEB0-42E5-9915-ECD7C68252FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{765CCE7F-E407-4EA6-A844-5BFDA3000D96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{765CCE7F-E407-4EA6-A844-5BFDA3000D96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{765CCE7F-E407-4EA6-A844-5BFDA3000D96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{765CCE7F-E407-4EA6-A844-5BFDA3000D96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08286203-E244-4994-82D9-2ECE592DC7E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08286203-E244-4994-82D9-2ECE592DC7E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08286203-E244-4994-82D9-2ECE592DC7E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08286203-E244-4994-82D9-2ECE592DC7E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{110C32C8-B1DE-42E1-BFD2-AC6C483E5862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{110C32C8-B1DE-42E1-BFD2-AC6C483E5862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{110C32C8-B1DE-42E1-BFD2-AC6C483E5862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{110C32C8-B1DE-42E1-BFD2-AC6C483E5862}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF01240C-EEB0-42E5-9915-ECD7C68252FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF01240C-EEB0-42E5-9915-ECD7C68252FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF01240C-EEB0-42E5-9915-ECD7C68252FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF01240C-EEB0-42E5-9915-ECD7C68252FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
