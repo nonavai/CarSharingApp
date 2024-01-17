@@ -1,11 +1,66 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "CarSharingApp.Identity.BusinessLogic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "CarSharingApp.Identity.DataAcces": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CarSharingApp.Identity.BusinessLogic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarSharingApp.Identity.BusinessLogic.dll": {}
+        }
+      },
+      "CarSharingApp.Identity.DataAcces/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "CarSharingApp.Identity.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CarSharingApp.Identity.DataAcces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarSharingApp.Identity.DataAcces.dll": {}
+        }
+      },
+      "CarSharingApp.Identity.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/CarSharingApp.Identity.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarSharingApp.Identity.Shared.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "CarSharingApp.Identity.BusinessLogic/1.0.0": {
+      "type": "project",
+      "path": "../CarSharingApp.Identity.BusinessLogic/CarSharingApp.Identity.BusinessLogic.csproj",
+      "msbuildProject": "../CarSharingApp.Identity.BusinessLogic/CarSharingApp.Identity.BusinessLogic.csproj"
+    },
+    "CarSharingApp.Identity.DataAcces/1.0.0": {
+      "type": "project",
+      "path": "../CarSharingApp.Identity.DataAcces/CarSharingApp.Identity.DataAcces.csproj",
+      "msbuildProject": "../CarSharingApp.Identity.DataAcces/CarSharingApp.Identity.DataAcces.csproj"
+    },
+    "CarSharingApp.Identity.Shared/1.0.0": {
+      "type": "project",
+      "path": "../CarSharingApp.Identity.Shared/CarSharingApp.Identity.Shared.csproj",
+      "msbuildProject": "../CarSharingApp.Identity.Shared/CarSharingApp.Identity.Shared.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "CarSharingApp.Identity.BusinessLogic >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Anton\\.nuget\\packages\\": {},
@@ -39,7 +94,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.Identity\\CarSharingApp.Identity.BusinessLogic\\CarSharingApp.Identity.BusinessLogic.csproj": {
+              "projectPath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.Identity\\CarSharingApp.Identity.BusinessLogic\\CarSharingApp.Identity.BusinessLogic.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

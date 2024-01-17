@@ -14,4 +14,8 @@
       <Folder Include="Specifications" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CarSharingApp.DealService.Shared\CarSharingApp.DealService.Shared.csproj" />
+    </ItemGroup>
+
 </Project>

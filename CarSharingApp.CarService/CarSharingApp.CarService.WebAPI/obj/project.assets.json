@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "CarSharingApp.CarService.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "CarSharingApp.CarService.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CarSharingApp.CarService.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarSharingApp.CarService.Application.dll": {}
+        }
+      },
+      "CarSharingApp.CarService.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/CarSharingApp.CarService.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarSharingApp.CarService.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "CarSharingApp.CarService.Application/1.0.0": {
+      "type": "project",
+      "path": "../CarSharingApp.CarService.Application/CarSharingApp.CarService.Application.csproj",
+      "msbuildProject": "../CarSharingApp.CarService.Application/CarSharingApp.CarService.Application.csproj"
+    },
+    "CarSharingApp.CarService.Domain/1.0.0": {
+      "type": "project",
+      "path": "../CarSharingApp.CarService.Domain/CarSharingApp.CarService.Domain.csproj",
+      "msbuildProject": "../CarSharingApp.CarService.Domain/CarSharingApp.CarService.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "CarSharingApp.CarService.Application >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Anton\\.nuget\\packages\\": {},
@@ -39,7 +76,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.CarService\\CarSharingApp.CarService.Application\\CarSharingApp.CarService.Application.csproj": {
+              "projectPath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.CarService\\CarSharingApp.CarService.Application\\CarSharingApp.CarService.Application.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

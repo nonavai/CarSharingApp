@@ -14,4 +14,8 @@
       <Folder Include="Responses" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CarSharingApp.CarService.Application\CarSharingApp.CarService.Application.csproj" />
+    </ItemGroup>
+
 </Project>

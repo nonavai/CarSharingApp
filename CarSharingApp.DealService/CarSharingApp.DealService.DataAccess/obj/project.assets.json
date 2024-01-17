@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "CarSharingApp.DealService.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/CarSharingApp.DealService.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarSharingApp.DealService.Shared.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "CarSharingApp.DealService.Shared/1.0.0": {
+      "type": "project",
+      "path": "../CarSharingApp.DealService.Shared/CarSharingApp.DealService.Shared.csproj",
+      "msbuildProject": "../CarSharingApp.DealService.Shared/CarSharingApp.DealService.Shared.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "CarSharingApp.DealService.Shared >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Anton\\.nuget\\packages\\": {},
@@ -39,7 +58,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.DealService\\CarSharingApp.DealService.Shared\\CarSharingApp.DealService.Shared.csproj": {
+              "projectPath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.DealService\\CarSharingApp.DealService.Shared\\CarSharingApp.DealService.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -12,4 +12,8 @@
       <Folder Include="MiddleWares" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CarSharingApp.Identity.BusinessLogic\CarSharingApp.Identity.BusinessLogic.csproj" />
+    </ItemGroup>
+
 </Project>

@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "CarSharingApp.DealService.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "CarSharingApp.DealService.Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CarSharingApp.DealService.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarSharingApp.DealService.DataAccess.dll": {}
+        }
+      },
+      "CarSharingApp.DealService.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/CarSharingApp.DealService.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarSharingApp.DealService.Shared.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "CarSharingApp.DealService.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../CarSharingApp.DealService.DataAccess/CarSharingApp.DealService.DataAccess.csproj",
+      "msbuildProject": "../CarSharingApp.DealService.DataAccess/CarSharingApp.DealService.DataAccess.csproj"
+    },
+    "CarSharingApp.DealService.Shared/1.0.0": {
+      "type": "project",
+      "path": "../CarSharingApp.DealService.Shared/CarSharingApp.DealService.Shared.csproj",
+      "msbuildProject": "../CarSharingApp.DealService.Shared/CarSharingApp.DealService.Shared.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "CarSharingApp.DealService.DataAccess >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Anton\\.nuget\\packages\\": {},
@@ -39,7 +76,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.DealService\\CarSharingApp.DealService.DataAccess\\CarSharingApp.DealService.DataAccess.csproj": {
+              "projectPath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.DealService\\CarSharingApp.DealService.DataAccess\\CarSharingApp.DealService.DataAccess.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
