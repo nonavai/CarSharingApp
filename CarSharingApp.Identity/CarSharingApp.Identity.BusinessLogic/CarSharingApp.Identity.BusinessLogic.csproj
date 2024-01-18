@@ -14,7 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\CarSharingApp.Identity.DataAcces\CarSharingApp.Identity.DataAcces.csproj" />
+      <ProjectReference Include="..\CarSharingApp.Identity.DataAccess\CarSharingApp.Identity.DataAccess.csproj" />
     </ItemGroup>
 
 </Project>
