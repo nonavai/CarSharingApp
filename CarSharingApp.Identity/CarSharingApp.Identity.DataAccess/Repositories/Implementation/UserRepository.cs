@@ -1,6 +1,6 @@
-﻿using CarSharing.UserService.DataAccess.Helpers;
-using CarSharingApp.Identity.DataAccess.DbContext;
+﻿using CarSharingApp.Identity.DataAccess.DbContext;
 using CarSharingApp.Identity.DataAccess.Entities;
+using CarSharingApp.Identity.DataAccess.Specifications;
 using CarSharingApp.Identity.DataAccess.Specifications.SpecSettings;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -29,26 +29,54 @@ public class UserRepository :  IUserRepository
     }
     
 
-    public async Task<IEnumerable<User>> GetBySpecAsync(UserSpecification spec)
+    public async Task<IEnumerable<User>> GetBySpecAsync(UserSpecification spec, CancellationToken token)
     {
+        token.ThrowIfCancellationRequested();
+        
         IQueryable<User> query = db.Users;
         query = query.ApplySpecification(spec);
         return await query.ToListAsync();
     }
 
-    public async Task<IdentityResult> AddAsync(User entity, string password)
+    public async Task<IdentityResult> AddAsync(User entity, string password, CancellationToken token)
     {
+        token.ThrowIfCancellationRequested();
+        
         return await _userManager.CreateAsync(entity, password);
     }
 
-    public async Task UpdateAsync(User entity)
+    public async Task<bool> CheckPasswordAsync(User entity, string password)
     {
-        await _userManager.UpdateAsync(entity);
-        
+        return await _userManager.CheckPasswordAsync(entity, password);
     }
 
-    public async Task DeleteAsync(User entity)
+    public async Task<IdentityResult> UpdateAsync(User entity)
     {
-        await _userManager.DeleteAsync(entity);
+        return await _userManager.UpdateAsync(entity);
     }
+
+    public async Task<IdentityResult> DeleteAsync(User entity, CancellationToken token)
+    {
+        token.ThrowIfCancellationRequested();
+        
+        return await _userManager.DeleteAsync(entity);
+    }
+
+    public async Task<IEnumerable<string>> GetRolesAsync(User user)
+    {
+        return await _userManager.GetRolesAsync(user);
+    } 
+    
+    public async Task<IdentityResult> AddToRoleAsync(User user, string role)
+    {
+        return await _userManager.AddToRoleAsync(user, role);
+    }
+
+    public async Task<IdentityResult> RemoveFromRolesAsync(User user, string role, CancellationToken token)
+    {
+        token.ThrowIfCancellationRequested();
+        
+        return await _userManager.RemoveFromRoleAsync(user, role);
+    }
+    
 }

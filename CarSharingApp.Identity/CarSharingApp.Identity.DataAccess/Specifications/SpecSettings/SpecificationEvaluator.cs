@@ -10,7 +10,10 @@ public static class SpecificationEvaluator
 
         queryResult = queryResult.Where(spec.Criteria);
 
-        queryResult = spec.Includes.Aggregate(queryResult, (current, include) => current.Include(include));
+        queryResult = spec.Includes.Aggregate(
+            queryResult,
+            (current, include) =>
+                current.Include(include));
 
         return queryResult;
     }

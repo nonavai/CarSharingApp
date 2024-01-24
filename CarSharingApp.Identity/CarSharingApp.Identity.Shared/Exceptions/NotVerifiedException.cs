@@ -1,4 +1,4 @@
-namespace CarSharing.UserService.Shared.Exceptions;
+namespace CarSharingApp.Identity.Shared.Exceptions;
 
 public class NotVerifiedException : Exception
 {

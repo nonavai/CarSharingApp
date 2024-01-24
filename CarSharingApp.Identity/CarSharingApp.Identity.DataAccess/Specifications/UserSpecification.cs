@@ -2,7 +2,7 @@
 using CarSharingApp.Identity.DataAccess.Entities;
 using CarSharingApp.Identity.DataAccess.Specifications.SpecSettings;
 
-namespace CarSharing.UserService.DataAccess.Helpers;
+namespace CarSharingApp.Identity.DataAccess.Specifications;
 
 public class UserSpecification : ISpecification<User>
 {

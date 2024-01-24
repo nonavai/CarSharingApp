@@ -3,7 +3,12 @@ using CarSharingApp.Identity.DataAccess.Specifications;
 
 namespace CarSharingApp.Identity.DataAccess.Repositories;
 
-public interface IUserInfoRepository : IBaseRepository<UserInfo, UserInfoSpecification>
+public interface IUserInfoRepository 
 {
-    Task<UserInfo> AddAsync(UserInfo entity);
+    Task<UserInfo> AddAsync(UserInfo entity, CancellationToken token);
+    Task<UserInfo?> GetByIdAsync(string id);
+    Task<IEnumerable<UserInfo>> GetBySpecAsync(UserInfoSpecification spec, CancellationToken token);
+    Task<UserInfo> UpdateAsync(UserInfo entity);
+    Task DeleteAsync(UserInfo entity, CancellationToken token);
+    Task<UserInfo?> GetByUserId(string userId);
 }
