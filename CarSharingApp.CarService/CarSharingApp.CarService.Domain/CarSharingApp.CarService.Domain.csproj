@@ -10,4 +10,10 @@
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.15" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Entities" />
+      <Folder Include="Enums" />
+      <Folder Include="Interfaces" />
+    </ItemGroup>
+
 </Project>
