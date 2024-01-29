@@ -27,9 +27,8 @@ public class UserRepository :  IUserRepository
     {
         return await _userManager.FindByIdAsync(id);
     }
-    
 
-    public async Task<IEnumerable<User>> GetBySpecAsync(UserSpecification spec, CancellationToken token)
+    public async Task<IEnumerable<User>> GetBySpecAsync(UserSpecification spec, CancellationToken token = default)
     {
         token.ThrowIfCancellationRequested();
         
@@ -38,7 +37,7 @@ public class UserRepository :  IUserRepository
         return await query.ToListAsync();
     }
 
-    public async Task<IdentityResult> AddAsync(User entity, string password, CancellationToken token)
+    public async Task<IdentityResult> AddAsync(User entity, string password, CancellationToken token = default)
     {
         token.ThrowIfCancellationRequested();
         
@@ -55,7 +54,7 @@ public class UserRepository :  IUserRepository
         return await _userManager.UpdateAsync(entity);
     }
 
-    public async Task<IdentityResult> DeleteAsync(User entity, CancellationToken token)
+    public async Task<IdentityResult> DeleteAsync(User entity, CancellationToken token = default)
     {
         token.ThrowIfCancellationRequested();
         
@@ -72,7 +71,7 @@ public class UserRepository :  IUserRepository
         return await _userManager.AddToRoleAsync(user, role);
     }
 
-    public async Task<IdentityResult> RemoveFromRolesAsync(User user, string role, CancellationToken token)
+    public async Task<IdentityResult> RemoveFromRolesAsync(User user, string role, CancellationToken token = default)
     {
         token.ThrowIfCancellationRequested();
         

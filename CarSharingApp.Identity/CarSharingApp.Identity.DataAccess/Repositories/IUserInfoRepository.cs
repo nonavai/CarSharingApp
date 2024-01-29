@@ -5,10 +5,10 @@ namespace CarSharingApp.Identity.DataAccess.Repositories;
 
 public interface IUserInfoRepository 
 {
-    Task<UserInfo> AddAsync(UserInfo entity, CancellationToken token);
+    Task<UserInfo> AddAsync(UserInfo entity, CancellationToken token = default);
     Task<UserInfo?> GetByIdAsync(string id);
-    Task<IEnumerable<UserInfo>> GetBySpecAsync(UserInfoSpecification spec, CancellationToken token);
+    Task<IEnumerable<UserInfo>> GetBySpecAsync(UserInfoSpecification spec, CancellationToken token = default);
     Task<UserInfo> UpdateAsync(UserInfo entity);
-    Task DeleteAsync(UserInfo entity, CancellationToken token);
+    Task DeleteAsync(UserInfo entity, CancellationToken token = default);
     Task<UserInfo?> GetByUserId(string userId);
 }

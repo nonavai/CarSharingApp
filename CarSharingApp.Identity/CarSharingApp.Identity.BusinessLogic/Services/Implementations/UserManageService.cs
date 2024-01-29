@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Text;
+using AutoMapper;
 using CarSharingApp.Identity.BusinessLogic.Models.User;
 using CarSharingApp.Identity.BusinessLogic.Models.UserInfo;
 using CarSharingApp.Identity.DataAccess.Entities;
@@ -22,7 +23,7 @@ public class UserManageService : IUserManageService
         _userInfoRepository = userInfoRepository;
     }
 
-    public async Task<UserDto> LogInAsync(LogInDto dto)
+    public async Task<UserCleanDto> LogInAsync(LogInDto dto)
     {
         var user = await _userRepository.GetByEmailAsync(dto.Email);
         
@@ -36,11 +37,12 @@ public class UserManageService : IUserManageService
             throw new BadAuthorizeException("Invalid Password");
         }
 
-        var userDto = _mapper.Map<UserDto>(user);
+        var userDto = _mapper.Map<UserCleanDto>(user);
+        
         return userDto;
     }
 
-    public async Task RegistrationAsync(UserNecessaryDto dto, CancellationToken token)
+    public async Task RegistrationAsync(UserNecessaryDto dto, CancellationToken token = default)
     {
         token.ThrowIfCancellationRequested();
         
@@ -54,7 +56,15 @@ public class UserManageService : IUserManageService
 
         if (!result.Succeeded)
         {
-            throw new IdentityException("Cannot Add New User");
+            var exceptionList = new StringBuilder("");
+            
+            foreach (var identityError in result.Errors)
+            {
+                exceptionList.Append(identityError.Description);
+                exceptionList.Append("\n");
+            }
+
+            throw new IdentityException(exceptionList.ToString());
         }
     }
 
@@ -68,16 +78,18 @@ public class UserManageService : IUserManageService
         }
         
         var userDto = _mapper.Map<UserDto>(user);
+        
         return userDto;
     }
 
-    public async Task<IEnumerable<UserCleanDto>> GetByNameAsync(string firstName, string lastName, CancellationToken token)
+    public async Task<IEnumerable<UserCleanDto>> GetByNameAsync(string firstName, string lastName, CancellationToken token = default)
     {
         token.ThrowIfCancellationRequested();
         
         var spec = new UserSpecification(user => user.FirstName == firstName && user.LastName == lastName).WithUserInfo();
         var users = await _userRepository.GetBySpecAsync(spec, token);
         var userDtos = _mapper.Map<IEnumerable<UserCleanDto>>(users);
+        
         return userDtos;
     }
 
@@ -102,7 +114,7 @@ public class UserManageService : IUserManageService
         return _mapper.Map<UserNecessaryDto>(userUpdated);
     }
 
-    public async Task<UserCleanDto> DeleteAsync(string id, CancellationToken token)
+    public async Task<UserCleanDto> DeleteAsync(string id, CancellationToken token = default)
     {
         token.ThrowIfCancellationRequested();
         
@@ -123,77 +135,7 @@ public class UserManageService : IUserManageService
         return _mapper.Map<UserCleanDto>(user);
     }
 
-    public async Task<IEnumerable<string>> GetUserRolesAsync(string id)
-    {
-        var user = await _userRepository.GetByIdAsync(id);
-        
-        if (user == null)
-        {
-            throw new NotFoundException("User Not Found");
-        }
-        
-        return await _userRepository.GetRolesAsync(user);
-    }
-
-    public async Task AddUserRoleAsync(string id, Roles role)
-    {
-        var user = await _userRepository.GetByIdAsync(id);
-        
-        if (user == null)
-        {
-            throw new NotFoundException("User Not Found");
-        }
-
-        switch (role)
-        {
-            case Roles.Lender:
-                await _userRepository.AddToRoleAsync(user, "lender");
-                break;
-            
-            case Roles.Borrower:
-                await _userRepository.AddToRoleAsync(user, "borrower");
-                break;
-            
-            case Roles.Admin:
-                await _userRepository.AddToRoleAsync(user, "admin");
-                break;
-            
-            default:
-                throw new NotFoundException("Role Not Found");
-        }
-    }
-
-    public async Task RemoveUserRoleAsync(string id, Roles role, CancellationToken token)
-    {
-        token.ThrowIfCancellationRequested();
-        
-        var user = await _userRepository.GetByIdAsync(id);
-        
-        if (user == null)
-        {
-            throw new NotFoundException("User Not Found");
-        }
-
-        switch (role)
-        {
-            case Roles.Lender:
-                await _userRepository.RemoveFromRolesAsync(user, "lender", token);
-                break;
-            
-            case Roles.Borrower:
-                await _userRepository.RemoveFromRolesAsync(user, "borrower", token);
-                break;
-            
-            case Roles.Admin:
-                await _userRepository.RemoveFromRolesAsync(user, "admin", token);
-                break;
-            
-            default:
-                throw new NotFoundException("Role Not Found");
-        }
-    }
-
-    public async Task<UserInfoDto> AddUserInfoAsync(string userId, UserInfoCleanDto dto, CancellationToken token)
+    public async Task<UserInfoDto> AddUserInfoAsync(string userId, UserInfoCleanDto dto, CancellationToken token = default)
     {
         token.ThrowIfCancellationRequested();
         
@@ -207,10 +149,11 @@ public class UserManageService : IUserManageService
         var userInfo = _mapper.Map<UserInfo>(dto);
         userInfo.User = user;
         var newUserInfo = await _userInfoRepository.AddAsync(userInfo, token);
+        
         return _mapper.Map<UserInfoDto>(newUserInfo);
     }
     
-    public async Task<IEnumerable<UserInfoDto>> GetExpiredUserInfosAsync(CancellationToken token)
+    public async Task<IEnumerable<UserInfoDto>> GetExpiredUserInfosAsync(CancellationToken token = default)
     {
         token.ThrowIfCancellationRequested();
         
@@ -218,6 +161,7 @@ public class UserManageService : IUserManageService
             new UserInfoSpecification(userInfo=> userInfo.LicenceExpiry <= DateTime.Now).WithUser();
         var usersInfo = await _userInfoRepository.GetBySpecAsync(spec, token);
         var userInfoDtos = _mapper.Map<IEnumerable<UserInfoDto>>(usersInfo);
+        
         return userInfoDtos;
     }
 
@@ -232,12 +176,14 @@ public class UserManageService : IUserManageService
         
         var userUpdated = _mapper.Map(dto, userInfo);
         await _userInfoRepository.UpdateAsync(userUpdated);
+        
         return _mapper.Map<UserInfoCleanDto>(userUpdated);
     }
 
     private async Task<bool> IsEmailExist(string email)
     {
         var user = await _userRepository.GetByEmailAsync(email);
+        
         return user != null;
     }
     

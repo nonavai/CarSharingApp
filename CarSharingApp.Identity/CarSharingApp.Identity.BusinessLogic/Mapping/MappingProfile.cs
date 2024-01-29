@@ -17,6 +17,5 @@ public class MappingProfileApi : Profile
         CreateMap<User, UserCleanDto>().ReverseMap();
         CreateMap<User, UserNecessaryDto>().ReverseMap();
         CreateMap<UserInfo, UserInfoCleanDto>().ReverseMap();
-
     }
 }

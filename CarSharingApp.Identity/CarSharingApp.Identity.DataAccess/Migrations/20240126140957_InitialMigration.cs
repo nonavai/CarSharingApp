@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CarSharingApp.Identity.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class IntialMigration : Migration
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,7 +32,7 @@ namespace CarSharingApp.Identity.DataAccess.Migrations
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RecordNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RecordNumber = table.Column<string>(type: "nvarchar(30)", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -167,13 +167,11 @@ namespace CarSharingApp.Identity.DataAccess.Migrations
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Birth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Category = table.Column<int>(type: "int", nullable: false),
                     LicenceExpiry = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LicenceIssue = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LicenceId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PlaceOfIssue = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    LicenceId = table.Column<string>(type: "nvarchar(20)", nullable: false),
+                    PlaceOfIssue = table.Column<string>(type: "nvarchar(50)", nullable: false)
                 },
                 constraints: table =>
                 {

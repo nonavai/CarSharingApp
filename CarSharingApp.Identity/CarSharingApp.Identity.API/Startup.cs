@@ -25,6 +25,7 @@ public class Startup
         services.AddAutoMapper(typeof(MappingProfileApi));
         services.AddTransient<ITokenService, TokenService>();
         services.AddTransient<IUserManageService, UserManageService>();
+        services.AddTransient<IRolesService, RolesService>();
     }
     
     public static void ConfigureRepository(IServiceCollection services)
@@ -58,7 +59,7 @@ public class Startup
     public static void ConfigureMiddlewares(WebApplication app)
     {
         app.UseMiddleware<LoggingMiddleware>();
-        app.UseMiddleware<ExceptionMiddleware>();
+        //app.UseMiddleware<ExceptionAndLoggingMiddleware>();
     }
     
     public static void ConfigureAuth(IServiceCollection services, ConfigurationManager config)

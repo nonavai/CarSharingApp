@@ -44,7 +44,7 @@ public class UserInfoRepository :  IUserInfoRepository
         await db.SaveChangesAsync();
     }
 
-    public async Task<UserInfo> AddAsync(UserInfo entity, CancellationToken token)
+    public async Task<UserInfo> AddAsync(UserInfo entity, CancellationToken token = default)
     {
         token.ThrowIfCancellationRequested();
         

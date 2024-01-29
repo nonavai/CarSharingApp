@@ -13,14 +13,6 @@ public class UserInfoValidation : AbstractValidator<UserInfo>
         RuleFor(borrower => borrower.Country)
             .NotEmpty().WithMessage("Country is required.");
 
-        RuleFor(borrower => borrower.FirstName)
-            .NotEmpty().WithMessage("First name is required.")
-            .MaximumLength(50).WithMessage("First name cannot exceed 50 characters.");
-
-        RuleFor(borrower => borrower.LastName)
-            .NotEmpty().WithMessage("Last name is required.")
-            .MaximumLength(50).WithMessage("Last name cannot exceed 50 characters.");
-
         RuleFor(borrower => borrower.Category)
             .IsInEnum().WithMessage("Invalid licence category.");
 

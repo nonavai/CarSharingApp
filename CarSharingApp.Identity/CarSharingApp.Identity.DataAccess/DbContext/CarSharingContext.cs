@@ -13,7 +13,7 @@ public class CarSharingContext : IdentityDbContext<User>
     public DbSet<UserInfo> UserInfos { get; set; }
     public DbSet<IdentityRole> Roles { get; set; }
 
-    private string DbPath;
+    private string DbPath = "Server=(localdb)\\mssqllocaldb;Database=CarSharingIdentityDB;Trusted_Connection=True;MultipleActiveResultSets=True;";
     public CarSharingContext()
     {
     }
@@ -32,7 +32,6 @@ public class CarSharingContext : IdentityDbContext<User>
     
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
-        //options.UseLazyLoadingProxies();
         options.UseSqlServer(DbPath);
     }
 

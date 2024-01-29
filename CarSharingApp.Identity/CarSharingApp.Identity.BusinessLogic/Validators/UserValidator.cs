@@ -1,4 +1,3 @@
-
 using System.Text.RegularExpressions;
 using CarSharingApp.Identity.BusinessLogic.Models.User;
 using FluentValidation;
@@ -29,5 +28,10 @@ public class UserValidator : AbstractValidator<UserDto>
             .MaximumLength(20).WithMessage("PhoneNumber must not exceed 50 characters.")
             .Matches(new Regex(@"^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$"))
             .WithMessage("PhoneNumber not valid");
+
+        RuleFor(user => user.RecordNumber)
+            .NotEmpty().WithMessage("RecordNumber is required")
+            .MinimumLength(5).WithMessage("RecordNumber must not be less than 5 characters.")
+            .MaximumLength(30).WithMessage("RecordNumber must not exceed 30 characters.");
     }
 }

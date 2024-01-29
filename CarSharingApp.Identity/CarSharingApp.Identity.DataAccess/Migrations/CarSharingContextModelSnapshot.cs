@@ -74,7 +74,7 @@ namespace CarSharingApp.Identity.DataAccess.Migrations
 
                     b.Property<string>("RecordNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
@@ -114,27 +114,19 @@ namespace CarSharingApp.Identity.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("LicenceExpiry")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LicenceId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<DateTime>("LicenceIssue")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("PlaceOfIssue")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("UserId")
                         .IsRequired()
