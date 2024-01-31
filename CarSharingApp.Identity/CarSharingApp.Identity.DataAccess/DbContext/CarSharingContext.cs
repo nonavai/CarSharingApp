@@ -13,14 +13,13 @@ public class CarSharingContext : IdentityDbContext<User>
     public DbSet<UserInfo> UserInfos { get; set; }
     public DbSet<IdentityRole> Roles { get; set; }
 
-    private string DbPath = "Server=(localdb)\\mssqllocaldb;Database=CarSharingIdentityDB;Trusted_Connection=True;MultipleActiveResultSets=True;";
+    
     public CarSharingContext()
     {
     }
 
     public CarSharingContext(DbContextOptions<CarSharingContext> options, IConfiguration configuration) : base(options)
     {
-        DbPath = configuration.GetConnectionString("DataBase");
     }
     
 
@@ -29,10 +28,4 @@ public class CarSharingContext : IdentityDbContext<User>
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfiguration(new UserConfiguration());
     }
-    
-    protected override void OnConfiguring(DbContextOptionsBuilder options)
-    {
-        options.UseSqlServer(DbPath);
-    }
-
 }

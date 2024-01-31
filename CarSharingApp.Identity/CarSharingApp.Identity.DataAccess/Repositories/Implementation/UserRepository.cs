@@ -30,17 +30,14 @@ public class UserRepository :  IUserRepository
 
     public async Task<IEnumerable<User>> GetBySpecAsync(UserSpecification spec, CancellationToken token = default)
     {
-        token.ThrowIfCancellationRequested();
-        
         IQueryable<User> query = db.Users;
         query = query.ApplySpecification(spec);
-        return await query.ToListAsync();
+        
+        return await query.ToListAsync(cancellationToken: token);
     }
 
-    public async Task<IdentityResult> AddAsync(User entity, string password, CancellationToken token = default)
+    public async Task<IdentityResult> AddAsync(User entity, string password)
     {
-        token.ThrowIfCancellationRequested();
-        
         return await _userManager.CreateAsync(entity, password);
     }
 
@@ -54,10 +51,8 @@ public class UserRepository :  IUserRepository
         return await _userManager.UpdateAsync(entity);
     }
 
-    public async Task<IdentityResult> DeleteAsync(User entity, CancellationToken token = default)
+    public async Task<IdentityResult> DeleteAsync(User entity)
     {
-        token.ThrowIfCancellationRequested();
-        
         return await _userManager.DeleteAsync(entity);
     }
 
@@ -71,10 +66,8 @@ public class UserRepository :  IUserRepository
         return await _userManager.AddToRoleAsync(user, role);
     }
 
-    public async Task<IdentityResult> RemoveFromRolesAsync(User user, string role, CancellationToken token = default)
+    public async Task<IdentityResult> RemoveFromRolesAsync(User user, string role)
     {
-        token.ThrowIfCancellationRequested();
-        
         return await _userManager.RemoveFromRoleAsync(user, role);
     }
     

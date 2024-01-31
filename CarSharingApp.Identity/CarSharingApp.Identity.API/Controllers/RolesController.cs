@@ -20,8 +20,10 @@ public class RolesController : ControllerBase
     [HttpGet]
     [Route("{userId}")]
     [Authorize]
-    public async Task<IActionResult> GetUserRolesAsync([FromRoute] string userId)
+    public async Task<IActionResult> GetUserRolesAsync([FromRoute] string userId, CancellationToken token)
     {
+        token.ThrowIfCancellationRequested();
+
         var result = await _rolesService.GetUserRolesAsync(userId);
         
         return Ok(result);
@@ -30,8 +32,10 @@ public class RolesController : ControllerBase
     [HttpPost]
     [Route("{userId}/{role}")]
     [Authorize(Roles = RoleNames.Admin)]
-    public async Task<IActionResult> AddRoleAsync([FromRoute] string userId, [FromRoute] Roles role)
+    public async Task<IActionResult> AddRoleAsync([FromRoute] string userId, [FromRoute] Roles role, CancellationToken token)
     {
+        token.ThrowIfCancellationRequested();
+
         await _rolesService.AddUserRoleAsync(userId, role);
         
         return Ok();
@@ -44,7 +48,7 @@ public class RolesController : ControllerBase
     {
         token.ThrowIfCancellationRequested();
 
-        await _rolesService.RemoveUserRoleAsync(userId, role, token);
+        await _rolesService.RemoveUserRoleAsync(userId, role);
         
         return Ok();
     }

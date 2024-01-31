@@ -2,6 +2,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using CarSharingApp.Identity.Shared.Constants;
 using CarSharingApp.Identity.Shared.Exceptions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -19,13 +20,13 @@ public class TokenService : ITokenService
         _configuration = configuration;
     }
 
-    public async Task<List<Claim>> AddClaims(string userId)
+    private async Task<List<Claim>> AddClaims(string userId)
     {
         var user = await _userRepository.GetByIdAsync(userId);
 
         if (user == null)
         {
-            throw new NotFoundException("User Not Found");
+            throw new NotFoundException(ErrorName.UserNotFound);
         }
         
         var claims = new List<Claim>
@@ -57,29 +58,5 @@ public class TokenService : ITokenService
             signingCredentials: creds);
         
         return new JwtSecurityTokenHandler().WriteToken(token);
-    }
-
-    public async Task<string> GetUserIdFromToken(string token)
-    {
-        var tokenHandler = new JwtSecurityTokenHandler();
-        var validToken = token.Split()[^1];
-        var securityToken = tokenHandler.ReadJwtToken(validToken);
-        
-        if (securityToken == null)
-        {
-            throw new NotVerifiedException("Invalid token");
-        }
-        
-        var claims = securityToken.Claims;
-        var userIdClaim = claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Jti);
-        
-        if (userIdClaim == null)
-        {
-            throw new NotVerifiedException("Token does not contain a UserId claim");
-        }
-
-        var userId = userIdClaim.Value;
-        
-        return userId;
     }
 }

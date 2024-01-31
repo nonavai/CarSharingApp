@@ -7,9 +7,9 @@ namespace CarSharingApp.Identity.API.Middlewares;
 public class ExceptionAndLoggingMiddleware
 {
     private readonly RequestDelegate _next;
-    private readonly ILogger<LoggingMiddleware> _logger;
+    private readonly ILogger<ExceptionAndLoggingMiddleware> _logger;
 
-    public ExceptionAndLoggingMiddleware(RequestDelegate next, ILogger<LoggingMiddleware> logger)
+    public ExceptionAndLoggingMiddleware(RequestDelegate next, ILogger<ExceptionAndLoggingMiddleware> logger)
     {
         _next = next;
         _logger = logger;

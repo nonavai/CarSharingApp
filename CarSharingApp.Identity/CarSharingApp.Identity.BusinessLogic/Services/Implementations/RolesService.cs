@@ -20,7 +20,7 @@ public class RolesService : IRolesService
         
         if (user == null)
         {
-            throw new NotFoundException("User Not Found");
+            throw new NotFoundException(ErrorName.UserNotFound);
         }
         
         return await _userRepository.GetRolesAsync(user);
@@ -32,7 +32,7 @@ public class RolesService : IRolesService
         
         if (user == null)
         {
-            throw new NotFoundException("User Not Found");
+            throw new NotFoundException(ErrorName.UserNotFound);
         }
 
         switch (role)
@@ -50,37 +50,35 @@ public class RolesService : IRolesService
                 break;
             
             default:
-                throw new NotFoundException("Role Not Found");
+                throw new NotFoundException(ErrorName.RoleNotFound);
         }
     }
 
-    public async Task RemoveUserRoleAsync(string id, Roles role, CancellationToken token)
+    public async Task RemoveUserRoleAsync(string id, Roles role)
     {
-        token.ThrowIfCancellationRequested();
-        
         var user = await _userRepository.GetByIdAsync(id);
         
         if (user == null)
         {
-            throw new NotFoundException("User Not Found");
+            throw new NotFoundException(ErrorName.UserNotFound);
         }
 
         switch (role)
         {
             case Roles.Lender:
-                await _userRepository.RemoveFromRolesAsync(user, RoleNames.Lender, token);
+                await _userRepository.RemoveFromRolesAsync(user, RoleNames.Lender);
                 break;
             
             case Roles.Borrower:
-                await _userRepository.RemoveFromRolesAsync(user, RoleNames.Borrower, token);
+                await _userRepository.RemoveFromRolesAsync(user, RoleNames.Borrower);
                 break;
             
             case Roles.Admin:
-                await _userRepository.RemoveFromRolesAsync(user, RoleNames.Admin, token);
+                await _userRepository.RemoveFromRolesAsync(user, RoleNames.Admin);
                 break;
             
             default:
-                throw new NotFoundException("Role Not Found");
+                throw new NotFoundException(ErrorName.RoleNotFound);
         }
     }
 }

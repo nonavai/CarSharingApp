@@ -1,9 +1,7 @@
 using CarSharingApp.Identity.API;
 using CarSharingApp.Identity.BusinessLogic.Validators;
-using CarSharingApp.Identity.DataAccess.DbContext;
 using FluentValidation;
 using FluentValidation.AspNetCore;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;

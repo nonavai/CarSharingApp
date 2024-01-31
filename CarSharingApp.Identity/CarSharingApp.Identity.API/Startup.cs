@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using System.Text;
+﻿using System.Text;
 using CarSharingApp.Identity.BusinessLogic.Mapping;
 using CarSharingApp.Identity.API.Extensions;
 using CarSharingApp.Identity.API.Middlewares;
@@ -58,8 +57,7 @@ public class Startup
     
     public static void ConfigureMiddlewares(WebApplication app)
     {
-        app.UseMiddleware<LoggingMiddleware>();
-        //app.UseMiddleware<ExceptionAndLoggingMiddleware>();
+        app.UseMiddleware<ExceptionAndLoggingMiddleware>();
     }
     
     public static void ConfigureAuth(IServiceCollection services, ConfigurationManager config)
