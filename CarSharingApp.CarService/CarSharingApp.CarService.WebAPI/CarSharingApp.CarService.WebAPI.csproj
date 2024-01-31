@@ -8,7 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers" />
       <Folder Include="MiddleWares" />
       <Folder Include="Requests" />
       <Folder Include="Responses" />
