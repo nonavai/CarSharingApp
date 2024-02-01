@@ -8,6 +8,7 @@ using CarSharingApp.Identity.DataAccess.DbContext;
 using CarSharingApp.Identity.DataAccess.Entities;
 using CarSharingApp.Identity.DataAccess.Repositories;
 using CarSharingApp.Identity.DataAccess.Repositories.Implementation;
+using CarSharingApp.Identity.Shared.Constants;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +24,7 @@ public class Startup
     {
         services.AddAutoMapper(typeof(MappingProfileApi));
         services.AddTransient<ITokenService, TokenService>();
+        services.AddTransient<IAuthService, AuthService>();
         services.AddTransient<IUserManageService, UserManageService>();
         services.AddTransient<IRolesService, RolesService>();
     }
@@ -76,16 +78,6 @@ public class Startup
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true
                 };
-                x.Events = new JwtBearerEvents();
-                x.Events.OnMessageReceived = context => {
-
-                    if (context.Request.Cookies.ContainsKey("Authorization"))
-                    {
-                        context.Token = context.Request.Cookies["Authorization"];
-                    }
-
-                    return Task.CompletedTask;
-                };
             });
 
     }
@@ -96,9 +88,9 @@ public class Startup
         {
             var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
             
-            await EnsureRoleCreated(roleManager, "lender");
-            await EnsureRoleCreated(roleManager, "admin");
-            await EnsureRoleCreated(roleManager, "borrower");
+            await EnsureRoleCreated(roleManager, RoleNames.Lender);
+            await EnsureRoleCreated(roleManager, RoleNames.Admin);
+            await EnsureRoleCreated(roleManager, RoleNames.Borrower);
         }
     }
     

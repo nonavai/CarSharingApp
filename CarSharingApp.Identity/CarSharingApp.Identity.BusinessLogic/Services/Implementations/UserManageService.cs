@@ -22,47 +22,6 @@ public class UserManageService : IUserManageService
         _userInfoRepository = userInfoRepository;
     }
 
-    public async Task<UserCleanDto> LogInAsync(LogInDto dto)
-    {
-        var user = await _userRepository.GetByEmailAsync(dto.Email);
-        
-        if (user == null)
-        {
-            throw new NotFoundException(ErrorName.EmailNotFound);
-        }
-
-        if (!await _userRepository.CheckPasswordAsync(user, dto.Password))
-        {
-            throw new BadAuthorizeException(ErrorName.PasswordInvalid);
-        }
-
-        var userDto = _mapper.Map<UserCleanDto>(user);
-        
-        return userDto;
-    }
-
-    public async Task RegistrationAsync(UserNecessaryDto dto)
-    {
-        if (await IsEmailExist(dto.Email))
-        {
-            throw new BadAuthorizeException(ErrorName.UserAlreadyExist);
-        }
-        
-        var user = _mapper.Map<User>(dto);
-        var result = await _userRepository.AddAsync(user, dto.Password);
-
-        if (!result.Succeeded)
-        {
-            var errorMessage = string.Join(
-                Environment.NewLine,
-                result.Errors.Select(exception =>
-                    exception.Description
-                ));
-            
-            throw new IdentityException(errorMessage);
-        }
-    }
-
     public async Task<UserDto> GetByIdAsync(string id)
     {
         var user = await _userRepository.GetByIdAsync(id);
@@ -192,12 +151,4 @@ public class UserManageService : IUserManageService
         
         return _mapper.Map<UserInfoCleanDto>(userUpdated);
     }
-
-    private async Task<bool> IsEmailExist(string email)
-    {
-        var user = await _userRepository.GetByEmailAsync(email);
-        
-        return user != null;
-    }
-    
 }

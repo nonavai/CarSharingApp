@@ -1,6 +1,5 @@
 ﻿using CarSharingApp.Identity.BusinessLogic.Services;
 using CarSharingApp.Identity.Shared.Constants;
-using CarSharingApp.Identity.Shared.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -32,7 +31,7 @@ public class RolesController : ControllerBase
     [HttpPost]
     [Route("{userId}/{role}")]
     [Authorize(Roles = RoleNames.Admin)]
-    public async Task<IActionResult> AddRoleAsync([FromRoute] string userId, [FromRoute] Roles role, CancellationToken token)
+    public async Task<IActionResult> AddRoleAsync([FromRoute] string userId, [FromRoute] string role, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
 
@@ -44,7 +43,7 @@ public class RolesController : ControllerBase
     [HttpDelete]
     [Route("{userId}/{role}")]
     [Authorize(Roles = RoleNames.Admin)]
-    public async Task<IActionResult> RemoveRoleAsync([FromRoute] string userId, [FromRoute] Roles role, CancellationToken token)
+    public async Task<IActionResult> RemoveRoleAsync([FromRoute] string userId, [FromRoute] string role, CancellationToken token)
     {
         token.ThrowIfCancellationRequested();
 

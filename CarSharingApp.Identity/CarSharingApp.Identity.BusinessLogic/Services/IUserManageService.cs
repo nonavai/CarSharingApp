@@ -5,8 +5,6 @@ namespace CarSharingApp.Identity.BusinessLogic.Services;
 
 public interface IUserManageService
 {
-    Task<UserCleanDto> LogInAsync(LogInDto dto);
-    Task RegistrationAsync(UserNecessaryDto dto);
     Task<UserDto> GetByIdAsync(string id);
     Task<IEnumerable<UserCleanDto>> GetByNameAsync(string firstName, string lastName, CancellationToken token = default);
     Task<UserNecessaryDto> UpdateAsync(string id, UserNecessaryDto dto);

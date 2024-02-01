@@ -1,6 +1,7 @@
-﻿using CarSharingApp.Identity.DataAccess.Repositories;
+﻿using AutoMapper;
+using CarSharingApp.Identity.BusinessLogic.Models.Role;
+using CarSharingApp.Identity.DataAccess.Repositories;
 using CarSharingApp.Identity.Shared.Constants;
-using CarSharingApp.Identity.Shared.Enums;
 using CarSharingApp.Identity.Shared.Exceptions;
 
 namespace CarSharingApp.Identity.BusinessLogic.Services.Implementations;
@@ -8,13 +9,15 @@ namespace CarSharingApp.Identity.BusinessLogic.Services.Implementations;
 public class RolesService : IRolesService
 {
     private readonly IUserRepository _userRepository;
+    private readonly IMapper _mapper;
 
-    public RolesService(IUserRepository userRepository)
+    public RolesService(IUserRepository userRepository, IMapper mapper)
     {
         _userRepository = userRepository;
+        _mapper = mapper;
     }
 
-    public async Task<IEnumerable<string>> GetUserRolesAsync(string id)
+    public async Task<IEnumerable<RoleDto>> GetUserRolesAsync(string id)
     {
         var user = await _userRepository.GetByIdAsync(id);
         
@@ -22,11 +25,14 @@ public class RolesService : IRolesService
         {
             throw new NotFoundException(ErrorName.UserNotFound);
         }
-        
-        return await _userRepository.GetRolesAsync(user);
+
+        var roles = await _userRepository.GetRolesAsync(user);
+        var roleDtos = _mapper.Map<IEnumerable<RoleDto>>(roles);
+
+        return roleDtos;
     }
 
-    public async Task AddUserRoleAsync(string id, Roles role)
+    public async Task AddUserRoleAsync(string id, string role)
     {
         var user = await _userRepository.GetByIdAsync(id);
         
@@ -37,15 +43,15 @@ public class RolesService : IRolesService
 
         switch (role)
         {
-            case Roles.Lender:
+            case RoleNames.Lender:
                 await _userRepository.AddToRoleAsync(user, RoleNames.Lender);
                 break;
             
-            case Roles.Borrower:
+            case RoleNames.Borrower:
                 await _userRepository.AddToRoleAsync(user, RoleNames.Borrower);
                 break;
             
-            case Roles.Admin:
+            case RoleNames.Admin:
                 await _userRepository.AddToRoleAsync(user, RoleNames.Admin);
                 break;
             
@@ -54,7 +60,7 @@ public class RolesService : IRolesService
         }
     }
 
-    public async Task RemoveUserRoleAsync(string id, Roles role)
+    public async Task RemoveUserRoleAsync(string id, string role)
     {
         var user = await _userRepository.GetByIdAsync(id);
         
@@ -65,15 +71,15 @@ public class RolesService : IRolesService
 
         switch (role)
         {
-            case Roles.Lender:
+            case RoleNames.Lender:
                 await _userRepository.RemoveFromRolesAsync(user, RoleNames.Lender);
                 break;
             
-            case Roles.Borrower:
+            case RoleNames.Borrower:
                 await _userRepository.RemoveFromRolesAsync(user, RoleNames.Borrower);
                 break;
             
-            case Roles.Admin:
+            case RoleNames.Admin:
                 await _userRepository.RemoveFromRolesAsync(user, RoleNames.Admin);
                 break;
             

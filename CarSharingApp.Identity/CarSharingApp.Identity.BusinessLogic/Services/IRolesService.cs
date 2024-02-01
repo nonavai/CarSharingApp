@@ -1,10 +1,10 @@
-﻿using CarSharingApp.Identity.Shared.Enums;
+﻿using CarSharingApp.Identity.BusinessLogic.Models.Role;
 
 namespace CarSharingApp.Identity.BusinessLogic.Services;
 
 public interface IRolesService
 {
-    Task<IEnumerable<string>> GetUserRolesAsync(string id);
-    Task AddUserRoleAsync(string id, Roles role);
-    Task RemoveUserRoleAsync(string id, Roles role);
+    Task<IEnumerable<RoleDto>> GetUserRolesAsync(string id);
+    Task AddUserRoleAsync(string id, string role);
+    Task RemoveUserRoleAsync(string id, string role);
 }

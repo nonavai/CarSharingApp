@@ -12,12 +12,10 @@ namespace CarSharingApp.Identity.API.Controllers;
 public class UserController : ControllerBase
 {
     private readonly IUserManageService _userManageService;
-    private readonly ITokenService _tokenService;
 
-    public UserController(IUserManageService userManageService, ITokenService tokenService)
+    public UserController(IUserManageService userManageService)
     {
         _userManageService = userManageService;
-        _tokenService = tokenService;
     }
 
     [HttpGet]
@@ -56,40 +54,6 @@ public class UserController : ControllerBase
         return Ok(result);
     }
 
-    [HttpPost]
-    [Route("login")]
-    public async Task<IActionResult> LoginAsync(LogInDto dto, CancellationToken token = default)
-    {
-        token.ThrowIfCancellationRequested();
-
-        var userDto = await _userManageService.LogInAsync(dto);
-        var accessToken = await _tokenService.GenerateToken(userDto.Id);
-        
-        Response.Cookies.Delete("Authorization");
-        Response.Cookies.Append(
-            "Authorization",
-            accessToken,
-            new CookieOptions()
-            {
-                HttpOnly = true,
-                SameSite = SameSiteMode.None,
-                Secure = true
-            });
-        
-        return Ok(userDto);
-    }
-
-    [HttpPost]
-    [Route("")]
-    public async Task<IActionResult> CreateAsync(UserNecessaryDto dto, CancellationToken token = default)
-    {
-        token.ThrowIfCancellationRequested();
-
-        await _userManageService.RegistrationAsync(dto);
-        
-        return Created("User Added Successfully", dto);
-    }
-    
     [HttpPost]
     [Route("{userId}/info")]
     [Authorize(Roles = RoleNames.Admin)]
