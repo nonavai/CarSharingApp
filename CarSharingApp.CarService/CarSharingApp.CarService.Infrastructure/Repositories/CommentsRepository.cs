@@ -1,5 +1,5 @@
-﻿using CarSharingApp.CarService.Domain.Entities;
-using CarSharingApp.CarService.Domain.Interfaces;
+﻿using CarSharingApp.CarService.Application.Repositories;
+using CarSharingApp.CarService.Domain.Entities;
 using CarSharingApp.CarService.Infrastructure.DataBase;
 
 namespace CarSharingApp.CarService.Infrastructure.Repositories;

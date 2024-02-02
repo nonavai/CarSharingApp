@@ -1,4 +1,4 @@
-﻿namespace CarSharingApp.CarService.Domain.Interfaces;
+﻿namespace CarSharingApp.CarService.Application.Repositories;
 
 public interface IBaseRepository<T>
 {

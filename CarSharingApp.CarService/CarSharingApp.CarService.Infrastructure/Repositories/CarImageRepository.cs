@@ -1,5 +1,5 @@
-﻿using CarSharingApp.CarService.Domain.Entities;
-using CarSharingApp.CarService.Domain.Interfaces;
+﻿using CarSharingApp.CarService.Application.Repositories;
+using CarSharingApp.CarService.Domain.Entities;
 using CarSharingApp.CarService.Infrastructure.DataBase;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,6 +17,14 @@ public class CarImageRepository : BaseRepository<CarImage>, ICarImageRepository
     public async Task<IEnumerable<CarImage>> GetByCarIdAsync(string carId)
     {
         var carImages = db.CarImages.AsNoTracking().AsQueryable().Where(image => image.CarId == carId);
+        
         return carImages.AsEnumerable();
+    }
+
+    public async Task<CarImage?> GetPrimaryAsync()
+    {
+        var entity = await db.CarImages.FirstOrDefaultAsync(image => image.IsPrimary);
+
+        return entity;
     }
 }
