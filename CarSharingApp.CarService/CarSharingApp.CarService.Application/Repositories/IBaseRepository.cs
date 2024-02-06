@@ -2,10 +2,10 @@
 
 public interface IBaseRepository<T>
 {
-    Task<T?> GetByIdAsync(string id);
+    Task<T?> GetByIdAsync(string id, CancellationToken token = default);
     Task<IEnumerable<T>> GetAllAsync();
-    Task<T> AddAsync(T entity);
-    Task<T> UpdateAsync(T entity);
-    Task<T?> DeleteAsync(string id);
-    Task<bool> ExistsAsync(string id);
+    Task<T> AddAsync(T entity, CancellationToken token = default);
+    Task<T> UpdateAsync(T entity, CancellationToken token = default);
+    Task<T?> DeleteAsync(string id, CancellationToken token = default);
+    Task<bool> ExistsAsync(string id, CancellationToken token = default);
 }

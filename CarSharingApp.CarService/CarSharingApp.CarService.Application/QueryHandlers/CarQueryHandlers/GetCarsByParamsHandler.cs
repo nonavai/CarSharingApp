@@ -6,10 +6,11 @@ using CarSharingApp.CarService.Application.Repositories;
 using CarSharingApp.CarService.Domain.Entities;
 using CarSharingApp.CarService.Domain.Specifications;
 using CarSharingApp.CarService.Domain.Specifications.SpecSettings;
+using MediatR;
 
 namespace CarSharingApp.CarService.Application.QueryHandlers.CarQueryHandlers;
 
-public class GetCarsByParamsHandler : IQueryHandler<GetCarsByParamsQuery, IEnumerable<CarDto>>
+public class GetCarsByParamsHandler : IRequestHandler<GetCarsByParamsQuery, IEnumerable<CarDto>>
 {
     private readonly ICarRepository _carRepository;
     private readonly IMapper _mapper;

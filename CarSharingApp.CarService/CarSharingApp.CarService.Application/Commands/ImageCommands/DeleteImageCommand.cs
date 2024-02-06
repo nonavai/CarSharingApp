@@ -1,6 +1,9 @@
-﻿namespace CarSharingApp.CarService.Application.Commands.ImageCommands;
+﻿using CarSharingApp.CarService.Application.DTO_s.Image;
+using MediatR;
 
-public class DeleteImageCommand
+namespace CarSharingApp.CarService.Application.Commands.ImageCommands;
+
+public class DeleteImageCommand : IRequest<ImageDto>
 {
     public string Id { get; set; }
 }

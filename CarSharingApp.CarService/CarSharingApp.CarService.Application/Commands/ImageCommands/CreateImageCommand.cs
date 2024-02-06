@@ -1,6 +1,9 @@
-﻿namespace CarSharingApp.CarService.Application.Commands.ImageCommands;
+﻿using CarSharingApp.CarService.Application.DTO_s.Image;
+using MediatR;
 
-public class CreateImageCommand
+namespace CarSharingApp.CarService.Application.Commands.ImageCommands;
+
+public class CreateImageCommand : IRequest<ImageDto>
 {
     public string CarId { get; set; }
     public string Url { get; set; }

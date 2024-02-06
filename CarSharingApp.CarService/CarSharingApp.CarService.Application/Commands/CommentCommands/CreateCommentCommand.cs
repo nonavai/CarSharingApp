@@ -1,6 +1,9 @@
-﻿namespace CarSharingApp.CarService.Application.Commands.CommentCommands;
+﻿using CarSharingApp.CarService.Application.DTO_s.Comment;
+using MediatR;
 
-public class CreateCommentCommand
+namespace CarSharingApp.CarService.Application.Commands.CommentCommands;
+
+public class CreateCommentCommand : IRequest<CommentDto>
 {
     public string UserId { get; set; }
     public string CarId { get; set; }

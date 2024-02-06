@@ -1,6 +1,9 @@
-﻿namespace CarSharingApp.CarService.Application.Queries.CommentQueries;
+﻿using CarSharingApp.CarService.Application.DTO_s.Comment;
+using MediatR;
 
-public class GetCommentQuery
+namespace CarSharingApp.CarService.Application.Queries.CommentQueries;
+
+public class GetCommentQuery : IRequest<CommentDto>
 {
     public string Id { get; set; }
 }

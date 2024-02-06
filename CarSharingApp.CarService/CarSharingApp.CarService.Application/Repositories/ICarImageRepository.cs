@@ -5,5 +5,5 @@ namespace CarSharingApp.CarService.Application.Repositories;
 public interface ICarImageRepository : IBaseRepository<CarImage>
 {
     Task<IEnumerable<CarImage>> GetByCarIdAsync(string carId);
-    Task<CarImage?> GetPrimaryAsync();
+    Task<CarImage?> GetPrimaryAsync(CancellationToken token = default);
 }

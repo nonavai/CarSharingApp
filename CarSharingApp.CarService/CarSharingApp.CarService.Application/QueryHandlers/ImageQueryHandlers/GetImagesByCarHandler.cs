@@ -1,23 +1,22 @@
 ﻿using CarSharingApp.CarService.Application.DTO_s.Image;
 using CarSharingApp.CarService.Application.Queries.ImageQueries;
 using CarSharingApp.CarService.Application.Repositories;
+using MediatR;
 using Microsoft.Extensions.Configuration;
 using Minio;
 using Minio.DataModel.Args;
 
 namespace CarSharingApp.CarService.Application.QueryHandlers.ImageQueryHandlers;
 
-public class GetImagesByCarHandler : IQueryHandler<GetImagesByCarQuery, IEnumerable<ImageDto>>
+public class GetImagesByCarHandler : IRequestHandler<GetImagesByCarQuery, IEnumerable<ImageDto>>
 {
-    private readonly MinioClient _minioClient;
+    private readonly IMinioRepository _minioRepository;
     private readonly ICarImageRepository _carImageRepository;
-    private string _bucketName;
 
-    public GetImagesByCarHandler(MinioClient minioClient, IConfiguration configuration, ICarImageRepository carImageRepository)
+    public GetImagesByCarHandler(ICarImageRepository carImageRepository, IMinioRepository minioRepository)
     {
-        _minioClient = minioClient;
         _carImageRepository = carImageRepository;
-        _bucketName = configuration["MinIO-Settings:BucketName"];
+        _minioRepository = minioRepository;
     }
 
     public async Task<IEnumerable<ImageDto>> Handle(GetImagesByCarQuery query, CancellationToken token)
@@ -29,24 +28,10 @@ public class GetImagesByCarHandler : IQueryHandler<GetImagesByCarQuery, IEnumera
                 CarId = image.CarId,
                 Url = image.Url,
                 IsPrimary = image.IsPrimary,
-                File = await GetImageAsync(image.Url)
+                File = await _minioRepository.GetAsync(image.Url, token)
             });
         var images = await Task.WhenAll(imagesTasks);
 
         return images.AsEnumerable();
-    }
-    
-    private async Task<Stream> GetImageAsync(string objectName)
-    {
-        var result = Stream.Null;
-        var getObjectArgs = new GetObjectArgs()
-            .WithBucket(_bucketName)
-            .WithObject(objectName)
-            .WithCallbackStream((stream =>
-                stream.CopyTo(result)));
-        
-        await _minioClient.GetObjectAsync(getObjectArgs);
-        
-        return result;
     }
 }

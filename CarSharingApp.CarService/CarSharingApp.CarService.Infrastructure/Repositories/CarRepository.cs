@@ -22,6 +22,6 @@ public class CarRepository : BaseRepository<Car>, ICarRepository
 
         IQueryable<Car> query = db.Cars;
         query = query.ApplySpecification(spec);
-        return await query.ToListAsync();
+        return await query.ToListAsync(cancellationToken: token);
     }
 }

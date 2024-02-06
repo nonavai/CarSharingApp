@@ -14,9 +14,9 @@ public class CarStateRepository : BaseRepository<CarState>, ICarStateRepository
         this.db = db;
     }
 
-    public async Task<CarState> GetByCarIdAsync(string id)
+    public async Task<CarState> GetByCarIdAsync(string id, CancellationToken token)
     {
-        var entity = await db.CarStates.FirstAsync(a => a.CarId == id);
+        var entity = await db.CarStates.FirstAsync(a => a.CarId == id, cancellationToken: token);
         return entity;
     }
 }

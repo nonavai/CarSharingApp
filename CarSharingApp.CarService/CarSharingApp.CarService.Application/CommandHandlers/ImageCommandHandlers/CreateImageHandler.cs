@@ -4,46 +4,36 @@ using CarSharingApp.CarService.Application.DTO_s.Image;
 using CarSharingApp.CarService.Application.Repositories;
 using CarSharingApp.CarService.Domain.Entities;
 using CarSharingApp.CarService.Domain.Exceptions;
-using Microsoft.Extensions.Configuration;
-using Minio;
-using Minio.DataModel.Args;
+using MediatR;
 
 
 namespace CarSharingApp.CarService.Application.CommandHandlers.ImageCommandHandlers;
 
-public class CreateImageHandler : ICommandHandler<CreateImageCommand, ImageDto>
+public class CreateImageHandler : IRequestHandler<CreateImageCommand, ImageDto>
 {
-    private readonly MinioClient _minioClient;
+    private readonly IMinioRepository _minioRepository;
     private readonly ICarImageRepository _carImageRepository;
     private readonly IMapper _mapper;
-    private string _bucketName;
-    
-    public CreateImageHandler(MinioClient minioClient, IConfiguration configuration, ICarImageRepository carImageRepository, IMapper mapper)
+
+    public CreateImageHandler(ICarImageRepository carImageRepository, IMapper mapper, IMinioRepository minioRepository)
     {
-        _minioClient = minioClient;
         _carImageRepository = carImageRepository;
         _mapper = mapper;
-        _bucketName = configuration["MinIO-Settings:BucketName"];
+        _minioRepository = minioRepository;
     }
 
-    public async Task<ImageDto> Handle(CreateImageCommand command)
+    public async Task<ImageDto> Handle(CreateImageCommand command, CancellationToken cancellationToken)
     {
-        var putObjectArgs = new PutObjectArgs()
-            .WithBucket(_bucketName)
-            .WithObject(command.Url)
-            .WithStreamData(command.File)
-            .WithObjectSize(command.File.Length)
-            .WithContentType("image/jpeg");
-        
-        var result =  await _minioClient.PutObjectAsync(putObjectArgs);
+        var image = _mapper.Map<ImageCleanDto>(command);
+        var response = await _minioRepository.AddAsync(image, cancellationToken);
 
-        if (result == null)
+        if (response == null)
         {
             throw new InvalidDataTypeException("Invalid Data Type");
         }
         
         var carImage = _mapper.Map<CarImage>(command);
-        var newCarImage = await _carImageRepository.AddAsync(carImage);
+        var newCarImage = await _carImageRepository.AddAsync(carImage, cancellationToken);
         var imageDto = _mapper.Map<ImageDto>(newCarImage);
         
         return imageDto;

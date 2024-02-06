@@ -1,6 +1,8 @@
-﻿namespace CarSharingApp.CarService.Application.Commands.CarStateCommands;
+﻿using CarSharingApp.CarService.Application.DTO_s.CarState;
 
-public class UpdateCarStateCommand
+namespace CarSharingApp.CarService.Application.Commands.CarStateCommands;
+
+public class UpdateCarStateCommand : CarStateDto
 {
     public string CarId { get; set; }
     public double Latitude { get; set; }
