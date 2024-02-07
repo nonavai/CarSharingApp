@@ -9,12 +9,17 @@
     <ItemGroup>
       <Folder Include="DTO's" />
       <Folder Include="Exceptions" />
-      <Folder Include="Services\Implementations" />
+      <Folder Include="Mapping" />
+      <Folder Include="Services" />
       <Folder Include="Validators" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\CarSharingApp.CarService.Domain\CarSharingApp.CarService.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="12.0.1" />
     </ItemGroup>
 
 </Project>
