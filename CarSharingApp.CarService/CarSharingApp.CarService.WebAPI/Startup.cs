@@ -7,7 +7,10 @@ using CarSharingApp.CarService.Application.Commands.CarCommands;
 using CarSharingApp.CarService.Application.Commands.CarStateCommands;
 using CarSharingApp.CarService.Application.Commands.CommentCommands;
 using CarSharingApp.CarService.Application.Commands.ImageCommands;
+using CarSharingApp.CarService.Application.DTO_s.Car;
 using CarSharingApp.CarService.Application.DTO_s.CarState;
+using CarSharingApp.CarService.Application.DTO_s.Comment;
+using CarSharingApp.CarService.Application.DTO_s.Image;
 using CarSharingApp.CarService.Application.Mapping;
 using CarSharingApp.CarService.Application.Queries.CarQueries;
 using CarSharingApp.CarService.Application.Queries.CommentQueries;
@@ -16,9 +19,6 @@ using CarSharingApp.CarService.Application.QueryHandlers.CarQueryHandlers;
 using CarSharingApp.CarService.Application.QueryHandlers.CommentQueryHandlers;
 using CarSharingApp.CarService.Application.QueryHandlers.ImageQueryHandlers;
 using CarSharingApp.CarService.Application.Repositories;
-using CarSharingApp.CarService.Application.Responses.Car;
-using CarSharingApp.CarService.Application.Responses.Comment;
-using CarSharingApp.CarService.Application.Responses.Image;
 using CarSharingApp.CarService.Infrastructure.DataBase;
 using CarSharingApp.CarService.Infrastructure.Repositories;
 using CarSharingApp.CarService.WebAPI.Extensions;
@@ -40,27 +40,28 @@ public class Startup
         services.AddAutoMapper(typeof(MappingProfile));
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
         
-        services.AddTransient<IRequestHandler<CreateCarCommand, CarResponse>, CreateCarHandler>();
-        services.AddTransient<IRequestHandler<UpdateCarCommand, CarResponse>, UpdateCarHandler>();
-        services.AddTransient<IRequestHandler<DeleteCarCommand, CarResponse>, DeleteCarHandler>();
+        services.AddTransient<IRequestHandler<CreateCarCommand, CarDto>, CreateCarHandler>();
+        services.AddTransient<IRequestHandler<UpdateCarCommand, CarDto>, UpdateCarHandler>();
+        services.AddTransient<IRequestHandler<DeleteCarCommand, CarDto>, DeleteCarHandler>();
         
-        services.AddTransient<IRequestHandler<UpdateCommentCommand, CommentResponse>, UpdateCommentHandler>();
-        services.AddTransient<IRequestHandler<CreateCommentCommand, CommentResponse>, CreateCommentHandler>();
-        services.AddTransient<IRequestHandler<DeleteCommentCommand, CommentResponse>, DeleteCommentHandler>();
+        services.AddTransient<IRequestHandler<UpdateCommentCommand, CommentDto>, UpdateCommentHandler>();
+        services.AddTransient<IRequestHandler<CreateCommentCommand, CommentDto>, CreateCommentHandler>();
+        services.AddTransient<IRequestHandler<DeleteCommentCommand, CommentDto>, DeleteCommentHandler>();
         
-        services.AddTransient<IRequestHandler<CreateImageCommand, ImageCommandResponse>, CreateImageHandler>();
-        services.AddTransient<IRequestHandler<UpdateImagePriorityCommand, ImageCommandResponse>, UpdateImagePriorityHandler>();
-        services.AddTransient<IRequestHandler<DeleteImageCommand, ImageCommandResponse>, DeleteImageHandler>();
+        services.AddTransient<IRequestHandler<CreateImageCommand, ImageDto>, CreateImageHandler>();
+        services.AddTransient<IRequestHandler<UpdateImagePriorityCommand, ImageDto>, UpdateImagePriorityHandler>();
+        services.AddTransient<IRequestHandler<DeleteImageCommand, ImageDto>, DeleteImageHandler>();
 
         services.AddTransient<IRequestHandler<UpdateCarActivityCommand, CarStateDto>, UpdateCarActivityHandler>();
         services.AddTransient<IRequestHandler<UpdateCarLocationCommand, CarStateDto>, UpdateCarLocationHandler>();
 
-        services.AddTransient<IRequestHandler<GetCarQuery, CarFullResponse>, GetCarHandler>();
-        services.AddTransient<IRequestHandler<GetCarsByParamsQuery, IEnumerable<CarResponse>>, GetCarsByParamsHandler>();
+        services.AddTransient<IRequestHandler<GetCarQuery, CarFullDto>, GetCarHandler>();
+        services.AddTransient<IRequestHandler<GetCarsByParamsQuery, IEnumerable<CarDto>>, GetCarsByParamsHandler>();
+        services.AddTransient<IRequestHandler<GetCarByUserQuery, IEnumerable<CarDto>>, GetCarByUserHandler>();
         
-        services.AddTransient<IRequestHandler<GetCommentsByCarQuery, IEnumerable<CommentResponse>>, GetCommentsByCarHandler>();
+        services.AddTransient<IRequestHandler<GetCommentsByCarQuery, IEnumerable<CommentDto>>, GetCommentsByCarHandler>();
         
-        services.AddTransient<IRequestHandler<GetImagesByCarQuery, IEnumerable<ImageQueryResponse>>, GetImagesByCarHandler>();
+        services.AddTransient<IRequestHandler<GetImagesByCarQuery, IEnumerable<ImageFullDto>>, GetImagesByCarHandler>();
     }
     
     public static async Task InitializeMinio(IServiceCollection services, ConfigurationManager config)

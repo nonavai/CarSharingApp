@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
 using CarSharingApp.CarService.Application.Commands.CarCommands;
+using CarSharingApp.CarService.Application.DTO_s.Car;
 using CarSharingApp.CarService.Application.Repositories;
-using CarSharingApp.CarService.Application.Responses.Car;
 using CarSharingApp.CarService.Domain.Exceptions;
 using MediatR;
 
 namespace CarSharingApp.CarService.Application.CommandHandlers.CarCommandHandlers;
 
-public class DeleteCarHandler : IRequestHandler<DeleteCarCommand, CarResponse>
+public class DeleteCarHandler : IRequestHandler<DeleteCarCommand, CarDto>
 {
     private readonly ICarRepository _carRepository;
     private readonly IMapper _mapper;
@@ -18,7 +18,7 @@ public class DeleteCarHandler : IRequestHandler<DeleteCarCommand, CarResponse>
         _carRepository = carRepository;
     }
 
-    public async Task<CarResponse> Handle(DeleteCarCommand command, CancellationToken cancellationToken)
+    public async Task<CarDto> Handle(DeleteCarCommand command, CancellationToken cancellationToken)
     {
         var car = await _carRepository.GetByIdAsync(command.Id, cancellationToken);
         
@@ -29,7 +29,7 @@ public class DeleteCarHandler : IRequestHandler<DeleteCarCommand, CarResponse>
         
         var newCar = await _carRepository.DeleteAsync(command.Id, cancellationToken);
         await _carRepository.SaveChangesAsync(cancellationToken);
-        var newCarDto = _mapper.Map<CarResponse>(newCar);
+        var newCarDto = _mapper.Map<CarDto>(newCar);
 
         return newCarDto;
     }

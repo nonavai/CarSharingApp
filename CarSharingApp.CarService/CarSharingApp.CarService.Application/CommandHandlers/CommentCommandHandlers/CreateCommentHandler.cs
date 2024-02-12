@@ -2,13 +2,12 @@
 using CarSharingApp.CarService.Application.Commands.CommentCommands;
 using CarSharingApp.CarService.Application.DTO_s.Comment;
 using CarSharingApp.CarService.Application.Repositories;
-using CarSharingApp.CarService.Application.Responses.Comment;
 using CarSharingApp.CarService.Domain.Entities;
 using MediatR;
 
 namespace CarSharingApp.CarService.Application.CommandHandlers.CommentCommandHandlers;
 
-public class CreateCommentHandler : IRequestHandler<CreateCommentCommand, CommentResponse>
+public class CreateCommentHandler : IRequestHandler<CreateCommentCommand, CommentDto>
 {
     private readonly ICommentRepository _commentRepository;
     private readonly IMapper _mapper;
@@ -19,13 +18,13 @@ public class CreateCommentHandler : IRequestHandler<CreateCommentCommand, Commen
         _commentRepository = commentRepository;
     }
 
-    public async Task<CommentResponse> Handle(CreateCommentCommand command, CancellationToken cancellationToken)
+    public async Task<CommentDto> Handle(CreateCommentCommand command, CancellationToken cancellationToken)
     {
         var comment = _mapper.Map<Comment>(command);
         comment.TimePosted = DateTime.Now;
         var newComment = await _commentRepository.AddAsync(comment, cancellationToken);
         await _commentRepository.SaveChangesAsync(cancellationToken);
-        var commentDto = _mapper.Map<CommentResponse>(newComment);
+        var commentDto = _mapper.Map<CommentDto>(newComment);
 
         return commentDto;
     }

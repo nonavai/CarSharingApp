@@ -18,10 +18,9 @@ public class CarRepository : BaseRepository<Car>, ICarRepository
 
     public async Task<IEnumerable<Car>> GetBySpecAsync(CarSpecification spec, CancellationToken token = default)
     {
-        token.ThrowIfCancellationRequested();
-
         IQueryable<Car> query = _dataBase.Cars;
         query = query.ApplySpecification(spec);
+        
         return await query.ToListAsync(cancellationToken: token);
     }
 
@@ -31,5 +30,12 @@ public class CarRepository : BaseRepository<Car>, ICarRepository
             .Include(car => car.Comments)
             .Include(car => car.CarState)
             .FirstOrDefaultAsync(p => p.Id == id, token);
+    }
+
+    public async Task<IEnumerable<Car>> GetByUserId(string id)
+    {
+        var query = _dataBase.Cars.Where(car => car.UserId == id);
+        
+        return query.AsEnumerable();
     }
 }

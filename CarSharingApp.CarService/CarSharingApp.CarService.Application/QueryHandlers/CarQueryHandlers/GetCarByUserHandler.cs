@@ -6,22 +6,22 @@ using MediatR;
 
 namespace CarSharingApp.CarService.Application.QueryHandlers.CarQueryHandlers;
 
-public class GetCarHandler: IRequestHandler<GetCarQuery, CarFullDto>
+public class GetCarByUserHandler : IRequestHandler<GetCarByUserQuery, IEnumerable<CarDto>>
 {
     private readonly ICarRepository _carRepository;
     private readonly IMapper _mapper;
 
-    public GetCarHandler(ICarRepository carRepository, IMapper mapper)
+    public GetCarByUserHandler(ICarRepository carRepository, IMapper mapper)
     {
         _carRepository = carRepository;
         _mapper = mapper;
     }
 
-    public async Task<CarFullDto> Handle(GetCarQuery query, CancellationToken token)
+    public async Task<IEnumerable<CarDto>> Handle(GetCarByUserQuery query, CancellationToken cancellationToken = default)
     {
-        var car = await _carRepository.GetByIdWithInclude(query.Id, token);
-        var carDto = _mapper.Map<CarFullDto>(car);
+        var cars = await _carRepository.GetByUserId(query.UserId);
+        var carDtos = _mapper.Map<IEnumerable<CarDto>>(cars);
 
-        return carDto;
+        return carDtos;
     }
 }

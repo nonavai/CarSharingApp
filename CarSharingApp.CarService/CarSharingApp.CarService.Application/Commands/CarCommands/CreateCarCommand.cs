@@ -1,11 +1,10 @@
 ﻿using CarSharingApp.CarService.Application.DTO_s.Car;
-using CarSharingApp.CarService.Application.Responses.Car;
 using CarSharingApp.CarService.Domain.Enums;
 using MediatR;
 
 namespace CarSharingApp.CarService.Application.Commands.CarCommands;
 
-public class CreateCarCommand : IRequest<CarResponse>
+public class CreateCarCommand : IRequest<CarDto>
 {
     public string UserId { get; set; }
     public int Year { get; set; }

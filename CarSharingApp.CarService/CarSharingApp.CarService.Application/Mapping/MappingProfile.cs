@@ -5,10 +5,8 @@ using CarSharingApp.CarService.Application.Commands.CommentCommands;
 using CarSharingApp.CarService.Application.Commands.ImageCommands;
 using CarSharingApp.CarService.Application.DTO_s.Car;
 using CarSharingApp.CarService.Application.DTO_s.CarState;
+using CarSharingApp.CarService.Application.DTO_s.Comment;
 using CarSharingApp.CarService.Application.DTO_s.Image;
-using CarSharingApp.CarService.Application.Responses.Car;
-using CarSharingApp.CarService.Application.Responses.Comment;
-using CarSharingApp.CarService.Application.Responses.Image;
 using CarSharingApp.CarService.Domain.Entities;
 
 namespace CarSharingApp.CarService.Application.Mapping;
@@ -17,7 +15,7 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        CreateMap<Car, CarFullResponse>()
+        CreateMap<Car, CarFullDto>()
             .ForMember(dest => dest.CarState, 
                 opt =>
                     opt.MapFrom(src =>
@@ -31,7 +29,7 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.Comments,
                 opt =>
                     opt.MapFrom(src => src.Comments.Select(comment =>
-                        new CommentResponse
+                        new CommentDto
                         {
                             Id = comment.Id,
                             UserId = comment.UserId,
@@ -39,10 +37,9 @@ public class MappingProfile : Profile
                             Text = comment.Text,
                             Rating = comment.Rating
                         }))).ReverseMap();
-        CreateMap<CreateCarCommand, CarDto>();
         CreateMap<CreateCarCommand, Car>();
         CreateMap<UpdateCarCommand, Car>();   
-        CreateMap<Car, CarResponse>();
+        CreateMap<Car, CarDto>();
 
         CreateMap<UpdateCarActivityCommand, Car>();
         CreateMap<UpdateCarLocationCommand, Car>();
@@ -50,10 +47,10 @@ public class MappingProfile : Profile
 
         CreateMap<CreateCommentCommand, Comment>();
         CreateMap<UpdateCommentCommand, Comment>();
-        CreateMap<Comment, CommentResponse>();
+        CreateMap<Comment, CommentDto>();
 
         CreateMap<CreateImageCommand, CarImage>();
-        CreateMap<CarImage, ImageCommandResponse>();
+        CreateMap<CarImage, ImageDto>();
         CreateMap<CreateImageCommand, ImageCleanDto>()
             .ForMember(dest=> dest.File,
                 opt=>

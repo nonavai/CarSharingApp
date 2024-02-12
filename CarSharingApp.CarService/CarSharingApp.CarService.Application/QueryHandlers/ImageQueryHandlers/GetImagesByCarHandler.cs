@@ -1,11 +1,11 @@
-﻿using CarSharingApp.CarService.Application.Queries.ImageQueries;
+﻿using CarSharingApp.CarService.Application.DTO_s.Image;
+using CarSharingApp.CarService.Application.Queries.ImageQueries;
 using CarSharingApp.CarService.Application.Repositories;
-using CarSharingApp.CarService.Application.Responses.Image;
 using MediatR;
 
 namespace CarSharingApp.CarService.Application.QueryHandlers.ImageQueryHandlers;
 
-public class GetImagesByCarHandler : IRequestHandler<GetImagesByCarQuery, IEnumerable<ImageQueryResponse>>
+public class GetImagesByCarHandler : IRequestHandler<GetImagesByCarQuery, IEnumerable<ImageFullDto>>
 {
     private readonly IMinioRepository _minioRepository;
     private readonly ICarImageRepository _carImageRepository;
@@ -16,7 +16,7 @@ public class GetImagesByCarHandler : IRequestHandler<GetImagesByCarQuery, IEnume
         _minioRepository = minioRepository;
     }
 
-    public async Task<IEnumerable<ImageQueryResponse>> Handle(GetImagesByCarQuery query, CancellationToken token)
+    public async Task<IEnumerable<ImageFullDto>> Handle(GetImagesByCarQuery query, CancellationToken token)
     {
         var carImages = await _carImageRepository.GetByCarIdAsync(query.CarId);
         var imagesTasks = carImages.Select(async image => 
@@ -25,7 +25,7 @@ public class GetImagesByCarHandler : IRequestHandler<GetImagesByCarQuery, IEnume
             var bytes = memoryStream.ToArray();
             var base64String = Convert.ToBase64String(bytes);
 
-            return new ImageQueryResponse
+            return new ImageFullDto
             {
                 CarId = image.CarId,
                 Url = image.Url,

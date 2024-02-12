@@ -1,6 +1,6 @@
-﻿namespace CarSharingApp.CarService.Application.Responses.Image;
+﻿namespace CarSharingApp.CarService.Application.DTO_s.Image;
 
-public class ImageCommandResponse
+public class ImageDto
 {
     public string Id { get; set; }
     public string CarId { get; set; }

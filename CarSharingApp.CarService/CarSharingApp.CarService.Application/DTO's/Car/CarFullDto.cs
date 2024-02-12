@@ -1,11 +1,10 @@
 ﻿using CarSharingApp.CarService.Application.DTO_s.CarState;
-using CarSharingApp.CarService.Application.Responses.Comment;
-using CarSharingApp.CarService.Application.Responses.Image;
+using CarSharingApp.CarService.Application.DTO_s.Comment;
 using CarSharingApp.CarService.Domain.Enums;
 
-namespace CarSharingApp.CarService.Application.Responses.Car;
+namespace CarSharingApp.CarService.Application.DTO_s.Car;
 
-public class CarFullResponse
+public class CarFullDto
 {
     public string Id { get; set; }
     public string UserId { get; set; }
@@ -22,5 +21,5 @@ public class CarFullResponse
     public string? Description { get; set; }
     
     public CarStateDto CarState { get; set; }
-    public IEnumerable<CommentResponse> Comments { get; set; }
+    public IEnumerable<CommentDto> Comments { get; set; }
 }

@@ -2,12 +2,11 @@
 using CarSharingApp.CarService.Application.DTO_s.Comment;
 using CarSharingApp.CarService.Application.Queries.CommentQueries;
 using CarSharingApp.CarService.Application.Repositories;
-using CarSharingApp.CarService.Application.Responses.Comment;
 using MediatR;
 
 namespace CarSharingApp.CarService.Application.QueryHandlers.CommentQueryHandlers;
 
-public class GetCommentsByCarHandler : IRequestHandler<GetCommentsByCarQuery, IEnumerable<CommentResponse>>
+public class GetCommentsByCarHandler : IRequestHandler<GetCommentsByCarQuery, IEnumerable<CommentDto>>
 {
     private readonly ICommentRepository _commentRepository;
     private readonly IMapper _mapper;
@@ -18,10 +17,10 @@ public class GetCommentsByCarHandler : IRequestHandler<GetCommentsByCarQuery, IE
         _commentRepository = commentRepository;
     }
 
-    public async Task<IEnumerable<CommentResponse>> Handle(GetCommentsByCarQuery query, CancellationToken cancellationToken)
+    public async Task<IEnumerable<CommentDto>> Handle(GetCommentsByCarQuery query, CancellationToken cancellationToken)
     {
         var comment = await _commentRepository.GetByCarIdAsync(query.CarId);
-        var commentDto = _mapper.Map<IEnumerable<CommentResponse>>(comment);
+        var commentDto = _mapper.Map<IEnumerable<CommentDto>>(comment);
 
         return commentDto;
     }

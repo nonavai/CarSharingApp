@@ -3,7 +3,7 @@ using MediatR;
 
 namespace CarSharingApp.CarService.Application.Queries.CarQueries;
 
-public class GetCarQuery : IRequest<CarFullDto>
+public class GetCarByUserQuery : IRequest<IEnumerable<CarDto>>
 {
-    public string Id { get; set; }
+    public string UserId { get; set; }
 }

@@ -2,13 +2,12 @@
 using CarSharingApp.CarService.Application.Commands.ImageCommands;
 using CarSharingApp.CarService.Application.DTO_s.Image;
 using CarSharingApp.CarService.Application.Repositories;
-using CarSharingApp.CarService.Application.Responses.Image;
 using CarSharingApp.CarService.Domain.Exceptions;
 using MediatR;
 
 namespace CarSharingApp.CarService.Application.CommandHandlers.ImageCommandHandlers;
 
-public class UpdateImagePriorityHandler: IRequestHandler<UpdateImagePriorityCommand, ImageCommandResponse>
+public class UpdateImagePriorityHandler: IRequestHandler<UpdateImagePriorityCommand, ImageDto>
 {
     private readonly ICarImageRepository _carImageRepository;
     private readonly IMapper _mapper;
@@ -20,7 +19,7 @@ public class UpdateImagePriorityHandler: IRequestHandler<UpdateImagePriorityComm
         _mapper = mapper;
     }
 
-    public async Task<ImageCommandResponse> Handle(UpdateImagePriorityCommand command, CancellationToken token = default)
+    public async Task<ImageDto> Handle(UpdateImagePriorityCommand command, CancellationToken token = default)
     {
         var newPrimaryImage = await _carImageRepository.GetByIdAsync(command.Id, token);
 
@@ -32,7 +31,7 @@ public class UpdateImagePriorityHandler: IRequestHandler<UpdateImagePriorityComm
         var oldPrimaryImage = await _carImageRepository.GetPrimaryAsync(token);
         newPrimaryImage.IsPrimary = true;
         var updatedNewImage = await _carImageRepository.UpdateAsync(newPrimaryImage, token);
-        var updatedImageDto = _mapper.Map<ImageCommandResponse>(updatedNewImage);
+        var updatedImageDto = _mapper.Map<ImageDto>(updatedNewImage);
         
         if (oldPrimaryImage != null)
         {

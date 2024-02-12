@@ -7,4 +7,5 @@ public interface ICarRepository : IBaseRepository<Car>
 {
     public Task<IEnumerable<Car>> GetBySpecAsync(CarSpecification spec, CancellationToken token = default);
     Task<Car?> GetByIdWithInclude(string id, CancellationToken token = default);
+    Task<IEnumerable<Car>> GetByUserId(string id);
 }
