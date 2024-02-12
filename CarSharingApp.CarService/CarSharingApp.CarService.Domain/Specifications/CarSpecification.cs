@@ -27,10 +27,9 @@ public class CarSpecification : ISpecification<Car>
         return this;
     }
 
-    public CarSpecification FilterCars(
-        int? minYear, int? maxYear, int? minPrice,
-        int? maxPrice, VehicleType? vehicleType,
-        FuelType? fuelType, string? mark, string? model)
+    public CarSpecification FilterCars(int? minYear, int? maxYear, int? minPrice,
+        int? maxPrice, VehicleType? vehicleType, FuelType? fuelType, string? mark, string? model,
+        float? minEngineCapacity, float? maxEngineCapacity, WheelDrive? wheelDrive)
     {
         var predicate = PredicateBuilder.True<Car>();
 
@@ -74,8 +73,25 @@ public class CarSpecification : ISpecification<Car>
             predicate = predicate.And(car => car.Model == model);
         }
 
+        if (minEngineCapacity.HasValue)
+        {
+            predicate = predicate.And(car => car.EngineCapacity < minEngineCapacity);
+        }
+        
+        if (maxEngineCapacity.HasValue)
+        {
+            predicate = predicate.And(car => car.EngineCapacity > maxEngineCapacity);
+        }
+        
+        if (wheelDrive.HasValue)
+        {
+            predicate = predicate.And(car => car.WheelDrive == wheelDrive);
+        }
+
         Criteria = Criteria.And(predicate);
         
         return this;
     }
+
+   
 }

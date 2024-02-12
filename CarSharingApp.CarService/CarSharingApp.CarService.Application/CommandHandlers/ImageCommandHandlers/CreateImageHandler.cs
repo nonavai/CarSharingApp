@@ -2,6 +2,7 @@
 using CarSharingApp.CarService.Application.Commands.ImageCommands;
 using CarSharingApp.CarService.Application.DTO_s.Image;
 using CarSharingApp.CarService.Application.Repositories;
+using CarSharingApp.CarService.Application.Responses.Image;
 using CarSharingApp.CarService.Domain.Entities;
 using CarSharingApp.CarService.Domain.Exceptions;
 using MediatR;
@@ -9,7 +10,7 @@ using MediatR;
 
 namespace CarSharingApp.CarService.Application.CommandHandlers.ImageCommandHandlers;
 
-public class CreateImageHandler : IRequestHandler<CreateImageCommand, ImageDto>
+public class CreateImageHandler : IRequestHandler<CreateImageCommand, ImageCommandResponse>
 {
     private readonly IMinioRepository _minioRepository;
     private readonly ICarImageRepository _carImageRepository;
@@ -22,7 +23,7 @@ public class CreateImageHandler : IRequestHandler<CreateImageCommand, ImageDto>
         _minioRepository = minioRepository;
     }
 
-    public async Task<ImageDto> Handle(CreateImageCommand command, CancellationToken cancellationToken)
+    public async Task<ImageCommandResponse> Handle(CreateImageCommand command, CancellationToken cancellationToken)
     {
         var image = _mapper.Map<ImageCleanDto>(command);
         var response = await _minioRepository.AddAsync(image, cancellationToken);
@@ -34,7 +35,8 @@ public class CreateImageHandler : IRequestHandler<CreateImageCommand, ImageDto>
         
         var carImage = _mapper.Map<CarImage>(command);
         var newCarImage = await _carImageRepository.AddAsync(carImage, cancellationToken);
-        var imageDto = _mapper.Map<ImageDto>(newCarImage);
+        await _carImageRepository.SaveChangesAsync(cancellationToken);
+        var imageDto = _mapper.Map<ImageCommandResponse>(newCarImage);
         
         return imageDto;
     }

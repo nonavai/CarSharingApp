@@ -16,4 +16,7 @@ public class CarFilterDto
     public FuelType? FuelType { get; set; }
     public string? Mark { get; set; }
     public string? Model { get; set; }
+    public WheelDrive? WheelDrive { get; set; }
+    public float? MinEngineCapacity { get; set; }
+    public float? MaxEngineCapacity { get; set; }
 }

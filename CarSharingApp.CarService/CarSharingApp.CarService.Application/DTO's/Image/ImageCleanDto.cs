@@ -3,5 +3,5 @@
 public class ImageCleanDto
 {
     public string Url { get; set; }
-    public Stream File { get; set; }
+    public MemoryStream File { get; set; }
 }

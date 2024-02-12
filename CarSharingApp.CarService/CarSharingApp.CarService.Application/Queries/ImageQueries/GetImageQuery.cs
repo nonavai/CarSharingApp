@@ -2,5 +2,5 @@
 
 public class GetImageQuery 
 {
-    public string CarId { get; set; }
+    public string Id { get; set; }
 }

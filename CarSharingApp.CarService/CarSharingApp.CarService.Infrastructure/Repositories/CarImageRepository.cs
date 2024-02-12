@@ -7,23 +7,23 @@ namespace CarSharingApp.CarService.Infrastructure.Repositories;
 
 public class CarImageRepository : BaseRepository<CarImage>, ICarImageRepository
 {
-    private readonly CarsContext db;
+    private readonly CarsContext _dataBase;
     
-    public CarImageRepository(CarsContext db) : base(db)
+    public CarImageRepository(CarsContext dataBase) : base(dataBase)
     {
-        this.db = db;
+        _dataBase = dataBase;
     }
 
     public async Task<IEnumerable<CarImage>> GetByCarIdAsync(string carId)
     {
-        var carImages = db.CarImages.AsNoTracking().AsQueryable().Where(image => image.CarId == carId);
+        var carImages = _dataBase.CarImages.AsNoTracking().AsQueryable().Where(image => image.CarId == carId);
         
         return carImages.AsEnumerable();
     }
 
     public async Task<CarImage?> GetPrimaryAsync(CancellationToken token = default)
     {
-        var entity = await db.CarImages.FirstOrDefaultAsync(image => image.IsPrimary, cancellationToken: token);
+        var entity = await _dataBase.CarImages.FirstOrDefaultAsync(image => image.IsPrimary, cancellationToken: token);
 
         return entity;
     }

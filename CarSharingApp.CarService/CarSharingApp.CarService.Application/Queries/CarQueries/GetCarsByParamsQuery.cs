@@ -1,10 +1,11 @@
 ﻿using CarSharingApp.CarService.Application.DTO_s.Car;
+using CarSharingApp.CarService.Application.Responses.Car;
 using CarSharingApp.CarService.Domain.Enums;
 using MediatR;
 
 namespace CarSharingApp.CarService.Application.Queries.CarQueries;
 
-public class GetCarsByParamsQuery : IRequest<IEnumerable<CarDto>>
+public class GetCarsByParamsQuery : IRequest<IEnumerable<CarResponse>>
 {
     public bool IsActive { get; set; }
     public double? RadiusKm { get; set; }
@@ -18,4 +19,7 @@ public class GetCarsByParamsQuery : IRequest<IEnumerable<CarDto>>
     public FuelType? FuelType { get; set; }
     public string? Mark { get; set; }
     public string? Model { get; set; }
+    public WheelDrive? WheelDrive { get; set; }
+    public float? MinEngineCapacity { get; set; }
+    public float? MaxEngineCapacity { get; set; }
 }

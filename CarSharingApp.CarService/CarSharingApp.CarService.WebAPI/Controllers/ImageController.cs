@@ -9,9 +9,9 @@ namespace CarSharingApp.CarService.WebAPI.Controllers;
 [ApiController]
 public class ImageController : ControllerBase
 {
-    private readonly Mediator _mediator;
+    private readonly IMediator _mediator;
 
-    public ImageController(Mediator mediator)
+    public ImageController(IMediator mediator)
     {
         _mediator = mediator;
     }

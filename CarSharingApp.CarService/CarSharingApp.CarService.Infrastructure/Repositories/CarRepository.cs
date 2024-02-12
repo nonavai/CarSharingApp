@@ -9,19 +9,27 @@ namespace CarSharingApp.CarService.Infrastructure.Repositories;
 
 public class CarRepository : BaseRepository<Car>, ICarRepository
 {
-    private CarsContext db;
+    private CarsContext _dataBase;
 
-    public CarRepository(CarsContext db) : base(db)
+    public CarRepository(CarsContext dataBase) : base(dataBase)
     {
-        this.db = db;
+        _dataBase = dataBase;
     }
 
-    public async Task<IEnumerable<Car>> GetBySpecAsync(CarSpecification spec, CancellationToken token)
+    public async Task<IEnumerable<Car>> GetBySpecAsync(CarSpecification spec, CancellationToken token = default)
     {
         token.ThrowIfCancellationRequested();
 
-        IQueryable<Car> query = db.Cars;
+        IQueryable<Car> query = _dataBase.Cars;
         query = query.ApplySpecification(spec);
         return await query.ToListAsync(cancellationToken: token);
+    }
+
+    public async Task<Car?> GetByIdWithInclude(string id, CancellationToken token = default)
+    {
+        return await _dataBase.Cars
+            .Include(car => car.Comments)
+            .Include(car => car.CarState)
+            .FirstOrDefaultAsync(p => p.Id == id, token);
     }
 }

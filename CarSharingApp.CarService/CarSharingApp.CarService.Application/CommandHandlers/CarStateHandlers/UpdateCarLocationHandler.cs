@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CarSharingApp.CarService.Application.Commands.CarCommands;
+using CarSharingApp.CarService.Application.Commands.CarStateCommands;
 using CarSharingApp.CarService.Application.DTO_s.CarState;
 using CarSharingApp.CarService.Application.Repositories;
 using MediatR;
@@ -20,9 +20,9 @@ public class UpdateCarLocationHandler : IRequestHandler<UpdateCarLocationCommand
     public async Task<CarStateDto> Handle(UpdateCarLocationCommand command, CancellationToken cancellationToken)
     {
         var carState = await _carStateRepository.GetByCarIdAsync(command.CarId, cancellationToken);
-        carState.Latitude = command.Latitude;
-        carState.Longitude = command.Longitude;
+        _mapper.Map(command, carState);
         var newCarState = await _carStateRepository.UpdateAsync(carState, cancellationToken);
+        await _carStateRepository.SaveChangesAsync(cancellationToken);
         var carStateDto = _mapper.Map<CarStateDto>(newCarState);
 
         return carStateDto;

@@ -9,19 +9,20 @@ namespace CarSharingApp.CarService.Infrastructure.Repositories;
 
 public class MinioRepository : IMinioRepository
 {
-    private readonly MinioClient _minioClient;
+    private readonly IMinioClient _minioClient;
     private string _bucketName;
 
-    public MinioRepository(MinioClient minioClient, IConfiguration configuration)
+    public MinioRepository(IMinioClient minioClient, IConfiguration configuration)
     {
         _minioClient = minioClient;
         _bucketName = configuration["MinIO-Settings:BucketName"];
+        InitializeMinio();
     }
 
 
-    public async Task<Stream> GetAsync(string objName, CancellationToken token = default)
+    public async Task<MemoryStream> GetAsync(string objName, CancellationToken token = default)
     {
-        var result = Stream.Null;
+        var result = new MemoryStream();
         var getObjectArgs = new GetObjectArgs()
             .WithBucket(_bucketName)
             .WithObject(objName)
@@ -51,5 +52,17 @@ public class MinioRepository : IMinioRepository
             .WithBucket(_bucketName)
             .WithObject(objName);
         await _minioClient.RemoveObjectAsync(deleteObjectArgs, token);
+    }
+
+    private void InitializeMinio()
+    {
+        var bucketExistsArgs = new BucketExistsArgs().WithBucket(_bucketName);
+        var isExist = _minioClient.BucketExistsAsync(bucketExistsArgs).Result;
+
+        if (!isExist)
+        {
+            var makeBucketArgs = new MakeBucketArgs().WithBucket(_bucketName);
+            _minioClient.MakeBucketAsync(makeBucketArgs).Wait();
+        }
     }
 }

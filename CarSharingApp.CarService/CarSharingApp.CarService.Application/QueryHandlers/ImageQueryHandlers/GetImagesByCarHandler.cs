@@ -1,14 +1,11 @@
-﻿using CarSharingApp.CarService.Application.DTO_s.Image;
-using CarSharingApp.CarService.Application.Queries.ImageQueries;
+﻿using CarSharingApp.CarService.Application.Queries.ImageQueries;
 using CarSharingApp.CarService.Application.Repositories;
+using CarSharingApp.CarService.Application.Responses.Image;
 using MediatR;
-using Microsoft.Extensions.Configuration;
-using Minio;
-using Minio.DataModel.Args;
 
 namespace CarSharingApp.CarService.Application.QueryHandlers.ImageQueryHandlers;
 
-public class GetImagesByCarHandler : IRequestHandler<GetImagesByCarQuery, IEnumerable<ImageDto>>
+public class GetImagesByCarHandler : IRequestHandler<GetImagesByCarQuery, IEnumerable<ImageQueryResponse>>
 {
     private readonly IMinioRepository _minioRepository;
     private readonly ICarImageRepository _carImageRepository;
@@ -19,17 +16,23 @@ public class GetImagesByCarHandler : IRequestHandler<GetImagesByCarQuery, IEnume
         _minioRepository = minioRepository;
     }
 
-    public async Task<IEnumerable<ImageDto>> Handle(GetImagesByCarQuery query, CancellationToken token)
+    public async Task<IEnumerable<ImageQueryResponse>> Handle(GetImagesByCarQuery query, CancellationToken token)
     {
         var carImages = await _carImageRepository.GetByCarIdAsync(query.CarId);
         var imagesTasks = carImages.Select(async image => 
-            new ImageDto
+        {
+            var memoryStream = await _minioRepository.GetAsync(image.Url, token);
+            var bytes = memoryStream.ToArray();
+            var base64String = Convert.ToBase64String(bytes);
+
+            return new ImageQueryResponse
             {
                 CarId = image.CarId,
                 Url = image.Url,
                 IsPrimary = image.IsPrimary,
-                File = await _minioRepository.GetAsync(image.Url, token)
-            });
+                File = base64String
+            };
+        });
         var images = await Task.WhenAll(imagesTasks);
 
         return images.AsEnumerable();

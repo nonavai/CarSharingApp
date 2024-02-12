@@ -1,8 +1,8 @@
 ﻿using System.Linq.Expressions;
 using AutoMapper;
-using CarSharingApp.CarService.Application.DTO_s.Car;
 using CarSharingApp.CarService.Application.Queries.CarQueries;
 using CarSharingApp.CarService.Application.Repositories;
+using CarSharingApp.CarService.Application.Responses.Car;
 using CarSharingApp.CarService.Domain.Entities;
 using CarSharingApp.CarService.Domain.Specifications;
 using CarSharingApp.CarService.Domain.Specifications.SpecSettings;
@@ -10,7 +10,7 @@ using MediatR;
 
 namespace CarSharingApp.CarService.Application.QueryHandlers.CarQueryHandlers;
 
-public class GetCarsByParamsHandler : IRequestHandler<GetCarsByParamsQuery, IEnumerable<CarDto>>
+public class GetCarsByParamsHandler : IRequestHandler<GetCarsByParamsQuery, IEnumerable<CarResponse>>
 {
     private readonly ICarRepository _carRepository;
     private readonly IMapper _mapper;
@@ -21,7 +21,7 @@ public class GetCarsByParamsHandler : IRequestHandler<GetCarsByParamsQuery, IEnu
         _mapper = mapper;
     }
 
-    public async Task<IEnumerable<CarDto>> Handle(GetCarsByParamsQuery query, CancellationToken token)
+    public async Task<IEnumerable<CarResponse>> Handle(GetCarsByParamsQuery query, CancellationToken token)
     {
         Expression<Func<Car, bool>> customFilter = car => car.CarState.IsActive == query.IsActive;
         
@@ -44,10 +44,13 @@ public class GetCarsByParamsHandler : IRequestHandler<GetCarsByParamsQuery, IEnu
             query.VehicleType,
             query.FuelType,
             query.Mark,
-            query.Model
+            query.Model,
+            query.MinEngineCapacity,
+            query.MaxEngineCapacity,
+            query.WheelDrive
         );
         var cars = await _carRepository.GetBySpecAsync(spec, token);
-        var carDtos = _mapper.Map<IEnumerable<CarDto>>(cars);
+        var carDtos = _mapper.Map<IEnumerable<CarResponse>>(cars);
 
         return carDtos;
     }

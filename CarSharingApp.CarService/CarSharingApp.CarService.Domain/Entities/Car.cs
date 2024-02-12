@@ -14,6 +14,9 @@ public class Car : BaseEntity
     public VehicleType VehicleType  { get; set; }
     public string VehicleBody { get; set; }
     public string Color  { get; set; }
+    public WheelDrive WheelDrive { get; set; }
+    public float EngineCapacity { get; set; }
+    public string? Description { get; set; }
 
     public IEnumerable<Comment> Comments { get; set; }
     public CarState CarState { get; set; }

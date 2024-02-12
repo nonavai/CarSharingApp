@@ -7,5 +7,6 @@ public interface IBaseRepository<T>
     Task<T> AddAsync(T entity, CancellationToken token = default);
     Task<T> UpdateAsync(T entity, CancellationToken token = default);
     Task<T?> DeleteAsync(string id, CancellationToken token = default);
+    Task SaveChangesAsync(CancellationToken token = default);
     Task<bool> ExistsAsync(string id, CancellationToken token = default);
 }

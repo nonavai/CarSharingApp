@@ -7,16 +7,16 @@ namespace CarSharingApp.CarService.Infrastructure.Repositories;
 
 public class CarStateRepository : BaseRepository<CarState>, ICarStateRepository
 {
-    private CarsContext db;
+    private CarsContext _dataBase;
 
-    public CarStateRepository(CarsContext db) : base(db)
+    public CarStateRepository(CarsContext dataBase) : base(dataBase)
     {
-        this.db = db;
+        _dataBase = dataBase;
     }
 
     public async Task<CarState> GetByCarIdAsync(string id, CancellationToken token)
     {
-        var entity = await db.CarStates.FirstAsync(a => a.CarId == id, cancellationToken: token);
+        var entity = await _dataBase.CarStates.FirstAsync(a => a.CarId == id, cancellationToken: token);
         return entity;
     }
 }

@@ -2,12 +2,13 @@
 using CarSharingApp.CarService.Application.Commands.ImageCommands;
 using CarSharingApp.CarService.Application.DTO_s.Image;
 using CarSharingApp.CarService.Application.Repositories;
+using CarSharingApp.CarService.Application.Responses.Image;
 using CarSharingApp.CarService.Domain.Exceptions;
 using MediatR;
 
 namespace CarSharingApp.CarService.Application.CommandHandlers.ImageCommandHandlers;
 
-public class DeleteImageHandler : IRequestHandler<DeleteImageCommand, ImageDto>
+public class DeleteImageHandler : IRequestHandler<DeleteImageCommand, ImageCommandResponse>
 {
     private readonly IMinioRepository _minioRepository;
     private readonly ICarImageRepository _carImageRepository;
@@ -20,7 +21,7 @@ public class DeleteImageHandler : IRequestHandler<DeleteImageCommand, ImageDto>
         _minioRepository = minioRepository;
     }
 
-    public async Task<ImageDto> Handle(DeleteImageCommand command, CancellationToken cancellationToken)
+    public async Task<ImageCommandResponse> Handle(DeleteImageCommand command, CancellationToken cancellationToken)
     {
         var image = await _carImageRepository.GetByIdAsync(command.Id, cancellationToken);
 
@@ -31,7 +32,8 @@ public class DeleteImageHandler : IRequestHandler<DeleteImageCommand, ImageDto>
         
         await _minioRepository.DeleteAsync(image.Url, cancellationToken);
         var deletedImage = await _carImageRepository.DeleteAsync(image.Id, cancellationToken);
-        var deletedImageDto = _mapper.Map<ImageDto>(deletedImage);
+        await _carImageRepository.SaveChangesAsync(cancellationToken);
+        var deletedImageDto = _mapper.Map<ImageCommandResponse>(deletedImage);
 
         return deletedImageDto;
     }

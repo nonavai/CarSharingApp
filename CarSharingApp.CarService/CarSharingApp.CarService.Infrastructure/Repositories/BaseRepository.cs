@@ -7,52 +7,53 @@ namespace CarSharingApp.CarService.Infrastructure.Repositories;
 
 public abstract class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
 {
-    private CarsContext db;
+    private CarsContext _dataBase;
 
-    protected BaseRepository(CarsContext db)
+    protected BaseRepository(CarsContext dataBase)
     {
-        this.db = db;
+        _dataBase = dataBase;
     }
 
     public virtual async Task<T?> GetByIdAsync(string id, CancellationToken token = default)
     {
-        return await db.Set<T>().FirstOrDefaultAsync(p => p.Id == id, token);
+        return await _dataBase.Set<T>().FirstOrDefaultAsync(p => p.Id == id, token);
     }
 
     public async Task<IEnumerable<T>> GetAllAsync()
     {
-        return db.Set<T>().AsNoTracking().AsEnumerable();
+        return _dataBase.Set<T>().AsNoTracking().AsEnumerable();
     }
 
     public async Task<T> AddAsync(T entity, CancellationToken token = default)
     {
-        await db.Set<T>().AddAsync(entity, token);
-        await db.SaveChangesAsync(token);
+        await _dataBase.Set<T>().AddAsync(entity, token);
+
         return entity;
     }
 
     public async Task<T> UpdateAsync(T entity, CancellationToken token = default)
     {
-        db.Entry(entity).State = EntityState.Modified;
-        await db.SaveChangesAsync(token);
+        _dataBase.Entry(entity).State = EntityState.Modified;
+
         return entity;
     }
 
     public async Task<T?> DeleteAsync(string id, CancellationToken token = default)
     {
         var entity = await GetByIdAsync(id, token);
-        if (entity != null)
-        {
-            db.Set<T>().Remove(entity);
-            await db.SaveChangesAsync(token);
-            return entity;
-        }
+        _dataBase.Set<T>().Remove(entity);
+        return entity;
 
-        return null;
+        
+    }
+
+    public async Task SaveChangesAsync(CancellationToken token = default)
+    {
+        await _dataBase.SaveChangesAsync(token);
     }
 
     public async Task<bool> ExistsAsync(string id, CancellationToken token = default)
     {
-        return await db.Set<T>().AsNoTracking().AnyAsync(p => p.Id == id, cancellationToken: token);
+        return await _dataBase.Set<T>().AsNoTracking().AnyAsync(p => p.Id == id, cancellationToken: token);
     }
 }

@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using CarSharingApp.CarService.Application.DTO_s.Car;
 using CarSharingApp.CarService.Application.Queries.CarQueries;
 using CarSharingApp.CarService.Application.Repositories;
+using CarSharingApp.CarService.Application.Responses.Car;
 using MediatR;
 
 namespace CarSharingApp.CarService.Application.QueryHandlers.CarQueryHandlers;
 
-public class GetCarHandler: IRequestHandler<GetCarQuery, CarDto>
+public class GetCarHandler: IRequestHandler<GetCarQuery, CarFullResponse>
 {
     private readonly ICarRepository _carRepository;
     private readonly IMapper _mapper;
@@ -17,10 +17,10 @@ public class GetCarHandler: IRequestHandler<GetCarQuery, CarDto>
         _mapper = mapper;
     }
 
-    public async Task<CarDto> Handle(GetCarQuery query, CancellationToken token)
+    public async Task<CarFullResponse> Handle(GetCarQuery query, CancellationToken token)
     {
-        var car = await _carRepository.GetByIdAsync(query.Id, token);
-        var carDto = _mapper.Map<CarDto>(car);
+        var car = await _carRepository.GetByIdWithInclude(query.Id, token);
+        var carDto = _mapper.Map<CarFullResponse>(car);
 
         return carDto;
     }

@@ -1,18 +1,17 @@
-﻿using CarSharingApp.CarService.Application.Commands.ImageCommands;
+﻿using CarSharingApp.CarService.Application.Commands.CarCommands;
 using CarSharingApp.CarService.Application.Queries.CarQueries;
-using CarSharingApp.CarService.Application.Queries.ImageQueries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarSharingApp.CarService.WebAPI.Controllers;
 
-[Route("[controller]")]
+[Route("api/car")]
 [ApiController]
 public class CarController : ControllerBase
 {
-    private readonly Mediator _mediator;
+    private readonly IMediator _mediator;
 
-    public CarController(Mediator mediator)
+    public CarController(IMediator mediator)
     {
         _mediator = mediator;
     }
@@ -26,9 +25,18 @@ public class CarController : ControllerBase
         return Ok(response);
     }
     
+    [HttpGet]
+    [Route("search")]
+    public async Task<IActionResult> GetByParamsAsync([FromQuery] GetCarsByParamsQuery query)
+    {
+        var response = await _mediator.Send(query);
+        
+        return Ok(response);
+    }
+    
     [HttpPost]
     [Route("")]
-    public async Task<IActionResult> AddAsync(CreateImageCommand command)
+    public async Task<IActionResult> AddAsync(CreateCarCommand command)
     {
         var response = await _mediator.Send(command);
         
@@ -37,7 +45,7 @@ public class CarController : ControllerBase
     
     [HttpPut]
     [Route("")]
-    public async Task<IActionResult> UpdatePriorityAsync(UpdateImagePriorityCommand command)
+    public async Task<IActionResult> UpdateAsync(UpdateCarCommand command)
     {
         var response = await _mediator.Send(command);
         
@@ -46,7 +54,7 @@ public class CarController : ControllerBase
     
     [HttpDelete]
     [Route("")]
-    public async Task<IActionResult> DeleteAsync(DeleteImageCommand query)
+    public async Task<IActionResult> DeleteAsync(DeleteCarCommand query)
     {
         var response = await _mediator.Send(query);
         

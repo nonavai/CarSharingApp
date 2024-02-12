@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "r1FiJ0tu1jyb82N/dVVB2e2tnP6i+MadXVTfKAZ6NIHLQgtj5BtaYn8quoRERd3parH4Qb9gevVGMxKvJNA69w==",
+  "dgSpecHash": "Uq2fNblnT87dTFOy7zNsod5wmexdmd/bw6OGx6ndVx1FlFSBW+7+5MCW58KO8Zae48/d5r0wZaK3j+aHD4HmVw==",
   "success": true,
   "projectFilePath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.CarService\\CarSharingApp.CarService.Application\\CarSharingApp.CarService.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Anton\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\communitytoolkit.highperformance\\8.2.2\\communitytoolkit.highperformance.8.2.2.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.15\\microsoft.entityframeworkcore.7.0.15.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.15\\microsoft.entityframeworkcore.abstractions.7.0.15.nupkg.sha512",
@@ -23,6 +25,7 @@
     "C:\\Users\\Anton\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\minio\\6.0.1\\minio.6.0.1.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\system.io.hashing\\7.0.0\\system.io.hashing.7.0.0.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\system.reactive\\6.0.0\\system.reactive.6.0.0.nupkg.sha512"
   ],
   "logs": []

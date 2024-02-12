@@ -1,4 +1,5 @@
 ﻿using CarSharingApp.CarService.Application.DTO_s.Car;
+using CarSharingApp.CarService.Application.Responses.Car;
 
 namespace CarSharingApp.CarService.Application.DTO_s.Comment;
 
@@ -10,5 +11,5 @@ public class CommentDto
     public DateTime TimePosted { get; set; }
     public string Text { get; set; }
     public int? Rating { get; set; }
-    public CarDto Car { get; set; }
+    public CarResponse Car { get; set; }
 }
