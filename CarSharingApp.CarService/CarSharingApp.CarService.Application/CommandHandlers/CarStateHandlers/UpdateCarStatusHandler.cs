@@ -7,18 +7,18 @@ using MediatR;
 
 namespace CarSharingApp.CarService.Application.CommandHandlers.CarStateHandlers;
 
-public class UpdateCarActivityHandler : IRequestHandler<UpdateCarActivityCommand, CarStateDto>
+public class UpdateCarStatusHandler : IRequestHandler<UpdateCarStatusCommand, CarStateDto>
 {
     private readonly ICarStateRepository _carStateRepository;
     private readonly IMapper _mapper;
 
-    public UpdateCarActivityHandler(IMapper mapper, ICarStateRepository carStateRepository)
+    public UpdateCarStatusHandler(IMapper mapper, ICarStateRepository carStateRepository)
     {
         _mapper = mapper;
         _carStateRepository = carStateRepository;
     }
 
-    public async Task<CarStateDto> Handle(UpdateCarActivityCommand command, CancellationToken cancellationToken)
+    public async Task<CarStateDto> Handle(UpdateCarStatusCommand command, CancellationToken cancellationToken)
     {
         var carState = await _carStateRepository.GetByCarIdAsync(command.CarId, cancellationToken);
         _mapper.Map(command, carState);

@@ -5,7 +5,12 @@ namespace CarSharingApp.CarService.Application.Repositories;
 
 public interface ICarRepository : IBaseRepository<Car>
 {
-    public Task<IEnumerable<Car>> GetBySpecAsync(CarSpecification spec, CancellationToken token = default);
-    Task<Car?> GetByIdWithInclude(string id, CancellationToken token = default);
-    Task<IEnumerable<Car>> GetByUserId(string id);
+    Task<IEnumerable<Car>> GetBySpecAsync(
+        CarSpecification spec,
+        int currentPage,
+        int pageSize,
+        CancellationToken token = default);
+    Task<Car?> GetByIdWithIncludeAsync(string id, CancellationToken token = default);
+    Task<IEnumerable<Car>> GetByUserIdAsync(string id);
+    Task DeleteManyAsync(params Car[] entities);
 }

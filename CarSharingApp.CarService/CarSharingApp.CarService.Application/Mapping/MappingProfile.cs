@@ -32,6 +32,7 @@ public class MappingProfile : Profile
                         new CommentDto
                         {
                             Id = comment.Id,
+                            CarId = comment.CarId,
                             UserId = comment.UserId,
                             TimePosted = comment.TimePosted,
                             Text = comment.Text,
@@ -41,7 +42,7 @@ public class MappingProfile : Profile
         CreateMap<UpdateCarCommand, Car>();   
         CreateMap<Car, CarDto>();
 
-        CreateMap<UpdateCarActivityCommand, Car>();
+        CreateMap<UpdateCarStatusCommand, Car>();
         CreateMap<UpdateCarLocationCommand, Car>();
         CreateMap<Car, CarStateDto>();
 

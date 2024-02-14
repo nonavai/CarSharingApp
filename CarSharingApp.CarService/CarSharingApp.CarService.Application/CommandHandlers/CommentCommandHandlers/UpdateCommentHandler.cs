@@ -24,7 +24,7 @@ public class UpdateCommentHandler : IRequestHandler<UpdateCommentCommand, Commen
         
         if (comment == null)
         {
-            throw new NotFoundException("Comment Not Found");
+            throw new NotFoundException("Comment");
         }
         
         var updatedComment = _mapper.Map(command, comment);

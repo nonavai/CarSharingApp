@@ -24,7 +24,7 @@ public class UpdateCarHandler : IRequestHandler<UpdateCarCommand, CarDto>
 
         if (car == null)
         {
-            throw new NotFoundException("Car Not Found");
+            throw new NotFoundException("Car");
         }
         
         var updatedCar = _mapper.Map(command, car);

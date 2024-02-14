@@ -42,6 +42,7 @@ public abstract class BaseRepository<T> : IBaseRepository<T> where T : BaseEntit
     {
         var entity = await GetByIdAsync(id, token);
         _dataBase.Set<T>().Remove(entity);
+        
         return entity;
 
         

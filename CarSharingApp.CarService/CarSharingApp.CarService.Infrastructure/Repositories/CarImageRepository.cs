@@ -21,9 +21,9 @@ public class CarImageRepository : BaseRepository<CarImage>, ICarImageRepository
         return carImages.AsEnumerable();
     }
 
-    public async Task<CarImage?> GetPrimaryAsync(CancellationToken token = default)
+    public async Task<CarImage?> GetPrimaryAsync(string carId, CancellationToken token = default)
     {
-        var entity = await _dataBase.CarImages.FirstOrDefaultAsync(image => image.IsPrimary, cancellationToken: token);
+        var entity = await _dataBase.CarImages.FirstOrDefaultAsync(image => image.IsPrimary && image.CarId == carId, cancellationToken: token);
 
         return entity;
     }

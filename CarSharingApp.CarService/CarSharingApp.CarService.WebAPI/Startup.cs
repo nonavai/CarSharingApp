@@ -21,8 +21,10 @@ using CarSharingApp.CarService.Application.QueryHandlers.ImageQueryHandlers;
 using CarSharingApp.CarService.Application.Repositories;
 using CarSharingApp.CarService.Infrastructure.DataBase;
 using CarSharingApp.CarService.Infrastructure.Repositories;
+using CarSharingApp.CarService.WebAPI.Consumers;
 using CarSharingApp.CarService.WebAPI.Extensions;
 using CarSharingApp.CarService.WebAPI.MiddleWares;
+using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -39,32 +41,70 @@ public class Startup
     {
         services.AddAutoMapper(typeof(MappingProfile));
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
-        
+        //Car CommandHandlers
         services.AddTransient<IRequestHandler<CreateCarCommand, CarDto>, CreateCarHandler>();
         services.AddTransient<IRequestHandler<UpdateCarCommand, CarDto>, UpdateCarHandler>();
         services.AddTransient<IRequestHandler<DeleteCarCommand, CarDto>, DeleteCarHandler>();
-        
+        services.AddTransient<IRequestHandler<DeleteCarByUserCommand, IEnumerable<CarDto>>, DeleteCarByUserHandler>();
+        //Comment CommandHandlers
         services.AddTransient<IRequestHandler<UpdateCommentCommand, CommentDto>, UpdateCommentHandler>();
         services.AddTransient<IRequestHandler<CreateCommentCommand, CommentDto>, CreateCommentHandler>();
         services.AddTransient<IRequestHandler<DeleteCommentCommand, CommentDto>, DeleteCommentHandler>();
-        
+        //Image CommandHandlers
         services.AddTransient<IRequestHandler<CreateImageCommand, ImageDto>, CreateImageHandler>();
         services.AddTransient<IRequestHandler<UpdateImagePriorityCommand, ImageDto>, UpdateImagePriorityHandler>();
         services.AddTransient<IRequestHandler<DeleteImageCommand, ImageDto>, DeleteImageHandler>();
-
-        services.AddTransient<IRequestHandler<UpdateCarActivityCommand, CarStateDto>, UpdateCarActivityHandler>();
+        //CarState CommandHandlers
+        services.AddTransient<IRequestHandler<UpdateCarStatusCommand, CarStateDto>, UpdateCarStatusHandler>();
         services.AddTransient<IRequestHandler<UpdateCarLocationCommand, CarStateDto>, UpdateCarLocationHandler>();
-
+        //Car QueryHandlers
         services.AddTransient<IRequestHandler<GetCarQuery, CarFullDto>, GetCarHandler>();
-        services.AddTransient<IRequestHandler<GetCarsByParamsQuery, IEnumerable<CarDto>>, GetCarsByParamsHandler>();
+        services.AddTransient<IRequestHandler<GetCarsByParamsQuery, IEnumerable<CarWithImageDto>>, GetCarsByParamsHandler>();
         services.AddTransient<IRequestHandler<GetCarByUserQuery, IEnumerable<CarDto>>, GetCarByUserHandler>();
-        
+        //Comment QueryHandlers
         services.AddTransient<IRequestHandler<GetCommentsByCarQuery, IEnumerable<CommentDto>>, GetCommentsByCarHandler>();
-        
+        //Image QueryHandlers
         services.AddTransient<IRequestHandler<GetImagesByCarQuery, IEnumerable<ImageFullDto>>, GetImagesByCarHandler>();
     }
+
+    public static void ConfigureMassTransit(IServiceCollection services, ConfigurationManager config)
+    {
+        services.AddMassTransit(x =>
+        {
+            var assembly = typeof(DeleteCarConsumer).Assembly;
+            var host = config["RabbitMQ:Host"];
+            var virtualHost = config["RabbitMQ:VirtualHost"];
+            var username = config["RabbitMQ:Username"];
+            var password = config["RabbitMQ:Password"];
+
+            x.AddEntityFrameworkOutbox<CarsContext>(o =>
+            {
+                o.UseSqlServer();
+
+                o.QueryDelay = TimeSpan.FromSeconds(20);
+
+                o.UseBusOutbox();
+            });
+
+            x.SetEndpointNameFormatter(new KebabCaseEndpointNameFormatter("Cars", false));
+
+            x.AddConsumers(assembly);
+
+            x.UsingRabbitMq((context, cfg) =>
+            {
+                cfg.Host(host, virtualHost, h =>
+                {
+                    h.Username(username);
+                    h.Password(password);
+                });
+
+                cfg.ConfigureEndpoints(context);
+
+            });
+        });
+    }
     
-    public static async Task InitializeMinio(IServiceCollection services, ConfigurationManager config)
+    public static void InitializeMinio(IServiceCollection services, ConfigurationManager config)
     {
         var endPoint = config["MinIO-Settings:EndPoint"];
         var accessKey = config["MinIO-Settings:AccessKey"];

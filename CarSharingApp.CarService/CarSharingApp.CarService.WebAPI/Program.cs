@@ -12,12 +12,14 @@ builder.Services.AddValidatorsFromAssemblyContaining<CreateCarValidation>();
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddSignalR();
 
+
 Startup.ConfigureDataBase(builder.Services, config);
 Startup.ConfigureSwagger(builder.Services);
 Startup.ConfigureAuth(builder.Services, config);
 Startup.ConfigureRepository(builder.Services);
 Startup.ConfigureServices(builder.Services);
-Startup.InitializeMinio(builder.Services, config).Wait();
+Startup.InitializeMinio(builder.Services, config);
+Startup.ConfigureMassTransit(builder.Services, config);
 
 var app = builder.Build();
 

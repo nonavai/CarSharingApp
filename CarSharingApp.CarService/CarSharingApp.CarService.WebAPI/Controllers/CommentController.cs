@@ -1,6 +1,7 @@
 ﻿using CarSharingApp.CarService.Application.Commands.CommentCommands;
 using CarSharingApp.CarService.Application.Queries.CommentQueries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarSharingApp.CarService.WebAPI.Controllers;
@@ -18,7 +19,7 @@ public class CommentController : ControllerBase
     
     [HttpGet]
     [Route("car")]
-    public async Task<IActionResult> GetByCarAsync(GetCommentsByCarQuery query)
+    public async Task<IActionResult> GetByCarAsync([FromQuery] GetCommentsByCarQuery query)
     {
         var response = await _mediator.Send(query);
         
@@ -27,7 +28,8 @@ public class CommentController : ControllerBase
     
     [HttpGet]
     [Route("")]
-    public async Task<IActionResult> GetAsync(GetCommentQuery query)
+    [Authorize]
+    public async Task<IActionResult> GetAsync([FromQuery] GetCommentQuery query)
     {
         var response = await _mediator.Send(query);
         
@@ -36,6 +38,7 @@ public class CommentController : ControllerBase
     
     [HttpPost]
     [Route("")]
+    [Authorize]
     public async Task<IActionResult> AddAsync(CreateCommentCommand command)
     {
         var response = await _mediator.Send(command);
@@ -45,6 +48,7 @@ public class CommentController : ControllerBase
     
     [HttpPut]
     [Route("")]
+    [Authorize]
     public async Task<IActionResult> UpdateAsync(UpdateCommentCommand command)
     {
         var response = await _mediator.Send(command);
@@ -54,6 +58,7 @@ public class CommentController : ControllerBase
     
     [HttpDelete]
     [Route("")]
+    [Authorize]
     public async Task<IActionResult> DeleteAsync(DeleteCommentCommand query)
     {
         var response = await _mediator.Send(query);

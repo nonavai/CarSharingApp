@@ -2,6 +2,7 @@
 using CarSharingApp.CarService.Application.Commands.CommentCommands;
 using CarSharingApp.CarService.Application.DTO_s.Comment;
 using CarSharingApp.CarService.Application.Repositories;
+using CarSharingApp.CarService.Domain.Exceptions;
 using MediatR;
 
 namespace CarSharingApp.CarService.Application.CommandHandlers.CommentCommandHandlers;
@@ -19,6 +20,13 @@ public class DeleteCommentHandler : IRequestHandler<DeleteCommentCommand, Commen
 
     public async Task<CommentDto> Handle(DeleteCommentCommand command, CancellationToken cancellationToken)
     {
+        var comment = await _commentRepository.GetByIdAsync(command.Id, cancellationToken);
+        
+        if (comment == null)
+        {
+            throw new NotFoundException("Comment");
+        }
+        
         var newComment = await _commentRepository.DeleteAsync(command.Id, cancellationToken);
         await _commentRepository.SaveChangesAsync(cancellationToken);
         var commentDto = _mapper.Map<CommentDto>(newComment);

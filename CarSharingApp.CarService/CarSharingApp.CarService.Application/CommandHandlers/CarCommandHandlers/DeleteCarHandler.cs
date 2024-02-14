@@ -24,7 +24,7 @@ public class DeleteCarHandler : IRequestHandler<DeleteCarCommand, CarDto>
         
         if (car == null)
         {
-            throw new NotFoundException("Car not found");
+            throw new NotFoundException("Car");
         }
         
         var newCar = await _carRepository.DeleteAsync(command.Id, cancellationToken);

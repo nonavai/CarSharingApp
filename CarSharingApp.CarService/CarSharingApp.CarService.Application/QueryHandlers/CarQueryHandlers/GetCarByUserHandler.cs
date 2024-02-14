@@ -19,7 +19,7 @@ public class GetCarByUserHandler : IRequestHandler<GetCarByUserQuery, IEnumerabl
 
     public async Task<IEnumerable<CarDto>> Handle(GetCarByUserQuery query, CancellationToken cancellationToken = default)
     {
-        var cars = await _carRepository.GetByUserId(query.UserId);
+        var cars = await _carRepository.GetByUserIdAsync(query.UserId);
         var carDtos = _mapper.Map<IEnumerable<CarDto>>(cars);
 
         return carDtos;

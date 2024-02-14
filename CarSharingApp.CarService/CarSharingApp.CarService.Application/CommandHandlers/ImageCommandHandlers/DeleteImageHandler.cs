@@ -26,7 +26,7 @@ public class DeleteImageHandler : IRequestHandler<DeleteImageCommand, ImageDto>
 
         if (image == null)
         {
-            throw new InvalidDataTypeException("Invalid Data Type");
+            throw new InvalidDataTypeException("Image");
         }
         
         await _minioRepository.DeleteAsync(image.Url, cancellationToken);

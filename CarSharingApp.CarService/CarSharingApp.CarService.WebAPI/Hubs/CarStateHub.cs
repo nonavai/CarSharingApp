@@ -34,10 +34,10 @@ public class CarStateHub : Hub
         await _mediator.Send(command);
     }
 
-    public async Task SendStatus(UpdateCarActivityCommand command)
+    public async Task SendStatus(UpdateCarStatusCommand command)
     {
         await Clients.Group($"{command.CarId}/status")
-            .SendAsync("ReceiveCarStateUpdate", command.Status); 
+            .SendAsync("ReceiveCarStatusUpdate", command.Status); 
         await _mediator.Send(command);
     }
 }

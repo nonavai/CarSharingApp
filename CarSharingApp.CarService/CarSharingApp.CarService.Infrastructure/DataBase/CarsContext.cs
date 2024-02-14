@@ -1,5 +1,6 @@
 ﻿using CarSharingApp.CarService.Domain.Entities;
 using CarSharingApp.CarService.Infrastructure.DataBase.Configurations;
+using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -11,17 +12,17 @@ public class CarsContext : DbContext
     public DbSet<CarState> CarStates { get; set; }
     public DbSet<Comment> Comments { get; set; }
     public DbSet<CarImage> CarImages { get; set; }
-
-    public string DbPath;
+    
     public CarsContext(DbContextOptions<CarsContext> options, IConfiguration configuration) : base(options)
     {
-        DbPath = configuration.GetConnectionString("CarSharingDb");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(CarConfiguration).Assembly);
+        modelBuilder.AddInboxStateEntity();
+        modelBuilder.AddOutboxMessageEntity();
+        modelBuilder.AddOutboxStateEntity();
     }
-    protected override void OnConfiguring(DbContextOptionsBuilder options)
-        => options.UseSqlServer(DbPath);
 }

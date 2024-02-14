@@ -25,10 +25,10 @@ public class UpdateImagePriorityHandler: IRequestHandler<UpdateImagePriorityComm
 
         if (newPrimaryImage == null)
         {
-            throw new NotFoundException("Image Not Found");
+            throw new NotFoundException("Image");
         }
         
-        var oldPrimaryImage = await _carImageRepository.GetPrimaryAsync(token);
+        var oldPrimaryImage = await _carImageRepository.GetPrimaryAsync(command.Id, token);
         newPrimaryImage.IsPrimary = true;
         var updatedNewImage = await _carImageRepository.UpdateAsync(newPrimaryImage, token);
         var updatedImageDto = _mapper.Map<ImageDto>(updatedNewImage);

@@ -25,5 +25,29 @@ public class CarConfiguration : IEntityTypeConfiguration<Car>
             .WithOne(cs => cs.Car)
             .HasForeignKey<CarState>(cs => cs.CarId)
             .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder
+            .Property(car => car.Color)
+            .HasColumnType("nvarchar(20)");
+        
+        modelBuilder
+            .Property(car => car.Description)
+            .HasColumnType("nvarchar(500)");
+        
+        modelBuilder
+            .Property(car => car.Mark)
+            .HasColumnType("nvarchar(30)");
+        
+        modelBuilder
+            .Property(car => car.Model)
+            .HasColumnType("nvarchar(30)");
+        
+        modelBuilder
+            .Property(car => car.VehicleBody)
+            .HasColumnType("nvarchar(17)");
+        
+        modelBuilder
+            .Property(car => car.Mark)
+            .HasColumnType("nvarchar(20)");
     }
 }

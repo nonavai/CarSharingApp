@@ -1,6 +1,7 @@
 ﻿using System.Linq.Expressions;
 using AutoMapper;
 using CarSharingApp.CarService.Application.DTO_s.Car;
+using CarSharingApp.CarService.Application.DTO_s.Image;
 using CarSharingApp.CarService.Application.Queries.CarQueries;
 using CarSharingApp.CarService.Application.Repositories;
 using CarSharingApp.CarService.Domain.Entities;
@@ -10,18 +11,22 @@ using MediatR;
 
 namespace CarSharingApp.CarService.Application.QueryHandlers.CarQueryHandlers;
 
-public class GetCarsByParamsHandler : IRequestHandler<GetCarsByParamsQuery, IEnumerable<CarDto>>
+public class GetCarsByParamsHandler : IRequestHandler<GetCarsByParamsQuery, IEnumerable<CarWithImageDto>>
 {
     private readonly ICarRepository _carRepository;
+    private readonly IMinioRepository _minioRepository;
+    private readonly ICarImageRepository _carImageRepository;
     private readonly IMapper _mapper;
 
-    public GetCarsByParamsHandler(ICarRepository carRepository, IMapper mapper)
+    public GetCarsByParamsHandler(ICarRepository carRepository, IMapper mapper, IMinioRepository minioRepository, ICarImageRepository carImageRepository)
     {
         _carRepository = carRepository;
         _mapper = mapper;
+        _minioRepository = minioRepository;
+        _carImageRepository = carImageRepository;
     }
 
-    public async Task<IEnumerable<CarDto>> Handle(GetCarsByParamsQuery query, CancellationToken token)
+    public async Task<IEnumerable<CarWithImageDto>> Handle(GetCarsByParamsQuery query, CancellationToken token)
     {
         Expression<Func<Car, bool>> customFilter = car => car.CarState.IsActive == query.IsActive;
         
@@ -49,9 +54,19 @@ public class GetCarsByParamsHandler : IRequestHandler<GetCarsByParamsQuery, IEnu
             query.MaxEngineCapacity,
             query.WheelDrive
         );
-        var cars = await _carRepository.GetBySpecAsync(spec, token);
-        var carDtos = _mapper.Map<IEnumerable<CarDto>>(cars);
-
-        return carDtos;
+        var cars = await _carRepository.GetBySpecAsync(spec, query.CurrentPage, query.PageSize, token);
+        var carDtos = _mapper.Map<IEnumerable<CarWithImageDto>>(cars);
+        var carsWithImage = carDtos.Select(async car =>
+        {
+            var primaryImage = await _carImageRepository.GetPrimaryAsync(car.Id, token);
+            var memoryStream = await _minioRepository.GetAsync(primaryImage.Url, token);
+            var bytes = memoryStream.ToArray();
+            var base64String = Convert.ToBase64String(bytes);
+            car.File = base64String;
+            return car;
+        });
+        var result = await Task.WhenAll(carsWithImage);
+        
+        return result.AsEnumerable();
     }
 }

@@ -40,7 +40,7 @@ public class MinioRepository : IMinioRepository
             .WithObject(dto.Url)
             .WithStreamData(dto.File)
             .WithObjectSize(dto.File.Length)
-            .WithContentType("image/jpeg");
+            .WithContentType("image/webp");
         var result =  await _minioClient.PutObjectAsync(putObjectArgs, token);
 
         return result;

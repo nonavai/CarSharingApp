@@ -4,7 +4,7 @@ using MediatR;
 
 namespace CarSharingApp.CarService.Application.Commands.CarStateCommands;
 
-public class UpdateCarActivityCommand : IRequest<CarStateDto>
+public class UpdateCarStatusCommand : IRequest<CarStateDto>
 {
     public string CarId { get; set; }
     public Status Status { get; set; }

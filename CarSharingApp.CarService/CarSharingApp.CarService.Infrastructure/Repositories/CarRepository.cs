@@ -16,15 +16,18 @@ public class CarRepository : BaseRepository<Car>, ICarRepository
         _dataBase = dataBase;
     }
 
-    public async Task<IEnumerable<Car>> GetBySpecAsync(CarSpecification spec, CancellationToken token = default)
+    public async Task<IEnumerable<Car>> GetBySpecAsync(CarSpecification spec, int currentPage, int pageSize,  CancellationToken token = default)
     {
         IQueryable<Car> query = _dataBase.Cars;
-        query = query.ApplySpecification(spec);
+        query = query.ApplySpecification(spec)
+            .OrderBy(car => car.Price)
+            .Skip((currentPage - 1) * pageSize)
+            .Take(pageSize);
         
         return await query.ToListAsync(cancellationToken: token);
     }
 
-    public async Task<Car?> GetByIdWithInclude(string id, CancellationToken token = default)
+    public async Task<Car?> GetByIdWithIncludeAsync(string id, CancellationToken token = default)
     {
         return await _dataBase.Cars
             .Include(car => car.Comments)
@@ -32,10 +35,14 @@ public class CarRepository : BaseRepository<Car>, ICarRepository
             .FirstOrDefaultAsync(p => p.Id == id, token);
     }
 
-    public async Task<IEnumerable<Car>> GetByUserId(string id)
+    public async Task<IEnumerable<Car>> GetByUserIdAsync(string id)
     {
         var query = _dataBase.Cars.Where(car => car.UserId == id);
         
         return query.AsEnumerable();
+    }
+    public async Task DeleteManyAsync(params Car[] entities)
+    {
+        _dataBase.Cars.RemoveRange(entities);
     }
 }

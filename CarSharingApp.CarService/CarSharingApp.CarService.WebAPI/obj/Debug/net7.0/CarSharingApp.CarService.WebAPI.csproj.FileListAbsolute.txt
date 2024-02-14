@@ -101,3 +101,11 @@ C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.WebAPI\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.WebAPI\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.WebAPI\bin\Debug\net7.0\System.CodeDom.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.WebAPI\bin\Debug\net7.0\MassTransit.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.WebAPI\bin\Debug\net7.0\MassTransit.Abstractions.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.WebAPI\bin\Debug\net7.0\MassTransit.RabbitMqTransport.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.WebAPI\bin\Debug\net7.0\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.WebAPI\bin\Debug\net7.0\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.WebAPI\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.WebAPI\bin\Debug\net7.0\RabbitMQ.Client.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.WebAPI\bin\Debug\net7.0\MassTransit.EntityFrameworkCoreIntegration.dll

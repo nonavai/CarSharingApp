@@ -29,7 +29,15 @@ public class CreateImageHandler : IRequestHandler<CreateImageCommand, ImageDto>
 
         if (response == null)
         {
-            throw new InvalidDataTypeException("Invalid Data Type");
+            throw new InvalidDataTypeException("Image");
+        }
+        
+        var oldPrimaryImage = await _carImageRepository.GetPrimaryAsync(command.CarId, cancellationToken);
+
+        if (command.IsPrimary && oldPrimaryImage != null)
+        {
+            oldPrimaryImage.IsPrimary = false;
+            var updatedNewImage = await _carImageRepository.UpdateAsync(oldPrimaryImage, cancellationToken);
         }
         
         var carImage = _mapper.Map<CarImage>(command);

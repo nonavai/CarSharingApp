@@ -34,5 +34,8 @@ public class CreateCarValidation : AbstractValidator<CreateCarCommand>
         RuleFor(car => car.Color)
             .MinimumLength(2).WithMessage("Min length must be greater than 2")
             .MaximumLength(20).WithMessage("Max length cannot exceed 20 characters");
+        
+        RuleFor(car => car.Description)
+            .MaximumLength(500).WithMessage("Max length cannot exceed 500 characters");
     }
 }

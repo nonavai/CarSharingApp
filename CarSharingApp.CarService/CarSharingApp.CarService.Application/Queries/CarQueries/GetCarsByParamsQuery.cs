@@ -4,7 +4,7 @@ using MediatR;
 
 namespace CarSharingApp.CarService.Application.Queries.CarQueries;
 
-public class GetCarsByParamsQuery : IRequest<IEnumerable<CarDto>>
+public class GetCarsByParamsQuery : IRequest<IEnumerable<CarWithImageDto>>
 {
     public bool IsActive { get; set; }
     public double? RadiusKm { get; set; }
@@ -21,4 +21,6 @@ public class GetCarsByParamsQuery : IRequest<IEnumerable<CarDto>>
     public WheelDrive? WheelDrive { get; set; }
     public float? MinEngineCapacity { get; set; }
     public float? MaxEngineCapacity { get; set; }
+    public int CurrentPage { get; set; }
+    public int PageSize { get; set; }
 }

@@ -2,6 +2,7 @@
 using CarSharingApp.CarService.Application.DTO_s.Comment;
 using CarSharingApp.CarService.Application.Queries.CommentQueries;
 using CarSharingApp.CarService.Application.Repositories;
+using CarSharingApp.CarService.Domain.Exceptions;
 using MediatR;
 
 namespace CarSharingApp.CarService.Application.QueryHandlers.CommentQueryHandlers;
@@ -20,6 +21,12 @@ public class GetCommentHandler : IRequestHandler<GetCommentQuery, CommentDto>
     public async Task<CommentDto> Handle(GetCommentQuery query, CancellationToken token)
     {
         var comment = await _commentRepository.GetByIdAsync(query.Id, token);
+        
+        if (comment == null)
+        {
+            throw new NotFoundException("Comment");
+        }
+        
         var commentDto = _mapper.Map<CommentDto>(comment);
 
         return commentDto;
