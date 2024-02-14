@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\CarSharingApp.Identity.API.props" />
+</Project>
