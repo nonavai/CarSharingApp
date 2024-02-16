@@ -7,14 +7,18 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Folder Include="CommandHandlers" />
       <Folder Include="Mapping" />
-      <Folder Include="Models" />
-      <Folder Include="Services\Implementations" />
+      <Folder Include="QueryHandlers" />
       <Folder Include="Validators" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\CarSharingApp.DealService.DataAccess\CarSharingApp.DealService.DataAccess.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="12.2.0" />
     </ItemGroup>
 
 </Project>
