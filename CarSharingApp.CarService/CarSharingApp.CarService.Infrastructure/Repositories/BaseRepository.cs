@@ -44,17 +44,10 @@ public abstract class BaseRepository<T> : IBaseRepository<T> where T : BaseEntit
         _dataBase.Set<T>().Remove(entity);
         
         return entity;
-
-        
     }
 
     public async Task SaveChangesAsync(CancellationToken token = default)
     {
         await _dataBase.SaveChangesAsync(token);
-    }
-
-    public async Task<bool> ExistsAsync(string id, CancellationToken token = default)
-    {
-        return await _dataBase.Set<T>().AsNoTracking().AnyAsync(p => p.Id == id, cancellationToken: token);
     }
 }

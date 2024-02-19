@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CarSharingApp.CarService.WebAPI.Controllers;
 
-[Route("[controller]")]
+[Route("api/image")]
 [ApiController]
 public class ImageController : ControllerBase
 {
@@ -27,10 +27,11 @@ public class ImageController : ControllerBase
         return Ok(response);
     }
     
+    [DisableRequestSizeLimit]
     [HttpPost]
     [Route("")]
-    [Authorize(Roles = RoleNames.Lender)]
-    public async Task<IActionResult> AddAsync(CreateImageCommand command)
+    //[Authorize(Roles = RoleNames.Lender)]
+    public async Task<IActionResult> AddAsync([FromForm] CreateImageCommand command)
     {
         var response = await _mediator.Send(command);
         
@@ -49,7 +50,7 @@ public class ImageController : ControllerBase
     
     [HttpDelete]
     [Route("")]
-    [Authorize(Roles = RoleNames.Lender)]
+    //[Authorize(Roles = RoleNames.Lender)]
     public async Task<IActionResult> DeleteAsync(DeleteImageCommand query)
     {
         var response = await _mediator.Send(query);

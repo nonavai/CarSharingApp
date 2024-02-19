@@ -12,7 +12,6 @@ builder.Services.AddValidatorsFromAssemblyContaining<CreateCarValidation>();
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddSignalR();
 
-
 Startup.ConfigureDataBase(builder.Services, config);
 Startup.ConfigureSwagger(builder.Services);
 Startup.ConfigureAuth(builder.Services, config);
@@ -23,7 +22,7 @@ Startup.ConfigureMassTransit(builder.Services, config);
 
 var app = builder.Build();
 
-Startup.ConfigureMiddlewares(app);
+//Startup.ConfigureMiddlewares(app);
 
 if (app.Environment.IsDevelopment())
 {

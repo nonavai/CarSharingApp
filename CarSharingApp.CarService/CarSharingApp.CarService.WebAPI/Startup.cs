@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Net;
+using System.Text;
 using CarSharingApp.CarService.Application.CommandHandlers.CarCommandHandlers;
 using CarSharingApp.CarService.Application.CommandHandlers.CarStateHandlers;
 using CarSharingApp.CarService.Application.CommandHandlers.CommentCommandHandlers;
@@ -69,7 +70,7 @@ public class Startup
 
     public static void ConfigureMassTransit(IServiceCollection services, ConfigurationManager config)
     {
-        services.AddMassTransit(x =>
+        /*services.AddMassTransit(x =>
         {
             var assembly = typeof(DeleteCarConsumer).Assembly;
             var host = config["RabbitMQ:Host"];
@@ -81,7 +82,7 @@ public class Startup
             {
                 o.UseSqlServer();
 
-                o.QueryDelay = TimeSpan.FromSeconds(20);
+                o.QueryDelay = TimeSpan.FromSeconds(120);
 
                 o.UseBusOutbox();
             });
@@ -101,18 +102,21 @@ public class Startup
                 cfg.ConfigureEndpoints(context);
 
             });
-        });
+        });*/
     }
     
     public static void InitializeMinio(IServiceCollection services, ConfigurationManager config)
     {
+        //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
         var endPoint = config["MinIO-Settings:EndPoint"];
         var accessKey = config["MinIO-Settings:AccessKey"];
         var secretKey = config["MinIO-Settings:SecretKey"];
         
         services.AddMinio(configureClient => configureClient
             .WithEndpoint(endPoint)
-            .WithCredentials(accessKey, secretKey));
+            .WithCredentials(accessKey, secretKey)
+            .WithSSL(false)
+            .Build());
     }
     
     public static void ConfigureRepository(IServiceCollection services)

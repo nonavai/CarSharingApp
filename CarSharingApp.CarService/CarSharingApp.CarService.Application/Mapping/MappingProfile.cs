@@ -8,6 +8,7 @@ using CarSharingApp.CarService.Application.DTO_s.CarState;
 using CarSharingApp.CarService.Application.DTO_s.Comment;
 using CarSharingApp.CarService.Application.DTO_s.Image;
 using CarSharingApp.CarService.Domain.Entities;
+using Microsoft.AspNetCore.Http;
 
 namespace CarSharingApp.CarService.Application.Mapping;
 
@@ -55,6 +56,14 @@ public class MappingProfile : Profile
         CreateMap<CreateImageCommand, ImageCleanDto>()
             .ForMember(dest=> dest.File,
                 opt=>
-                    opt.MapFrom(src => src.File.OpenReadStream()));
+                    opt.MapFrom(src => MapFormFileToMemoryStream(src.File)));
+    }
+    
+    private MemoryStream MapFormFileToMemoryStream(IFormFile formFile)
+    {
+        var memoryStream = new MemoryStream();
+        formFile.CopyTo(memoryStream);
+        memoryStream.Position = 0;
+        return memoryStream;
     }
 }
