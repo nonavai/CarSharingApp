@@ -21,6 +21,6 @@ public class GetCarsByParamsQuery : IRequest<IEnumerable<CarWithImageDto>>
     public WheelDrive? WheelDrive { get; set; }
     public float? MinEngineCapacity { get; set; }
     public float? MaxEngineCapacity { get; set; }
-    public int CurrentPage { get; set; }
-    public int PageSize { get; set; }
+    public int CurrentPage { get; set; } = 1;
+    public int PageSize { get; set; } = 10;
 }

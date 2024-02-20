@@ -19,7 +19,6 @@ public class CarController : ControllerBase
     }
     
     [HttpGet]
-    [Route("")]
     public async Task<IActionResult> GetAsync([FromQuery] GetCarQuery query)
     {
         var response = await _mediator.Send(query);
@@ -46,10 +45,7 @@ public class CarController : ControllerBase
         return Ok(response);
     }
     
-    
-    
     [HttpPost]
-    [Route("")]
     [Authorize(Roles = RoleNames.Lender)]
     public async Task<IActionResult> AddAsync(CreateCarCommand command)
     {
@@ -59,7 +55,6 @@ public class CarController : ControllerBase
     }
     
     [HttpPut]
-    [Route("")]
     [Authorize(Roles = RoleNames.Lender)]
     public async Task<IActionResult> UpdateAsync(UpdateCarCommand command)
     {
@@ -69,7 +64,6 @@ public class CarController : ControllerBase
     }
     
     [HttpDelete]
-    [Route("")]
     [Authorize(Roles = RoleNames.Lender)]
     public async Task<IActionResult> DeleteAsync(DeleteCarCommand query)
     {

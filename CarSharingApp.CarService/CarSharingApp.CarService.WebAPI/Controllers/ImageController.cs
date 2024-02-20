@@ -19,7 +19,6 @@ public class ImageController : ControllerBase
     }
     
     [HttpGet]
-    [Route("")]
     public async Task<IActionResult> GetAsync([FromQuery] GetImagesByCarQuery query)
     {
         var response = await _mediator.Send(query);
@@ -29,8 +28,7 @@ public class ImageController : ControllerBase
     
     [DisableRequestSizeLimit]
     [HttpPost]
-    [Route("")]
-    //[Authorize(Roles = RoleNames.Lender)]
+    [Authorize(Roles = RoleNames.Lender)]
     public async Task<IActionResult> AddAsync([FromForm] CreateImageCommand command)
     {
         var response = await _mediator.Send(command);
@@ -39,7 +37,6 @@ public class ImageController : ControllerBase
     }
     
     [HttpPut]
-    [Route("")]
     [Authorize(Roles = RoleNames.Lender)]
     public async Task<IActionResult> UpdatePriorityAsync(UpdateImagePriorityCommand command)
     {
@@ -49,8 +46,7 @@ public class ImageController : ControllerBase
     }
     
     [HttpDelete]
-    [Route("")]
-    //[Authorize(Roles = RoleNames.Lender)]
+    [Authorize(Roles = RoleNames.Lender)]
     public async Task<IActionResult> DeleteAsync(DeleteImageCommand query)
     {
         var response = await _mediator.Send(query);

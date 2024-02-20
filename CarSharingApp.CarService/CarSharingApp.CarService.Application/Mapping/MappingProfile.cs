@@ -42,6 +42,7 @@ public class MappingProfile : Profile
         CreateMap<CreateCarCommand, Car>();
         CreateMap<UpdateCarCommand, Car>();   
         CreateMap<Car, CarDto>();
+        CreateMap<Car, CarWithImageDto>();
 
         CreateMap<UpdateCarStatusCommand, Car>();
         CreateMap<UpdateCarLocationCommand, Car>();
@@ -64,6 +65,7 @@ public class MappingProfile : Profile
         var memoryStream = new MemoryStream();
         formFile.CopyTo(memoryStream);
         memoryStream.Position = 0;
+        
         return memoryStream;
     }
 }

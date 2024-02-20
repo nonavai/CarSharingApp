@@ -25,16 +25,17 @@ public class CreateCarHandler : IRequestHandler<CreateCarCommand, CarDto>
     {
         var car = _mapper.Map<Car>(command);
         var newCar = await _carRepository.AddAsync(car, cancellationToken);
-        var newCarState = await _carStateRepository.AddAsync(new CarState
+        var newCarState = new CarState
         {
             Status = Status.Free,
             IsActive = true,
             Latitude = 0,
             Longitude = 0,
             Car = newCar
-        }, cancellationToken);
+        };
+        var carState = await _carStateRepository.AddAsync(newCarState, token: cancellationToken);
         await _carRepository.SaveChangesAsync(cancellationToken);
-        newCar.CarState = newCarState;
+        newCar.CarState = carState;
         var newCarDto = _mapper.Map<CarDto>(newCar);
 
         return newCarDto;

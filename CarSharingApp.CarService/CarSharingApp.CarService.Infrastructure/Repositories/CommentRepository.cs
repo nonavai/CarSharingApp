@@ -15,6 +15,6 @@ public class CommentRepository : BaseRepository<Comment>, ICommentRepository
 
     public async Task<IEnumerable<Comment>> GetByCarIdAsync(string id)
     {
-        return _dataBase.Comments.Where(f => f.CarId == id).AsEnumerable();
+        return _dataBase.Comments.Where(comment => comment.CarId == id).AsEnumerable();
     }
 }

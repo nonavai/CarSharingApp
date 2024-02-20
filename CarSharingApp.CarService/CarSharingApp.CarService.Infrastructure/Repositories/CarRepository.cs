@@ -32,7 +32,7 @@ public class CarRepository : BaseRepository<Car>, ICarRepository
         return await _dataBase.Cars
             .Include(car => car.Comments)
             .Include(car => car.CarState)
-            .FirstOrDefaultAsync(p => p.Id == id, token);
+            .FirstOrDefaultAsync(car => car.Id == id, token);
     }
 
     public async Task<IEnumerable<Car>> GetByUserIdAsync(string id)

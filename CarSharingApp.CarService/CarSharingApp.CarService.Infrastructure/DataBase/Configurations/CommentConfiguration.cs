@@ -10,6 +10,6 @@ public class CommentConfiguration : IEntityTypeConfiguration<Comment>
     {
         modelBuilder
             .Property(comment => comment.Text)
-            .HasColumnType("nvarchar(500)");
+            .HasMaxLength(500);
     }
 }

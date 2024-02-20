@@ -27,7 +27,6 @@ public class CommentController : ControllerBase
     }
     
     [HttpGet]
-    [Route("")]
     [Authorize]
     public async Task<IActionResult> GetAsync([FromQuery] GetCommentQuery query)
     {
@@ -37,7 +36,6 @@ public class CommentController : ControllerBase
     }
     
     [HttpPost]
-    [Route("")]
     [Authorize]
     public async Task<IActionResult> AddAsync(CreateCommentCommand command)
     {
@@ -47,7 +45,6 @@ public class CommentController : ControllerBase
     }
     
     [HttpPut]
-    [Route("")]
     [Authorize]
     public async Task<IActionResult> UpdateAsync(UpdateCommentCommand command)
     {
@@ -57,7 +54,6 @@ public class CommentController : ControllerBase
     }
     
     [HttpDelete]
-    [Route("")]
     [Authorize]
     public async Task<IActionResult> DeleteAsync(DeleteCommentCommand query)
     {

@@ -16,11 +16,9 @@ public class GetCarsByParamsValidation : AbstractValidator<GetCarsByParamsQuery>
             .WithMessage("Year must be between 1900 and the current year.");
         
         RuleFor(car => car.Mark)
-            .NotEmpty().WithMessage("Car mark is required.")
             .MaximumLength(30).WithMessage("Car mark cannot exceed 30 characters.");
 
         RuleFor(car => car.Model)
-            .NotEmpty().WithMessage("Car model is required.")
             .MaximumLength(30).WithMessage("Car model cannot exceed 30 characters.");
         
         RuleFor(car => car.MinPrice)

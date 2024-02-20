@@ -28,26 +28,26 @@ public class CarConfiguration : IEntityTypeConfiguration<Car>
 
         modelBuilder
             .Property(car => car.Color)
-            .HasColumnType("nvarchar(20)");
+            .HasMaxLength(20);
         
         modelBuilder
             .Property(car => car.Description)
-            .HasColumnType("nvarchar(500)");
+            .HasMaxLength(500);
         
         modelBuilder
             .Property(car => car.Mark)
-            .HasColumnType("nvarchar(30)");
+            .HasMaxLength(30);
         
         modelBuilder
             .Property(car => car.Model)
-            .HasColumnType("nvarchar(30)");
+            .HasMaxLength(30);
         
         modelBuilder
             .Property(car => car.VehicleBody)
-            .HasColumnType("nvarchar(17)");
+            .HasMaxLength(17);
         
         modelBuilder
             .Property(car => car.Mark)
-            .HasColumnType("nvarchar(20)");
+            .HasMaxLength(20);
     }
 }

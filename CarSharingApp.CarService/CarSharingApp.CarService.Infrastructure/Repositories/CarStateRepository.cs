@@ -16,7 +16,7 @@ public class CarStateRepository : BaseRepository<CarState>, ICarStateRepository
 
     public async Task<CarState> GetByCarIdAsync(string id, CancellationToken token)
     {
-        var entity = await _dataBase.CarStates.FirstAsync(a => a.CarId == id, cancellationToken: token);
+        var entity = await _dataBase.CarStates.FirstAsync(state => state.CarId == id, cancellationToken: token);
         
         return entity;
     }

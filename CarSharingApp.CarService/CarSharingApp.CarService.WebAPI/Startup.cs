@@ -1,5 +1,4 @@
-﻿using System.Net;
-using System.Text;
+﻿using System.Text;
 using CarSharingApp.CarService.Application.CommandHandlers.CarCommandHandlers;
 using CarSharingApp.CarService.Application.CommandHandlers.CarStateHandlers;
 using CarSharingApp.CarService.Application.CommandHandlers.CommentCommandHandlers;
@@ -70,7 +69,7 @@ public class Startup
 
     public static void ConfigureMassTransit(IServiceCollection services, ConfigurationManager config)
     {
-        /*services.AddMassTransit(x =>
+        services.AddMassTransit(x =>
         {
             var assembly = typeof(DeleteCarConsumer).Assembly;
             var host = config["RabbitMQ:Host"];
@@ -78,7 +77,7 @@ public class Startup
             var username = config["RabbitMQ:Username"];
             var password = config["RabbitMQ:Password"];
 
-            x.AddEntityFrameworkOutbox<CarsContext>(o =>
+            x.AddEntityFrameworkOutbox<HelperContext>(o =>
             {
                 o.UseSqlServer();
 
@@ -86,8 +85,6 @@ public class Startup
 
                 o.UseBusOutbox();
             });
-
-            x.SetEndpointNameFormatter(new KebabCaseEndpointNameFormatter("Cars", false));
 
             x.AddConsumers(assembly);
 
@@ -102,12 +99,11 @@ public class Startup
                 cfg.ConfigureEndpoints(context);
 
             });
-        });*/
+        });
     }
     
     public static void InitializeMinio(IServiceCollection services, ConfigurationManager config)
     {
-        //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
         var endPoint = config["MinIO-Settings:EndPoint"];
         var accessKey = config["MinIO-Settings:AccessKey"];
         var secretKey = config["MinIO-Settings:SecretKey"];
@@ -138,8 +134,11 @@ public class Startup
     public static void ConfigureDataBase(IServiceCollection services, ConfigurationManager config)
     {
         var connectionString = config.GetConnectionString("DataBase");
+        var helperConnectionString = config.GetConnectionString("HelperDB");
         services.AddDbContext<CarsContext>(options =>
             options.UseSqlServer(connectionString));
+        services.AddDbContext<HelperContext>(options =>
+            options.UseSqlServer(helperConnectionString));
     }
     
     public static void ConfigureMiddlewares(WebApplication app)
