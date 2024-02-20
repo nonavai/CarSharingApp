@@ -7,6 +7,5 @@ public class CreateDealCommand : IRequest<DealDto>
 {
     public string CarId { get; set; }
     public string UserId { get; set; }
-    public DateTime Requested { get; set; }
     public float TotalPrice { get; set; }
 }

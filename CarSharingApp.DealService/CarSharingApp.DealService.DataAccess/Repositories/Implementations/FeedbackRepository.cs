@@ -6,7 +6,7 @@ namespace CarSharingApp.DealService.DataAccess.Repositories.Implementations;
 
 public class FeedbackRepository : BaseRepository<Feedback>, IFeedBackRepository
 {
-    public FeedbackRepository(IMongoContext context) : base(context, "feedback")
+    public FeedbackRepository(MongoContext context) : base(context, "Feedbacks")
     {
     }
 

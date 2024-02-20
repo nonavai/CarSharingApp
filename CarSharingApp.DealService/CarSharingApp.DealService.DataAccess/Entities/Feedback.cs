@@ -11,6 +11,4 @@ public class Feedback : BaseEntity
     public string Text { get; set; }
     public int? Rating { get; set; }
     public bool IsChanged { get; set; }
-    public Deal Deal { get; set; }
-    public IEnumerable<Answer> Answers { get; set; }
 }

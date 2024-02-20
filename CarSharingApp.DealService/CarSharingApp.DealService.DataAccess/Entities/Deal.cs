@@ -11,5 +11,4 @@ public class Deal : BaseEntity
     public DealState State { get; set; }
     public float TotalPrice { get; set; }
     public int? Rating { get; set; }
-    public IEnumerable<Feedback> FeedBacks { get; set; }
 }

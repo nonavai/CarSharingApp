@@ -7,5 +7,4 @@ public class Answer : BaseEntity
     public DateTime Posted { get; set; }
     public string Text { get; set; }
     public bool IsChanged { get; set; }
-    public Feedback Feedback { get; set; }
 }

@@ -13,3 +13,5 @@ C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\obj\Debug\net7.0\refint\CarSharingApp.DealService.DataAccess.dll
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\obj\Debug\net7.0\CarSharingApp.DealService.DataAccess.pdb
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\obj\Debug\net7.0\ref\CarSharingApp.DealService.DataAccess.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\bin\Debug\net7.0\CarSharingApp.DealService.DataAccess.runtimeconfig.json
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\obj\Debug\net7.0\CarSharingApp.DealService.DataAccess.genruntimeconfig.cache

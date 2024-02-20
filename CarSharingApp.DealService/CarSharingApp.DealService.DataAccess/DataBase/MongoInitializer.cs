@@ -31,7 +31,7 @@ public class MongoInitializer
         
         var feedback = new Feedback
         {
-            Id = null,
+            Id = Guid.NewGuid().ToString(),
             DealId = "deal1",
             UserId = "user1",
             IssueType = IssueType.None,
@@ -43,7 +43,7 @@ public class MongoInitializer
 
         var deal = new Deal
         {
-            Id = null,
+            Id = Guid.NewGuid().ToString(),
             CarId = "car1",
             UserId = "user1",
             Requested = DateTime.Now,
@@ -55,6 +55,7 @@ public class MongoInitializer
 
         var answer = new Answer
         {
+            Id = Guid.NewGuid().ToString(),
             FeedBackId = feedback.Id,
             UserId = "user1",
             Posted = DateTime.Now,

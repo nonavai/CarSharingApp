@@ -6,7 +6,7 @@ namespace CarSharingApp.DealService.DataAccess.Repositories.Implementations;
 
 public class DealRepository : BaseRepository<Deal>, IDealRepository
 {
-    public DealRepository(IMongoContext context) : base(context, "deals")
+    public DealRepository(MongoContext context) : base(context, "Deals")
     {
     }
 

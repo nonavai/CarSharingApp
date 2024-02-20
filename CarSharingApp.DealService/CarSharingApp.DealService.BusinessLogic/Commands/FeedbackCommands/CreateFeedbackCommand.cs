@@ -6,7 +6,6 @@ namespace CarSharingApp.DealService.BusinessLogic.Commands.FeedbackCommands;
 
 public class CreateFeedbackCommand : IRequest<FeedbackDto>
 {
-    public string Id { get; set; }
     public string DealId { get; set; }
     public string UserId { get; set; }
     public IssueType IssueType { get; set; }

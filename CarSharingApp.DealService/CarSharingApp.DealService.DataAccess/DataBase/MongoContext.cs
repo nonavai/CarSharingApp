@@ -9,7 +9,6 @@ public class MongoContext : IMongoContext
     
     public MongoContext(IConfiguration config)
     {
-        
         var client = new MongoClient(config.GetConnectionString("Database"));
         _database = client.GetDatabase(config.GetConnectionString("DatabaseName"));
     }
