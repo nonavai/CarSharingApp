@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
 
 builder.Services.AddControllers();
-builder.Services.AddValidatorsFromAssemblyContaining<CreateDealValidation>(); 
+builder.Services.AddValidatorsFromAssemblyContaining<CreateAnswerValidation>(); 
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddSignalR();
 
@@ -20,7 +20,7 @@ Startup.ConfigureMassTransit(builder.Services, config);
 
 var app = builder.Build();
 
-Startup.ConfigureMiddlewares(app);
+//Startup.ConfigureMiddlewares(app);
 Startup.ConfigureHangfire(app, config);
 
 if (app.Environment.IsDevelopment())

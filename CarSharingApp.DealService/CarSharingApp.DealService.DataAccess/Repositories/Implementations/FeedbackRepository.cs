@@ -10,7 +10,7 @@ public class FeedbackRepository : BaseRepository<Feedback>, IFeedBackRepository
     {
     }
 
-    public async Task<IEnumerable<Feedback>> GetByDealIdAsync(string dealId, int currentPage, int pageSize, CancellationToken cancellationToken)
+    public async Task<IEnumerable<Feedback>> GetByDealIdAsync(string dealId, int currentPage, int pageSize, CancellationToken cancellationToken = default)
     {
         return await _collection.Find(feedback => feedback.DealId == dealId)
             .SortBy(answer => answer.Posted)

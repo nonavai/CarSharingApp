@@ -1,6 +1,7 @@
 ﻿using CarSharingApp.DealService.BusinessLogic.Commands.AnswerCommands;
 using CarSharingApp.DealService.BusinessLogic.Queries.AnswerQueries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarSharingApp.DealService.API.Controllers;
@@ -17,7 +18,6 @@ public class AnswerController : ControllerBase
     }
     
     [HttpGet]
-    [Route("")]
     public async Task<IActionResult> GetAsync([FromQuery] GetAnswersByFeedbackQuery query)
     {
         var response = await _mediator.Send(query);
@@ -26,7 +26,7 @@ public class AnswerController : ControllerBase
     }
 
     [HttpPost]
-    [Route("")]
+    [Authorize]
     public async Task<IActionResult> AddAsync(CreateAnswerCommand command)
     {
         var response = await _mediator.Send(command);
@@ -35,7 +35,7 @@ public class AnswerController : ControllerBase
     }
     
     [HttpPut]
-    [Route("")]
+    [Authorize]
     public async Task<IActionResult> UpdateAsync(UpdateAnswerCommand command)
     {
         var response = await _mediator.Send(command);
@@ -44,7 +44,7 @@ public class AnswerController : ControllerBase
     }
     
     [HttpDelete]
-    [Route("")]
+    [Authorize]
     public async Task<IActionResult> DeleteAsync(DeleteAnswerCommand query)
     {
         var response = await _mediator.Send(query);

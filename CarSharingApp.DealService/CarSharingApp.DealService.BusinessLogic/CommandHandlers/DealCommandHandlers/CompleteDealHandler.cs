@@ -30,6 +30,11 @@ public class CompleteDealHandler : IRequestHandler<CompleteDealCommand, DealDto>
             throw new NotFoundException("Deal");
         }
 
+        if (deal.State != DealState.Active)
+        {
+            throw new BadRequestException();
+        }
+
         deal.State = DealState.Succeeded;
         deal.Finished = DateTime.Now;
         var difference = deal.Finished - deal.Requested;

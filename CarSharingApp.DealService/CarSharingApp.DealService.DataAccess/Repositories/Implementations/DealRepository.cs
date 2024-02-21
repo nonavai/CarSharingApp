@@ -10,7 +10,7 @@ public class DealRepository : BaseRepository<Deal>, IDealRepository
     {
     }
 
-    public async Task<IEnumerable<Deal>> GetByCarIdAsync(string carId, int currentPage, int pageSize, CancellationToken cancellationToken)
+    public async Task<IEnumerable<Deal>> GetByCarIdAsync(string carId, int currentPage, int pageSize, CancellationToken cancellationToken = default)
     {
         return await _collection.Find(deal => deal.CarId == carId)
             .SortBy(deal => deal.Finished)
@@ -19,7 +19,7 @@ public class DealRepository : BaseRepository<Deal>, IDealRepository
             .ToListAsync(cancellationToken: cancellationToken);
     }
 
-    public async Task<IEnumerable<Deal>> GetByUserIdAsync(string userId, int currentPage, int pageSize, CancellationToken cancellationToken)
+    public async Task<IEnumerable<Deal>> GetByUserIdAsync(string userId, int currentPage, int pageSize, CancellationToken cancellationToken = default)
     {
         return await _collection.Find(deal => deal.UserId == userId)
             .SortBy(deal => deal.Finished)

@@ -21,9 +21,6 @@ public class UpdateCarStatusProducer
             Status = newStatus
         };
         
-        await _bus.Publish(newCarState, context =>
-        {
-            context.SetRoutingKey("state");
-        });
+        await _bus.Publish(newCarState);
     }
 }

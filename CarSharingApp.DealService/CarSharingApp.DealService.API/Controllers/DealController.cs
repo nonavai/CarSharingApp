@@ -1,6 +1,8 @@
 ﻿using CarSharingApp.DealService.BusinessLogic.Commands.DealCommands;
 using CarSharingApp.DealService.BusinessLogic.Queries.DealQueries;
+using CarSharingApp.DealService.Shared.Constants;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarSharingApp.DealService.API.Controllers;
@@ -27,6 +29,7 @@ public class DealController : ControllerBase
     
     [HttpGet]
     [Route("user")]
+    [Authorize]
     public async Task<IActionResult> GetByUserAsync([FromQuery] GetDealsByUserQuery query)
     {
         var response = await _mediator.Send(query);
@@ -35,7 +38,7 @@ public class DealController : ControllerBase
     }
 
     [HttpPost]
-    [Route("")]
+    [Authorize(Roles = RoleNames.Borrower)]
     public async Task<IActionResult> AddAsync(CreateDealCommand command)
     {
         var response = await _mediator.Send(command);
@@ -45,6 +48,7 @@ public class DealController : ControllerBase
     
     [HttpPut]
     [Route("complete")]
+    [Authorize(Roles = RoleNames.Borrower)]
     public async Task<IActionResult> CompleteAsync(CompleteDealCommand command)
     {
         var response = await _mediator.Send(command);
@@ -54,6 +58,7 @@ public class DealController : ControllerBase
     
     [HttpPut]
     [Route("confirm")]
+    [Authorize(Roles = RoleNames.Borrower)]
     public async Task<IActionResult> ConfirmAsync(ConfirmDealCommand command)
     {
         var response = await _mediator.Send(command);
@@ -63,6 +68,7 @@ public class DealController : ControllerBase
     
     [HttpPut]
     [Route("cancel")]
+    [Authorize(Roles = RoleNames.Borrower)]
     public async Task<IActionResult> CancelAsync(CancelDealCommand command)
     {
         var response = await _mediator.Send(command);

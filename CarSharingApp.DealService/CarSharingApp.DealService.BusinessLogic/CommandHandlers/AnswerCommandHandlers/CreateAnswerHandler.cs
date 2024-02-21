@@ -21,6 +21,7 @@ public class CreateAnswerHandler : IRequestHandler<CreateAnswerCommand, AnswerDt
     public async Task<AnswerDto> Handle(CreateAnswerCommand request, CancellationToken cancellationToken = default)
     {
         var answer = _mapper.Map<Answer>(request);
+        answer.Posted = DateTime.Now;
         var entityResult = await _answerRepository.CreateAsync(answer, cancellationToken);
         var result = _mapper.Map<AnswerDto>(entityResult);
         

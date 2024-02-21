@@ -40,26 +40,25 @@ public class Startup
     {
         services.AddAutoMapper(typeof(MappingProfile));
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
-
+        //deal commands
         services.AddTransient<IRequestHandler<CreateDealCommand, DealDto>, CreateDealHandler>();
         services.AddTransient<IRequestHandler<CancelDealCommand, DealDto>, CancelDealHandler>();
         services.AddTransient<IRequestHandler<ConfirmDealCommand, DealDto>, ConfirmDealHandler>();
         services.AddTransient<IRequestHandler<CompleteDealCommand, DealDto>, CompleteDealHandler>();
-        
+        //feedback commands
         services.AddTransient<IRequestHandler<CreateFeedbackCommand, FeedbackDto>, CreateFeedbackHandler>();
         services.AddTransient<IRequestHandler<UpdateFeedbackCommand, FeedbackDto>, UpdateFeedbackHandler>();
         services.AddTransient<IRequestHandler<DeleteFeedbackCommand, FeedbackDto>, DeleteFeedbackHandler>();
-        
+        //answer commands
         services.AddTransient<IRequestHandler<CreateAnswerCommand, AnswerDto>, CreateAnswerHandler>();
         services.AddTransient<IRequestHandler<UpdateAnswerCommand, AnswerDto>, UpdateAnswerHandler>();
         services.AddTransient<IRequestHandler<DeleteAnswerCommand, AnswerDto>, DeleteAnswerHandler>();
-        
-
+        //deal queries
         services.AddTransient<IRequestHandler<GetDealsByCarQuery, IEnumerable<DealDto>>, GetDealsByCarHandler>();
         services.AddTransient<IRequestHandler<GetDealsByUserQuery, IEnumerable<DealDto>>, GetDealsByUserHandler>();
-        
+        //answer queries
         services.AddTransient<IRequestHandler<GetAnswersByFeedbackQuery, IEnumerable<AnswerDto>>, GetAnswersByFeedbackHandler>();
-        
+        // feedback queries
         services.AddTransient<IRequestHandler<GetFeedbackByDealQueries, IEnumerable<FeedbackDto>>, GetFeedbackByDealHandler>();
     }
 
@@ -97,7 +96,6 @@ public class Startup
     
     public static void ConfigureHangfire(IApplicationBuilder app, ConfigurationManager config)
     {
-        
         GlobalConfiguration.Configuration.UseSqlServerStorage(config.GetConnectionString("HelperDB"));
     
         app.UseHangfireServer();

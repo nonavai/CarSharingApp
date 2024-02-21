@@ -18,7 +18,6 @@ public class FeedbackController : ControllerBase
     }
     
     [HttpGet]
-    [Route("")]
     public async Task<IActionResult> GetAsync([FromQuery] GetFeedbackByDealQueries query)
     {
         var response = await _mediator.Send(query);
@@ -27,7 +26,7 @@ public class FeedbackController : ControllerBase
     }
 
     [HttpPost]
-    [Route("")]
+    [Authorize]
     public async Task<IActionResult> AddAsync(CreateFeedbackCommand command)
     {
         var response = await _mediator.Send(command);
@@ -36,7 +35,7 @@ public class FeedbackController : ControllerBase
     }
     
     [HttpPut]
-    [Route("")]
+    [Authorize]
     public async Task<IActionResult> UpdateAsync(UpdateFeedbackCommand command)
     {
         var response = await _mediator.Send(command);
@@ -45,7 +44,7 @@ public class FeedbackController : ControllerBase
     }
     
     [HttpDelete]
-    [Route("")]
+    [Authorize]
     public async Task<IActionResult> DeleteAsync(DeleteFeedbackCommand query)
     {
         var response = await _mediator.Send(query);

@@ -21,6 +21,7 @@ public class CreateFeedbackHandler : IRequestHandler<CreateFeedbackCommand, Feed
     public async Task<FeedbackDto> Handle(CreateFeedbackCommand request, CancellationToken cancellationToken = default)
     {
         var deal = _mapper.Map<Feedback>(request);
+        deal.Posted = DateTime.Now;
         var entityResult = await _feedBackRepository.CreateAsync(deal, cancellationToken);
         var result = _mapper.Map<FeedbackDto>(entityResult);
         

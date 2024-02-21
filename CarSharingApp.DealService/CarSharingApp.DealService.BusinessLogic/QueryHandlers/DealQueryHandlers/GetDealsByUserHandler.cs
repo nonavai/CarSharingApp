@@ -19,7 +19,7 @@ public class GetDealsByUserHandler: IRequestHandler<GetDealsByUserQuery, IEnumer
     
     public async Task<IEnumerable<DealDto>> Handle(GetDealsByUserQuery request, CancellationToken cancellationToken = default)
     {
-        var deals = await _dealRepository.GetByCarIdAsync(
+        var deals = await _dealRepository.GetByUserIdAsync(
             request.UserId,
             request.CurrentPage,
             request.PageSize,
