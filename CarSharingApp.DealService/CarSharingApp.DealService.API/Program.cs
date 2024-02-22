@@ -17,10 +17,11 @@ Startup.ConfigureAuth(builder.Services, config);
 Startup.ConfigureRepository(builder.Services);
 Startup.ConfigureServices(builder.Services);
 Startup.ConfigureMassTransit(builder.Services, config);
+Startup.ConfigureRedis(builder.Services, config);
 
 var app = builder.Build();
 
-//Startup.ConfigureMiddlewares(app);
+Startup.ConfigureMiddlewares(app);
 Startup.ConfigureHangfire(app, config);
 
 if (app.Environment.IsDevelopment())
