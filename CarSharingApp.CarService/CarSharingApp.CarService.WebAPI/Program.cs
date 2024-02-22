@@ -19,10 +19,11 @@ Startup.ConfigureRepository(builder.Services);
 Startup.ConfigureServices(builder.Services);
 Startup.InitializeMinio(builder.Services, config);
 Startup.ConfigureMassTransit(builder.Services, config);
+Startup.ConfigureRedis(builder.Services, config);
 
 var app = builder.Build();
 
-//Startup.ConfigureMiddlewares(app);
+Startup.ConfigureMiddlewares(app);
 
 if (app.Environment.IsDevelopment())
 {

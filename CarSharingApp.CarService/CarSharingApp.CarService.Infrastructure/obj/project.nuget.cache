@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QZRj5VIKd3ILkmiAdYCsu72vwo9Gxr0gF9siv0dmRRr7eWnZ0PMMsgR6nIoxyqOGDA6pCsfah1z+AAzr7ydocQ==",
+  "dgSpecHash": "yl2dV38wZZRKUT5FcyJTm4PjIUS8WWs6WVGJX5AJYeS9yZxI/uCnkwRx82PeX95PPSGqG2Sq84+YddalKoZ/hQ==",
   "success": true,
   "projectFilePath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.CarService\\CarSharingApp.CarService.Infrastructure\\CarSharingApp.CarService.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -55,6 +55,9 @@
     "C:\\Users\\Anton\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\minio\\6.0.1\\minio.6.0.1.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\stackexchange.redis\\2.7.20\\stackexchange.redis.2.7.20.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.1\\system.diagnostics.diagnosticsource.7.0.1.nupkg.sha512",

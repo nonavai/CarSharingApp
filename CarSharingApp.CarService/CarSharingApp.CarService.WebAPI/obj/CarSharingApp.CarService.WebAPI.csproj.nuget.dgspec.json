@@ -72,6 +72,14 @@
             "Minio": {
               "target": "Package",
               "version": "[6.0.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.7.20, )"
             }
           },
           "imports": [
@@ -325,6 +333,10 @@
             "Microsoft.OpenApi": {
               "target": "Package",
               "version": "[1.6.13, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.7.20, )"
             },
             "Swashbuckle.AspNetCore.SwaggerGen": {
               "target": "Package",

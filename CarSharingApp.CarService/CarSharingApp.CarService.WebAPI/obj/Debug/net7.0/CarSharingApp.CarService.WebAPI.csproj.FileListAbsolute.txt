@@ -109,3 +109,6 @@ C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.WebAPI\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.WebAPI\bin\Debug\net7.0\RabbitMQ.Client.dll
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.WebAPI\bin\Debug\net7.0\MassTransit.EntityFrameworkCoreIntegration.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.WebAPI\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.WebAPI\bin\Debug\net7.0\Pipelines.Sockets.Unofficial.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.WebAPI\bin\Debug\net7.0\StackExchange.Redis.dll

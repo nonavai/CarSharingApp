@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using CarSharingApp.CarService.Application.Caching;
 using CarSharingApp.CarService.Application.CommandHandlers.CarCommandHandlers;
 using CarSharingApp.CarService.Application.CommandHandlers.CarStateHandlers;
 using CarSharingApp.CarService.Application.CommandHandlers.CommentCommandHandlers;
@@ -31,6 +32,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Minio;
+using StackExchange.Redis;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace CarSharingApp.CarService.WebAPI;
@@ -163,5 +165,12 @@ public class Startup
                     ValidateIssuerSigningKey = true
                 };
             });
+    }
+    
+    public static void ConfigureRedis(IServiceCollection services, ConfigurationManager config)
+    {
+        services.AddSingleton<IConnectionMultiplexer>(x =>
+            ConnectionMultiplexer.Connect(config.GetConnectionString("Redis")));
+        services.AddSingleton<ICacheService ,CacheService>();
     }
 }
