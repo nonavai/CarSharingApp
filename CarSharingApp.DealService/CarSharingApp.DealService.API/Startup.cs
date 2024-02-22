@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using CarSharingApp.DealService.API.Extensions;
 using CarSharingApp.DealService.API.MiddleWares;
+using CarSharingApp.DealService.BusinessLogic.Caching;
 using CarSharingApp.DealService.BusinessLogic.CommandHandlers.AnswerCommandHandlers;
 using CarSharingApp.DealService.BusinessLogic.CommandHandlers.DealCommandHandlers;
 using CarSharingApp.DealService.BusinessLogic.CommandHandlers.FeedbackCommandHandlers;
@@ -29,7 +30,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
+using StackExchange.Redis;
 using Swashbuckle.AspNetCore.SwaggerGen;
+
 
 
 namespace CarSharingApp.DealService.API;
@@ -164,5 +167,12 @@ public class Startup
                     ValidateIssuerSigningKey = true
                 };
             });
+    }
+
+    public static void ConfigureRedis(IServiceCollection services, ConfigurationManager config)
+    {
+        services.AddSingleton<IConnectionMultiplexer>(x =>
+            ConnectionMultiplexer.Connect(config.GetConnectionString("Redis")));
+        services.AddSingleton<ICacheService ,CacheService>();
     }
 }

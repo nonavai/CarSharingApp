@@ -17,6 +17,7 @@
           "Microsoft.EntityFrameworkCore.Design": "7.0.16",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.16",
           "Microsoft.OpenApi": "1.6.13",
+          "StackExchange.Redis": "2.7.20",
           "Swashbuckle.AspNetCore.SwaggerGen": "6.5.0",
           "Swashbuckle.AspNetCore.SwaggerUI": "6.5.0"
         },
@@ -246,6 +247,14 @@
           "lib/net6.0/Humanizer.dll": {
             "assemblyVersion": "2.14.0.0",
             "fileVersion": "2.14.1.48190"
+          }
+        }
+      },
+      "JsonConverter.Abstractions/0.5.0": {
+        "runtime": {
+          "lib/netstandard2.1/JsonConverter.Abstractions.dll": {
+            "assemblyVersion": "0.5.0.0",
+            "fileVersion": "0.5.0.0"
           }
         }
       },
@@ -812,11 +821,45 @@
           }
         }
       },
+      "NetTopologySuite/2.5.0": {
+        "dependencies": {
+          "System.Memory": "4.5.5"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NetTopologySuite.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
       "Newtonsoft.Json/11.0.1": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "11.0.0.0",
             "fileVersion": "11.0.1.21818"
+          }
+        }
+      },
+      "NRedisStack/0.11.0": {
+        "dependencies": {
+          "NetTopologySuite": "2.5.0",
+          "StackExchange.Redis": "2.7.20"
+        },
+        "runtime": {
+          "lib/net7.0/NRedisStack.dll": {
+            "assemblyVersion": "0.11.0.0",
+            "fileVersion": "0.11.0.0"
+          }
+        }
+      },
+      "Pipelines.Sockets.Unofficial/2.2.8": {
+        "dependencies": {
+          "System.IO.Pipelines": "5.0.1"
+        },
+        "runtime": {
+          "lib/net5.0/Pipelines.Sockets.Unofficial.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "2.2.8.1080"
           }
         }
       },
@@ -845,6 +888,18 @@
           "lib/net5.0/Snappier.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "StackExchange.Redis/2.7.20": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
+          "Pipelines.Sockets.Unofficial": "2.2.8"
+        },
+        "runtime": {
+          "lib/net6.0/StackExchange.Redis.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.7.20.59961"
           }
         }
       },
@@ -944,6 +999,7 @@
           "System.Security.Principal.Windows": "5.0.0"
         }
       },
+      "System.IO.Pipelines/5.0.1": {},
       "System.Memory/4.5.5": {},
       "System.Memory.Data/1.0.2": {
         "dependencies": {
@@ -1080,8 +1136,10 @@
           "CarSharingApp.DealService.DataAccess": "1.0.0",
           "FluentValidation": "11.5.1",
           "Hangfire": "1.8.10",
+          "JsonConverter.Abstractions": "0.5.0",
           "MassTransit.RabbitMQ": "8.1.3",
-          "MediatR": "12.2.0"
+          "MediatR": "12.2.0",
+          "NRedisStack": "0.11.0"
         },
         "runtime": {
           "CarSharingApp.DealService.BusinessLogic.dll": {}
@@ -1224,6 +1282,13 @@
       "sha512": "sha512-lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
+    },
+    "JsonConverter.Abstractions/0.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+xjuP5eXF/MNBGdWElFOTpytDXfAtds3hLaqWhZx0iYizEJc+mSzuJRg1uAgD4ZbOUaFKcFq9sYi3tJFPRzE4g==",
+      "path": "jsonconverter.abstractions/0.5.0",
+      "hashPath": "jsonconverter.abstractions.0.5.0.nupkg.sha512"
     },
     "MassTransit/8.1.3": {
       "type": "package",
@@ -1582,12 +1647,33 @@
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
     },
+    "NetTopologySuite/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5/+2O2ADomEdUn09mlSigACdqvAf0m/pVPGtIPEPQWnyrVykYY0NlfXLIdkMgi41kvH9kNrPqYaFBTZtHYH7Xw==",
+      "path": "nettopologysuite/2.5.0",
+      "hashPath": "nettopologysuite.2.5.0.nupkg.sha512"
+    },
     "Newtonsoft.Json/11.0.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-pNN4l+J6LlpIvHOeNdXlwxv39NPJ2B5klz+Rd2UQZIx30Squ5oND1Yy3wEAUoKn0GPUj6Yxt9lxlYWQqfZcvKg==",
       "path": "newtonsoft.json/11.0.1",
       "hashPath": "newtonsoft.json.11.0.1.nupkg.sha512"
+    },
+    "NRedisStack/0.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-v27MRxtH2pxQBPU1qleqpIi0VWDB0BR6IU+ozpHuNdjchGahZcK/XzQSpHK6AMCN4amQ+mIsH7Dh/Y+PxrZ/Qw==",
+      "path": "nredisstack/0.11.0",
+      "hashPath": "nredisstack.0.11.0.nupkg.sha512"
+    },
+    "Pipelines.Sockets.Unofficial/2.2.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zG2FApP5zxSx6OcdJQLbZDk2AVlN2BNQD6MorwIfV6gVj0RRxWPEp2LXAxqDGZqeNV1Zp0BNPcNaey/GXmTdvQ==",
+      "path": "pipelines.sockets.unofficial/2.2.8",
+      "hashPath": "pipelines.sockets.unofficial.2.2.8.nupkg.sha512"
     },
     "RabbitMQ.Client/6.8.1": {
       "type": "package",
@@ -1609,6 +1695,13 @@
       "sha512": "sha512-rFtK2KEI9hIe8gtx3a0YDXdHOpedIf9wYCEYtBEmtlyiWVX3XlCNV03JrmmAi/Cdfn7dxK+k0sjjcLv4fpHnqA==",
       "path": "snappier/1.0.0",
       "hashPath": "snappier.1.0.0.nupkg.sha512"
+    },
+    "StackExchange.Redis/2.7.20": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4ogjXwVp/7Gi/dNjGn1SWVxjrS0J0izVg8LeMVWSF3/zS3GH4lwtEMehQ9VEatQAqRbZ0i+OU+Z2obLUTYEoYg==",
+      "path": "stackexchange.redis/2.7.20",
+      "hashPath": "stackexchange.redis.2.7.20.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore.Swagger/6.5.0": {
       "type": "package",
@@ -1686,6 +1779,13 @@
       "sha512": "sha512-SxHB3nuNrpptVk+vZ/F+7OHEpoHUIKKMl02bUmYHQr1r+glbZQxs7pRtsf4ENO29TVm2TH3AEeep2fJcy92oYw==",
       "path": "system.io.filesystem.accesscontrol/5.0.0",
       "hashPath": "system.io.filesystem.accesscontrol.5.0.0.nupkg.sha512"
+    },
+    "System.IO.Pipelines/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qEePWsaq9LoEEIqhbGe6D5J8c9IqQOUuTzzV6wn1POlfdLkJliZY3OlB0j0f17uMWlqZYjH7txj+2YbyrIA8Yg==",
+      "path": "system.io.pipelines/5.0.1",
+      "hashPath": "system.io.pipelines.5.0.1.nupkg.sha512"
     },
     "System.Memory/4.5.5": {
       "type": "package",
