@@ -1,11 +1,13 @@
 ﻿using AutoMapper;
 using CarSharingApp.Identity.BusinessLogic.Models.User;
 using CarSharingApp.Identity.BusinessLogic.Models.UserInfo;
+using CarSharingApp.Identity.BusinessLogic.Producers;
 using CarSharingApp.Identity.DataAccess.Entities;
 using CarSharingApp.Identity.DataAccess.Repositories;
 using CarSharingApp.Identity.DataAccess.Specifications;
 using CarSharingApp.Identity.Shared.Constants;
 using CarSharingApp.Identity.Shared.Exceptions;
+using Hangfire;
 
 namespace CarSharingApp.Identity.BusinessLogic.Services.Implementations;
 
@@ -93,7 +95,9 @@ public class UserManageService : IUserManageService
             
             throw new IdentityException(errorMessage);
         }
-            
+
+        BackgroundJob.Enqueue<UserDeletedProducer>(x => x.DeleteCarsByUser(user.Id));
+
         return _mapper.Map<UserCleanDto>(user);
     }
     
@@ -129,8 +133,8 @@ public class UserManageService : IUserManageService
     
     public async Task<IEnumerable<UserInfoDto>> GetExpiredUserInfosAsync(CancellationToken token = default)
     {
-        var spec = 
-            new UserInfoSpecification(userInfo=> userInfo.LicenceExpiry <= DateTime.Now).WithUser();
+        var spec = new UserInfoSpecification(userInfo =>
+            userInfo.LicenceExpiry <= DateTime.Now).WithUser();
         var usersInfo = await _userInfoRepository.GetBySpecAsync(spec, token);
         var userInfoDtos = _mapper.Map<IEnumerable<UserInfoDto>>(usersInfo);
         
@@ -150,5 +154,27 @@ public class UserManageService : IUserManageService
         await _userInfoRepository.UpdateAsync(userUpdated);
         
         return _mapper.Map<UserInfoCleanDto>(userUpdated);
+    }
+
+    public async Task DeletingExpiredLicence()
+    {
+        var spec = new UserInfoSpecification(userInfo =>
+            userInfo.LicenceExpiry <= DateTime.Now).WithUser();
+        var usersInfo = await _userInfoRepository.GetBySpecAsync(spec);
+        var deleteTasks = usersInfo.Select(async userInfo =>
+            await _userRepository.RemoveFromRolesAsync(userInfo.User, RoleNames.Borrower));
+        var results = await Task.WhenAll(deleteTasks);
+
+        if (results.Any(r => !r.Succeeded))
+        {
+            var errorMessages = results
+                .Where(r => !r.Succeeded)
+                .SelectMany(r => r.Errors)
+                .Select(e => e.Description);
+            
+            var errorMessage = string.Join(Environment.NewLine, errorMessages);
+            
+            throw new IdentityException(errorMessage);
+        }
     }
 }

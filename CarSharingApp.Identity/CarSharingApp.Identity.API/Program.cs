@@ -20,6 +20,8 @@ Startup.InitializeRoles(builder.Services).Wait();
 
 var app = builder.Build();
 Startup.ConfigureMiddlewares(app);
+Startup.ConfigureHangfire(app, config);
+Startup.ScheduleLicenceCheck(builder.Services);
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
