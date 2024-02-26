@@ -18,7 +18,7 @@ public class CarSharingContext : IdentityDbContext<User>
     {
     }
 
-    public CarSharingContext(DbContextOptions<CarSharingContext> options, IConfiguration configuration) : base(options)
+    public CarSharingContext(DbContextOptions<CarSharingContext> options) : base(options)
     {
     }
     

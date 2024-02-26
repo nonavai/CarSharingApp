@@ -9,6 +9,7 @@ using CarSharingApp.Identity.DataAccess.Entities;
 using CarSharingApp.Identity.DataAccess.Repositories;
 using CarSharingApp.Identity.DataAccess.Repositories.Implementation;
 using CarSharingApp.Identity.Shared.Constants;
+using CarSharingApp.Identity.Shared.Options;
 using Hangfire;
 using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -161,7 +162,12 @@ public class Startup
         {
             var userManager = scope.ServiceProvider.GetRequiredService<IUserManageService>();
 
-            RecurringJob.AddOrUpdate(() => userManager.DeletingExpiredLicence(), Cron.Daily);
+            RecurringJob.AddOrUpdate(() => userManager.DeletingExpiredLicenceAsync(), Cron.Daily);
         }
+    }
+
+    public static void OptionsConfigure(IServiceCollection services, ConfigurationManager config)
+    {
+        services.Configure<JwtOptions>(config.GetSection("JwtSettings"));
     }
 }

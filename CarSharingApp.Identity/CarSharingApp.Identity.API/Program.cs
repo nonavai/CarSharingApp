@@ -5,6 +5,7 @@ using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
+Startup.OptionsConfigure(builder.Services, config);
 Startup.ConfigureIdentity(builder.Services);
 Startup.ConfigureDataBase(builder.Services, config);
 
@@ -17,6 +18,7 @@ Startup.ConfigureAuth(builder.Services, config);
 Startup.ConfigureRepository(builder.Services);
 Startup.ConfigureServices(builder.Services);
 Startup.InitializeRoles(builder.Services).Wait();
+Startup.ConfigureMassTransit(builder.Services, config);
 
 var app = builder.Build();
 Startup.ConfigureMiddlewares(app);

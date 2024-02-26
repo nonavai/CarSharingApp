@@ -156,7 +156,7 @@ public class UserManageService : IUserManageService
         return _mapper.Map<UserInfoCleanDto>(userUpdated);
     }
 
-    public async Task DeletingExpiredLicence()
+    public async Task DeletingExpiredLicenceAsync()
     {
         var spec = new UserInfoSpecification(userInfo =>
             userInfo.LicenceExpiry <= DateTime.Now).WithUser();
