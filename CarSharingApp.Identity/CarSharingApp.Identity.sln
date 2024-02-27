@@ -1,12 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.Identity.DataAcces", "CarSharingApp.Identity.DataAcces\CarSharingApp.Identity.DataAcces.csproj", "{765CCE7F-E407-4EA6-A844-5BFDA3000D96}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSharingApp.Identity.BusinessLogic", "CarSharingApp.Identity.BusinessLogic\CarSharingApp.Identity.BusinessLogic.csproj", "{08286203-E244-4994-82D9-2ECE592DC7E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.Identity.BusinessLogic", "CarSharingApp.Identity.BusinessLogic\CarSharingApp.Identity.BusinessLogic.csproj", "{08286203-E244-4994-82D9-2ECE592DC7E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSharingApp.Identity.API", "CarSharingApp.Identity.API\CarSharingApp.Identity.API.csproj", "{110C32C8-B1DE-42E1-BFD2-AC6C483E5862}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.Identity.API", "CarSharingApp.Identity.API\CarSharingApp.Identity.API.csproj", "{110C32C8-B1DE-42E1-BFD2-AC6C483E5862}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSharingApp.Identity.Shared", "CarSharingApp.Identity.Shared\CarSharingApp.Identity.Shared.csproj", "{2CE96456-F395-4AE1-8A26-27073C4BBFA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.Identity.Shared", "CarSharingApp.Identity.Shared\CarSharingApp.Identity.Shared.csproj", "{2CE96456-F395-4AE1-8A26-27073C4BBFA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSharingApp.Identity.DataAccess", "CarSharingApp.Identity.DataAccess\CarSharingApp.Identity.DataAccess.csproj", "{468AC3D8-A1E4-4978-B139-DE4C52C9AF1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{765CCE7F-E407-4EA6-A844-5BFDA3000D96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{765CCE7F-E407-4EA6-A844-5BFDA3000D96}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{765CCE7F-E407-4EA6-A844-5BFDA3000D96}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{765CCE7F-E407-4EA6-A844-5BFDA3000D96}.Release|Any CPU.Build.0 = Release|Any CPU
 		{08286203-E244-4994-82D9-2ECE592DC7E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{08286203-E244-4994-82D9-2ECE592DC7E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08286203-E244-4994-82D9-2ECE592DC7E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -30,5 +29,12 @@ Global
 		{2CE96456-F395-4AE1-8A26-27073C4BBFA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CE96456-F395-4AE1-8A26-27073C4BBFA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CE96456-F395-4AE1-8A26-27073C4BBFA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{468AC3D8-A1E4-4978-B139-DE4C52C9AF1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{468AC3D8-A1E4-4978-B139-DE4C52C9AF1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{468AC3D8-A1E4-4978-B139-DE4C52C9AF1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{468AC3D8-A1E4-4978-B139-DE4C52C9AF1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

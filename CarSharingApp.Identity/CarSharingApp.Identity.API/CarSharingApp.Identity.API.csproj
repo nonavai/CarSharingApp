@@ -8,12 +8,23 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers" />
-      <Folder Include="MiddleWares" />
+      <ProjectReference Include="..\CarSharingApp.Identity.BusinessLogic\CarSharingApp.Identity.BusinessLogic.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\CarSharingApp.Identity.BusinessLogic\CarSharingApp.Identity.BusinessLogic.csproj" />
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+      <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+      <PackageReference Include="Hangfire.SqlServer" Version="1.8.10" />
+      <PackageReference Include="MassTransit.EntityFrameworkCore" Version="8.1.3" />
+      <PackageReference Include="MassTransit.RabbitMQ" Version="8.1.3" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.15" />
+      <PackageReference Include="Microsoft.OpenApi" Version="1.6.12" />
+      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.15">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
     </ItemGroup>
 
 </Project>
