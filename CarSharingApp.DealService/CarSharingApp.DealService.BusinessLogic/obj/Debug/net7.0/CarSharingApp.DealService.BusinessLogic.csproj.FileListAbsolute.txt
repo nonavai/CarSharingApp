@@ -1,0 +1,17 @@
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.BusinessLogic\bin\Debug\net7.0\CarSharingApp.DealService.BusinessLogic.deps.json
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.BusinessLogic\bin\Debug\net7.0\CarSharingApp.DealService.BusinessLogic.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.BusinessLogic\bin\Debug\net7.0\CarSharingApp.DealService.BusinessLogic.pdb
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.BusinessLogic\bin\Debug\net7.0\CarSharingApp.DealService.DataAccess.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.BusinessLogic\bin\Debug\net7.0\CarSharingApp.DealService.Shared.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.BusinessLogic\bin\Debug\net7.0\CarSharingApp.DealService.DataAccess.pdb
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.BusinessLogic\bin\Debug\net7.0\CarSharingApp.DealService.Shared.pdb
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.BusinessLogic\obj\Debug\net7.0\CarSharingApp.DealService.BusinessLogic.csproj.AssemblyReference.cache
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.BusinessLogic\obj\Debug\net7.0\CarSharingApp.DealService.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.BusinessLogic\obj\Debug\net7.0\CarSharingApp.DealService.BusinessLogic.AssemblyInfoInputs.cache
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.BusinessLogic\obj\Debug\net7.0\CarSharingApp.DealService.BusinessLogic.AssemblyInfo.cs
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.BusinessLogic\obj\Debug\net7.0\CarSharingApp.DealService.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.BusinessLogic\obj\Debug\net7.0\CarSharingApp.DealService.BusinessLogic.csproj.CopyComplete
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.BusinessLogic\obj\Debug\net7.0\CarSharingApp.DealService.BusinessLogic.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.BusinessLogic\obj\Debug\net7.0\refint\CarSharingApp.DealService.BusinessLogic.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.BusinessLogic\obj\Debug\net7.0\CarSharingApp.DealService.BusinessLogic.pdb
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.BusinessLogic\obj\Debug\net7.0\ref\CarSharingApp.DealService.BusinessLogic.dll
