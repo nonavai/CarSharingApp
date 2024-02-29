@@ -1,24 +1,7 @@
 ﻿using System.Text;
 using CarSharingApp.CarService.Application.Caching;
-using CarSharingApp.CarService.Application.CommandHandlers.CarCommandHandlers;
-using CarSharingApp.CarService.Application.CommandHandlers.CarStateHandlers;
-using CarSharingApp.CarService.Application.CommandHandlers.CommentCommandHandlers;
-using CarSharingApp.CarService.Application.CommandHandlers.ImageCommandHandlers;
-using CarSharingApp.CarService.Application.Commands.CarCommands;
 using CarSharingApp.CarService.Application.Commands.CarStateCommands;
-using CarSharingApp.CarService.Application.Commands.CommentCommands;
-using CarSharingApp.CarService.Application.Commands.ImageCommands;
-using CarSharingApp.CarService.Application.DTO_s.Car;
-using CarSharingApp.CarService.Application.DTO_s.CarState;
-using CarSharingApp.CarService.Application.DTO_s.Comment;
-using CarSharingApp.CarService.Application.DTO_s.Image;
 using CarSharingApp.CarService.Application.Mapping;
-using CarSharingApp.CarService.Application.Queries.CarQueries;
-using CarSharingApp.CarService.Application.Queries.CommentQueries;
-using CarSharingApp.CarService.Application.Queries.ImageQueries;
-using CarSharingApp.CarService.Application.QueryHandlers.CarQueryHandlers;
-using CarSharingApp.CarService.Application.QueryHandlers.CommentQueryHandlers;
-using CarSharingApp.CarService.Application.QueryHandlers.ImageQueryHandlers;
 using CarSharingApp.CarService.Application.Repositories;
 using CarSharingApp.CarService.Infrastructure.DataBase;
 using CarSharingApp.CarService.Infrastructure.Repositories;
@@ -26,7 +9,6 @@ using CarSharingApp.CarService.WebAPI.Consumers;
 using CarSharingApp.CarService.WebAPI.Extensions;
 using CarSharingApp.CarService.WebAPI.MiddleWares;
 using MassTransit;
-using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -34,6 +16,7 @@ using Microsoft.IdentityModel.Tokens;
 using Minio;
 using StackExchange.Redis;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using UserService;
 
 namespace CarSharingApp.CarService.WebAPI;
 
@@ -42,31 +25,7 @@ public class Startup
     public static void ConfigureServices(IServiceCollection services)
     {
         services.AddAutoMapper(typeof(MappingProfile));
-        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
-        //Car CommandHandlers
-        services.AddTransient<IRequestHandler<CreateCarCommand, CarDto>, CreateCarHandler>();
-        services.AddTransient<IRequestHandler<UpdateCarCommand, CarDto>, UpdateCarHandler>();
-        services.AddTransient<IRequestHandler<DeleteCarCommand, CarDto>, DeleteCarHandler>();
-        services.AddTransient<IRequestHandler<DeleteCarByUserCommand, IEnumerable<CarDto>>, DeleteCarByUserHandler>();
-        //Comment CommandHandlers
-        services.AddTransient<IRequestHandler<UpdateCommentCommand, CommentDto>, UpdateCommentHandler>();
-        services.AddTransient<IRequestHandler<CreateCommentCommand, CommentDto>, CreateCommentHandler>();
-        services.AddTransient<IRequestHandler<DeleteCommentCommand, CommentDto>, DeleteCommentHandler>();
-        //Image CommandHandlers
-        services.AddTransient<IRequestHandler<CreateImageCommand, ImageDto>, CreateImageHandler>();
-        services.AddTransient<IRequestHandler<UpdateImagePriorityCommand, ImageDto>, UpdateImagePriorityHandler>();
-        services.AddTransient<IRequestHandler<DeleteImageCommand, ImageDto>, DeleteImageHandler>();
-        //CarState CommandHandlers
-        services.AddTransient<IRequestHandler<UpdateCarStatusCommand, CarStateDto>, UpdateCarStatusHandler>();
-        services.AddTransient<IRequestHandler<UpdateCarLocationCommand, CarStateDto>, UpdateCarLocationHandler>();
-        //Car QueryHandlers
-        services.AddTransient<IRequestHandler<GetCarQuery, CarFullDto>, GetCarHandler>();
-        services.AddTransient<IRequestHandler<GetCarsByParamsQuery, IEnumerable<CarWithImageDto>>, GetCarsByParamsHandler>();
-        services.AddTransient<IRequestHandler<GetCarByUserQuery, IEnumerable<CarDto>>, GetCarByUserHandler>();
-        //Comment QueryHandlers
-        services.AddTransient<IRequestHandler<GetCommentsByCarQuery, IEnumerable<CommentDto>>, GetCommentsByCarHandler>();
-        //Image QueryHandlers
-        services.AddTransient<IRequestHandler<GetImagesByCarQuery, IEnumerable<ImageFullDto>>, GetImagesByCarHandler>();
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(UpdateCarStatusCommand).Assembly));
     }
 
     public static void ConfigureMassTransit(IServiceCollection services, ConfigurationManager config)
@@ -165,6 +124,18 @@ public class Startup
                     ValidateIssuerSigningKey = true
                 };
             });
+    }
+
+    public static void ConfigureGRPC(IServiceCollection services, ConfigurationManager config)
+    {
+        services.AddGrpc();
+        services.AddGrpcClient<User.UserClient>(options =>
+            options.Address = new Uri(config["gRPC:UserConnection"]));
+    }
+    
+    public static void ConfigureGRPC(WebApplication app)
+    {
+        app.MapGrpcService<gRPC.Services.CarService>();
     }
     
     public static void ConfigureRedis(IServiceCollection services, ConfigurationManager config)

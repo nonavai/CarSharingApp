@@ -24,6 +24,7 @@ public class MappingProfile : Profile
                         {
                             Id = src.CarState.Id,
                             CarId = src.CarState.CarId,
+                            Status = src.CarState.Status,
                             Latitude = src.CarState.Latitude,
                             Longitude = src.CarState.Longitude
                         }))
@@ -47,6 +48,7 @@ public class MappingProfile : Profile
         CreateMap<UpdateCarStatusCommand, Car>();
         CreateMap<UpdateCarLocationCommand, Car>();
         CreateMap<Car, CarStateDto>();
+        CreateMap<CarState, CarStateDto>();
 
         CreateMap<CreateCommentCommand, Comment>();
         CreateMap<UpdateCommentCommand, Comment>();

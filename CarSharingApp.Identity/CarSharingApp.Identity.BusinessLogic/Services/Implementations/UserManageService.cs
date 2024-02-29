@@ -177,4 +177,11 @@ public class UserManageService : IUserManageService
             throw new IdentityException(errorMessage);
         }
     }
+
+    public async Task<bool> IsUserExits(string id)
+    {
+        var user = await _userRepository.GetByIdAsync(id);
+        
+        return user != null;
+    }
 }

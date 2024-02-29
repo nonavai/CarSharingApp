@@ -124,3 +124,10 @@ C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Id
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.API\bin\Debug\net7.0\tr-TR\Hangfire.Core.resources.dll
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.API\bin\Debug\net7.0\zh-TW\Hangfire.Core.resources.dll
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.API\bin\Debug\net7.0\zh\Hangfire.Core.resources.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.API\bin\Debug\net7.0\Google.Protobuf.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.API\bin\Debug\net7.0\Grpc.AspNetCore.Server.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.API\bin\Debug\net7.0\Grpc.AspNetCore.Server.ClientFactory.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.API\bin\Debug\net7.0\Grpc.Core.Api.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.API\bin\Debug\net7.0\Grpc.Net.Client.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.API\bin\Debug\net7.0\Grpc.Net.ClientFactory.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.API\bin\Debug\net7.0\Grpc.Net.Common.dll

@@ -24,6 +24,7 @@ var app = builder.Build();
 Startup.ConfigureMiddlewares(app);
 Startup.ConfigureHangfire(app, config);
 Startup.ScheduleLicenceCheck(builder.Services);
+Startup.ConfigureGRPC(app);
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
