@@ -8,10 +8,14 @@
           "Microsoft.CSharp": "4.7.0"
         },
         "compile": {
-          "lib/netstandard2.1/AutoMapper.dll": {}
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/AutoMapper.dll": {}
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
         }
       },
       "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
@@ -30,10 +34,14 @@
       "AWSSDK.Core/3.7.100.14": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.1/AWSSDK.Core.dll": {}
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp3.1/AWSSDK.Core.dll": {}
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "AWSSDK.SecurityToken/3.7.100.14": {
@@ -42,10 +50,14 @@
           "AWSSDK.Core": "[3.7.100.14, 4.0.0)"
         },
         "compile": {
-          "lib/netcoreapp3.1/AWSSDK.SecurityToken.dll": {}
+          "lib/netcoreapp3.1/AWSSDK.SecurityToken.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp3.1/AWSSDK.SecurityToken.dll": {}
+          "lib/netcoreapp3.1/AWSSDK.SecurityToken.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Azure.Core/1.35.0": {
@@ -60,10 +72,14 @@
           "System.Threading.Tasks.Extensions": "4.5.4"
         },
         "compile": {
-          "lib/net6.0/Azure.Core.dll": {}
+          "lib/net6.0/Azure.Core.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Azure.Core.dll": {}
+          "lib/net6.0/Azure.Core.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Azure.Identity/1.10.3": {
@@ -78,10 +94,14 @@
           "System.Threading.Tasks.Extensions": "4.5.4"
         },
         "compile": {
-          "lib/netstandard2.0/Azure.Identity.dll": {}
+          "lib/netstandard2.0/Azure.Identity.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Azure.Identity.dll": {}
+          "lib/netstandard2.0/Azure.Identity.dll": {
+            "related": ".xml"
+          }
         }
       },
       "DnsClient/1.6.1": {
@@ -90,19 +110,27 @@
           "Microsoft.Win32.Registry": "5.0.0"
         },
         "compile": {
-          "lib/net5.0/DnsClient.dll": {}
+          "lib/net5.0/DnsClient.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net5.0/DnsClient.dll": {}
+          "lib/net5.0/DnsClient.dll": {
+            "related": ".xml"
+          }
         }
       },
       "FluentValidation/11.5.1": {
         "type": "package",
         "compile": {
-          "lib/net7.0/FluentValidation.dll": {}
+          "lib/net7.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/FluentValidation.dll": {}
+          "lib/net7.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
         }
       },
       "FluentValidation.AspNetCore/11.3.0": {
@@ -112,10 +140,14 @@
           "FluentValidation.DependencyInjectionExtensions": "11.5.1"
         },
         "compile": {
-          "lib/net6.0/FluentValidation.AspNetCore.dll": {}
+          "lib/net6.0/FluentValidation.AspNetCore.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/FluentValidation.AspNetCore.dll": {}
+          "lib/net6.0/FluentValidation.AspNetCore.dll": {
+            "related": ".xml"
+          }
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -128,10 +160,143 @@
           "Microsoft.Extensions.Dependencyinjection.Abstractions": "2.1.0"
         },
         "compile": {
-          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {}
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {}
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Google.Protobuf/3.25.3": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Grpc.AspNetCore/2.49.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.21.5",
+          "Grpc.AspNetCore.Server.ClientFactory": "2.49.0",
+          "Grpc.Tools": "2.49.0"
+        },
+        "compile": {
+          "lib/net7.0/_._": {}
+        },
+        "runtime": {
+          "lib/net7.0/_._": {}
+        }
+      },
+      "Grpc.AspNetCore.Server/2.49.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Net.Common": "2.49.0"
+        },
+        "compile": {
+          "lib/net7.0/Grpc.AspNetCore.Server.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Grpc.AspNetCore.Server.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Grpc.AspNetCore.Server.ClientFactory/2.49.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.AspNetCore.Server": "2.49.0",
+          "Grpc.Net.ClientFactory": "2.49.0"
+        },
+        "compile": {
+          "lib/net7.0/Grpc.AspNetCore.Server.ClientFactory.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Grpc.AspNetCore.Server.ClientFactory.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Grpc.Core.Api/2.61.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Grpc.Net.Client/2.61.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Net.Common": "2.61.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Grpc.Net.Client.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Grpc.Net.Client.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Grpc.Net.ClientFactory/2.49.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Net.Client": "2.49.0",
+          "Microsoft.Extensions.Http": "3.0.3"
+        },
+        "compile": {
+          "lib/net7.0/Grpc.Net.ClientFactory.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Grpc.Net.ClientFactory.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Grpc.Net.Common/2.61.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Core.Api": "2.61.0"
+        },
+        "compile": {
+          "lib/net7.0/Grpc.Net.Common.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Grpc.Net.Common.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Hangfire/1.8.10": {
@@ -148,10 +313,14 @@
           "Hangfire.NetCore": "[1.8.10]"
         },
         "compile": {
-          "lib/netcoreapp3.0/Hangfire.AspNetCore.dll": {}
+          "lib/netcoreapp3.0/Hangfire.AspNetCore.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp3.0/Hangfire.AspNetCore.dll": {}
+          "lib/netcoreapp3.0/Hangfire.AspNetCore.dll": {
+            "related": ".xml"
+          }
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -163,10 +332,14 @@
           "Newtonsoft.Json": "11.0.1"
         },
         "compile": {
-          "lib/netstandard2.0/Hangfire.Core.dll": {}
+          "lib/netstandard2.0/Hangfire.Core.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Hangfire.Core.dll": {}
+          "lib/netstandard2.0/Hangfire.Core.dll": {
+            "related": ".xml"
+          }
         },
         "resource": {
           "lib/netstandard2.0/ca/Hangfire.Core.resources.dll": {
@@ -222,10 +395,14 @@
           "Microsoft.Extensions.Logging.Abstractions": "3.0.0"
         },
         "compile": {
-          "lib/netstandard2.1/Hangfire.NetCore.dll": {}
+          "lib/netstandard2.1/Hangfire.NetCore.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/Hangfire.NetCore.dll": {}
+          "lib/netstandard2.1/Hangfire.NetCore.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Hangfire.SqlServer/1.8.10": {
@@ -234,19 +411,27 @@
           "Hangfire.Core": "[1.8.10]"
         },
         "compile": {
-          "lib/netstandard2.0/Hangfire.SqlServer.dll": {}
+          "lib/netstandard2.0/Hangfire.SqlServer.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Hangfire.SqlServer.dll": {}
+          "lib/netstandard2.0/Hangfire.SqlServer.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
-          "lib/net6.0/_._": {}
+          "lib/net6.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Humanizer.dll": {}
+          "lib/net6.0/Humanizer.dll": {
+            "related": ".xml"
+          }
         }
       },
       "JsonConverter.Abstractions/0.5.0": {
@@ -274,19 +459,27 @@
           "System.Threading.Channels": "7.0.0"
         },
         "compile": {
-          "lib/net7.0/MassTransit.dll": {}
+          "lib/net7.0/MassTransit.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/MassTransit.dll": {}
+          "lib/net7.0/MassTransit.dll": {
+            "related": ".xml"
+          }
         }
       },
       "MassTransit.Abstractions/8.1.3": {
         "type": "package",
         "compile": {
-          "lib/net7.0/MassTransit.Abstractions.dll": {}
+          "lib/net7.0/MassTransit.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/MassTransit.Abstractions.dll": {}
+          "lib/net7.0/MassTransit.Abstractions.dll": {
+            "related": ".xml"
+          }
         }
       },
       "MassTransit.EntityFrameworkCore/8.1.3": {
@@ -296,10 +489,14 @@
           "Microsoft.EntityFrameworkCore.Relational": "7.0.11"
         },
         "compile": {
-          "lib/net7.0/MassTransit.EntityFrameworkCoreIntegration.dll": {}
+          "lib/net7.0/MassTransit.EntityFrameworkCoreIntegration.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/MassTransit.EntityFrameworkCoreIntegration.dll": {}
+          "lib/net7.0/MassTransit.EntityFrameworkCoreIntegration.dll": {
+            "related": ".xml"
+          }
         }
       },
       "MassTransit.RabbitMQ/8.1.3": {
@@ -309,10 +506,14 @@
           "RabbitMQ.Client": "6.8.1"
         },
         "compile": {
-          "lib/net7.0/MassTransit.RabbitMqTransport.dll": {}
+          "lib/net7.0/MassTransit.RabbitMqTransport.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/MassTransit.RabbitMqTransport.dll": {}
+          "lib/net7.0/MassTransit.RabbitMqTransport.dll": {
+            "related": ".xml"
+          }
         }
       },
       "MediatR/12.2.0": {
@@ -322,19 +523,27 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
         },
         "compile": {
-          "lib/net6.0/MediatR.dll": {}
+          "lib/net6.0/MediatR.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/MediatR.dll": {}
+          "lib/net6.0/MediatR.dll": {
+            "related": ".xml"
+          }
         }
       },
       "MediatR.Contracts/2.0.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/MediatR.Contracts.dll": {}
+          "lib/netstandard2.0/MediatR.Contracts.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/MediatR.Contracts.dll": {}
+          "lib/netstandard2.0/MediatR.Contracts.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.15": {
@@ -343,10 +552,14 @@
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.35.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -358,7 +571,9 @@
           "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.CSharp/4.7.0": {
@@ -388,10 +603,14 @@
           "System.Text.Encodings.Web": "6.0.0"
         },
         "compile": {
-          "ref/net6.0/Microsoft.Data.SqlClient.dll": {}
+          "ref/net6.0/Microsoft.Data.SqlClient.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Data.SqlClient.dll": {}
+          "lib/net6.0/Microsoft.Data.SqlClient.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/unix/lib/net6.0/Microsoft.Data.SqlClient.dll": {
@@ -435,10 +654,14 @@
           "Microsoft.Extensions.Logging": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.dll": {}
+          "lib/net6.0/Microsoft.EntityFrameworkCore.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.dll": {}
+          "lib/net6.0/Microsoft.EntityFrameworkCore.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props": {}
@@ -447,10 +670,14 @@
       "Microsoft.EntityFrameworkCore.Abstractions/7.0.16": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/7.0.16": {
@@ -471,10 +698,14 @@
           "Mono.TextTemplating": "2.2.1"
         },
         "compile": {
-          "lib/net6.0/_._": {}
+          "lib/net6.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {}
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "build/net6.0/Microsoft.EntityFrameworkCore.Design.props": {}
@@ -487,10 +718,14 @@
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll": {}
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll": {}
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.EntityFrameworkCore.SqlServer/7.0.16": {
@@ -500,10 +735,14 @@
           "Microsoft.EntityFrameworkCore.Relational": "7.0.16"
         },
         "compile": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
+          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
+          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/7.0.0": {
@@ -512,10 +751,14 @@
           "Microsoft.Extensions.Primitives": "7.0.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.Caching.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Caching.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Caching.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Caching.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -531,10 +774,14 @@
           "Microsoft.Extensions.Primitives": "7.0.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.Caching.Memory.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Caching.Memory.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Caching.Memory.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Caching.Memory.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -547,10 +794,14 @@
           "Microsoft.Extensions.Primitives": "8.0.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.Configuration.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Configuration.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Configuration.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Configuration.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -562,10 +813,14 @@
           "Microsoft.Extensions.Primitives": "8.0.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -577,10 +832,14 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.DependencyInjection.dll": {}
+          "lib/net7.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.DependencyInjection.dll": {}
+          "lib/net7.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -589,10 +848,14 @@
       "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -605,10 +868,14 @@
           "System.Text.Json": "7.0.0"
         },
         "compile": {
-          "lib/net7.0/_._": {}
+          "lib/net7.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.DependencyModel.dll": {}
+          "lib/net7.0/Microsoft.Extensions.DependencyModel.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -623,19 +890,27 @@
           "Microsoft.Extensions.Options": "7.0.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/7.0.1": {
         "type": "package",
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.FileProviders.Abstractions/7.0.0": {
@@ -644,10 +919,14 @@
           "Microsoft.Extensions.Primitives": "7.0.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -661,13 +940,35 @@
           "Microsoft.Extensions.FileProviders.Abstractions": "7.0.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.Hosting.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Hosting.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Http/3.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.0.3",
+          "Microsoft.Extensions.Logging": "3.0.3",
+          "Microsoft.Extensions.Options": "3.0.3"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Logging/7.0.0": {
@@ -679,10 +980,14 @@
           "Microsoft.Extensions.Options": "7.0.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.Logging.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Logging.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -691,10 +996,14 @@
       "Microsoft.Extensions.Logging.Abstractions/7.0.1": {
         "type": "package",
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
@@ -707,10 +1016,14 @@
           "Microsoft.Extensions.Primitives": "7.0.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.Options.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Options.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Options.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Options.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -719,10 +1032,14 @@
       "Microsoft.Extensions.Primitives/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.Primitives.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Primitives.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Primitives.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Primitives.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -734,10 +1051,14 @@
           "Microsoft.IdentityModel.Abstractions": "6.22.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.Identity.Client.dll": {}
+          "lib/net6.0/Microsoft.Identity.Client.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Identity.Client.dll": {}
+          "lib/net6.0/Microsoft.Identity.Client.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Identity.Client.Extensions.Msal/4.56.0": {
@@ -748,19 +1069,27 @@
           "System.Security.Cryptography.ProtectedData": "4.5.0"
         },
         "compile": {
-          "lib/netstandard2.0/Microsoft.Identity.Client.Extensions.Msal.dll": {}
+          "lib/netstandard2.0/Microsoft.Identity.Client.Extensions.Msal.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Identity.Client.Extensions.Msal.dll": {}
+          "lib/netstandard2.0/Microsoft.Identity.Client.Extensions.Msal.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.IdentityModel.Abstractions/6.35.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Microsoft.IdentityModel.Abstractions.dll": {}
+          "lib/net6.0/Microsoft.IdentityModel.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.IdentityModel.Abstractions.dll": {}
+          "lib/net6.0/Microsoft.IdentityModel.Abstractions.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.IdentityModel.JsonWebTokens/6.35.0": {
@@ -772,10 +1101,14 @@
           "System.Text.Json": "4.7.2"
         },
         "compile": {
-          "lib/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
+          "lib/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
+          "lib/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.IdentityModel.Logging/6.35.0": {
@@ -784,10 +1117,14 @@
           "Microsoft.IdentityModel.Abstractions": "6.35.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.IdentityModel.Logging.dll": {}
+          "lib/net6.0/Microsoft.IdentityModel.Logging.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.IdentityModel.Logging.dll": {}
+          "lib/net6.0/Microsoft.IdentityModel.Logging.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.IdentityModel.Protocols/6.35.0": {
@@ -797,10 +1134,14 @@
           "Microsoft.IdentityModel.Tokens": "6.35.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.IdentityModel.Protocols.dll": {}
+          "lib/net6.0/Microsoft.IdentityModel.Protocols.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.IdentityModel.Protocols.dll": {}
+          "lib/net6.0/Microsoft.IdentityModel.Protocols.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.IdentityModel.Protocols.OpenIdConnect/6.35.0": {
@@ -810,10 +1151,14 @@
           "System.IdentityModel.Tokens.Jwt": "6.35.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {}
+          "lib/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {}
+          "lib/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.IdentityModel.Tokens/6.35.0": {
@@ -824,10 +1169,14 @@
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.IdentityModel.Tokens.dll": {}
+          "lib/net6.0/Microsoft.IdentityModel.Tokens.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.IdentityModel.Tokens.dll": {}
+          "lib/net6.0/Microsoft.IdentityModel.Tokens.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {
@@ -851,19 +1200,27 @@
       "Microsoft.OpenApi/1.6.13": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Microsoft.SqlServer.Server/1.0.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {}
+          "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {}
+          "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Microsoft.Win32.Registry/5.0.0": {
@@ -873,10 +1230,14 @@
           "System.Security.Principal.Windows": "5.0.0"
         },
         "compile": {
-          "ref/netstandard2.0/Microsoft.Win32.Registry.dll": {}
+          "ref/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {}
+          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
@@ -888,10 +1249,14 @@
       "Microsoft.Win32.SystemEvents/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/_._": {}
+          "lib/net6.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {}
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -910,10 +1275,14 @@
           "System.Runtime.CompilerServices.Unsafe": "5.0.0"
         },
         "compile": {
-          "lib/netstandard2.1/MongoDB.Bson.dll": {}
+          "lib/netstandard2.1/MongoDB.Bson.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/MongoDB.Bson.dll": {}
+          "lib/netstandard2.1/MongoDB.Bson.dll": {
+            "related": ".xml"
+          }
         }
       },
       "MongoDB.Driver/2.23.1": {
@@ -925,10 +1294,14 @@
           "MongoDB.Libmongocrypt": "1.8.0"
         },
         "compile": {
-          "lib/netstandard2.1/MongoDB.Driver.dll": {}
+          "lib/netstandard2.1/MongoDB.Driver.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/MongoDB.Driver.dll": {}
+          "lib/netstandard2.1/MongoDB.Driver.dll": {
+            "related": ".xml"
+          }
         }
       },
       "MongoDB.Driver.Core/2.23.1": {
@@ -945,10 +1318,14 @@
           "ZstdSharp.Port": "0.7.3"
         },
         "compile": {
-          "lib/netstandard2.1/MongoDB.Driver.Core.dll": {}
+          "lib/netstandard2.1/MongoDB.Driver.Core.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/MongoDB.Driver.Core.dll": {}
+          "lib/netstandard2.1/MongoDB.Driver.Core.dll": {
+            "related": ".xml"
+          }
         }
       },
       "MongoDB.Libmongocrypt/1.8.0": {
@@ -1002,19 +1379,27 @@
           "System.Memory": "4.5.4"
         },
         "compile": {
-          "lib/netstandard2.0/NetTopologySuite.dll": {}
+          "lib/netstandard2.0/NetTopologySuite.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/NetTopologySuite.dll": {}
+          "lib/netstandard2.0/NetTopologySuite.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Newtonsoft.Json/11.0.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       },
       "NRedisStack/0.11.0": {
@@ -1036,10 +1421,14 @@
           "System.IO.Pipelines": "5.0.1"
         },
         "compile": {
-          "lib/net5.0/Pipelines.Sockets.Unofficial.dll": {}
+          "lib/net5.0/Pipelines.Sockets.Unofficial.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net5.0/Pipelines.Sockets.Unofficial.dll": {}
+          "lib/net5.0/Pipelines.Sockets.Unofficial.dll": {
+            "related": ".xml"
+          }
         }
       },
       "RabbitMQ.Client/6.8.1": {
@@ -1049,10 +1438,14 @@
           "System.Threading.Channels": "7.0.0"
         },
         "compile": {
-          "lib/netstandard2.0/RabbitMQ.Client.dll": {}
+          "lib/netstandard2.0/RabbitMQ.Client.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/RabbitMQ.Client.dll": {}
+          "lib/netstandard2.0/RabbitMQ.Client.dll": {
+            "related": ".xml"
+          }
         }
       },
       "SharpCompress/0.30.1": {
@@ -1067,10 +1460,14 @@
       "Snappier/1.0.0": {
         "type": "package",
         "compile": {
-          "lib/net5.0/Snappier.dll": {}
+          "lib/net5.0/Snappier.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net5.0/Snappier.dll": {}
+          "lib/net5.0/Snappier.dll": {
+            "related": ".xml"
+          }
         }
       },
       "StackExchange.Redis/2.7.20": {
@@ -1080,10 +1477,14 @@
           "Pipelines.Sockets.Unofficial": "2.2.8"
         },
         "compile": {
-          "lib/net6.0/StackExchange.Redis.dll": {}
+          "lib/net6.0/StackExchange.Redis.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/StackExchange.Redis.dll": {}
+          "lib/net6.0/StackExchange.Redis.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Swashbuckle.AspNetCore.Swagger/6.5.0": {
@@ -1092,10 +1493,14 @@
           "Microsoft.OpenApi": "1.2.3"
         },
         "compile": {
-          "lib/net7.0/Swashbuckle.AspNetCore.Swagger.dll": {}
+          "lib/net7.0/Swashbuckle.AspNetCore.Swagger.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Swashbuckle.AspNetCore.Swagger.dll": {}
+          "lib/net7.0/Swashbuckle.AspNetCore.Swagger.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -1107,19 +1512,27 @@
           "Swashbuckle.AspNetCore.Swagger": "6.5.0"
         },
         "compile": {
-          "lib/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+          "lib/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+          "lib/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Swashbuckle.AspNetCore.SwaggerUI/6.5.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+          "lib/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+          "lib/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -1137,7 +1550,9 @@
       "System.CodeDom/4.4.0": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
           "lib/netstandard2.0/System.CodeDom.dll": {}
@@ -1150,10 +1565,14 @@
           "System.Security.Permissions": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {}
+          "lib/net6.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {}
+          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -1162,10 +1581,14 @@
       "System.Diagnostics.DiagnosticSource/7.0.1": {
         "type": "package",
         "compile": {
-          "lib/net7.0/System.Diagnostics.DiagnosticSource.dll": {}
+          "lib/net7.0/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/System.Diagnostics.DiagnosticSource.dll": {}
+          "lib/net7.0/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -1177,10 +1600,14 @@
           "Microsoft.Win32.SystemEvents": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {}
+          "lib/net6.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Drawing.Common.dll": {}
+          "lib/net6.0/System.Drawing.Common.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -1199,10 +1626,14 @@
       "System.Formats.Asn1/5.0.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/_._": {}
+          "lib/netstandard2.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Formats.Asn1.dll": {}
+          "lib/netstandard2.0/System.Formats.Asn1.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.IdentityModel.Tokens.Jwt/6.35.0": {
@@ -1212,10 +1643,14 @@
           "Microsoft.IdentityModel.Tokens": "6.35.0"
         },
         "compile": {
-          "lib/net6.0/System.IdentityModel.Tokens.Jwt.dll": {}
+          "lib/net6.0/System.IdentityModel.Tokens.Jwt.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.IdentityModel.Tokens.Jwt.dll": {}
+          "lib/net6.0/System.IdentityModel.Tokens.Jwt.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.IO.FileSystem.AccessControl/5.0.0": {
@@ -1225,10 +1660,14 @@
           "System.Security.Principal.Windows": "5.0.0"
         },
         "compile": {
-          "ref/netstandard2.0/System.IO.FileSystem.AccessControl.dll": {}
+          "ref/netstandard2.0/System.IO.FileSystem.AccessControl.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.IO.FileSystem.AccessControl.dll": {}
+          "lib/netstandard2.0/System.IO.FileSystem.AccessControl.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/win/lib/netstandard2.0/System.IO.FileSystem.AccessControl.dll": {
@@ -1240,10 +1679,14 @@
       "System.IO.Pipelines/5.0.1": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp2.0/System.IO.Pipelines.dll": {}
+          "ref/netcoreapp2.0/System.IO.Pipelines.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp3.0/System.IO.Pipelines.dll": {}
+          "lib/netcoreapp3.0/System.IO.Pipelines.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Memory/4.5.5": {
@@ -1262,10 +1705,14 @@
           "System.Text.Json": "4.6.0"
         },
         "compile": {
-          "lib/netstandard2.0/System.Memory.Data.dll": {}
+          "lib/netstandard2.0/System.Memory.Data.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Memory.Data.dll": {}
+          "lib/netstandard2.0/System.Memory.Data.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Numerics.Vectors/4.5.0": {
@@ -1302,7 +1749,9 @@
           "Microsoft.NETCore.Targets": "1.1.0"
         },
         "compile": {
-          "ref/netstandard1.5/System.Runtime.dll": {}
+          "ref/netstandard1.5/System.Runtime.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Runtime.Caching/6.0.0": {
@@ -1311,10 +1760,14 @@
           "System.Configuration.ConfigurationManager": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {}
+          "lib/net6.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Runtime.Caching.dll": {}
+          "lib/net6.0/System.Runtime.Caching.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -1329,10 +1782,14 @@
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -1341,10 +1798,14 @@
       "System.Security.AccessControl/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/System.Security.AccessControl.dll": {}
+          "lib/net6.0/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Security.AccessControl.dll": {}
+          "lib/net6.0/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -1362,10 +1823,14 @@
           "System.Formats.Asn1": "5.0.0"
         },
         "compile": {
-          "ref/netcoreapp3.0/System.Security.Cryptography.Cng.dll": {}
+          "ref/netcoreapp3.0/System.Security.Cryptography.Cng.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp3.0/System.Security.Cryptography.Cng.dll": {}
+          "lib/netcoreapp3.0/System.Security.Cryptography.Cng.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/win/lib/netcoreapp3.0/System.Security.Cryptography.Cng.dll": {
@@ -1377,10 +1842,14 @@
       "System.Security.Cryptography.ProtectedData/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {}
+          "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {}
+          "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -1399,10 +1868,14 @@
           "System.Windows.Extensions": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {}
+          "lib/net6.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Security.Permissions.dll": {}
+          "lib/net6.0/System.Security.Permissions.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -1411,10 +1884,14 @@
       "System.Security.Principal.Windows/5.0.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {}
+          "ref/netcoreapp3.0/System.Security.Principal.Windows.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {}
+          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
@@ -1435,7 +1912,9 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Text.Encoding.dll": {}
+          "ref/netstandard1.3/System.Text.Encoding.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Text.Encoding.CodePages/6.0.0": {
@@ -1444,10 +1923,14 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {}
+          "lib/net6.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Text.Encoding.CodePages.dll": {}
+          "lib/net6.0/System.Text.Encoding.CodePages.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -1462,10 +1945,14 @@
       "System.Text.Encodings.Web/7.0.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/System.Text.Encodings.Web.dll": {}
+          "lib/net7.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/System.Text.Encodings.Web.dll": {}
+          "lib/net7.0/System.Text.Encodings.Web.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -1483,10 +1970,14 @@
           "System.Text.Encodings.Web": "7.0.0"
         },
         "compile": {
-          "lib/net7.0/System.Text.Json.dll": {}
+          "lib/net7.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/System.Text.Json.dll": {}
+          "lib/net7.0/System.Text.Json.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/System.Text.Json.targets": {}
@@ -1495,10 +1986,14 @@
       "System.Threading.Channels/7.0.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/System.Threading.Channels.dll": {}
+          "lib/net7.0/System.Threading.Channels.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/System.Threading.Channels.dll": {}
+          "lib/net7.0/System.Threading.Channels.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -1519,10 +2014,14 @@
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {}
+          "lib/net6.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Windows.Extensions.dll": {}
+          "lib/net6.0/System.Windows.Extensions.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/win/lib/net6.0/System.Windows.Extensions.dll": {
@@ -1540,11 +2039,27 @@
           "lib/net7.0/ZstdSharp.dll": {}
         }
       },
+      "CarSharingApp.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Google.Protobuf": "3.25.3",
+          "Grpc.AspNetCore": "2.49.0",
+          "Grpc.Net.Client": "2.61.0"
+        },
+        "compile": {
+          "bin/placeholder/CarSharingApp.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarSharingApp.Common.dll": {}
+        }
+      },
       "CarSharingApp.DealService.BusinessLogic/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "AutoMapper": "12.0.1",
+          "CarSharingApp.Common": "1.0.0",
           "CarSharingApp.DealService.DataAccess": "1.0.0",
           "FluentValidation": "11.5.1",
           "Hangfire": "1.8.10",
@@ -1795,6 +2310,203 @@
         "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.xml",
         "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll",
         "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.xml"
+      ]
+    },
+    "Google.Protobuf/3.25.3": {
+      "sha512": "fDY/kt0gy2nVcoeMmiyDMtwgvDJG5qaU7+Ic77szKTvVkIvoo7tyf+d+QDlKSosB+FjoKocX/ObObxqKCq60uA==",
+      "type": "package",
+      "path": "google.protobuf/3.25.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "google.protobuf.3.25.3.nupkg.sha512",
+        "google.protobuf.nuspec",
+        "lib/net45/Google.Protobuf.dll",
+        "lib/net45/Google.Protobuf.pdb",
+        "lib/net45/Google.Protobuf.xml",
+        "lib/net5.0/Google.Protobuf.dll",
+        "lib/net5.0/Google.Protobuf.pdb",
+        "lib/net5.0/Google.Protobuf.xml",
+        "lib/netstandard1.1/Google.Protobuf.dll",
+        "lib/netstandard1.1/Google.Protobuf.pdb",
+        "lib/netstandard1.1/Google.Protobuf.xml",
+        "lib/netstandard2.0/Google.Protobuf.dll",
+        "lib/netstandard2.0/Google.Protobuf.pdb",
+        "lib/netstandard2.0/Google.Protobuf.xml"
+      ]
+    },
+    "Grpc.AspNetCore/2.49.0": {
+      "sha512": "IHgWR8YcLnP2Rmz3guK1mOQVDLWL6XZdZT6ktHTTdlTm60FCVwtfrGmEdyu7lEsMzMd2vYHnZ1SwRzicMW4uoA==",
+      "type": "package",
+      "path": "grpc.aspnetcore/2.49.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.aspnetcore.2.49.0.nupkg.sha512",
+        "grpc.aspnetcore.nuspec",
+        "lib/net5.0/_._",
+        "lib/net6.0/_._",
+        "lib/net7.0/_._",
+        "lib/netcoreapp3.0/_._",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.AspNetCore.Server/2.49.0": {
+      "sha512": "it0nmQi10S/cgC1nk/nVgQiYv5sd/IWnob8SsB3JEpbIFAAKaU6ZjdTKRiATunNtDb/IYBLGeo8BMDoxfewxyw==",
+      "type": "package",
+      "path": "grpc.aspnetcore.server/2.49.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.aspnetcore.server.2.49.0.nupkg.sha512",
+        "grpc.aspnetcore.server.nuspec",
+        "lib/net5.0/Grpc.AspNetCore.Server.dll",
+        "lib/net5.0/Grpc.AspNetCore.Server.pdb",
+        "lib/net5.0/Grpc.AspNetCore.Server.xml",
+        "lib/net6.0/Grpc.AspNetCore.Server.dll",
+        "lib/net6.0/Grpc.AspNetCore.Server.pdb",
+        "lib/net6.0/Grpc.AspNetCore.Server.xml",
+        "lib/net7.0/Grpc.AspNetCore.Server.dll",
+        "lib/net7.0/Grpc.AspNetCore.Server.pdb",
+        "lib/net7.0/Grpc.AspNetCore.Server.xml",
+        "lib/netcoreapp3.0/Grpc.AspNetCore.Server.dll",
+        "lib/netcoreapp3.0/Grpc.AspNetCore.Server.pdb",
+        "lib/netcoreapp3.0/Grpc.AspNetCore.Server.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.AspNetCore.Server.ClientFactory/2.49.0": {
+      "sha512": "2a30ebIihiDcJsDq4GAil2LTNY4y4bgPZLpG06WNI/JuxDkRxoQ0myuRHdVlouQ1MzkjixQepEuRvHvNHgvk6w==",
+      "type": "package",
+      "path": "grpc.aspnetcore.server.clientfactory/2.49.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grpc.aspnetcore.server.clientfactory.2.49.0.nupkg.sha512",
+        "grpc.aspnetcore.server.clientfactory.nuspec",
+        "lib/net5.0/Grpc.AspNetCore.Server.ClientFactory.dll",
+        "lib/net5.0/Grpc.AspNetCore.Server.ClientFactory.pdb",
+        "lib/net5.0/Grpc.AspNetCore.Server.ClientFactory.xml",
+        "lib/net6.0/Grpc.AspNetCore.Server.ClientFactory.dll",
+        "lib/net6.0/Grpc.AspNetCore.Server.ClientFactory.pdb",
+        "lib/net6.0/Grpc.AspNetCore.Server.ClientFactory.xml",
+        "lib/net7.0/Grpc.AspNetCore.Server.ClientFactory.dll",
+        "lib/net7.0/Grpc.AspNetCore.Server.ClientFactory.pdb",
+        "lib/net7.0/Grpc.AspNetCore.Server.ClientFactory.xml",
+        "lib/netcoreapp3.0/Grpc.AspNetCore.Server.ClientFactory.dll",
+        "lib/netcoreapp3.0/Grpc.AspNetCore.Server.ClientFactory.pdb",
+        "lib/netcoreapp3.0/Grpc.AspNetCore.Server.ClientFactory.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Core.Api/2.61.0": {
+      "sha512": "FFHazRC4SVRpeYzHudZVLTmETfweFaihQZ9xcxbny21MKaz3mmbH8d26bcJ8clCufTYoCxav6nz1moyoxJ+olw==",
+      "type": "package",
+      "path": "grpc.core.api/2.61.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.core.api.2.61.0.nupkg.sha512",
+        "grpc.core.api.nuspec",
+        "lib/net462/Grpc.Core.Api.dll",
+        "lib/net462/Grpc.Core.Api.pdb",
+        "lib/net462/Grpc.Core.Api.xml",
+        "lib/netstandard2.0/Grpc.Core.Api.dll",
+        "lib/netstandard2.0/Grpc.Core.Api.pdb",
+        "lib/netstandard2.0/Grpc.Core.Api.xml",
+        "lib/netstandard2.1/Grpc.Core.Api.dll",
+        "lib/netstandard2.1/Grpc.Core.Api.pdb",
+        "lib/netstandard2.1/Grpc.Core.Api.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Net.Client/2.61.0": {
+      "sha512": "/H4WMyzoTKVBE31PaCG76c/29YTpBeP8W1Vh9of7ykmi8Iw9SlZTm+8quZ35DzRkORZSV6T8CvYPwCVxJzTUKA==",
+      "type": "package",
+      "path": "grpc.net.client/2.61.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.net.client.2.61.0.nupkg.sha512",
+        "grpc.net.client.nuspec",
+        "lib/net462/Grpc.Net.Client.dll",
+        "lib/net462/Grpc.Net.Client.pdb",
+        "lib/net462/Grpc.Net.Client.xml",
+        "lib/net6.0/Grpc.Net.Client.dll",
+        "lib/net6.0/Grpc.Net.Client.pdb",
+        "lib/net6.0/Grpc.Net.Client.xml",
+        "lib/net7.0/Grpc.Net.Client.dll",
+        "lib/net7.0/Grpc.Net.Client.pdb",
+        "lib/net7.0/Grpc.Net.Client.xml",
+        "lib/net8.0/Grpc.Net.Client.dll",
+        "lib/net8.0/Grpc.Net.Client.pdb",
+        "lib/net8.0/Grpc.Net.Client.xml",
+        "lib/netstandard2.0/Grpc.Net.Client.dll",
+        "lib/netstandard2.0/Grpc.Net.Client.pdb",
+        "lib/netstandard2.0/Grpc.Net.Client.xml",
+        "lib/netstandard2.1/Grpc.Net.Client.dll",
+        "lib/netstandard2.1/Grpc.Net.Client.pdb",
+        "lib/netstandard2.1/Grpc.Net.Client.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Net.ClientFactory/2.49.0": {
+      "sha512": "4Ac7dsrARbcs1g2vrUSUadtZ0kIGTk6yhA5ccOBjgM+RTzY3L54TgMddmeaV7/Z4f9sZn6T1ls6FmUiG8Dms+Q==",
+      "type": "package",
+      "path": "grpc.net.clientfactory/2.49.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.net.clientfactory.2.49.0.nupkg.sha512",
+        "grpc.net.clientfactory.nuspec",
+        "lib/net5.0/Grpc.Net.ClientFactory.dll",
+        "lib/net5.0/Grpc.Net.ClientFactory.pdb",
+        "lib/net5.0/Grpc.Net.ClientFactory.xml",
+        "lib/net6.0/Grpc.Net.ClientFactory.dll",
+        "lib/net6.0/Grpc.Net.ClientFactory.pdb",
+        "lib/net6.0/Grpc.Net.ClientFactory.xml",
+        "lib/net7.0/Grpc.Net.ClientFactory.dll",
+        "lib/net7.0/Grpc.Net.ClientFactory.pdb",
+        "lib/net7.0/Grpc.Net.ClientFactory.xml",
+        "lib/netstandard2.0/Grpc.Net.ClientFactory.dll",
+        "lib/netstandard2.0/Grpc.Net.ClientFactory.pdb",
+        "lib/netstandard2.0/Grpc.Net.ClientFactory.xml",
+        "lib/netstandard2.1/Grpc.Net.ClientFactory.dll",
+        "lib/netstandard2.1/Grpc.Net.ClientFactory.pdb",
+        "lib/netstandard2.1/Grpc.Net.ClientFactory.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Net.Common/2.61.0": {
+      "sha512": "7htYm01A2GCNFq6iamv1NjPycs0nslsYrDD01VAy71k8aSDISBklGJwH7iXZ+ScHdhz+qE0WVvZYVTFsfMPZzQ==",
+      "type": "package",
+      "path": "grpc.net.common/2.61.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grpc.net.common.2.61.0.nupkg.sha512",
+        "grpc.net.common.nuspec",
+        "lib/net6.0/Grpc.Net.Common.dll",
+        "lib/net6.0/Grpc.Net.Common.pdb",
+        "lib/net6.0/Grpc.Net.Common.xml",
+        "lib/net7.0/Grpc.Net.Common.dll",
+        "lib/net7.0/Grpc.Net.Common.pdb",
+        "lib/net7.0/Grpc.Net.Common.xml",
+        "lib/net8.0/Grpc.Net.Common.dll",
+        "lib/net8.0/Grpc.Net.Common.pdb",
+        "lib/net8.0/Grpc.Net.Common.xml",
+        "lib/netstandard2.0/Grpc.Net.Common.dll",
+        "lib/netstandard2.0/Grpc.Net.Common.pdb",
+        "lib/netstandard2.0/Grpc.Net.Common.xml",
+        "lib/netstandard2.1/Grpc.Net.Common.dll",
+        "lib/netstandard2.1/Grpc.Net.Common.pdb",
+        "lib/netstandard2.1/Grpc.Net.Common.xml",
+        "packageIcon.png"
       ]
     },
     "Hangfire/1.8.10": {
@@ -2698,6 +3410,22 @@
         "microsoft.extensions.hosting.abstractions.7.0.0.nupkg.sha512",
         "microsoft.extensions.hosting.abstractions.nuspec",
         "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Http/3.0.3": {
+      "sha512": "dcyB8szIcSynjVZRuFgqkZpPgTc5zeRSj1HMXSmNqWbHYKiPYJl8ZQgBHz6wmZNSUUNGpCs5uxUg8DZHHDC1Ew==",
+      "type": "package",
+      "path": "microsoft.extensions.http/3.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netcoreapp3.0/Microsoft.Extensions.Http.dll",
+        "lib/netcoreapp3.0/Microsoft.Extensions.Http.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.xml",
+        "microsoft.extensions.http.3.0.3.nupkg.sha512",
+        "microsoft.extensions.http.nuspec"
       ]
     },
     "Microsoft.Extensions.Logging/7.0.0": {
@@ -4666,6 +5394,11 @@
         "zstdsharp.port.nuspec"
       ]
     },
+    "CarSharingApp.Common/1.0.0": {
+      "type": "project",
+      "path": "../../CarSharingApp.Common/CarSharingApp.Common/CarSharingApp.Common.csproj",
+      "msbuildProject": "../../CarSharingApp.Common/CarSharingApp.Common/CarSharingApp.Common.csproj"
+    },
     "CarSharingApp.DealService.BusinessLogic/1.0.0": {
       "type": "project",
       "path": "../CarSharingApp.DealService.BusinessLogic/CarSharingApp.DealService.BusinessLogic.csproj",
@@ -4685,6 +5418,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
+      "CarSharingApp.Common >= 1.0.0",
       "CarSharingApp.DealService.BusinessLogic >= 1.0.0",
       "FluentValidation.AspNetCore >= 11.3.0",
       "MassTransit.RabbitMQ >= 8.1.3",
@@ -4731,6 +5465,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.Common\\CarSharingApp.Common\\CarSharingApp.Common.csproj": {
+              "projectPath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.Common\\CarSharingApp.Common\\CarSharingApp.Common.csproj"
+            },
             "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.DealService\\CarSharingApp.DealService.BusinessLogic\\CarSharingApp.DealService.BusinessLogic.csproj": {
               "projectPath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.DealService\\CarSharingApp.DealService.BusinessLogic\\CarSharingApp.DealService.BusinessLogic.csproj"
             }

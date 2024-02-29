@@ -1,0 +1,2 @@
+obj\Debug\net7.0\Protos/Car.cs \
+obj\Debug\net7.0\Protos/CarGrpc.cs: Protos/Car.proto

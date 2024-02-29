@@ -11,6 +11,7 @@ builder.Services.AddValidatorsFromAssemblyContaining<CreateAnswerValidation>();
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddSignalR();
 
+Startup.ConfigureGRPC(builder.Services, config);
 Startup.ConfigureDataBase(builder.Services, config);
 Startup.ConfigureSwagger(builder.Services);
 Startup.ConfigureAuth(builder.Services, config);

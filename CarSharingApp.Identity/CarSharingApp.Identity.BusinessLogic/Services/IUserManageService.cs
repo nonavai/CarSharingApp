@@ -14,4 +14,5 @@ public interface IUserManageService
     Task<UserInfoCleanDto> UpdateUserInfoAsync(string id, UserInfoCleanDto dto);
     Task<UserInfoCleanDto> DeleteUserInfoAsync(string id, CancellationToken token = default);
     Task DeletingExpiredLicenceAsync();
+    Task<bool> IsUserExits(string id);
 }

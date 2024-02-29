@@ -8,28 +8,169 @@
           "Microsoft.CSharp": "4.7.0"
         },
         "compile": {
-          "lib/netstandard2.1/AutoMapper.dll": {}
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.1/AutoMapper.dll": {}
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
         }
       },
       "CommunityToolkit.HighPerformance/8.2.2": {
         "type": "package",
         "compile": {
-          "lib/net7.0/CommunityToolkit.HighPerformance.dll": {}
+          "lib/net7.0/CommunityToolkit.HighPerformance.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/CommunityToolkit.HighPerformance.dll": {}
+          "lib/net7.0/CommunityToolkit.HighPerformance.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "FluentValidation/11.9.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/FluentValidation.dll": {}
+          "lib/net7.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/FluentValidation.dll": {}
+          "lib/net7.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Google.Protobuf/3.25.3": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Grpc.AspNetCore/2.49.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.21.5",
+          "Grpc.AspNetCore.Server.ClientFactory": "2.49.0",
+          "Grpc.Tools": "2.49.0"
+        },
+        "compile": {
+          "lib/net7.0/_._": {}
+        },
+        "runtime": {
+          "lib/net7.0/_._": {}
+        }
+      },
+      "Grpc.AspNetCore.Server/2.49.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Net.Common": "2.49.0"
+        },
+        "compile": {
+          "lib/net7.0/Grpc.AspNetCore.Server.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Grpc.AspNetCore.Server.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Grpc.AspNetCore.Server.ClientFactory/2.49.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.AspNetCore.Server": "2.49.0",
+          "Grpc.Net.ClientFactory": "2.49.0"
+        },
+        "compile": {
+          "lib/net7.0/Grpc.AspNetCore.Server.ClientFactory.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Grpc.AspNetCore.Server.ClientFactory.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Grpc.Core.Api/2.61.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Grpc.Net.Client/2.61.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Net.Common": "2.61.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0"
+        },
+        "compile": {
+          "lib/net7.0/Grpc.Net.Client.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Grpc.Net.Client.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Grpc.Net.ClientFactory/2.49.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Net.Client": "2.49.0",
+          "Microsoft.Extensions.Http": "3.0.3"
+        },
+        "compile": {
+          "lib/net7.0/Grpc.Net.ClientFactory.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Grpc.Net.ClientFactory.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Grpc.Net.Common/2.61.0": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Core.Api": "2.61.0"
+        },
+        "compile": {
+          "lib/net7.0/Grpc.Net.Common.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Grpc.Net.Common.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "MediatR/12.2.0": {
@@ -39,19 +180,27 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
         },
         "compile": {
-          "lib/net6.0/MediatR.dll": {}
+          "lib/net6.0/MediatR.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/MediatR.dll": {}
+          "lib/net6.0/MediatR.dll": {
+            "related": ".xml"
+          }
         }
       },
       "MediatR.Contracts/2.0.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/MediatR.Contracts.dll": {}
+          "lib/netstandard2.0/MediatR.Contracts.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/MediatR.Contracts.dll": {}
+          "lib/netstandard2.0/MediatR.Contracts.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.AspNetCore.Http.Features/5.0.17": {
@@ -61,10 +210,14 @@
           "System.IO.Pipelines": "5.0.2"
         },
         "compile": {
-          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {}
+          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {}
+          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.CSharp/4.7.0": {
@@ -86,10 +239,14 @@
           "Microsoft.Extensions.Logging": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.dll": {}
+          "lib/net6.0/Microsoft.EntityFrameworkCore.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.dll": {}
+          "lib/net6.0/Microsoft.EntityFrameworkCore.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props": {}
@@ -98,10 +255,14 @@
       "Microsoft.EntityFrameworkCore.Abstractions/7.0.15": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/7.0.15": {
@@ -119,10 +280,14 @@
           "Microsoft.Extensions.Primitives": "7.0.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.Caching.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Caching.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Caching.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Caching.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -138,10 +303,14 @@
           "Microsoft.Extensions.Primitives": "7.0.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.Caching.Memory.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Caching.Memory.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Caching.Memory.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Caching.Memory.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -153,10 +322,14 @@
           "Microsoft.Extensions.Primitives": "7.0.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -168,10 +341,14 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.DependencyInjection.dll": {}
+          "lib/net7.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.DependencyInjection.dll": {}
+          "lib/net7.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -180,13 +357,35 @@
       "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Http/3.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.0.3",
+          "Microsoft.Extensions.Logging": "3.0.3",
+          "Microsoft.Extensions.Options": "3.0.3"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Http.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Extensions.Logging/7.0.0": {
@@ -198,10 +397,14 @@
           "Microsoft.Extensions.Options": "7.0.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.Logging.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Logging.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -210,10 +413,14 @@
       "Microsoft.Extensions.Logging.Abstractions/7.0.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
@@ -226,10 +433,14 @@
           "Microsoft.Extensions.Primitives": "7.0.0"
         },
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.Options.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Options.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Options.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Options.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -238,10 +449,14 @@
       "Microsoft.Extensions.Primitives/7.0.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/Microsoft.Extensions.Primitives.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Primitives.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Microsoft.Extensions.Primitives.dll": {}
+          "lib/net7.0/Microsoft.Extensions.Primitives.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -257,19 +472,27 @@
           "System.Reactive": "6.0.0"
         },
         "compile": {
-          "lib/net7.0/Minio.dll": {}
+          "lib/net7.0/Minio.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/Minio.dll": {}
+          "lib/net7.0/Minio.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Newtonsoft.Json.dll": {}
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/Newtonsoft.Json.dll": {}
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Pipelines.Sockets.Unofficial/2.2.8": {
@@ -278,10 +501,14 @@
           "System.IO.Pipelines": "5.0.1"
         },
         "compile": {
-          "lib/net5.0/Pipelines.Sockets.Unofficial.dll": {}
+          "lib/net5.0/Pipelines.Sockets.Unofficial.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net5.0/Pipelines.Sockets.Unofficial.dll": {}
+          "lib/net5.0/Pipelines.Sockets.Unofficial.dll": {
+            "related": ".xml"
+          }
         }
       },
       "StackExchange.Redis/2.7.20": {
@@ -291,19 +518,27 @@
           "Pipelines.Sockets.Unofficial": "2.2.8"
         },
         "compile": {
-          "lib/net6.0/StackExchange.Redis.dll": {}
+          "lib/net6.0/StackExchange.Redis.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/StackExchange.Redis.dll": {}
+          "lib/net6.0/StackExchange.Redis.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.IO.Hashing/7.0.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/System.IO.Hashing.dll": {}
+          "lib/net7.0/System.IO.Hashing.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net7.0/System.IO.Hashing.dll": {}
+          "lib/net7.0/System.IO.Hashing.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -312,19 +547,27 @@
       "System.IO.Pipelines/5.0.2": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp2.0/System.IO.Pipelines.dll": {}
+          "ref/netcoreapp2.0/System.IO.Pipelines.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp3.0/System.IO.Pipelines.dll": {}
+          "lib/netcoreapp3.0/System.IO.Pipelines.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Reactive/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/System.Reactive.dll": {}
+          "lib/net6.0/System.Reactive.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Reactive.dll": {}
+          "lib/net6.0/System.Reactive.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -341,6 +584,21 @@
         },
         "runtime": {
           "bin/placeholder/CarSharingApp.CarService.Domain.dll": {}
+        }
+      },
+      "CarSharingApp.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Google.Protobuf": "3.25.3",
+          "Grpc.AspNetCore": "2.49.0",
+          "Grpc.Net.Client": "2.61.0"
+        },
+        "compile": {
+          "bin/placeholder/CarSharingApp.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarSharingApp.Common.dll": {}
         }
       }
     }
@@ -410,6 +668,203 @@
         "lib/netstandard2.0/FluentValidation.xml",
         "lib/netstandard2.1/FluentValidation.dll",
         "lib/netstandard2.1/FluentValidation.xml"
+      ]
+    },
+    "Google.Protobuf/3.25.3": {
+      "sha512": "fDY/kt0gy2nVcoeMmiyDMtwgvDJG5qaU7+Ic77szKTvVkIvoo7tyf+d+QDlKSosB+FjoKocX/ObObxqKCq60uA==",
+      "type": "package",
+      "path": "google.protobuf/3.25.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "google.protobuf.3.25.3.nupkg.sha512",
+        "google.protobuf.nuspec",
+        "lib/net45/Google.Protobuf.dll",
+        "lib/net45/Google.Protobuf.pdb",
+        "lib/net45/Google.Protobuf.xml",
+        "lib/net5.0/Google.Protobuf.dll",
+        "lib/net5.0/Google.Protobuf.pdb",
+        "lib/net5.0/Google.Protobuf.xml",
+        "lib/netstandard1.1/Google.Protobuf.dll",
+        "lib/netstandard1.1/Google.Protobuf.pdb",
+        "lib/netstandard1.1/Google.Protobuf.xml",
+        "lib/netstandard2.0/Google.Protobuf.dll",
+        "lib/netstandard2.0/Google.Protobuf.pdb",
+        "lib/netstandard2.0/Google.Protobuf.xml"
+      ]
+    },
+    "Grpc.AspNetCore/2.49.0": {
+      "sha512": "IHgWR8YcLnP2Rmz3guK1mOQVDLWL6XZdZT6ktHTTdlTm60FCVwtfrGmEdyu7lEsMzMd2vYHnZ1SwRzicMW4uoA==",
+      "type": "package",
+      "path": "grpc.aspnetcore/2.49.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.aspnetcore.2.49.0.nupkg.sha512",
+        "grpc.aspnetcore.nuspec",
+        "lib/net5.0/_._",
+        "lib/net6.0/_._",
+        "lib/net7.0/_._",
+        "lib/netcoreapp3.0/_._",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.AspNetCore.Server/2.49.0": {
+      "sha512": "it0nmQi10S/cgC1nk/nVgQiYv5sd/IWnob8SsB3JEpbIFAAKaU6ZjdTKRiATunNtDb/IYBLGeo8BMDoxfewxyw==",
+      "type": "package",
+      "path": "grpc.aspnetcore.server/2.49.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.aspnetcore.server.2.49.0.nupkg.sha512",
+        "grpc.aspnetcore.server.nuspec",
+        "lib/net5.0/Grpc.AspNetCore.Server.dll",
+        "lib/net5.0/Grpc.AspNetCore.Server.pdb",
+        "lib/net5.0/Grpc.AspNetCore.Server.xml",
+        "lib/net6.0/Grpc.AspNetCore.Server.dll",
+        "lib/net6.0/Grpc.AspNetCore.Server.pdb",
+        "lib/net6.0/Grpc.AspNetCore.Server.xml",
+        "lib/net7.0/Grpc.AspNetCore.Server.dll",
+        "lib/net7.0/Grpc.AspNetCore.Server.pdb",
+        "lib/net7.0/Grpc.AspNetCore.Server.xml",
+        "lib/netcoreapp3.0/Grpc.AspNetCore.Server.dll",
+        "lib/netcoreapp3.0/Grpc.AspNetCore.Server.pdb",
+        "lib/netcoreapp3.0/Grpc.AspNetCore.Server.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.AspNetCore.Server.ClientFactory/2.49.0": {
+      "sha512": "2a30ebIihiDcJsDq4GAil2LTNY4y4bgPZLpG06WNI/JuxDkRxoQ0myuRHdVlouQ1MzkjixQepEuRvHvNHgvk6w==",
+      "type": "package",
+      "path": "grpc.aspnetcore.server.clientfactory/2.49.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grpc.aspnetcore.server.clientfactory.2.49.0.nupkg.sha512",
+        "grpc.aspnetcore.server.clientfactory.nuspec",
+        "lib/net5.0/Grpc.AspNetCore.Server.ClientFactory.dll",
+        "lib/net5.0/Grpc.AspNetCore.Server.ClientFactory.pdb",
+        "lib/net5.0/Grpc.AspNetCore.Server.ClientFactory.xml",
+        "lib/net6.0/Grpc.AspNetCore.Server.ClientFactory.dll",
+        "lib/net6.0/Grpc.AspNetCore.Server.ClientFactory.pdb",
+        "lib/net6.0/Grpc.AspNetCore.Server.ClientFactory.xml",
+        "lib/net7.0/Grpc.AspNetCore.Server.ClientFactory.dll",
+        "lib/net7.0/Grpc.AspNetCore.Server.ClientFactory.pdb",
+        "lib/net7.0/Grpc.AspNetCore.Server.ClientFactory.xml",
+        "lib/netcoreapp3.0/Grpc.AspNetCore.Server.ClientFactory.dll",
+        "lib/netcoreapp3.0/Grpc.AspNetCore.Server.ClientFactory.pdb",
+        "lib/netcoreapp3.0/Grpc.AspNetCore.Server.ClientFactory.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Core.Api/2.61.0": {
+      "sha512": "FFHazRC4SVRpeYzHudZVLTmETfweFaihQZ9xcxbny21MKaz3mmbH8d26bcJ8clCufTYoCxav6nz1moyoxJ+olw==",
+      "type": "package",
+      "path": "grpc.core.api/2.61.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.core.api.2.61.0.nupkg.sha512",
+        "grpc.core.api.nuspec",
+        "lib/net462/Grpc.Core.Api.dll",
+        "lib/net462/Grpc.Core.Api.pdb",
+        "lib/net462/Grpc.Core.Api.xml",
+        "lib/netstandard2.0/Grpc.Core.Api.dll",
+        "lib/netstandard2.0/Grpc.Core.Api.pdb",
+        "lib/netstandard2.0/Grpc.Core.Api.xml",
+        "lib/netstandard2.1/Grpc.Core.Api.dll",
+        "lib/netstandard2.1/Grpc.Core.Api.pdb",
+        "lib/netstandard2.1/Grpc.Core.Api.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Net.Client/2.61.0": {
+      "sha512": "/H4WMyzoTKVBE31PaCG76c/29YTpBeP8W1Vh9of7ykmi8Iw9SlZTm+8quZ35DzRkORZSV6T8CvYPwCVxJzTUKA==",
+      "type": "package",
+      "path": "grpc.net.client/2.61.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.net.client.2.61.0.nupkg.sha512",
+        "grpc.net.client.nuspec",
+        "lib/net462/Grpc.Net.Client.dll",
+        "lib/net462/Grpc.Net.Client.pdb",
+        "lib/net462/Grpc.Net.Client.xml",
+        "lib/net6.0/Grpc.Net.Client.dll",
+        "lib/net6.0/Grpc.Net.Client.pdb",
+        "lib/net6.0/Grpc.Net.Client.xml",
+        "lib/net7.0/Grpc.Net.Client.dll",
+        "lib/net7.0/Grpc.Net.Client.pdb",
+        "lib/net7.0/Grpc.Net.Client.xml",
+        "lib/net8.0/Grpc.Net.Client.dll",
+        "lib/net8.0/Grpc.Net.Client.pdb",
+        "lib/net8.0/Grpc.Net.Client.xml",
+        "lib/netstandard2.0/Grpc.Net.Client.dll",
+        "lib/netstandard2.0/Grpc.Net.Client.pdb",
+        "lib/netstandard2.0/Grpc.Net.Client.xml",
+        "lib/netstandard2.1/Grpc.Net.Client.dll",
+        "lib/netstandard2.1/Grpc.Net.Client.pdb",
+        "lib/netstandard2.1/Grpc.Net.Client.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Net.ClientFactory/2.49.0": {
+      "sha512": "4Ac7dsrARbcs1g2vrUSUadtZ0kIGTk6yhA5ccOBjgM+RTzY3L54TgMddmeaV7/Z4f9sZn6T1ls6FmUiG8Dms+Q==",
+      "type": "package",
+      "path": "grpc.net.clientfactory/2.49.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.net.clientfactory.2.49.0.nupkg.sha512",
+        "grpc.net.clientfactory.nuspec",
+        "lib/net5.0/Grpc.Net.ClientFactory.dll",
+        "lib/net5.0/Grpc.Net.ClientFactory.pdb",
+        "lib/net5.0/Grpc.Net.ClientFactory.xml",
+        "lib/net6.0/Grpc.Net.ClientFactory.dll",
+        "lib/net6.0/Grpc.Net.ClientFactory.pdb",
+        "lib/net6.0/Grpc.Net.ClientFactory.xml",
+        "lib/net7.0/Grpc.Net.ClientFactory.dll",
+        "lib/net7.0/Grpc.Net.ClientFactory.pdb",
+        "lib/net7.0/Grpc.Net.ClientFactory.xml",
+        "lib/netstandard2.0/Grpc.Net.ClientFactory.dll",
+        "lib/netstandard2.0/Grpc.Net.ClientFactory.pdb",
+        "lib/netstandard2.0/Grpc.Net.ClientFactory.xml",
+        "lib/netstandard2.1/Grpc.Net.ClientFactory.dll",
+        "lib/netstandard2.1/Grpc.Net.ClientFactory.pdb",
+        "lib/netstandard2.1/Grpc.Net.ClientFactory.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Net.Common/2.61.0": {
+      "sha512": "7htYm01A2GCNFq6iamv1NjPycs0nslsYrDD01VAy71k8aSDISBklGJwH7iXZ+ScHdhz+qE0WVvZYVTFsfMPZzQ==",
+      "type": "package",
+      "path": "grpc.net.common/2.61.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grpc.net.common.2.61.0.nupkg.sha512",
+        "grpc.net.common.nuspec",
+        "lib/net6.0/Grpc.Net.Common.dll",
+        "lib/net6.0/Grpc.Net.Common.pdb",
+        "lib/net6.0/Grpc.Net.Common.xml",
+        "lib/net7.0/Grpc.Net.Common.dll",
+        "lib/net7.0/Grpc.Net.Common.pdb",
+        "lib/net7.0/Grpc.Net.Common.xml",
+        "lib/net8.0/Grpc.Net.Common.dll",
+        "lib/net8.0/Grpc.Net.Common.pdb",
+        "lib/net8.0/Grpc.Net.Common.xml",
+        "lib/netstandard2.0/Grpc.Net.Common.dll",
+        "lib/netstandard2.0/Grpc.Net.Common.pdb",
+        "lib/netstandard2.0/Grpc.Net.Common.xml",
+        "lib/netstandard2.1/Grpc.Net.Common.dll",
+        "lib/netstandard2.1/Grpc.Net.Common.pdb",
+        "lib/netstandard2.1/Grpc.Net.Common.xml",
+        "packageIcon.png"
       ]
     },
     "MediatR/12.2.0": {
@@ -713,6 +1168,22 @@
         "microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.abstractions.nuspec",
         "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Http/3.0.3": {
+      "sha512": "dcyB8szIcSynjVZRuFgqkZpPgTc5zeRSj1HMXSmNqWbHYKiPYJl8ZQgBHz6wmZNSUUNGpCs5uxUg8DZHHDC1Ew==",
+      "type": "package",
+      "path": "microsoft.extensions.http/3.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netcoreapp3.0/Microsoft.Extensions.Http.dll",
+        "lib/netcoreapp3.0/Microsoft.Extensions.Http.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Http.xml",
+        "microsoft.extensions.http.3.0.3.nupkg.sha512",
+        "microsoft.extensions.http.nuspec"
       ]
     },
     "Microsoft.Extensions.Logging/7.0.0": {
@@ -1052,12 +1523,18 @@
       "type": "project",
       "path": "../CarSharingApp.CarService.Domain/CarSharingApp.CarService.Domain.csproj",
       "msbuildProject": "../CarSharingApp.CarService.Domain/CarSharingApp.CarService.Domain.csproj"
+    },
+    "CarSharingApp.Common/1.0.0": {
+      "type": "project",
+      "path": "../../CarSharingApp.Common/CarSharingApp.Common/CarSharingApp.Common.csproj",
+      "msbuildProject": "../../CarSharingApp.Common/CarSharingApp.Common/CarSharingApp.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "AutoMapper >= 12.0.1",
       "CarSharingApp.CarService.Domain >= 1.0.0",
+      "CarSharingApp.Common >= 1.0.0",
       "FluentValidation >= 11.9.0",
       "MediatR >= 12.2.0",
       "Microsoft.AspNetCore.Http.Features >= 5.0.17",
@@ -1102,6 +1579,9 @@
           "projectReferences": {
             "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.CarService\\CarSharingApp.CarService.Domain\\CarSharingApp.CarService.Domain.csproj": {
               "projectPath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.CarService\\CarSharingApp.CarService.Domain\\CarSharingApp.CarService.Domain.csproj"
+            },
+            "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.Common\\CarSharingApp.Common\\CarSharingApp.Common.csproj": {
+              "projectPath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.Common\\CarSharingApp.Common\\CarSharingApp.Common.csproj"
             }
           }
         }

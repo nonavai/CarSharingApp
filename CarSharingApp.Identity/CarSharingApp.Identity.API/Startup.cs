@@ -30,6 +30,7 @@ public class Startup
         services.AddTransient<IAuthService, AuthService>();
         services.AddTransient<IUserManageService, UserManageService>();
         services.AddTransient<IRolesService, RolesService>();
+        services.AddGrpc();
     }
     
     public static void ConfigureRepository(IServiceCollection services)
@@ -169,5 +170,10 @@ public class Startup
     public static void OptionsConfigure(IServiceCollection services, ConfigurationManager config)
     {
         services.Configure<JwtOptions>(config.GetSection("JwtSettings"));
+    }
+
+    public static void ConfigureGRPC(WebApplication app)
+    {
+        app.MapGrpcService<gRPC.Services.UserService>();
     }
 }

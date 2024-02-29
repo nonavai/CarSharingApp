@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package carService;
+
+service Car {
+  rpc IsCarAvailable (CarAvailableRequest) returns (CarAvailableResponse) {}
+}
+
+message CarAvailableRequest {
+  string userId = 1;
+}
+
+message CarAvailableResponse {
+  bool isAvailable = 1;
+}

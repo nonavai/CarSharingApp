@@ -13,3 +13,5 @@ C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\obj\Debug\net7.0\refint\CarSharingApp.CarService.Application.dll
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\obj\Debug\net7.0\CarSharingApp.CarService.Application.pdb
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\obj\Debug\net7.0\ref\CarSharingApp.CarService.Application.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\bin\Debug\net7.0\CarSharingApp.Common.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\bin\Debug\net7.0\CarSharingApp.Common.pdb

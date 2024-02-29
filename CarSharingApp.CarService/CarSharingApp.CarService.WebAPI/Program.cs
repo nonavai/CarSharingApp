@@ -12,6 +12,7 @@ builder.Services.AddValidatorsFromAssemblyContaining<CreateCarValidation>();
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddSignalR();
 
+Startup.ConfigureGRPC(builder.Services, config);
 Startup.ConfigureDataBase(builder.Services, config);
 Startup.ConfigureSwagger(builder.Services);
 Startup.ConfigureAuth(builder.Services, config);
@@ -24,6 +25,7 @@ Startup.ConfigureRedis(builder.Services, config);
 var app = builder.Build();
 
 Startup.ConfigureMiddlewares(app);
+Startup.ConfigureGRPC(app);
 
 if (app.Environment.IsDevelopment())
 {

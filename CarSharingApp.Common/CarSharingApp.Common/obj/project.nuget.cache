@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "dgSpecHash": "4grYJ9Vtu1lTi0lFOswvgT2D+HJiDvcTtaDW2a4nFOyiBFmLiMzEUt+i3Ik0o/hRjzEJL+RHj2/uRcZmR7WdXQ==",
+  "success": true,
+  "projectFilePath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.Common\\CarSharingApp.Common\\CarSharingApp.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Anton\\.nuget\\packages\\google.protobuf\\3.25.3\\google.protobuf.3.25.3.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\grpc.aspnetcore\\2.49.0\\grpc.aspnetcore.2.49.0.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\grpc.aspnetcore.server\\2.49.0\\grpc.aspnetcore.server.2.49.0.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\grpc.aspnetcore.server.clientfactory\\2.49.0\\grpc.aspnetcore.server.clientfactory.2.49.0.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\grpc.core.api\\2.61.0\\grpc.core.api.2.61.0.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\grpc.net.client\\2.61.0\\grpc.net.client.2.61.0.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\grpc.net.clientfactory\\2.49.0\\grpc.net.clientfactory.2.49.0.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\grpc.net.common\\2.61.0\\grpc.net.common.2.61.0.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\grpc.tools\\2.62.0\\grpc.tools.2.62.0.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\microsoft.extensions.configuration\\3.0.3\\microsoft.extensions.configuration.3.0.3.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.0.3\\microsoft.extensions.configuration.abstractions.3.0.3.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.0.3\\microsoft.extensions.configuration.binder.3.0.3.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.0.3\\microsoft.extensions.dependencyinjection.3.0.3.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.0.3\\microsoft.extensions.dependencyinjection.abstractions.3.0.3.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\microsoft.extensions.http\\3.0.3\\microsoft.extensions.http.3.0.3.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\microsoft.extensions.logging\\3.0.3\\microsoft.extensions.logging.3.0.3.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\microsoft.extensions.options\\3.0.3\\microsoft.extensions.options.3.0.3.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\microsoft.extensions.primitives\\3.0.3\\microsoft.extensions.primitives.3.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

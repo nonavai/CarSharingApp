@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package userService;
+
+service User {
+  rpc GetUserRoles (GetUserRolesRequest) returns (GetUserRolesResponse) {}
+  
+  rpc IsUserExist (UserExistRequest) returns (UserExistResponse) {}
+}
+
+message GetUserRolesRequest{
+  string userId = 1;
+}
+
+message GetUserRolesResponse{
+  repeated string roles = 1;
+}
+
+message UserExistRequest {
+  string userId = 1;
+}
+
+message UserExistResponse {
+  bool exists = 1;
+}

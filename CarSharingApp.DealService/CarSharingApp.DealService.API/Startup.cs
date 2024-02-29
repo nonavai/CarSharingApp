@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using CarService;
 using CarSharingApp.DealService.API.Extensions;
 using CarSharingApp.DealService.API.MiddleWares;
 using CarSharingApp.DealService.BusinessLogic.Caching;
@@ -32,7 +33,7 @@ using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
 using StackExchange.Redis;
 using Swashbuckle.AspNetCore.SwaggerGen;
-
+using UserService;
 
 
 namespace CarSharingApp.DealService.API;
@@ -167,6 +168,15 @@ public class Startup
                     ValidateIssuerSigningKey = true
                 };
             });
+    }
+    
+    public static void ConfigureGRPC(IServiceCollection services, ConfigurationManager config)
+    {
+        services.AddGrpc();
+        services.AddGrpcClient<User.UserClient>(options =>
+            options.Address = new Uri(config["gRPC:UserConnection"]));
+        services.AddGrpcClient<Car.CarClient>(options =>
+            options.Address = new Uri(config["gRPC:CarConnection"]));
     }
 
     public static void ConfigureRedis(IServiceCollection services, ConfigurationManager config)
