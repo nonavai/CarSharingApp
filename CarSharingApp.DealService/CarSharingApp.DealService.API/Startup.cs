@@ -81,7 +81,7 @@ public class Startup
     {
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
-        services.AddScoped<IConfigureOptions<SwaggerGenOptions>, SwaggerConfigurationExtension>();
+        services.AddTransient<IConfigureOptions<SwaggerGenOptions>, SwaggerConfigurationExtension>();
     }
     
     public static void ConfigureDataBase(IServiceCollection services, ConfigurationManager config)
