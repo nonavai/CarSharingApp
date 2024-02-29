@@ -2,29 +2,14 @@
 using CarSharingApp.DealService.API.Extensions;
 using CarSharingApp.DealService.API.MiddleWares;
 using CarSharingApp.DealService.BusinessLogic.Caching;
-using CarSharingApp.DealService.BusinessLogic.CommandHandlers.AnswerCommandHandlers;
-using CarSharingApp.DealService.BusinessLogic.CommandHandlers.DealCommandHandlers;
-using CarSharingApp.DealService.BusinessLogic.CommandHandlers.FeedbackCommandHandlers;
-using CarSharingApp.DealService.BusinessLogic.Commands.AnswerCommands;
 using CarSharingApp.DealService.BusinessLogic.Commands.DealCommands;
-using CarSharingApp.DealService.BusinessLogic.Commands.FeedbackCommands;
 using CarSharingApp.DealService.BusinessLogic.Mapping;
-using CarSharingApp.DealService.BusinessLogic.Models.Answer;
-using CarSharingApp.DealService.BusinessLogic.Models.Deal;
-using CarSharingApp.DealService.BusinessLogic.Models.FeedBack;
-using CarSharingApp.DealService.BusinessLogic.Queries.AnswerQueries;
-using CarSharingApp.DealService.BusinessLogic.Queries.DealQueries;
-using CarSharingApp.DealService.BusinessLogic.Queries.FeedbackQueries;
-using CarSharingApp.DealService.BusinessLogic.QueryHandlers.AnswerQueryHandlers;
-using CarSharingApp.DealService.BusinessLogic.QueryHandlers.DealQueryHandlers;
-using CarSharingApp.DealService.BusinessLogic.QueryHandlers.FeedbackQueryHandlers;
 using CarSharingApp.DealService.DataAccess.DataBase;
 using CarSharingApp.DealService.DataAccess.DataBase.AdditionalDB;
 using CarSharingApp.DealService.DataAccess.Repositories;
 using CarSharingApp.DealService.DataAccess.Repositories.Implementations;
 using Hangfire;
 using MassTransit;
-using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -42,27 +27,7 @@ public class Startup
     public static void ConfigureServices(IServiceCollection services)
     {
         services.AddAutoMapper(typeof(MappingProfile));
-        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
-        //deal commands
-        services.AddTransient<IRequestHandler<CreateDealCommand, DealDto>, CreateDealHandler>();
-        services.AddTransient<IRequestHandler<CancelDealCommand, DealDto>, CancelDealHandler>();
-        services.AddTransient<IRequestHandler<ConfirmDealCommand, DealDto>, ConfirmDealHandler>();
-        services.AddTransient<IRequestHandler<CompleteDealCommand, DealDto>, CompleteDealHandler>();
-        //feedback commands
-        services.AddTransient<IRequestHandler<CreateFeedbackCommand, FeedbackDto>, CreateFeedbackHandler>();
-        services.AddTransient<IRequestHandler<UpdateFeedbackCommand, FeedbackDto>, UpdateFeedbackHandler>();
-        services.AddTransient<IRequestHandler<DeleteFeedbackCommand, FeedbackDto>, DeleteFeedbackHandler>();
-        //answer commands
-        services.AddTransient<IRequestHandler<CreateAnswerCommand, AnswerDto>, CreateAnswerHandler>();
-        services.AddTransient<IRequestHandler<UpdateAnswerCommand, AnswerDto>, UpdateAnswerHandler>();
-        services.AddTransient<IRequestHandler<DeleteAnswerCommand, AnswerDto>, DeleteAnswerHandler>();
-        //deal queries
-        services.AddTransient<IRequestHandler<GetDealsByCarQuery, IEnumerable<DealDto>>, GetDealsByCarHandler>();
-        services.AddTransient<IRequestHandler<GetDealsByUserQuery, IEnumerable<DealDto>>, GetDealsByUserHandler>();
-        //answer queries
-        services.AddTransient<IRequestHandler<GetAnswersByFeedbackQuery, IEnumerable<AnswerDto>>, GetAnswersByFeedbackHandler>();
-        // feedback queries
-        services.AddTransient<IRequestHandler<GetFeedbackByDealQueries, IEnumerable<FeedbackDto>>, GetFeedbackByDealHandler>();
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CreateDealCommand).Assembly));
     }
 
     public static void ConfigureMassTransit(IServiceCollection services, ConfigurationManager config)
@@ -107,16 +72,16 @@ public class Startup
     
     public static void ConfigureRepository(IServiceCollection services)
     {
-        services.AddTransient<IDealRepository, DealRepository>();
-        services.AddTransient<IAnswerRepository, AnswerRepository>();
-        services.AddTransient<IFeedBackRepository, FeedbackRepository>();
+        services.AddScoped<IDealRepository, DealRepository>();
+        services.AddScoped<IAnswerRepository, AnswerRepository>();
+        services.AddScoped<IFeedBackRepository, FeedbackRepository>();
     }
     
     public static void ConfigureSwagger(IServiceCollection services)
     {
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
-        services.AddTransient<IConfigureOptions<SwaggerGenOptions>, SwaggerConfigurationExtension>();
+        services.AddScoped<IConfigureOptions<SwaggerGenOptions>, SwaggerConfigurationExtension>();
     }
     
     public static void ConfigureDataBase(IServiceCollection services, ConfigurationManager config)

@@ -1,12 +1,13 @@
 ﻿using CarSharingApp.DealService.DataAccess.DataBase;
 using CarSharingApp.DealService.DataAccess.Entities;
+using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 
 namespace CarSharingApp.DealService.DataAccess.Repositories.Implementations;
 
 public class FeedbackRepository : BaseRepository<Feedback>, IFeedBackRepository
 {
-    public FeedbackRepository(MongoContext context) : base(context, "Feedbacks")
+    public FeedbackRepository(MongoContext context, IConfiguration config) : base(context, config["MongoRepositories:FeedBack"]!)
     {
     }
 

@@ -1,12 +1,13 @@
 ﻿using CarSharingApp.DealService.DataAccess.DataBase;
 using CarSharingApp.DealService.DataAccess.Entities;
+using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 
 namespace CarSharingApp.DealService.DataAccess.Repositories.Implementations;
 
 public class DealRepository : BaseRepository<Deal>, IDealRepository
 {
-    public DealRepository(MongoContext context) : base(context, "Deals")
+    public DealRepository(MongoContext context, IConfiguration config) : base(context, config["MongoRepositories:Deal"]!)
     {
     }
 
