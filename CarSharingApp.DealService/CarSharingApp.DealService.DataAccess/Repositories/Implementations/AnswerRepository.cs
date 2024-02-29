@@ -1,5 +1,6 @@
 ﻿using CarSharingApp.DealService.DataAccess.DataBase;
 using CarSharingApp.DealService.DataAccess.Entities;
+using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 
 namespace CarSharingApp.DealService.DataAccess.Repositories.Implementations;
@@ -7,7 +8,7 @@ namespace CarSharingApp.DealService.DataAccess.Repositories.Implementations;
 public class AnswerRepository : BaseRepository<Answer>, IAnswerRepository 
 {
     
-    public AnswerRepository(MongoContext context) : base(context, "Answers")
+    public AnswerRepository(MongoContext context, IConfiguration config) : base(context, config["MongoRepositories:Answer"]!)
     {
     }
 
