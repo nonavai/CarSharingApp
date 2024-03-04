@@ -9,6 +9,9 @@ using CarSharingApp.Identity.DataAccess.Entities;
 using CarSharingApp.Identity.DataAccess.Repositories;
 using CarSharingApp.Identity.DataAccess.Repositories.Implementation;
 using CarSharingApp.Identity.Shared.Constants;
+using CarSharingApp.Identity.Shared.Options;
+using Hangfire;
+using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +38,14 @@ public class Startup
         services.AddTransient<IUserRepository, UserRepository>();
     }
     
+    public static void ConfigureHangfire(IApplicationBuilder app, ConfigurationManager config)
+    {
+        GlobalConfiguration.Configuration.UseSqlServerStorage(config.GetConnectionString("HelperDB"));
+    
+        app.UseHangfireServer();
+        app.UseHangfireDashboard();
+    }
+    
     public static void ConfigureSwagger(IServiceCollection services)
     {
         services.AddEndpointsApiExplorer();
@@ -45,8 +56,18 @@ public class Startup
     public static void ConfigureDataBase(IServiceCollection services, ConfigurationManager config)
     {
         var connectionString = config.GetConnectionString("DataBase");
+        var helperConnectionString = config.GetConnectionString("HelperDB");
         services.AddDbContext<CarSharingContext>(options =>
             options.UseSqlServer(connectionString));
+        services.AddDbContext<HelperContext>(options =>
+            options.UseSqlServer(helperConnectionString));
+
+        services.AddHangfire(configuration =>
+        {
+            configuration.UseSqlServerStorage(helperConnectionString);
+        });
+
+        services.AddHangfireServer();
     }
 
     public static void ConfigureIdentity(IServiceCollection services)
@@ -102,5 +123,51 @@ public class Startup
         {
             await roleManager.CreateAsync(new IdentityRole(roleName));
         }
+    }
+    
+    public static void ConfigureMassTransit(IServiceCollection services, ConfigurationManager config)
+    {
+        services.AddMassTransit(x =>
+        {
+            var host = config["RabbitMQ:Host"];
+            var virtualHost = config["RabbitMQ:VirtualHost"];
+            var username = config["RabbitMQ:Username"];
+            var password = config["RabbitMQ:Password"];
+
+            x.AddEntityFrameworkOutbox<HelperContext>(o =>
+            {
+                o.UseSqlServer();
+
+                o.QueryDelay = TimeSpan.FromSeconds(120);
+
+                o.UseBusOutbox();
+            });
+
+            x.UsingRabbitMq((context, cfg) =>
+            {
+                cfg.Host(host, virtualHost, h =>
+                {
+                    h.Username(username);
+                    h.Password(password);
+                });
+            });
+        });
+        
+        services.AddMassTransitHostedService();
+    }
+
+    public static void ScheduleLicenceCheck(IServiceCollection services)
+    {
+        using (var scope = services.BuildServiceProvider().CreateScope())
+        {
+            var userManager = scope.ServiceProvider.GetRequiredService<IUserManageService>();
+
+            RecurringJob.AddOrUpdate(() => userManager.DeletingExpiredLicenceAsync(), Cron.Daily);
+        }
+    }
+
+    public static void OptionsConfigure(IServiceCollection services, ConfigurationManager config)
+    {
+        services.Configure<JwtOptions>(config.GetSection("JwtSettings"));
     }
 }
