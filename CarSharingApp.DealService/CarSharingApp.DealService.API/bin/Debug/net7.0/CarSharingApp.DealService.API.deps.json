@@ -9,7 +9,6 @@
       "CarSharingApp.DealService.API/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
-          "CarSharingApp.Common": "1.0.0",
           "CarSharingApp.DealService.BusinessLogic": "1.0.0",
           "FluentValidation.AspNetCore": "11.3.0",
           "MassTransit.RabbitMQ": "8.1.3",
@@ -1218,20 +1217,9 @@
           }
         }
       },
-      "CarSharingApp.Common/1.0.0": {
-        "dependencies": {
-          "Google.Protobuf": "3.25.3",
-          "Grpc.AspNetCore": "2.49.0",
-          "Grpc.Net.Client": "2.61.0"
-        },
-        "runtime": {
-          "CarSharingApp.Common.dll": {}
-        }
-      },
       "CarSharingApp.DealService.BusinessLogic/1.0.0": {
         "dependencies": {
           "AutoMapper": "12.0.1",
-          "CarSharingApp.Common": "1.0.0",
           "CarSharingApp.DealService.DataAccess": "1.0.0",
           "FluentValidation": "11.5.1",
           "Hangfire": "1.8.10",
@@ -1258,6 +1246,11 @@
         }
       },
       "CarSharingApp.DealService.Shared/1.0.0": {
+        "dependencies": {
+          "Google.Protobuf": "3.25.3",
+          "Grpc.AspNetCore": "2.49.0",
+          "Grpc.Net.Client": "2.61.0"
+        },
         "runtime": {
           "CarSharingApp.DealService.Shared.dll": {}
         }
@@ -2095,11 +2088,6 @@
       "sha512": "sha512-U9Ix4l4cl58Kzz1rJzj5hoVTjmbx1qGMwzAcbv1j/d3NzrFaESIurQyg+ow4mivCgkE3S413y+U9k4WdnEIkRA==",
       "path": "zstdsharp.port/0.7.3",
       "hashPath": "zstdsharp.port.0.7.3.nupkg.sha512"
-    },
-    "CarSharingApp.Common/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "CarSharingApp.DealService.BusinessLogic/1.0.0": {
       "type": "project",

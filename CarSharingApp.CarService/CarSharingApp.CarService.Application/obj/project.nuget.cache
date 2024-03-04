@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Z6x2wThmaBPZ1xlNhRuR6SECoUHRM8LsVKHAFiZbjSukcrgbX/38mt75p4b5MMlEGXkvunu3m47eURFV5tE/sw==",
+  "dgSpecHash": "8h6GMbNH6GqLrNDFLQIl5ig8YNTFhHHjg5hGoY2T/Rm/nvPe5OOOPNA9uSehMM2Y7g4Z2dtjLEDaqX6zbiqg1A==",
   "success": true,
   "projectFilePath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.CarService\\CarSharingApp.CarService.Application\\CarSharingApp.CarService.Application.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\Anton\\.nuget\\packages\\grpc.net.client\\2.61.0\\grpc.net.client.2.61.0.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\grpc.net.clientfactory\\2.49.0\\grpc.net.clientfactory.2.49.0.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\grpc.net.common\\2.61.0\\grpc.net.common.2.61.0.nupkg.sha512",
+    "C:\\Users\\Anton\\.nuget\\packages\\grpc.tools\\2.62.0\\grpc.tools.2.62.0.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Anton\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",

@@ -17,5 +17,3 @@ C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Infrastructure\obj\Debug\net7.0\CarSharingApp.CarService.Infrastructure.pdb
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Infrastructure\obj\Debug\net7.0\CarSharingApp.CarService.Infrastructure.genruntimeconfig.cache
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Infrastructure\obj\Debug\net7.0\ref\CarSharingApp.CarService.Infrastructure.dll
-C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Infrastructure\bin\Debug\net7.0\CarSharingApp.Common.dll
-C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Infrastructure\bin\Debug\net7.0\CarSharingApp.Common.pdb

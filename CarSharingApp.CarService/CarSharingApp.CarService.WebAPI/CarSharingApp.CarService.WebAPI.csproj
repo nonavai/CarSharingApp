@@ -10,8 +10,6 @@
     <ItemGroup>
         <ProjectReference Include="..\CarSharingApp.CarService.Application\CarSharingApp.CarService.Application.csproj" />
         <ProjectReference Include="..\CarSharingApp.CarService.Infrastructure\CarSharingApp.CarService.Infrastructure.csproj" />
-        <ProjectReference Include="C:\rider\c#projects\CarSharingAplication\CarSharingApp.Common\CarSharingApp.Common\CarSharingApp.Common.csproj" />
-        <Protobuf Include="Protos\Car.proto" GrpcServices="Server" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1566,8 +1566,10 @@
         "dependencies": {
           "AutoMapper": "12.0.1",
           "CarSharingApp.CarService.Domain": "1.0.0",
-          "CarSharingApp.Common": "1.0.0",
           "FluentValidation": "11.9.0",
+          "Google.Protobuf": "3.25.3",
+          "Grpc.AspNetCore": "2.49.0",
+          "Grpc.Net.Client": "2.61.0",
           "MediatR": "12.2.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
@@ -1593,21 +1595,6 @@
         },
         "runtime": {
           "bin/placeholder/CarSharingApp.CarService.Domain.dll": {}
-        }
-      },
-      "CarSharingApp.Common/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Google.Protobuf": "3.25.3",
-          "Grpc.AspNetCore": "2.49.0",
-          "Grpc.Net.Client": "2.61.0"
-        },
-        "compile": {
-          "bin/placeholder/CarSharingApp.Common.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CarSharingApp.Common.dll": {}
         }
       }
     }
@@ -4259,11 +4246,6 @@
       "type": "project",
       "path": "../CarSharingApp.CarService.Domain/CarSharingApp.CarService.Domain.csproj",
       "msbuildProject": "../CarSharingApp.CarService.Domain/CarSharingApp.CarService.Domain.csproj"
-    },
-    "CarSharingApp.Common/1.0.0": {
-      "type": "project",
-      "path": "../../CarSharingApp.Common/CarSharingApp.Common/CarSharingApp.Common.csproj",
-      "msbuildProject": "../../CarSharingApp.Common/CarSharingApp.Common/CarSharingApp.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {

@@ -145,5 +145,3 @@ C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.API\bin\Debug\net7.0\Grpc.Net.Client.dll
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.API\bin\Debug\net7.0\Grpc.Net.ClientFactory.dll
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.API\bin\Debug\net7.0\Grpc.Net.Common.dll
-C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.API\bin\Debug\net7.0\CarSharingApp.Common.dll
-C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.API\bin\Debug\net7.0\CarSharingApp.Common.pdb

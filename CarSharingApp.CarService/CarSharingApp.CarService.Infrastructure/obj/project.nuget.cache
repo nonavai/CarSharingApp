@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "C2hfL5KbyD0k/cnYB7cxcVf0O5MqeqMOcApr0jOR+U1Z6PgEy/WZmWRajV+toFLABYHx8OZRTZrPKw2MfwWRlg==",
+  "dgSpecHash": "5FCGvrn63srfXgGITAJb52Ht0ABANvCMdenDfLAXV3AfDojgGLtQD1ZOrTj1UL6JrA9OqEoi6fvXYkV1qRT/vQ==",
   "success": true,
   "projectFilePath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.CarService\\CarSharingApp.CarService.Infrastructure\\CarSharingApp.CarService.Infrastructure.csproj",
   "expectedPackageFiles": [

@@ -1826,21 +1826,6 @@
           "lib/net7.0/ZstdSharp.dll": {}
         }
       },
-      "CarSharingApp.Common/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Google.Protobuf": "3.25.3",
-          "Grpc.AspNetCore": "2.49.0",
-          "Grpc.Net.Client": "2.61.0"
-        },
-        "compile": {
-          "bin/placeholder/CarSharingApp.Common.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CarSharingApp.Common.dll": {}
-        }
-      },
       "CarSharingApp.DealService.DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -1862,6 +1847,11 @@
       "CarSharingApp.DealService.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Google.Protobuf": "3.25.3",
+          "Grpc.AspNetCore": "2.49.0",
+          "Grpc.Net.Client": "2.61.0"
+        },
         "compile": {
           "bin/placeholder/CarSharingApp.DealService.Shared.dll": {}
         },
@@ -4893,11 +4883,6 @@
         "zstdsharp.port.nuspec"
       ]
     },
-    "CarSharingApp.Common/1.0.0": {
-      "type": "project",
-      "path": "../../CarSharingApp.Common/CarSharingApp.Common/CarSharingApp.Common.csproj",
-      "msbuildProject": "../../CarSharingApp.Common/CarSharingApp.Common/CarSharingApp.Common.csproj"
-    },
     "CarSharingApp.DealService.DataAccess/1.0.0": {
       "type": "project",
       "path": "../CarSharingApp.DealService.DataAccess/CarSharingApp.DealService.DataAccess.csproj",
@@ -4912,7 +4897,6 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "AutoMapper >= 12.0.1",
-      "CarSharingApp.Common >= 1.0.0",
       "CarSharingApp.DealService.DataAccess >= 1.0.0",
       "FluentValidation >= 11.5.1",
       "Hangfire >= 1.8.10",
@@ -4955,9 +4939,6 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.Common\\CarSharingApp.Common\\CarSharingApp.Common.csproj": {
-              "projectPath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.Common\\CarSharingApp.Common\\CarSharingApp.Common.csproj"
-            },
             "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.DealService\\CarSharingApp.DealService.DataAccess\\CarSharingApp.DealService.DataAccess.csproj": {
               "projectPath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.DealService\\CarSharingApp.DealService.DataAccess\\CarSharingApp.DealService.DataAccess.csproj"
             }

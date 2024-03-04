@@ -10,8 +10,11 @@
         "dependencies": {
           "AutoMapper": "12.0.1",
           "CarSharingApp.CarService.Domain": "1.0.0",
-          "CarSharingApp.Common": "1.0.0",
           "FluentValidation": "11.9.0",
+          "Google.Protobuf": "3.25.3",
+          "Grpc.AspNetCore": "2.49.0",
+          "Grpc.Net.Client": "2.61.0",
+          "Grpc.Tools": "2.62.0",
           "MediatR": "12.2.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
@@ -61,7 +64,8 @@
       "Grpc.AspNetCore/2.49.0": {
         "dependencies": {
           "Google.Protobuf": "3.25.3",
-          "Grpc.AspNetCore.Server.ClientFactory": "2.49.0"
+          "Grpc.AspNetCore.Server.ClientFactory": "2.49.0",
+          "Grpc.Tools": "2.62.0"
         }
       },
       "Grpc.AspNetCore.Server/2.49.0": {
@@ -130,6 +134,7 @@
           }
         }
       },
+      "Grpc.Tools/2.62.0": {},
       "MediatR/12.2.0": {
         "dependencies": {
           "MediatR.Contracts": "2.0.1",
@@ -306,16 +311,6 @@
         "runtime": {
           "CarSharingApp.CarService.Domain.dll": {}
         }
-      },
-      "CarSharingApp.Common/1.0.0": {
-        "dependencies": {
-          "Google.Protobuf": "3.25.3",
-          "Grpc.AspNetCore": "2.49.0",
-          "Grpc.Net.Client": "2.61.0"
-        },
-        "runtime": {
-          "CarSharingApp.Common.dll": {}
-        }
       }
     }
   },
@@ -401,6 +396,13 @@
       "sha512": "sha512-7htYm01A2GCNFq6iamv1NjPycs0nslsYrDD01VAy71k8aSDISBklGJwH7iXZ+ScHdhz+qE0WVvZYVTFsfMPZzQ==",
       "path": "grpc.net.common/2.61.0",
       "hashPath": "grpc.net.common.2.61.0.nupkg.sha512"
+    },
+    "Grpc.Tools/2.62.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tVU0hseOI3tYI9Z62++01EAUBNsKMQfZfeuZyW9Qa3z1D7IqtQKoU2u+3426uIPCTzVVi8qBgsszThyKam9NQA==",
+      "path": "grpc.tools/2.62.0",
+      "hashPath": "grpc.tools.2.62.0.nupkg.sha512"
     },
     "MediatR/12.2.0": {
       "type": "package",
@@ -571,11 +573,6 @@
       "hashPath": "system.reactive.6.0.0.nupkg.sha512"
     },
     "CarSharingApp.CarService.Domain/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "CarSharingApp.Common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
