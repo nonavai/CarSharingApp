@@ -21,10 +21,8 @@ public class UserController : ControllerBase
     [HttpGet]
     [Route("{id}")]
     [Authorize(Roles = RoleNames.Admin)]
-    public async Task<IActionResult> GetAsync([FromRoute] string id, CancellationToken token = default)
+    public async Task<IActionResult> GetAsync([FromRoute] string id)
     {
-        token.ThrowIfCancellationRequested();
-
         var userDto = await _userManageService.GetByIdAsync(id);
         
         return Ok(userDto);
@@ -35,8 +33,6 @@ public class UserController : ControllerBase
     [Authorize(Roles = RoleNames.Admin)]
     public async Task<IActionResult> GetByNameAsync([FromQuery] string firstName, [FromQuery]string lastName, CancellationToken token = default)
     {
-        token.ThrowIfCancellationRequested();
-
         var result = await _userManageService.GetByNameAsync(firstName, lastName, token);
         
         return Ok(result);
@@ -47,8 +43,6 @@ public class UserController : ControllerBase
     [Authorize]
     public async Task<IActionResult> GetExpiredUserInfosAsync(CancellationToken token = default)
     {
-        token.ThrowIfCancellationRequested();
-        
         var result = await _userManageService.GetExpiredUserInfosAsync(token);
         
         return Ok(result);
@@ -59,8 +53,6 @@ public class UserController : ControllerBase
     [Authorize(Roles = RoleNames.Admin)]
     public async Task<IActionResult> AddUserInfoAsync(string userId, UserInfoCleanDto dto, CancellationToken token = default)
     {
-        token.ThrowIfCancellationRequested();
-
         await _userManageService.AddUserInfoAsync(userId, dto, token);
         
         return Created("User Added Successfully", dto);
@@ -69,10 +61,8 @@ public class UserController : ControllerBase
     [Authorize]
     [HttpPut]
     [Route("{id}")]
-    public async Task<IActionResult> EditAsync([FromRoute] string id, [FromBody] UserNecessaryDto dto, CancellationToken token = default)
+    public async Task<IActionResult> EditAsync([FromRoute] string id, [FromBody] UserNecessaryDto dto)
     {
-        token.ThrowIfCancellationRequested();
-
         var userDto = await _userManageService.UpdateAsync(id, dto);
         
         return Ok(userDto);
@@ -81,10 +71,8 @@ public class UserController : ControllerBase
     [Authorize]
     [HttpPut]
     [Route("{userId}/info")]
-    public async Task<IActionResult> EditUserInfoAsync([FromRoute] string userId, [FromBody] UserInfoCleanDto dto, CancellationToken token = default)
+    public async Task<IActionResult> EditUserInfoAsync([FromRoute] string userId, [FromBody] UserInfoCleanDto dto)
     {
-        token.ThrowIfCancellationRequested();
-
         var userDto = await _userManageService.UpdateUserInfoAsync(userId, dto);
         
         return Ok(userDto);
@@ -93,10 +81,8 @@ public class UserController : ControllerBase
     [Authorize]
     [HttpDelete]
     [Route("{id}")]
-    public async Task<IActionResult> DeleteAsync([FromRoute]string id, CancellationToken token = default)
+    public async Task<IActionResult> DeleteAsync([FromRoute]string id)
     {
-        token.ThrowIfCancellationRequested();
-
         var deletedUser = await _userManageService.DeleteAsync(id);
         
         return Ok(deletedUser);
@@ -107,8 +93,6 @@ public class UserController : ControllerBase
     [Route("{userId}/info")]
     public async Task<IActionResult> DeleteInfoAsync([FromRoute]string userId, CancellationToken token = default)
     {
-        token.ThrowIfCancellationRequested();
-
         var deletedUser = await _userManageService.DeleteUserInfoAsync(userId, token);
         
         return Ok(deletedUser);

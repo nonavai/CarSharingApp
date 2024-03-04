@@ -19,18 +19,18 @@ public class CarController : ControllerBase
     }
     
     [HttpGet]
-    public async Task<IActionResult> GetAsync([FromQuery] GetCarQuery query)
+    public async Task<IActionResult> GetAsync([FromQuery] GetCarQuery query, CancellationToken token = default)
     {
-        var response = await _mediator.Send(query);
+        var response = await _mediator.Send(query, token);
         
         return Ok(response);
     }
     
     [HttpGet]
     [Route("search")]
-    public async Task<IActionResult> GetByParamsAsync([FromQuery] GetCarsByParamsQuery query)
+    public async Task<IActionResult> GetByParamsAsync([FromQuery] GetCarsByParamsQuery query, CancellationToken token = default)
     {
-        var response = await _mediator.Send(query);
+        var response = await _mediator.Send(query, token);
         
         return Ok(response);
     }
@@ -38,36 +38,36 @@ public class CarController : ControllerBase
     [HttpGet]
     [Route("user")]
     [Authorize]
-    public async Task<IActionResult> GetByUserAsync([FromQuery] GetCarByUserQuery query)
+    public async Task<IActionResult> GetByUserAsync([FromQuery] GetCarByUserQuery query, CancellationToken token = default)
     {
-        var response = await _mediator.Send(query);
+        var response = await _mediator.Send(query, token);
         
         return Ok(response);
     }
     
     [HttpPost]
     [Authorize(Roles = RoleNames.Lender)]
-    public async Task<IActionResult> AddAsync(CreateCarCommand command)
+    public async Task<IActionResult> AddAsync(CreateCarCommand command, CancellationToken token = default)
     {
-        var response = await _mediator.Send(command);
+        var response = await _mediator.Send(command, token);
         
         return Ok(response);
     }
     
     [HttpPut]
     [Authorize(Roles = RoleNames.Lender)]
-    public async Task<IActionResult> UpdateAsync(UpdateCarCommand command)
+    public async Task<IActionResult> UpdateAsync(UpdateCarCommand command, CancellationToken token = default)
     {
-        var response = await _mediator.Send(command);
+        var response = await _mediator.Send(command, token);
         
         return Ok(response);
     }
     
     [HttpDelete]
     [Authorize(Roles = RoleNames.Lender)]
-    public async Task<IActionResult> DeleteAsync(DeleteCarCommand query)
+    public async Task<IActionResult> DeleteAsync(DeleteCarCommand query, CancellationToken token = default)
     {
-        var response = await _mediator.Send(query);
+        var response = await _mediator.Send(query, token);
         
         return Ok(response);
     }

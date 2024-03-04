@@ -19,9 +19,9 @@ public class ImageController : ControllerBase
     }
     
     [HttpGet]
-    public async Task<IActionResult> GetAsync([FromQuery] GetImagesByCarQuery query)
+    public async Task<IActionResult> GetAsync([FromQuery] GetImagesByCarQuery query, CancellationToken token = default)
     {
-        var response = await _mediator.Send(query);
+        var response = await _mediator.Send(query, token);
         
         return Ok(response);
     }
@@ -29,27 +29,27 @@ public class ImageController : ControllerBase
     [DisableRequestSizeLimit]
     [HttpPost]
     [Authorize(Roles = RoleNames.Lender)]
-    public async Task<IActionResult> AddAsync([FromForm] CreateImageCommand command)
+    public async Task<IActionResult> AddAsync([FromForm] CreateImageCommand command, CancellationToken token = default)
     {
-        var response = await _mediator.Send(command);
+        var response = await _mediator.Send(command, token);
         
         return Ok(response);
     }
     
     [HttpPut]
     [Authorize(Roles = RoleNames.Lender)]
-    public async Task<IActionResult> UpdatePriorityAsync(UpdateImagePriorityCommand command)
+    public async Task<IActionResult> UpdatePriorityAsync(UpdateImagePriorityCommand command, CancellationToken token = default)
     {
-        var response = await _mediator.Send(command);
+        var response = await _mediator.Send(command, token);
         
         return Ok(response);
     }
     
     [HttpDelete]
     [Authorize(Roles = RoleNames.Lender)]
-    public async Task<IActionResult> DeleteAsync(DeleteImageCommand query)
+    public async Task<IActionResult> DeleteAsync(DeleteImageCommand query, CancellationToken token = default)
     {
-        var response = await _mediator.Send(query);
+        var response = await _mediator.Send(query, token);
         
         return Ok(response);
     }

@@ -19,45 +19,45 @@ public class CommentController : ControllerBase
     
     [HttpGet]
     [Route("car")]
-    public async Task<IActionResult> GetByCarAsync([FromQuery] GetCommentsByCarQuery query)
+    public async Task<IActionResult> GetByCarAsync([FromQuery] GetCommentsByCarQuery query, CancellationToken token = default)
     {
-        var response = await _mediator.Send(query);
+        var response = await _mediator.Send(query, token);
         
         return Ok(response);
     }
     
     [HttpGet]
     [Authorize]
-    public async Task<IActionResult> GetAsync([FromQuery] GetCommentQuery query)
+    public async Task<IActionResult> GetAsync([FromQuery] GetCommentQuery query, CancellationToken token = default)
     {
-        var response = await _mediator.Send(query);
+        var response = await _mediator.Send(query, token);
         
         return Ok(response);
     }
     
     [HttpPost]
     [Authorize]
-    public async Task<IActionResult> AddAsync(CreateCommentCommand command)
+    public async Task<IActionResult> AddAsync(CreateCommentCommand command, CancellationToken token = default)
     {
-        var response = await _mediator.Send(command);
+        var response = await _mediator.Send(command, token);
         
         return Ok(response);
     }
     
     [HttpPut]
     [Authorize]
-    public async Task<IActionResult> UpdateAsync(UpdateCommentCommand command)
+    public async Task<IActionResult> UpdateAsync(UpdateCommentCommand command, CancellationToken token = default)
     {
-        var response = await _mediator.Send(command);
+        var response = await _mediator.Send(command, token);
         
         return Ok(response);
     }
     
     [HttpDelete]
     [Authorize]
-    public async Task<IActionResult> DeleteAsync(DeleteCommentCommand query)
+    public async Task<IActionResult> DeleteAsync(DeleteCommentCommand query, CancellationToken token = default)
     {
-        var response = await _mediator.Send(query);
+        var response = await _mediator.Send(query, token);
         
         return Ok(response);
     }

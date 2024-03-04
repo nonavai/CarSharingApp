@@ -18,36 +18,36 @@ public class AnswerController : ControllerBase
     }
     
     [HttpGet]
-    public async Task<IActionResult> GetAsync([FromQuery] GetAnswersByFeedbackQuery query)
+    public async Task<IActionResult> GetAsync([FromQuery] GetAnswersByFeedbackQuery query, CancellationToken token = default)
     {
-        var response = await _mediator.Send(query);
+        var response = await _mediator.Send(query, token);
         
         return Ok(response);
     }
 
     [HttpPost]
     [Authorize]
-    public async Task<IActionResult> AddAsync(CreateAnswerCommand command)
+    public async Task<IActionResult> AddAsync(CreateAnswerCommand command, CancellationToken token = default)
     {
-        var response = await _mediator.Send(command);
+        var response = await _mediator.Send(command, token);
         
         return Ok(response);
     }
     
     [HttpPut]
     [Authorize]
-    public async Task<IActionResult> UpdateAsync(UpdateAnswerCommand command)
+    public async Task<IActionResult> UpdateAsync(UpdateAnswerCommand command, CancellationToken token = default)
     {
-        var response = await _mediator.Send(command);
+        var response = await _mediator.Send(command, token);
         
         return Ok(response);
     }
     
     [HttpDelete]
     [Authorize]
-    public async Task<IActionResult> DeleteAsync(DeleteAnswerCommand query)
+    public async Task<IActionResult> DeleteAsync(DeleteAnswerCommand query, CancellationToken token = default)
     {
-        var response = await _mediator.Send(query);
+        var response = await _mediator.Send(query, token);
         
         return Ok(response);
     }

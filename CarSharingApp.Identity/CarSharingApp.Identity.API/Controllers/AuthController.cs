@@ -17,10 +17,8 @@ public class AuthController : ControllerBase
     
     [HttpPost]
     [Route("login")]
-    public async Task<IActionResult> LoginAsync(LogInDto dto, CancellationToken token = default)
+    public async Task<IActionResult> LoginAsync(LogInDto dto)
     {
-        token.ThrowIfCancellationRequested();
-
         var userDto = await _authService.LogInAsync(dto);
 
         return Ok(userDto);
@@ -28,10 +26,8 @@ public class AuthController : ControllerBase
 
     [HttpPost]
     [Route("")]
-    public async Task<IActionResult> CreateAsync(UserNecessaryDto dto, CancellationToken token = default)
+    public async Task<IActionResult> CreateAsync(UserNecessaryDto dto)
     {
-        token.ThrowIfCancellationRequested();
-
         await _authService.RegistrationAsync(dto);
         
         return Created("User Added Successfully", dto);

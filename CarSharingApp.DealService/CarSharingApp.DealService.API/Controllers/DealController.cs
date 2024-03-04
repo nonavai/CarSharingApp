@@ -20,7 +20,7 @@ public class DealController : ControllerBase
     
     [HttpGet]
     [Route("car")]
-    public async Task<IActionResult> GetByCarAsync([FromQuery] GetDealsByCarQuery query)
+    public async Task<IActionResult> GetByCarAsync([FromQuery] GetDealsByCarQuery query, CancellationToken token = default)
     {
         var response = await _mediator.Send(query);
         
@@ -30,18 +30,18 @@ public class DealController : ControllerBase
     [HttpGet]
     [Route("user")]
     [Authorize]
-    public async Task<IActionResult> GetByUserAsync([FromQuery] GetDealsByUserQuery query)
+    public async Task<IActionResult> GetByUserAsync([FromQuery] GetDealsByUserQuery query, CancellationToken token = default)
     {
-        var response = await _mediator.Send(query);
+        var response = await _mediator.Send(query, token);
         
         return Ok(response);
     }
 
     [HttpPost]
-    //[Authorize(Roles = RoleNames.Borrower)]
-    public async Task<IActionResult> AddAsync(CreateDealCommand command)
+    [Authorize(Roles = RoleNames.Borrower)]
+    public async Task<IActionResult> AddAsync(CreateDealCommand command, CancellationToken token = default)
     {
-        var response = await _mediator.Send(command);
+        var response = await _mediator.Send(command, token);
         
         return Ok(response);
     }
@@ -49,9 +49,9 @@ public class DealController : ControllerBase
     [HttpPut]
     [Route("complete")]
     [Authorize(Roles = RoleNames.Borrower)]
-    public async Task<IActionResult> CompleteAsync(CompleteDealCommand command)
+    public async Task<IActionResult> CompleteAsync(CompleteDealCommand command, CancellationToken token = default)
     {
-        var response = await _mediator.Send(command);
+        var response = await _mediator.Send(command, token);
         
         return Ok(response);
     }
@@ -59,9 +59,9 @@ public class DealController : ControllerBase
     [HttpPut]
     [Route("confirm")]
     [Authorize(Roles = RoleNames.Borrower)]
-    public async Task<IActionResult> ConfirmAsync(ConfirmDealCommand command)
+    public async Task<IActionResult> ConfirmAsync(ConfirmDealCommand command, CancellationToken token = default)
     {
-        var response = await _mediator.Send(command);
+        var response = await _mediator.Send(command, token);
         
         return Ok(response);
     }
@@ -69,9 +69,9 @@ public class DealController : ControllerBase
     [HttpPut]
     [Route("cancel")]
     [Authorize(Roles = RoleNames.Borrower)]
-    public async Task<IActionResult> CancelAsync(CancelDealCommand command)
+    public async Task<IActionResult> CancelAsync(CancelDealCommand command, CancellationToken token = default)
     {
-        var response = await _mediator.Send(command);
+        var response = await _mediator.Send(command, token);
         
         return Ok(response);
     }
