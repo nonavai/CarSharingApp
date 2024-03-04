@@ -46,7 +46,7 @@ public class CarController : ControllerBase
     }
     
     [HttpPost]
-    [Authorize(Roles = RoleNames.Lender)]
+    //[Authorize(Roles = RoleNames.Lender)]
     public async Task<IActionResult> AddAsync(CreateCarCommand command)
     {
         var response = await _mediator.Send(command);

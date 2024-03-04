@@ -38,7 +38,7 @@ public class DealController : ControllerBase
     }
 
     [HttpPost]
-    //[Authorize(Roles = RoleNames.Borrower)]
+    [Authorize(Roles = RoleNames.Borrower)]
     public async Task<IActionResult> AddAsync(CreateDealCommand command)
     {
         var response = await _mediator.Send(command);

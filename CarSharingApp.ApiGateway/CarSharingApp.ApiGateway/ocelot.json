@@ -1,0 +1,260 @@
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "api/answer",
+      "UpstreamHttpMethod": ["Get", "Post", "Put"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/answer"
+    },
+    {
+      "UpstreamPathTemplate": "api/deal",
+      "UpstreamHttpMethod": ["Post"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/deal"
+    },
+    {
+      "UpstreamPathTemplate": "api/deal/car",
+      "UpstreamHttpMethod": ["Get"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/deal/car"
+    },
+    {
+      "UpstreamPathTemplate": "api/deal/user",
+      "UpstreamHttpMethod": ["Get"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/deal/user"
+    },
+    {
+      "UpstreamPathTemplate": "api/deal/complete",
+      "UpstreamHttpMethod": ["Put"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/deal/complete"
+    },
+    {
+      "UpstreamPathTemplate": "api/deal/confirm",
+      "UpstreamHttpMethod": ["Put"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/deal/confirm"
+    },
+    {
+      "UpstreamPathTemplate": "api/deal/cancel",
+      "UpstreamHttpMethod": ["Put"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/deal/cancel"
+    },
+    {
+      "UpstreamPathTemplate": "api/feedback",
+      "UpstreamHttpMethod": ["Get", "Post", "Put", "Delete"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/feedback"
+    },
+    {
+      "UpstreamPathTemplate": "api/user",
+      "UpstreamHttpMethod": ["Get", "Post"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/user"
+    },
+    {
+      "UpstreamPathTemplate": "api/user/login",
+      "UpstreamHttpMethod": ["Post"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/user/login"
+    },
+    {
+      "UpstreamPathTemplate": "api/user/{id}",
+      "UpstreamHttpMethod": ["Get", "Put", "Delete"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/user/{id}"
+    },
+    {
+      "UpstreamPathTemplate": "api/user/{userId}/info",
+      "UpstreamHttpMethod": ["Get", "Put", "Delete"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/user/{userId}/info"
+    },
+    {
+      "UpstreamPathTemplate": "api/user/expired",
+      "UpstreamHttpMethod": ["Get"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/user/expired"
+    },
+    {
+      "UpstreamPathTemplate": "api/roles/{userId}",
+      "UpstreamHttpMethod": ["Get"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/roles/{userId}"
+    },
+    {
+      "UpstreamPathTemplate": "api/roles/{userId}/{role}",
+      "UpstreamHttpMethod": ["Post", "Delete"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/roles/{userId}/{role}"
+    },
+    {
+      "UpstreamPathTemplate": "api/car",
+      "UpstreamHttpMethod": ["Get", "Post", "Put", "Delete"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/car"
+    },
+    {
+      "UpstreamPathTemplate": "api/car/search",
+      "UpstreamHttpMethod": ["Get"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/car/search"
+    },
+    {
+      "UpstreamPathTemplate": "api/car/user",
+      "UpstreamHttpMethod": ["Get", "Post", "Put"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/car/user"
+    },
+    {
+      "UpstreamPathTemplate": "api/comments",
+      "UpstreamHttpMethod": ["Get", "Post", "Put", "Delete"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/comments"
+    },
+    {
+      "UpstreamPathTemplate": "api/comments/car",
+      "UpstreamHttpMethod": ["Get"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/comments/car"
+    },
+    {
+      "UpstreamPathTemplate": "api/image",
+      "UpstreamHttpMethod": ["Get", "Post", "Put", "Delete"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "",
+          "Port" : 80
+        }
+      ],
+      "DownstreamPathTemplate": "api/image"
+    }
+    
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": ""
+  }
+}
