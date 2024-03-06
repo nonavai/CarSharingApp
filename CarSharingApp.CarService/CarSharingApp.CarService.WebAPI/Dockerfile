@@ -6,6 +6,10 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["CarSharingApp.CarService.WebAPI/CarSharingApp.CarService.WebAPI.csproj", "CarSharingApp.CarService.WebAPI/"]
+COPY ["CarSharingApp.CarService.Application/CarSharingApp.CarService.Application.csproj", "CarSharingApp.CarService.Application/"]
+COPY ["CarSharingApp.CarService.Infrastructure/CarSharingApp.CarService.Infrastructure.csproj", "CarSharingApp.CarService.Infrastructure/"]
+COPY ["CarSharingApp.CarService.Domain/CarSharingApp.CarService.Domain.csproj", "CarSharingApp.CarService.Domain/"]
+
 RUN dotnet restore "CarSharingApp.CarService.WebAPI/CarSharingApp.CarService.WebAPI.csproj"
 COPY . .
 WORKDIR "/src/CarSharingApp.CarService.WebAPI"

@@ -1,0 +1,52 @@
+services:
+  
+  rabbitmq:
+    container_name: my-rabbitmq
+    image: rabbitmq:latest
+    ports:
+      - 5672:5672
+      - 15672:15672
+    restart: unless-stopped
+    entrypoint:
+      RABBITMQ_DEFAULT_USER: "guest"
+      RABBITMQ_DEFAULT_PASS: "guest"
+  
+  sqlserver:
+    container_name: SqlServer
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - 1433:1433
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Passw0rd
+    restart: unless-stopped
+    
+  minio:
+    image: quay.io/minio/minio
+    container_name: minio1
+    restart: always
+    ports:
+      - "9000:9000"
+    environment:
+      - MINIO_ROOT_USER=new-user
+      - MINIO_ROOT_PASSWORD=new-user
+  
+  
+  redis:
+    image: redis
+    container_name: my-redis-container
+    ports:
+      - "6379:6379"
+        
+  identity:
+    container_name: 
+    build:
+      context: "."
+      dockerfile: "/CarSharingApp.Identity/CarSharingApp.Identity.API/Dockerfile"
+    depends_on:
+      - sqlserver
+      - rabbitmq
+    ports:
+      - 1000:80
+        
+        
