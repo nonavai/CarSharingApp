@@ -9,8 +9,6 @@ public class UserInfoDto
     public string UserId { get; set; }
     public DateTime Birth { get; set; }
     public string Country { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
     public LicenceType Category { get; set; }
     public DateTime LicenceExpiry { get; set; }
     public DateTime LicenceIssue { get; set; }

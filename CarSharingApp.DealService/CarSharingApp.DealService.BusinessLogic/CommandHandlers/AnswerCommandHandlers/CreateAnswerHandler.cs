@@ -24,7 +24,7 @@ public class CreateAnswerHandler : IRequestHandler<CreateAnswerCommand, AnswerDt
     
     public async Task<AnswerDto> Handle(CreateAnswerCommand request, CancellationToken cancellationToken = default)
     {
-        var userResponse = await _userClient.IsUserExistAsync(new UserExistRequest
+        var userResponse = await _userClient.IsUserExistAsync(new UserRequest()
         {
             UserId = request.UserId
         });

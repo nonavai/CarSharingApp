@@ -24,7 +24,7 @@ public class CreateCommentHandler : IRequestHandler<CreateCommentCommand, Commen
 
     public async Task<CommentDto> Handle(CreateCommentCommand command, CancellationToken cancellationToken)
     {
-        var userResponse = await _userClient.IsUserExistAsync(new UserExistRequest
+        var userResponse = await _userClient.IsUserExistAsync(new UserRequest()
         {
             UserId = command.UserId
         });

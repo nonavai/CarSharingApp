@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2ef6ae46-cd3e-41b0-b6c9-a2f635704f70" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/bin/Debug/net7.0/CarSharingApp.ApiGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/bin/Debug/net7.0/CarSharingApp.ApiGateway.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/bin/Debug/net7.0/CarSharingApp.ApiGateway.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/bin/Debug/net7.0/CarSharingApp.ApiGateway.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/bin/Debug/net7.0/ocelot.json" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/bin/Debug/net7.0/ocelot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/obj/Debug/net7.0/CarSharingApp.ApiGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/obj/Debug/net7.0/CarSharingApp.ApiGateway.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/obj/Debug/net7.0/CarSharingApp.ApiGateway.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/obj/Debug/net7.0/CarSharingApp.ApiGateway.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/obj/Debug/net7.0/ref/CarSharingApp.ApiGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/obj/Debug/net7.0/ref/CarSharingApp.ApiGateway.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/obj/Debug/net7.0/refint/CarSharingApp.ApiGateway.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/obj/Debug/net7.0/refint/CarSharingApp.ApiGateway.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/ocelot.json" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/ocelot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/.vs/CarSharingApp.CarService/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/.vs/CarSharingApp.CarService/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/.vs/CarSharingApp.CarService/FileContentIndex/01e5c4d7-4969-4e10-81e3-851613fed422.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/.vs/CarSharingApp.CarService/FileContentIndex/037b9d2a-8bbc-4e99-b905-b607a49fc39a.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/.vs/CarSharingApp.CarService/FileContentIndex/431704fc-1842-4fd2-8325-daced883e748.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/.vs/CarSharingApp.CarService/FileContentIndex/4b8bf712-2bf7-46f5-bdb6-f8b0645e5c77.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/.vs/CarSharingApp.CarService/FileContentIndex/7c61ecff-bbe7-4218-9595-d47225687e8b.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/.vs/CarSharingApp.CarService/FileContentIndex/97cf3ad8-9169-4e18-898d-ff8161d10da1.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/.vs/CarSharingApp.CarService/FileContentIndex/b9de5e0c-45bd-4aed-89c2-63f8724e9dd4.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/.vs/CarSharingApp.CarService/FileContentIndex/eaef2fbb-057f-46c8-bcc5-f6957799ffde.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/.vs/CarSharingApp.CarService/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/.vs/CarSharingApp.CarService/v17/.futdcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/.vs/CarSharingApp.CarService/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/.vs/CarSharingApp.CarService/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/.vs/ProjectEvaluation/carsharingapp.carservice.metadata.v6.1" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/.vs/ProjectEvaluation/carsharingapp.carservice.metadata.v6.1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/.vs/ProjectEvaluation/carsharingapp.carservice.projects.v6.1" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/.vs/ProjectEvaluation/carsharingapp.carservice.projects.v6.1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/Caching/CacheService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/Caching/CacheService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/CommandHandlers/CarCommandHandlers/CreateCarHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/CommandHandlers/CarCommandHandlers/CreateCarHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/CommandHandlers/ImageCommandHandlers/CreateImageHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/CommandHandlers/ImageCommandHandlers/CreateImageHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/DTO's/Car/CarFullDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/DTO's/Car/CarFullDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/DTO's/Car/CarWithImageDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/DTO's/Car/CarWithImageDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/Mapping/MappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/Mapping/MappingProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/Queries/CarQueries/GetCarsByParamsQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/Queries/CarQueries/GetCarsByParamsQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/QueryHandlers/CarQueryHandlers/GetCarsByParamsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/QueryHandlers/CarQueryHandlers/GetCarsByParamsHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/QueryHandlers/ImageQueryHandlers/GetImagesByCarHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/QueryHandlers/ImageQueryHandlers/GetImagesByCarHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/bin/Debug/net7.0/CarSharingApp.CarService.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/bin/Debug/net7.0/CarSharingApp.CarService.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/bin/Debug/net7.0/CarSharingApp.CarService.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/bin/Debug/net7.0/CarSharingApp.CarService.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/bin/Debug/net7.0/CarSharingApp.CarService.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/bin/Debug/net7.0/CarSharingApp.CarService.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/bin/Debug/net7.0/CarSharingApp.CarService.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/bin/Debug/net7.0/CarSharingApp.CarService.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/obj/Debug/net7.0/CarSharingApp.CarService.Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/obj/Debug/net7.0/CarSharingApp.CarService.Application.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/obj/Debug/net7.0/CarSharingApp.CarService.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/obj/Debug/net7.0/CarSharingApp.CarService.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/obj/Debug/net7.0/CarSharingApp.CarService.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/obj/Debug/net7.0/CarSharingApp.CarService.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/obj/Debug/net7.0/ref/CarSharingApp.CarService.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/obj/Debug/net7.0/ref/CarSharingApp.CarService.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/obj/Debug/net7.0/refint/CarSharingApp.CarService.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Application/obj/Debug/net7.0/refint/CarSharingApp.CarService.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Domain/Entities/CarState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Domain/Entities/CarState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Domain/bin/Debug/net7.0/CarSharingApp.CarService.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Domain/bin/Debug/net7.0/CarSharingApp.CarService.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Domain/bin/Debug/net7.0/CarSharingApp.CarService.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Domain/bin/Debug/net7.0/CarSharingApp.CarService.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Domain/obj/Debug/net7.0/CarSharingApp.CarService.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Domain/obj/Debug/net7.0/CarSharingApp.CarService.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Domain/obj/Debug/net7.0/CarSharingApp.CarService.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Domain/obj/Debug/net7.0/CarSharingApp.CarService.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Domain/obj/Debug/net7.0/ref/CarSharingApp.CarService.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Domain/obj/Debug/net7.0/ref/CarSharingApp.CarService.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Domain/obj/Debug/net7.0/refint/CarSharingApp.CarService.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Domain/obj/Debug/net7.0/refint/CarSharingApp.CarService.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/Migrations/CarsContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/Migrations/CarsContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/Repositories/CarRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/Repositories/CarRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/bin/Debug/net7.0/CarSharingApp.CarService.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/bin/Debug/net7.0/CarSharingApp.CarService.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/bin/Debug/net7.0/CarSharingApp.CarService.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/bin/Debug/net7.0/CarSharingApp.CarService.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/bin/Debug/net7.0/CarSharingApp.CarService.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/bin/Debug/net7.0/CarSharingApp.CarService.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/bin/Debug/net7.0/CarSharingApp.CarService.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/bin/Debug/net7.0/CarSharingApp.CarService.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/bin/Debug/net7.0/CarSharingApp.CarService.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/bin/Debug/net7.0/CarSharingApp.CarService.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/bin/Debug/net7.0/CarSharingApp.CarService.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/bin/Debug/net7.0/CarSharingApp.CarService.Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/obj/Debug/net7.0/CarSharingApp.CarService.Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/obj/Debug/net7.0/CarSharingApp.CarService.Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/obj/Debug/net7.0/CarSharingApp.CarService.Infrastructure.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/obj/Debug/net7.0/CarSharingApp.CarService.Infrastructure.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/obj/Debug/net7.0/CarSharingApp.CarService.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/obj/Debug/net7.0/CarSharingApp.CarService.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/obj/Debug/net7.0/CarSharingApp.CarService.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/obj/Debug/net7.0/CarSharingApp.CarService.Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/obj/Debug/net7.0/ref/CarSharingApp.CarService.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/obj/Debug/net7.0/ref/CarSharingApp.CarService.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/obj/Debug/net7.0/refint/CarSharingApp.CarService.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.Infrastructure/obj/Debug/net7.0/refint/CarSharingApp.CarService.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/bin/Debug/net7.0/CarSharingApp.CarService.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/bin/Debug/net7.0/CarSharingApp.CarService.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/bin/Debug/net7.0/CarSharingApp.CarService.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/bin/Debug/net7.0/CarSharingApp.CarService.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/bin/Debug/net7.0/CarSharingApp.CarService.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/bin/Debug/net7.0/CarSharingApp.CarService.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/bin/Debug/net7.0/CarSharingApp.CarService.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/bin/Debug/net7.0/CarSharingApp.CarService.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/bin/Debug/net7.0/CarSharingApp.CarService.Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/bin/Debug/net7.0/CarSharingApp.CarService.Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/bin/Debug/net7.0/CarSharingApp.CarService.Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/bin/Debug/net7.0/CarSharingApp.CarService.Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/bin/Debug/net7.0/CarSharingApp.CarService.WebAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/bin/Debug/net7.0/CarSharingApp.CarService.WebAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/bin/Debug/net7.0/CarSharingApp.CarService.WebAPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/bin/Debug/net7.0/CarSharingApp.CarService.WebAPI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/bin/Debug/net7.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/bin/Debug/net7.0/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/obj/Debug/net7.0/CarSharingApp.CarService.WebAPI.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/obj/Debug/net7.0/CarSharingApp.CarService.WebAPI.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/obj/Debug/net7.0/CarSharingApp.CarService.WebAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/obj/Debug/net7.0/CarSharingApp.CarService.WebAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/obj/Debug/net7.0/CarSharingApp.CarService.WebAPI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/obj/Debug/net7.0/CarSharingApp.CarService.WebAPI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/obj/Debug/net7.0/ref/CarSharingApp.CarService.WebAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/obj/Debug/net7.0/ref/CarSharingApp.CarService.WebAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/obj/Debug/net7.0/refint/CarSharingApp.CarService.WebAPI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/obj/Debug/net7.0/refint/CarSharingApp.CarService.WebAPI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.DealService/CarSharingApp.DealService.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.DealService/CarSharingApp.DealService.API/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.API/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.API/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.API/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.API/bin/Debug/net7.0/CarSharingApp.Identity.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.API/bin/Debug/net7.0/CarSharingApp.Identity.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.API/bin/Debug/net7.0/CarSharingApp.Identity.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.API/bin/Debug/net7.0/CarSharingApp.Identity.API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.API/bin/Debug/net7.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.API/bin/Debug/net7.0/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.API/obj/Debug/net7.0/CarSharingApp.Identity.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.API/obj/Debug/net7.0/CarSharingApp.Identity.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.API/obj/Debug/net7.0/CarSharingApp.Identity.API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.API/obj/Debug/net7.0/CarSharingApp.Identity.API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.API/obj/Debug/net7.0/ref/CarSharingApp.Identity.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.API/obj/Debug/net7.0/ref/CarSharingApp.Identity.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.API/obj/Debug/net7.0/refint/CarSharingApp.Identity.API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.API/obj/Debug/net7.0/refint/CarSharingApp.Identity.API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.BusinessLogic/obj/Debug/net7.0/CarSharingApp.Identity.BusinessLogic.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.BusinessLogic/obj/Debug/net7.0/CarSharingApp.Identity.BusinessLogic.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.DataAccess/obj/Debug/net7.0/CarSharingApp.Identity.DataAccess.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../CarSharingApp.Identity/CarSharingApp.Identity.DataAccess/obj/Debug/net7.0/CarSharingApp.Identity.DataAccess.csproj.AssemblyReference.cache" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+        <option value="CSS File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2dJ84H7RUreQHPFd6HIyrEGg0rc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/front-end&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/rider/c#projects/CarSharingAplication/web/src/Styles&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\rider\\c#projects\\CarSharingAplication\\web\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\rider\c#projects\CarSharingAplication\web\src\Styles" />
+      <recent name="C:\rider\c#projects\CarSharingAplication\web\src\Pages" />
+      <recent name="C:\rider\c#projects\CarSharingAplication\web\src\Components" />
+      <recent name="C:\rider\c#projects\CarSharingAplication\web\src\API" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2ef6ae46-cd3e-41b0-b6c9-a2f635704f70" name="Changes" comment="" />
+      <created>1709714628072</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709714628072</updated>
+      <workItem from="1709714629071" duration="32861000" />
+      <workItem from="1710112847536" duration="16044000" />
+      <workItem from="1710222129646" duration="1242000" />
+      <workItem from="1710244340677" duration="17543000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/Pages/SearchPage.tsx</url>
+          <line>55</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/Components/CarProfile.tsx</url>
+          <line>13</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

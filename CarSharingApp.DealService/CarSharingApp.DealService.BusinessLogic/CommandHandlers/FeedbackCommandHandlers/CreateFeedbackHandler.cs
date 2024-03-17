@@ -24,7 +24,7 @@ public class CreateFeedbackHandler : IRequestHandler<CreateFeedbackCommand, Feed
     
     public async Task<FeedbackDto> Handle(CreateFeedbackCommand request, CancellationToken cancellationToken = default)
     {
-        var userResponse = await _userClient.IsUserExistAsync(new UserExistRequest
+        var userResponse = await _userClient.IsUserExistAsync(new UserRequest()
         {
             UserId = request.UserId
         });

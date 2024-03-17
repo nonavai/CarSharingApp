@@ -27,7 +27,7 @@ public class CreateCarHandler : IRequestHandler<CreateCarCommand, CarDto>
 
     public async Task<CarDto> Handle(CreateCarCommand command, CancellationToken cancellationToken)
     {
-        var userResponse = await _userClient.IsUserExistAsync(new UserExistRequest
+        var userResponse = await _userClient.IsUserExistAsync(new UserRequest()
         {
             UserId = command.UserId
         });

@@ -31,7 +31,7 @@ public class CreateDealHandler : IRequestHandler<CreateDealCommand, DealDto>
     
     public async Task<DealDto> Handle(CreateDealCommand request, CancellationToken cancellationToken = default)
     {
-        var userResponse = await _userClient.IsUserExistAsync(new UserExistRequest
+        var userResponse = await _userClient.IsUserExistAsync(new UserRequest()
         {
             UserId = request.UserId
         });
@@ -41,7 +41,7 @@ public class CreateDealHandler : IRequestHandler<CreateDealCommand, DealDto>
             throw new NotFoundException("User");
         }
         
-        var userRolesResponse = await _userClient.GetUserRolesAsync(new GetUserRolesRequest
+        var userRolesResponse = await _userClient.GetUserRolesAsync(new UserRequest()
         {
             UserId = request.UserId
         });

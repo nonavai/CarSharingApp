@@ -3,21 +3,17 @@ syntax = "proto3";
 package userService;
 
 service User {
-  rpc GetUserRoles (GetUserRolesRequest) returns (GetUserRolesResponse) {}
+  rpc GetUserRoles (UserRequest) returns (GetUserRolesResponse) {}
   
-  rpc IsUserExist (UserExistRequest) returns (UserExistResponse) {}
+  rpc IsUserExist (UserRequest) returns (UserExistResponse) {}
 }
 
-message GetUserRolesRequest{
+message UserRequest{
   string userId = 1;
 }
 
 message GetUserRolesResponse{
   repeated string roles = 1;
-}
-
-message UserExistRequest {
-  string userId = 1;
 }
 
 message UserExistResponse {

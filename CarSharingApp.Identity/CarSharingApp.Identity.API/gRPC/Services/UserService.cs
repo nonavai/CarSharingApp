@@ -15,7 +15,7 @@ public class UserService : User.UserBase
         _rolesService = rolesService;
     }
 
-    public override async Task<UserExistResponse> IsUserExist(UserExistRequest request, ServerCallContext context)
+    public override async Task<UserExistResponse> IsUserExist(UserRequest request, ServerCallContext context)
     {
         var result = await _userManageService.IsUserExits(request.UserId);
         
@@ -25,7 +25,7 @@ public class UserService : User.UserBase
         });
     }
 
-    public override async Task<GetUserRolesResponse> GetUserRoles(GetUserRolesRequest request, ServerCallContext context)
+    public override async Task<GetUserRolesResponse> GetUserRoles(UserRequest request, ServerCallContext context)
     {
         var result = await _rolesService.GetUserRolesAsync(request.UserId);
         var response = new GetUserRolesResponse();
