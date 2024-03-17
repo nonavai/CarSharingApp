@@ -19,10 +19,18 @@ public class DealController : ControllerBase
     }
     
     [HttpGet]
+    public async Task<IActionResult> GetByIdAsync([FromQuery] GetDealByIdQuery query, CancellationToken token = default)
+    {
+        var response = await _mediator.Send(query, token);
+        
+        return Ok(response);
+    }
+    
+    [HttpGet]
     [Route("car")]
     public async Task<IActionResult> GetByCarAsync([FromQuery] GetDealsByCarQuery query, CancellationToken token = default)
     {
-        var response = await _mediator.Send(query);
+        var response = await _mediator.Send(query, token);
         
         return Ok(response);
     }

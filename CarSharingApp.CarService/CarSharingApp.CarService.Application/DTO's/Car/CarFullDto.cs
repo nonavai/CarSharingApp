@@ -21,5 +21,4 @@ public class CarFullDto
     public string? Description { get; set; }
     
     public CarStateDto CarState { get; set; }
-    public IEnumerable<CommentDto> Comments { get; set; }
 }

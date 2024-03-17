@@ -40,4 +40,6 @@ public class CarStateHub : Hub
             .SendAsync("ReceiveCarStatusUpdate", command.Status); 
         await _mediator.Send(command);
     }
+    
+    
 }

@@ -2,11 +2,11 @@
   "Routes": [
     {
       "UpstreamPathTemplate": "/api/answer",
-      "UpstreamHttpMethod": ["Get", "Post", "Put"],
+      "UpstreamHttpMethod": ["Get", "Post", "Put", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7043
         }
       ],
@@ -15,11 +15,11 @@
     },
     {
       "UpstreamPathTemplate": "/api/deal",
-      "UpstreamHttpMethod": ["Post"],
+      "UpstreamHttpMethod": ["Get", "Post", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7043
         }
       ],
@@ -28,11 +28,11 @@
     },
     {
       "UpstreamPathTemplate": "/api/deal/car",
-      "UpstreamHttpMethod": ["Get"],
+      "UpstreamHttpMethod": ["Get", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7043
         }
       ],
@@ -41,11 +41,11 @@
     },
     {
       "UpstreamPathTemplate": "/api/deal/user",
-      "UpstreamHttpMethod": ["Get"],
+      "UpstreamHttpMethod": ["Get", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7043
         }
       ],
@@ -54,11 +54,11 @@
     },
     {
       "UpstreamPathTemplate": "/api/deal/complete",
-      "UpstreamHttpMethod": ["Put"],
+      "UpstreamHttpMethod": ["Put", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7043
         }
       ],
@@ -67,11 +67,11 @@
     },
     {
       "UpstreamPathTemplate": "/api/deal/confirm",
-      "UpstreamHttpMethod": ["Put"],
+      "UpstreamHttpMethod": ["Put", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7043
         }
       ],
@@ -80,11 +80,11 @@
     },
     {
       "UpstreamPathTemplate": "/api/deal/cancel",
-      "UpstreamHttpMethod": ["Put"],
+      "UpstreamHttpMethod": ["Put", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7043
         }
       ],
@@ -93,11 +93,11 @@
     },
     {
       "UpstreamPathTemplate": "/api/feedback",
-      "UpstreamHttpMethod": ["Get", "Post", "Put", "Delete"],
+      "UpstreamHttpMethod": ["Get", "Post", "Put", "Delete", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7043
         }
       ],
@@ -106,11 +106,11 @@
     },
     {
       "UpstreamPathTemplate": "/api/user",
-      "UpstreamHttpMethod": ["Get", "Post"],
+      "UpstreamHttpMethod": ["Get", "Post", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7070
         }
       ],
@@ -119,11 +119,11 @@
     },
     {
       "UpstreamPathTemplate": "/api/user/login",
-      "UpstreamHttpMethod": ["Post"],
+      "UpstreamHttpMethod": ["Post", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7070
         }
       ],
@@ -132,11 +132,11 @@
     },
     {
       "UpstreamPathTemplate": "/api/user/{id}",
-      "UpstreamHttpMethod": ["Get", "Put", "Delete"],
+      "UpstreamHttpMethod": ["Get", "Put", "Delete", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7070
         }
       ],
@@ -145,11 +145,11 @@
     },
     {
       "UpstreamPathTemplate": "/api/user/{userId}/info",
-      "UpstreamHttpMethod": ["Get", "Put", "Delete"],
+      "UpstreamHttpMethod": ["Get", "Put", "Delete", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7070
         }
       ],
@@ -158,11 +158,11 @@
     },
     {
       "UpstreamPathTemplate": "/api/user/expired",
-      "UpstreamHttpMethod": ["Get"],
+      "UpstreamHttpMethod": ["Get", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7070
         }
       ],
@@ -171,11 +171,11 @@
     },
     {
       "UpstreamPathTemplate": "/api/roles/{userId}",
-      "UpstreamHttpMethod": ["Get"],
+      "UpstreamHttpMethod": ["Get", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7070
         }
       ],
@@ -184,11 +184,11 @@
     },
     {
       "UpstreamPathTemplate": "/api/roles/{userId}/{role}",
-      "UpstreamHttpMethod": ["Post", "Delete"],
+      "UpstreamHttpMethod": ["Post", "Delete", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7070
         }
       ],
@@ -197,11 +197,11 @@
     },
     {
       "UpstreamPathTemplate": "/api/car",
-      "UpstreamHttpMethod": ["Get", "Post", "Put", "Delete"],
+      "UpstreamHttpMethod": ["Get", "Post", "Put", "Delete", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7198
         }
       ],
@@ -210,11 +210,11 @@
     },
     {
       "UpstreamPathTemplate": "/api/car/search",
-      "UpstreamHttpMethod": ["Get"],
+      "UpstreamHttpMethod": ["Get", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7198
         }
       ],
@@ -223,11 +223,11 @@
     },
     {
       "UpstreamPathTemplate": "/api/car/user",
-      "UpstreamHttpMethod": ["Get", "Post", "Put"],
+      "UpstreamHttpMethod": ["Get", "Post", "Put", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7198
         }
       ],
@@ -236,11 +236,11 @@
     },
     {
       "UpstreamPathTemplate": "/api/comments",
-      "UpstreamHttpMethod": ["Get", "Post", "Put", "Delete"],
+      "UpstreamHttpMethod": ["Get", "Post", "Put", "Delete", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7198
         }
       ],
@@ -249,11 +249,11 @@
     },
     {
       "UpstreamPathTemplate": "/api/comments/car",
-      "UpstreamHttpMethod": ["Get"],
+      "UpstreamHttpMethod": ["Get", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7198
         }
       ],
@@ -262,15 +262,27 @@
     },
     {
       "UpstreamPathTemplate": "/api/image",
-      "UpstreamHttpMethod": ["Get", "Post", "Put", "Delete"],
+      "UpstreamHttpMethod": ["Get", "Post", "Put", "Delete", "Options"],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host" : "https://localhost",
+          "Host" : "localhost",
           "Port" : 7198
         }
       ],
       "DownstreamPathTemplate": "/api/image",
+      "SwaggerKey" : "car"
+    },
+    {
+      "UpstreamPathTemplate": "/car-state",
+      "DownstreamScheme": "wss",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "localhost",
+          "Port" : 7198
+        }
+      ],
+      "DownstreamPathTemplate": "/car-state",
       "SwaggerKey" : "car"
     }
   ],
@@ -307,6 +319,6 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost"
+    "BaseUrl": "https://localhost:7231"
   }
 }

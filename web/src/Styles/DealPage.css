@@ -1,0 +1,61 @@
+/* Стили для контейнера страницы */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Стили для заголовка */
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Стили для блока информации о машине */
+.car-info {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.car-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Стили для блока информации о пользователе */
+.user-info {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.user-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Стили для блока информации о заказе */
+.order-info {
+    margin-bottom: 20px;
+}
+
+.order-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Стили для кнопки подтверждения */
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

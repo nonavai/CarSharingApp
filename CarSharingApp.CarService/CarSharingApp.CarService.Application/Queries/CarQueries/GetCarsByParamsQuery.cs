@@ -6,7 +6,7 @@ namespace CarSharingApp.CarService.Application.Queries.CarQueries;
 
 public class GetCarsByParamsQuery : IRequest<IEnumerable<CarWithImageDto>>
 {
-    public bool IsActive { get; set; }
+    public Status Status { get; set; }
     public double? RadiusKm { get; set; }
     public double? Latitude { get; set; }
     public double? Longitude { get; set; }

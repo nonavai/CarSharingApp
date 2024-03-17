@@ -49,6 +49,10 @@ namespace CarService {
     static readonly grpc::Marshaller<global::CarService.CarAvailableRequest> __Marshaller_carService_CarAvailableRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::CarService.CarAvailableRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::CarService.CarAvailableResponse> __Marshaller_carService_CarAvailableResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::CarService.CarAvailableResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::CarService.ChangeStatus> __Marshaller_carService_ChangeStatus = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::CarService.ChangeStatus.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::CarService.ChangeCarStatusResponse> __Marshaller_carService_ChangeCarStatusResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::CarService.ChangeCarStatusResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::CarService.CarAvailableRequest, global::CarService.CarAvailableResponse> __Method_IsCarAvailable = new grpc::Method<global::CarService.CarAvailableRequest, global::CarService.CarAvailableResponse>(
@@ -57,6 +61,14 @@ namespace CarService {
         "IsCarAvailable",
         __Marshaller_carService_CarAvailableRequest,
         __Marshaller_carService_CarAvailableResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::CarService.ChangeStatus, global::CarService.ChangeCarStatusResponse> __Method_ChangeCarStatus = new grpc::Method<global::CarService.ChangeStatus, global::CarService.ChangeCarStatusResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ChangeCarStatus",
+        __Marshaller_carService_ChangeStatus,
+        __Marshaller_carService_ChangeCarStatusResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -74,6 +86,12 @@ namespace CarService {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::CarService.ChangeCarStatusResponse> ChangeCarStatus(global::CarService.ChangeStatus request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -82,7 +100,8 @@ namespace CarService {
     public static grpc::ServerServiceDefinition BindService(CarBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_IsCarAvailable, serviceImpl.IsCarAvailable).Build();
+          .AddMethod(__Method_IsCarAvailable, serviceImpl.IsCarAvailable)
+          .AddMethod(__Method_ChangeCarStatus, serviceImpl.ChangeCarStatus).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -93,6 +112,7 @@ namespace CarService {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, CarBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_IsCarAvailable, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::CarService.CarAvailableRequest, global::CarService.CarAvailableResponse>(serviceImpl.IsCarAvailable));
+      serviceBinder.AddMethod(__Method_ChangeCarStatus, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::CarService.ChangeStatus, global::CarService.ChangeCarStatusResponse>(serviceImpl.ChangeCarStatus));
     }
 
   }

@@ -25,6 +25,6 @@ public class CacheService : ICacheService
     public async Task SetAsync<T>(string key, T value, TimeSpan? expiry = null)
     {
         var serializedValue = JsonConvert.SerializeObject(value);
-        await _database.StringSetAsync(key, serializedValue, TimeSpan.FromMinutes(10));
+        await _database.StringSetAsync(key, serializedValue, TimeSpan.FromMinutes(1));
     }
 }

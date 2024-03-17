@@ -1,4 +1,5 @@
-﻿using CarSharingApp.CarService.Domain.Enums;
+﻿using CarSharingApp.CarService.Application.DTO_s.CarState;
+using CarSharingApp.CarService.Domain.Enums;
 
 namespace CarSharingApp.CarService.Application.DTO_s.Car;
 
@@ -18,4 +19,5 @@ public class CarWithImageDto
     public float EngineCapacity { get; set; }
     public string? Description { get; set; }
     public string File { get; set; }
+    public CarStateDto CarState { get; set; }
 }

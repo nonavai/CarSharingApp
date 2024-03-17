@@ -17,7 +17,7 @@ public class MappingProfile : Profile
     public MappingProfile()
     {
         CreateMap<Car, CarFullDto>()
-            .ForMember(dest => dest.CarState, 
+            .ForMember(dest => dest.CarState,
                 opt =>
                     opt.MapFrom(src =>
                         new CarStateDto
@@ -27,26 +27,25 @@ public class MappingProfile : Profile
                             Status = src.CarState.Status,
                             Latitude = src.CarState.Latitude,
                             Longitude = src.CarState.Longitude
-                        }))
-            .ForMember(dest => dest.Comments,
-                opt =>
-                    opt.MapFrom(src => src.Comments.Select(comment =>
-                        new CommentDto
-                        {
-                            Id = comment.Id,
-                            CarId = comment.CarId,
-                            UserId = comment.UserId,
-                            TimePosted = comment.TimePosted,
-                            Text = comment.Text,
-                            Rating = comment.Rating
-                        }))).ReverseMap();
+                        }));
         CreateMap<CreateCarCommand, Car>();
         CreateMap<UpdateCarCommand, Car>();   
         CreateMap<Car, CarDto>();
-        CreateMap<Car, CarWithImageDto>();
+        CreateMap<Car, CarWithImageDto>()
+            .ForMember(dest => dest.CarState,
+                opt =>
+                    opt.MapFrom(src =>
+                        new CarStateDto
+                        {
+                            Id = src.CarState.Id,
+                            CarId = src.CarState.CarId,
+                            Status = src.CarState.Status,
+                            Latitude = src.CarState.Latitude,
+                            Longitude = src.CarState.Longitude
+                        }));;
 
-        CreateMap<UpdateCarStatusCommand, Car>();
-        CreateMap<UpdateCarLocationCommand, Car>();
+        CreateMap<UpdateCarStatusCommand, CarState>();
+        CreateMap<UpdateCarLocationCommand, CarState>();
         CreateMap<Car, CarStateDto>();
         CreateMap<CarState, CarStateDto>();
 
@@ -56,6 +55,7 @@ public class MappingProfile : Profile
 
         CreateMap<CreateImageCommand, CarImage>();
         CreateMap<CarImage, ImageDto>();
+        CreateMap<CarImage, ImageFullDto>().ReverseMap();
         CreateMap<CreateImageCommand, ImageCleanDto>()
             .ForMember(dest=> dest.File,
                 opt=>

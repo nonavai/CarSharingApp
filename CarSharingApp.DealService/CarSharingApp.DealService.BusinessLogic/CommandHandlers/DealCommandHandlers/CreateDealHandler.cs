@@ -2,15 +2,15 @@
 using CarService;
 using CarSharingApp.DealService.BusinessLogic.Commands.DealCommands;
 using CarSharingApp.DealService.BusinessLogic.Models.Deal;
-using CarSharingApp.DealService.BusinessLogic.Producers;
 using CarSharingApp.DealService.DataAccess.Entities;
 using CarSharingApp.DealService.DataAccess.Repositories;
 using CarSharingApp.DealService.Shared.Constants;
-using CarSharingApp.DealService.Shared.Enums;
 using CarSharingApp.DealService.Shared.Exceptions;
+using Grpc.Core;
 using Hangfire;
 using MediatR;
 using UserService;
+using Status = CarService.Status;
 
 namespace CarSharingApp.DealService.BusinessLogic.CommandHandlers.DealCommandHandlers;
 
@@ -53,7 +53,7 @@ public class CreateDealHandler : IRequestHandler<CreateDealCommand, DealDto>
         
         var carResponse = await _carClient.IsCarAvailableAsync(new CarAvailableRequest
         {
-            UserId = request.UserId
+            UserId = request.CarId
         });
         
         if (!carResponse.IsAvailable)
@@ -71,8 +71,12 @@ public class CreateDealHandler : IRequestHandler<CreateDealCommand, DealDto>
                 Id = result.Id
             }, cancellationToken), 
             TimeSpan.FromMinutes(20));
-        BackgroundJob.Enqueue<UpdateCarStatusProducer>(x =>
-            x.UpdateCarStatus(request.CarId, CarStatus.Booking));
+        BackgroundJob.Enqueue<Car.CarClient>(x =>
+            x.ChangeCarStatus(new ChangeStatus
+            {
+                CarId = result.CarId,
+                Status = CarService.Status.Booking
+            }, new CallOptions()));
         
         return result;
     }

@@ -12,7 +12,18 @@ Startup.ConfigureDataBase(builder.Services, config);
 builder.Services.AddControllers();
 builder.Services.AddValidatorsFromAssemblyContaining<UserValidator>(); 
 builder.Services.AddFluentValidationAutoValidation();
-
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:3000")
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials();
+        });
+});
 Startup.ConfigureSwagger(builder.Services);
 Startup.ConfigureAuth(builder.Services, config);
 Startup.ConfigureRepository(builder.Services);
@@ -21,6 +32,7 @@ Startup.InitializeRoles(builder.Services).Wait();
 Startup.ConfigureMassTransit(builder.Services, config);
 
 var app = builder.Build();
+app.UseCors(MyAllowSpecificOrigins);
 Startup.ConfigureMiddlewares(app);
 Startup.ConfigureHangfire(app, config);
 Startup.ScheduleLicenceCheck(builder.Services);

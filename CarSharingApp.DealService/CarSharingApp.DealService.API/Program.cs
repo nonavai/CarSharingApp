@@ -20,8 +20,22 @@ Startup.ConfigureServices(builder.Services);
 Startup.ConfigureMassTransit(builder.Services, config);
 Startup.ConfigureRedis(builder.Services, config);
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:3000")
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials();
+        });
+});
+
 var app = builder.Build();
 
+app.UseCors(MyAllowSpecificOrigins);
 Startup.ConfigureMiddlewares(app);
 Startup.ConfigureHangfire(app, config);
 

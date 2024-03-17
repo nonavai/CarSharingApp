@@ -40,7 +40,7 @@ public class GetCarsByParamsHandler : IRequestHandler<GetCarsByParamsQuery, IEnu
             return cache;
         }
 
-        Expression<Func<Car, bool>> customFilter = car => car.CarState.IsActive == query.IsActive;
+        Expression<Func<Car, bool>> customFilter = car => car.CarState.Status == query.Status;
         
         if (query.RadiusKm.HasValue && query.Latitude.HasValue && query.Longitude.HasValue)
         {
@@ -53,32 +53,40 @@ public class GetCarsByParamsHandler : IRequestHandler<GetCarsByParamsQuery, IEnu
             ) <= maxDistance);
         }
         
-        var spec = new CarSpecification(customFilter).FilterCars(
-            query.MinYear,
-            query.MaxYear,
-            query.MinPrice,
-            query.MaxPrice,
-            query.VehicleType,
-            query.FuelType,
-            query.Mark,
-            query.Model,
-            query.MinEngineCapacity,
-            query.MaxEngineCapacity,
-            query.WheelDrive
-        );
+        var spec = new CarSpecification(customFilter)
+            .WithCarStatus()
+            .FilterCars(
+                query.MinYear,
+                query.MaxYear,
+                query.MinPrice,
+                query.MaxPrice,
+                query.VehicleType,
+                query.FuelType,
+                query.Mark,
+                query.Model,
+                query.MinEngineCapacity,
+                query.MaxEngineCapacity,
+                query.WheelDrive
+            );
         var cars = await _carRepository.GetBySpecAsync(spec, query.CurrentPage, query.PageSize, token);
         var carDtos = _mapper.Map<IEnumerable<CarWithImageDto>>(cars);
-        var carsWithImage = carDtos.Select(async car =>
+        var result = new List<CarWithImageDto>();
+        
+        foreach (var carDto in carDtos)
         {
-            var primaryImage = await _carImageRepository.GetPrimaryAsync(car.Id, token);
-            var memoryStream = await _minioRepository.GetAsync(primaryImage.Url, token);
-            var bytes = memoryStream.ToArray();
-            var base64String = Convert.ToBase64String(bytes);
-            car.File = base64String;
-            return car;
-        });
-        var result = await Task.WhenAll(carsWithImage);
-        await _cacheService.SetAsync(serializedValue, result);
+            var primaryImage = await _carImageRepository.GetPrimaryAsync(carDto.Id, token);
+
+            if (primaryImage != null)
+            {
+                var memoryStream = await _minioRepository.GetAsync(primaryImage.Url, token);
+                var bytes = memoryStream.ToArray();
+                var base64String = Convert.ToBase64String(bytes);
+                carDto.File = base64String;
+            }
+
+            result.Add(carDto);
+        }
+        await _cacheService.SetAsync(serializedValue, result.AsEnumerable());
         
         return result.AsEnumerable();
     }

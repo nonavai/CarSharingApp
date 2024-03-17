@@ -42,7 +42,6 @@ public class CreateCarHandler : IRequestHandler<CreateCarCommand, CarDto>
         var newCarState = new CarState
         {
             Status = Status.Free,
-            IsActive = true,
             Latitude = 0,
             Longitude = 0,
             Car = newCar

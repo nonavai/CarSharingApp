@@ -11,7 +11,7 @@ public class MappingProfileApi : Profile
     public MappingProfileApi()
     {
         CreateMap<User, UserDto>()
-            .ForMember(dest => dest.UserInfoDto, opt=> opt.MapFrom(src=> src.UserInfo))
+            .ForMember(dest => dest.UserInfo, opt=> opt.MapFrom(src=> src.UserInfo))
             .ReverseMap();
         CreateMap<UserInfo, UserInfoDto>()
             .ForMember(dest => dest.User, opt=> opt.MapFrom(src=> src.User))

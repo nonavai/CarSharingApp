@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
+using CarService;
 using CarSharingApp.DealService.BusinessLogic.Commands.DealCommands;
 using CarSharingApp.DealService.BusinessLogic.Models.Deal;
-using CarSharingApp.DealService.BusinessLogic.Producers;
 using CarSharingApp.DealService.DataAccess.Repositories;
 using CarSharingApp.DealService.Shared.Enums;
 using CarSharingApp.DealService.Shared.Exceptions;
-using MediatR;
+using Grpc.Core;
 using Hangfire;
+using MediatR;
 
 namespace CarSharingApp.DealService.BusinessLogic.CommandHandlers.DealCommandHandlers;
 
@@ -14,11 +15,13 @@ public class ConfirmDealHandler : IRequestHandler<ConfirmDealCommand, DealDto>
 {
     private readonly IDealRepository _dealRepository;
     private readonly IMapper _mapper;
+    private readonly Car.CarClient _carClient;
 
-    public ConfirmDealHandler(IMapper mapper, IDealRepository dealRepository)
+    public ConfirmDealHandler(IMapper mapper, IDealRepository dealRepository, Car.CarClient carClient)
     {
         _mapper = mapper;
         _dealRepository = dealRepository;
+        _carClient = carClient;
     }
     
     public async Task<DealDto> Handle(ConfirmDealCommand request, CancellationToken cancellationToken = default)
@@ -33,8 +36,12 @@ public class ConfirmDealHandler : IRequestHandler<ConfirmDealCommand, DealDto>
         deal.State = DealState.Active;
         var confirmed = _dealRepository.UpdateAsync(deal.Id, deal, cancellationToken: cancellationToken);
         var result = _mapper.Map<DealDto>(confirmed);
-        BackgroundJob.Enqueue<UpdateCarStatusProducer>(x =>
-            x.UpdateCarStatus(deal.CarId, CarStatus.Taken));
+        BackgroundJob.Enqueue<Car.CarClient>(x =>
+            x.ChangeCarStatus(new ChangeStatus
+            {
+                CarId = result.CarId,
+                Status = CarService.Status.Taken
+            }, new CallOptions()));
         
         return result;
     }

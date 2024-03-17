@@ -20,7 +20,7 @@ public class UserController : ControllerBase
 
     [HttpGet]
     [Route("{id}")]
-    [Authorize(Roles = RoleNames.Admin)]
+    [Authorize]
     public async Task<IActionResult> GetAsync([FromRoute] string id)
     {
         var userDto = await _userManageService.GetByIdAsync(id);

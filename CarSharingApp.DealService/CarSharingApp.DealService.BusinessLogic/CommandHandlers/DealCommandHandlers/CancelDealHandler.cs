@@ -1,12 +1,15 @@
 ﻿using AutoMapper;
+using CarService;
 using CarSharingApp.DealService.BusinessLogic.Commands.DealCommands;
 using CarSharingApp.DealService.BusinessLogic.Models.Deal;
 using CarSharingApp.DealService.BusinessLogic.Producers;
 using CarSharingApp.DealService.DataAccess.Repositories;
 using CarSharingApp.DealService.Shared.Enums;
 using CarSharingApp.DealService.Shared.Exceptions;
+using Grpc.Core;
 using Hangfire;
 using MediatR;
+using Status = CarSharingApp.DealService.Shared.Enums.Status;
 
 namespace CarSharingApp.DealService.BusinessLogic.CommandHandlers.DealCommandHandlers;
 
@@ -41,8 +44,12 @@ public class CancelDealHandler : IRequestHandler<CancelDealCommand, DealDto>
         deal.Finished = DateTime.Now; 
         await _dealRepository.UpdateAsync(deal.Id, deal, cancellationToken: cancellationToken);
         var result = _mapper.Map<DealDto>(deal);
-        BackgroundJob.Enqueue<UpdateCarStatusProducer>(x =>
-            x.UpdateCarStatus(deal.CarId, CarStatus.Free));
+        BackgroundJob.Enqueue<Car.CarClient>(x =>
+            x.ChangeCarStatus(new ChangeStatus
+            {
+                CarId = result.CarId,
+                Status = CarService.Status.Free
+            }, new CallOptions()));
         
         return result;
     }

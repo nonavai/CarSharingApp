@@ -30,7 +30,6 @@ public class CarRepository : BaseRepository<Car>, ICarRepository
     public async Task<Car?> GetByIdWithIncludeAsync(string id, CancellationToken token = default)
     {
         return await _dataBase.Cars
-            .Include(car => car.Comments)
             .Include(car => car.CarState)
             .FirstOrDefaultAsync(car => car.Id == id, token);
     }

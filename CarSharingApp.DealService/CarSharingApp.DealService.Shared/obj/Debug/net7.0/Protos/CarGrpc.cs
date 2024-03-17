@@ -49,6 +49,10 @@ namespace CarService {
     static readonly grpc::Marshaller<global::CarService.CarAvailableRequest> __Marshaller_carService_CarAvailableRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::CarService.CarAvailableRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::CarService.CarAvailableResponse> __Marshaller_carService_CarAvailableResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::CarService.CarAvailableResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::CarService.ChangeStatus> __Marshaller_carService_ChangeStatus = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::CarService.ChangeStatus.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::CarService.ChangeCarStatusResponse> __Marshaller_carService_ChangeCarStatusResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::CarService.ChangeCarStatusResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::CarService.CarAvailableRequest, global::CarService.CarAvailableResponse> __Method_IsCarAvailable = new grpc::Method<global::CarService.CarAvailableRequest, global::CarService.CarAvailableResponse>(
@@ -57,6 +61,14 @@ namespace CarService {
         "IsCarAvailable",
         __Marshaller_carService_CarAvailableRequest,
         __Marshaller_carService_CarAvailableResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::CarService.ChangeStatus, global::CarService.ChangeCarStatusResponse> __Method_ChangeCarStatus = new grpc::Method<global::CarService.ChangeStatus, global::CarService.ChangeCarStatusResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ChangeCarStatus",
+        __Marshaller_carService_ChangeStatus,
+        __Marshaller_carService_ChangeCarStatusResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -110,6 +122,26 @@ namespace CarService {
       public virtual grpc::AsyncUnaryCall<global::CarService.CarAvailableResponse> IsCarAvailableAsync(global::CarService.CarAvailableRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_IsCarAvailable, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::CarService.ChangeCarStatusResponse ChangeCarStatus(global::CarService.ChangeStatus request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ChangeCarStatus(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::CarService.ChangeCarStatusResponse ChangeCarStatus(global::CarService.ChangeStatus request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ChangeCarStatus, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::CarService.ChangeCarStatusResponse> ChangeCarStatusAsync(global::CarService.ChangeStatus request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ChangeCarStatusAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::CarService.ChangeCarStatusResponse> ChangeCarStatusAsync(global::CarService.ChangeStatus request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ChangeCarStatus, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]

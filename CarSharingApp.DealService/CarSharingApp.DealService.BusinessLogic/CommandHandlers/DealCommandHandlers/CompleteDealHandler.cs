@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
+using CarService;
 using CarSharingApp.DealService.BusinessLogic.Commands.DealCommands;
 using CarSharingApp.DealService.BusinessLogic.Models.Deal;
-using CarSharingApp.DealService.BusinessLogic.Producers;
 using CarSharingApp.DealService.DataAccess.Repositories;
 using CarSharingApp.DealService.Shared.Enums;
 using CarSharingApp.DealService.Shared.Exceptions;
+using Grpc.Core;
 using Hangfire;
 using MediatR;
 
@@ -14,11 +15,13 @@ public class CompleteDealHandler : IRequestHandler<CompleteDealCommand, DealDto>
 {
     private readonly IDealRepository _dealRepository;
     private readonly IMapper _mapper;
+    private readonly Car.CarClient _carClient;
 
-    public CompleteDealHandler(IMapper mapper, IDealRepository dealRepository)
+    public CompleteDealHandler(IMapper mapper, IDealRepository dealRepository, Car.CarClient carClient)
     {
         _mapper = mapper;
         _dealRepository = dealRepository;
+        _carClient = carClient;
     }
     
     public async Task<DealDto> Handle(CompleteDealCommand request, CancellationToken cancellationToken = default)
@@ -41,9 +44,12 @@ public class CompleteDealHandler : IRequestHandler<CompleteDealCommand, DealDto>
         deal.TotalPrice = (float)(deal.TotalPrice * difference.Value.TotalHours);
         var confirmed = _dealRepository.UpdateAsync(deal.Id, deal, cancellationToken: cancellationToken);
         var result = _mapper.Map<DealDto>(confirmed);
-        BackgroundJob.Enqueue<UpdateCarStatusProducer>(x =>
-            x.UpdateCarStatus(deal.CarId, CarStatus.Free));
-        
+        BackgroundJob.Enqueue<Car.CarClient>(x =>
+            x.ChangeCarStatus(new ChangeStatus
+            {
+                CarId = result.CarId,
+                Status = CarService.Status.Free
+            }, new CallOptions()));
         return result;
     }
 }

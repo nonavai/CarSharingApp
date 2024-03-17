@@ -5,6 +5,7 @@ using CarSharingApp.DealService.API.MiddleWares;
 using CarSharingApp.DealService.BusinessLogic.Caching;
 using CarSharingApp.DealService.BusinessLogic.Commands.DealCommands;
 using CarSharingApp.DealService.BusinessLogic.Mapping;
+using CarSharingApp.DealService.BusinessLogic.Queries.DealQueries;
 using CarSharingApp.DealService.DataAccess.DataBase;
 using CarSharingApp.DealService.DataAccess.DataBase.AdditionalDB;
 using CarSharingApp.DealService.DataAccess.Repositories;
@@ -28,7 +29,11 @@ public class Startup
     public static void ConfigureServices(IServiceCollection services)
     {
         services.AddAutoMapper(typeof(MappingProfile));
-        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CreateDealCommand).Assembly));
+        services.AddMediatR(cfg =>
+        {
+            cfg.RegisterServicesFromAssembly(typeof(CreateDealCommand).Assembly);
+            cfg.RegisterServicesFromAssembly(typeof(GetDealByIdQuery).Assembly);
+        });
     }
 
     public static void ConfigureMassTransit(IServiceCollection services, ConfigurationManager config)

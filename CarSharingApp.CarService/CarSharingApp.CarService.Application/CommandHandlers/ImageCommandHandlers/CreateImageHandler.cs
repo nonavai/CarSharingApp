@@ -24,6 +24,7 @@ public class CreateImageHandler : IRequestHandler<CreateImageCommand, ImageDto>
 
     public async Task<ImageDto> Handle(CreateImageCommand command, CancellationToken cancellationToken)
     {
+        command.Url += Guid.NewGuid();
         var image = _mapper.Map<ImageCleanDto>(command);
         var response = await _minioRepository.AddAsync(image, cancellationToken);
 

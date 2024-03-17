@@ -32,7 +32,7 @@ public class Startup
     {
         services.AddMassTransit(x =>
         {
-            var assembly = typeof(DeleteCarConsumer).Assembly;
+            var assembly = typeof(UpdateCarStatusConsumer).Assembly;
             var host = config["RabbitMQ:Host"];
             var virtualHost = config["RabbitMQ:VirtualHost"];
             var username = config["RabbitMQ:Username"];
@@ -58,7 +58,6 @@ public class Startup
                 });
 
                 cfg.ConfigureEndpoints(context);
-
             });
         });
     }

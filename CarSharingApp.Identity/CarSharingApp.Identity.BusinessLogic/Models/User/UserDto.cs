@@ -12,5 +12,5 @@ public class UserDto
     public string PhoneNumber { get; set; }
     public string RecordNumber { get; set; }
     public string UserName { get; set; }
-    public UserInfoDto UserInfoDto { get; set; }
+    public UserInfoDto UserInfo { get; set; }
 }
