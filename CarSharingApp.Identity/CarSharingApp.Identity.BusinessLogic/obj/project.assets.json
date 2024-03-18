@@ -1448,6 +1448,16 @@
           }
         }
       },
+      "CarSharingApp.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/CarSharingApp.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarSharingApp.Common.dll": {}
+        }
+      },
       "CarSharingApp.Identity.DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -3925,6 +3935,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "CarSharingApp.Common/1.0.0": {
+      "type": "project",
+      "path": "../../CarSharingApp.Common/CarSharingApp.Common/CarSharingApp.Common.csproj",
+      "msbuildProject": "../../CarSharingApp.Common/CarSharingApp.Common/CarSharingApp.Common.csproj"
+    },
     "CarSharingApp.Identity.DataAccess/1.0.0": {
       "type": "project",
       "path": "../CarSharingApp.Identity.DataAccess/CarSharingApp.Identity.DataAccess.csproj",
@@ -3939,6 +3954,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "AutoMapper >= 12.0.1",
+      "CarSharingApp.Common >= 1.0.0",
       "CarSharingApp.Identity.DataAccess >= 1.0.0",
       "FluentValidation >= 11.9.0",
       "Hangfire >= 1.8.10",
@@ -3978,6 +3994,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.Common\\CarSharingApp.Common\\CarSharingApp.Common.csproj": {
+              "projectPath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.Common\\CarSharingApp.Common\\CarSharingApp.Common.csproj"
+            },
             "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.Identity\\CarSharingApp.Identity.DataAccess\\CarSharingApp.Identity.DataAccess.csproj": {
               "projectPath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.Identity\\CarSharingApp.Identity.DataAccess\\CarSharingApp.Identity.DataAccess.csproj"
             }

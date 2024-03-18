@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\CarSharingApp.Common\CarSharingApp.Common\CarSharingApp.Common.csproj" />
         <ProjectReference Include="..\CarSharingApp.CarService.Application\CarSharingApp.CarService.Application.csproj" />
         <ProjectReference Include="..\CarSharingApp.CarService.Infrastructure\CarSharingApp.CarService.Infrastructure.csproj" />
     </ItemGroup>

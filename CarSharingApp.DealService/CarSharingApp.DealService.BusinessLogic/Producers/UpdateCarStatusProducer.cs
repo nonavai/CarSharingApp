@@ -1,5 +1,5 @@
-﻿using CarSharingApp.DealService.BusinessLogic.Models.CarState;
-using CarSharingApp.DealService.Shared.Enums;
+﻿using CarSharingApp.Common.Enums;
+using CarSharingApp.Common.Messages;
 using MassTransit;
 
 namespace CarSharingApp.DealService.BusinessLogic.Producers;
@@ -13,9 +13,9 @@ public class UpdateCarStatusProducer
         _bus = bus;
     }
 
-    public async Task UpdateCarStatus(string carId, CarStatus newStatus)
+    public async Task UpdateCarStatus(string carId, Status newStatus)
     {
-        var newCarState = new CarState
+        var newCarState = new CarStatusMessage
         {
             CarId = carId,
             Status = newStatus

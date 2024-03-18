@@ -1829,6 +1829,16 @@
         "runtime": {
           "bin/placeholder/CarSharingApp.CarService.Infrastructure.dll": {}
         }
+      },
+      "CarSharingApp.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/CarSharingApp.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarSharingApp.Common.dll": {}
+        }
       }
     }
   },
@@ -4810,6 +4820,11 @@
       "type": "project",
       "path": "../CarSharingApp.CarService.Infrastructure/CarSharingApp.CarService.Infrastructure.csproj",
       "msbuildProject": "../CarSharingApp.CarService.Infrastructure/CarSharingApp.CarService.Infrastructure.csproj"
+    },
+    "CarSharingApp.Common/1.0.0": {
+      "type": "project",
+      "path": "../../CarSharingApp.Common/CarSharingApp.Common/CarSharingApp.Common.csproj",
+      "msbuildProject": "../../CarSharingApp.Common/CarSharingApp.Common/CarSharingApp.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4817,6 +4832,7 @@
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
       "CarSharingApp.CarService.Application >= 1.0.0",
       "CarSharingApp.CarService.Infrastructure >= 1.0.0",
+      "CarSharingApp.Common >= 1.0.0",
       "FluentValidation.AspNetCore >= 11.3.0",
       "Google.Protobuf >= 3.25.3",
       "Grpc.AspNetCore >= 2.49.0",
@@ -4871,6 +4887,9 @@
             },
             "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.CarService\\CarSharingApp.CarService.Infrastructure\\CarSharingApp.CarService.Infrastructure.csproj": {
               "projectPath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.CarService\\CarSharingApp.CarService.Infrastructure\\CarSharingApp.CarService.Infrastructure.csproj"
+            },
+            "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.Common\\CarSharingApp.Common\\CarSharingApp.Common.csproj": {
+              "projectPath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.Common\\CarSharingApp.Common\\CarSharingApp.Common.csproj"
             }
           }
         }

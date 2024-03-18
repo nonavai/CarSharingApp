@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "u7X9mZzxufT4l1tp/HGaIWS7RY8GoKcBxU8OUprwZ2KPH3GNDPLZiozgfBz9sGTPuDeLUZI1KcAMGrrAeanXYQ==",
+  "dgSpecHash": "92l7WGjR10nvJ+i+ZHsakTL0DkEa3ZB8KYuGfFEt4HjfqMPQcLXaFuu8J3JeaQhtkdAatYDO89LGm0XPtGGJAw==",
   "success": true,
   "projectFilePath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.CarService\\CarSharingApp.CarService.WebAPI\\CarSharingApp.CarService.WebAPI.csproj",
   "expectedPackageFiles": [

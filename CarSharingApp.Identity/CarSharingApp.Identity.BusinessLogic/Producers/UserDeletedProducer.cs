@@ -1,4 +1,4 @@
-﻿using CarSharingApp.Identity.BusinessLogic.Models.Car;
+﻿using CarSharingApp.Common.Messages;
 using MassTransit;
 
 namespace CarSharingApp.Identity.BusinessLogic.Producers;
@@ -14,9 +14,9 @@ public class UserDeletedProducer
 
     public async Task DeleteCarsByUser(string userId)
     {
-        var command = new DeleteCarByUser
+        var command = new UserMessage
         {
-            UserId = userId
+            Id = userId
         };
 
         await _bus.Publish(command);

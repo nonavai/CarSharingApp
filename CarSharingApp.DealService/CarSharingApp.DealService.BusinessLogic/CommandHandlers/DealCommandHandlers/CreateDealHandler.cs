@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CarService;
+using CarSharingApp.Common.Enums;
 using CarSharingApp.DealService.BusinessLogic.Commands.DealCommands;
 using CarSharingApp.DealService.BusinessLogic.Models.Deal;
 using CarSharingApp.DealService.BusinessLogic.Producers;
@@ -72,7 +73,7 @@ public class CreateDealHandler : IRequestHandler<CreateDealCommand, DealDto>
             }, cancellationToken), 
             TimeSpan.FromMinutes(20));
         BackgroundJob.Enqueue<UpdateCarStatusProducer>(x =>
-            x.UpdateCarStatus(request.CarId, CarStatus.Booking));
+            x.UpdateCarStatus(request.CarId, Status.Booking));
         
         return result;
     }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CarSharingApp.Common.Enums;
 using CarSharingApp.DealService.BusinessLogic.Commands.DealCommands;
 using CarSharingApp.DealService.BusinessLogic.Models.Deal;
 using CarSharingApp.DealService.BusinessLogic.Producers;
@@ -42,7 +43,7 @@ public class CancelDealHandler : IRequestHandler<CancelDealCommand, DealDto>
         await _dealRepository.UpdateAsync(deal.Id, deal, cancellationToken: cancellationToken);
         var result = _mapper.Map<DealDto>(deal);
         BackgroundJob.Enqueue<UpdateCarStatusProducer>(x =>
-            x.UpdateCarStatus(deal.CarId, CarStatus.Free));
+            x.UpdateCarStatus(deal.CarId, Status.Free));
         
         return result;
     }
