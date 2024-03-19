@@ -23,6 +23,7 @@ namespace CarSharingApp.Identity.API;
 
 public class Startup
 {
+    private static string MyAllowSpecificOrigins { get; set; }
     public static void ConfigureServices(IServiceCollection services)
     {
         services.AddAutoMapper(typeof(MappingProfileApi));
@@ -175,5 +176,26 @@ public class Startup
     public static void ConfigureGRPC(WebApplication app)
     {
         app.MapGrpcService<gRPC.Services.UserService>();
+    }
+    
+    public static void ConfigureCors(IServiceCollection services)
+    {
+        MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+        services.AddCors(options =>
+        {
+            options.AddPolicy(name: MyAllowSpecificOrigins,
+                policy =>
+                {
+                    policy.WithOrigins("http://localhost:3000")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials();
+                });
+        });
+    }
+
+    public static void ConfigureCors(WebApplication app)
+    {
+        app.UseCors(MyAllowSpecificOrigins);
     }
 }

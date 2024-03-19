@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Navigation from "../Components/Navigation";
 import {SearchData} from "../Models/Requests/SearchData";
 import {SearchCars} from "../API/api";
@@ -12,14 +12,12 @@ import {WheelDrive} from "../Models/Enums/WheelDrive";
 
 import {
     CDBSidebar,
-    CDBSidebarContent,
     CDBSidebarFooter,
-    CDBSidebarHeader,
-    CDBSidebarMenu,
-    CDBSidebarMenuItem,
+    CDBSidebarHeader
 } from 'cdbreact';
 
 const CarSearch = () => {
+
 
     const [searchCriteria, setSearchCriteria] = useState<SearchData>({
         Color: null,
@@ -43,7 +41,44 @@ const CarSearch = () => {
     }as SearchData);
 
     const [results, setResults] = useState<CarWithImageData[]>([]);
+    const [currentPage, setCurrentPage] = useState(1);
     const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Состояние для открытия/закрытия sidebar
+    useEffect(() => {
+        const loadMoreResults = async () => {
+            try {
+                let searchData = searchCriteria
+                searchData.CurrentPage = currentPage
+                setSearchCriteria(searchData);
+                const newResults = await SearchCars(searchCriteria);
+                if (newResults !== null) {
+                    setResults(prevResults => [...prevResults, ...newResults]);
+                    setCurrentPage(prevPage => prevPage + 1);
+                }
+            } catch (error) {
+                console.error('Error loading more results:', error);
+            }
+        };
+
+        // Создание нового экземпляра Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                loadMoreResults();
+            }
+        }, { threshold: 0.1 });
+
+
+        const ninthElement = document.querySelector(`#result-${9}`);
+        if (ninthElement) {
+            observer.observe(ninthElement);
+        }
+
+        return () => {
+            if (ninthElement) {
+                observer.unobserve(ninthElement);
+            }
+        };
+    }, [currentPage]);
+
 
     // Функция для изменения состояния открытия/закрытия sidebar
     const toggleSidebar = () => {
@@ -57,15 +92,16 @@ const CarSearch = () => {
         }// Update results with the search results
     };
 
+
     // @ts-ignore
     return (
         <body>
             <header>
                 <Navigation />
             </header>
-        <div className="fixed-top" style={{ display: 'flex', height: '100vh', overflow: 'scroll initial', marginTop: '8vh' }}>
+        <div style={{ display: 'flex', minHeight: '100vh', overflow: 'scroll initial', marginTop: '8vh' }}>
             <CDBSidebar
-                className="some-class" // Пример className
+                className="search-bar  " // Пример className
                 breakpoint={1} // Пример breakpoint
                 toggled={true} // Пример toggled (может быть true или false)
                 minWidth="5rem" // Пример minWidth
@@ -84,7 +120,7 @@ const CarSearch = () => {
                         <form>
                             <div>
                                 <select
-                                    className="form-select"
+                                    className="form__field"
                                     onChange={(e) => {
                                         const selectedStatus = e.target.value as keyof typeof Status | '';
                                         setSearchCriteria({ ...searchCriteria, Status: selectedStatus !== '' ? Status[selectedStatus] : null })
@@ -99,7 +135,7 @@ const CarSearch = () => {
                             </div>
                             <div>
                                 <select
-                                    className="form-select"
+                                    className="form__field"
                                     onChange={(e) => {
                                         const vehicleType = e.target.value as keyof typeof VehicleType | '';
                                         setSearchCriteria({ ...searchCriteria, VehicleType: vehicleType !== '' ? VehicleType[vehicleType] : null })
@@ -113,7 +149,7 @@ const CarSearch = () => {
                             </div>
                             <div>
                                 <select
-                                    className="form-select"
+                                    className="form__field"
                                     onChange={(e) => {
                                         const fuelType = e.target.value as keyof typeof FuelType | '';
                                         setSearchCriteria({ ...searchCriteria, FuelType: fuelType !== '' ? FuelType[fuelType] : null })
@@ -130,7 +166,7 @@ const CarSearch = () => {
                             </div>
                             <div>
                                 <select
-                                    className="form-select"
+                                    className="form__field"
                                     onChange={(e) => {
                                         const wheelDrive = e.target.value as keyof typeof WheelDrive | '';
                                         setSearchCriteria({ ...searchCriteria, WheelDrive: wheelDrive !== '' ? WheelDrive[wheelDrive] : null })
@@ -144,100 +180,124 @@ const CarSearch = () => {
                                 </select>
                             </div>
                             <div>
-
-                                <input
-                                    className="form-control"
-                                    type="text"
-                                    placeholder="Mark"
-                                    value={searchCriteria.Mark || ''}
-                                    onChange={(e) =>
-                                        setSearchCriteria({ ...searchCriteria, Mark: e.target.value || null})
-                                    }
-                                />
+                                <div className="form__group field">
+                                    <input
+                                        className="form__field white-color-font"
+                                        type="text"
+                                        name="mark"
+                                        placeholder="Mark"
+                                        value={searchCriteria.Mark || ''}
+                                        onChange={(e) =>
+                                            setSearchCriteria({ ...searchCriteria, Mark: e.target.value || null})
+                                        }
+                                    />
+                                    <label htmlFor="marl" className="form__label">Mark</label>
+                                </div>
                             </div>
                             <div>
-
-                                <input
-                                    className="form-control"
-                                    type="text"
-                                    placeholder="Model"
-                                    value={searchCriteria.Model || ''}
-                                    onChange={(e) =>
-                                        setSearchCriteria({ ...searchCriteria, Model: e.target.value  || null})
-                                    }
-                                />
+                                <div className="form__group field">
+                                    <input
+                                        className="form__field white-color-font"
+                                        type="text"
+                                        name="model"
+                                        placeholder="Model"
+                                        value={searchCriteria.Model || ''}
+                                        onChange={(e) =>
+                                            setSearchCriteria({ ...searchCriteria, Model: e.target.value  || null})
+                                        }
+                                    />
+                                    <label htmlFor="model" className="form__label">Model</label>
+                                </div>
                             </div>
                             <div>
-
-                                <input
-                                    className="form-control"
-                                    type="number"
-                                    placeholder="Min Year"
-                                    value={searchCriteria.MinYear ?? ''}
-                                    onChange={(e) =>
-                                        setSearchCriteria({ ...searchCriteria, MinYear: e.target.value ? +e.target.value : null })
-                                    }
-                                />
+                                <div className="form__group field">
+                                    <input
+                                        className="form__field white-color-font"
+                                        type="number"
+                                        name="minyear"
+                                        placeholder="Min Year"
+                                        value={searchCriteria.MinYear ?? ''}
+                                        onChange={(e) =>
+                                            setSearchCriteria({ ...searchCriteria, MinYear: e.target.value ? +e.target.value : null })
+                                        }
+                                    />
+                                    <label htmlFor="minyear" className="form__label">Min Year</label>
+                                </div>
                             </div>
                             <div>
-
-                                <input
-                                    className="form-control"
-                                    type="number"
-                                    placeholder="Max Year"
-                                    value={searchCriteria.MaxYear || ''}
-                                    onChange={(e) =>
-                                        setSearchCriteria({ ...searchCriteria, MaxYear: e.target.value ? +e.target.value : null })
-                                    }
-                                />
+                                <div className="form__group field">
+                                    <input
+                                        className="form__field white-color-font"
+                                        type="number"
+                                        name="maxyear"
+                                        placeholder="Max Year"
+                                        value={searchCriteria.MaxYear || ''}
+                                        onChange={(e) =>
+                                            setSearchCriteria({ ...searchCriteria, MaxYear: e.target.value ? +e.target.value : null })
+                                        }
+                                    />
+                                    <label htmlFor="maxyear" className="form__label">Max Year</label>
+                                </div>
                             </div>
                             <div>
-
-                                <input
-                                    className="form-control"
-                                    type="number"
-                                    placeholder="Min Price"
-                                    value={searchCriteria.MinPrice || ''}
-                                    onChange={(e) =>
-                                        setSearchCriteria({ ...searchCriteria, MinPrice: e.target.value ? +e.target.value : null })
-                                    }
-                                />
+                                <div className="form__group field">
+                                    <input
+                                        className="form__field white-color-font"
+                                        type="number"
+                                        name="minprice"
+                                        placeholder="Min Price"
+                                        value={searchCriteria.MinPrice || ''}
+                                        onChange={(e) =>
+                                            setSearchCriteria({ ...searchCriteria, MinPrice: e.target.value ? +e.target.value : null })
+                                        }
+                                    />
+                                    <label htmlFor="minprice" className="form__label">Min Price</label>
+                                </div>
                             </div>
                             <div>
-
-                                <input
-                                    className="form-control"
-                                    type="number"
-                                    placeholder="Max Price"
-                                    value={searchCriteria.MaxPrice || ''}
-                                    onChange={(e) =>
-                                        setSearchCriteria({ ...searchCriteria, MaxPrice: e.target.value ? +e.target.value : null })
-                                    }
-                                />
+                                <div className="form__group field">
+                                    <input
+                                        className="form__field white-color-font"
+                                        name="maxprice"
+                                        type="number"
+                                        placeholder="Max Price"
+                                        value={searchCriteria.MaxPrice || ''}
+                                        onChange={(e) =>
+                                            setSearchCriteria({ ...searchCriteria, MaxPrice: e.target.value ? +e.target.value : null })
+                                        }
+                                    />
+                                    <label htmlFor="maxprice" className="form__label">Max Price</label>
+                                </div>
                             </div>
                             <div>
-
-                                <input
-                                    className="form-control"
-                                    type="number"
-                                    placeholder="Minimal Engine Capacity"
-                                    value={searchCriteria.MinEngineCapacity || ''}
-                                    onChange={(e) =>
-                                        setSearchCriteria({ ...searchCriteria, MinEngineCapacity: e.target.value ? +e.target.value : null })
-                                    }
-                                />
+                                <div className="form__group field">
+                                    <input
+                                        className="form__field white-color-font"
+                                        name="minengine"
+                                        type="number"
+                                        placeholder="Minimal Engine Capacity"
+                                        value={searchCriteria.MinEngineCapacity || ''}
+                                        onChange={(e) =>
+                                            setSearchCriteria({ ...searchCriteria, MinEngineCapacity: e.target.value ? +e.target.value : null })
+                                        }
+                                    />
+                                    <label htmlFor="minengine" className="form__label">Minimal Engine Capacity</label>
+                                </div>
                             </div>
                             <div>
-
-                                <input
-                                    className="form-control"
-                                    type="number"
-                                    placeholder="Maximum Engine Capacity"
-                                    value={searchCriteria.MaxEngineCapacity || ''}
-                                    onChange={(e) =>
-                                        setSearchCriteria({ ...searchCriteria, MaxEngineCapacity: e.target.value ? +e.target.value : null })
-                                    }
-                                />
+                                <div className="form__group field">
+                                    <input
+                                        className="form__field white-color-font"
+                                        type="number"
+                                        name="maxengine"
+                                        placeholder="Maximum Engine Capacity"
+                                        value={searchCriteria.MaxEngineCapacity || ''}
+                                        onChange={(e) =>
+                                            setSearchCriteria({ ...searchCriteria, MaxEngineCapacity: e.target.value ? +e.target.value : null })
+                                        }
+                                    />
+                                    <label htmlFor="maxengine" className="form__label">Maximum Engine Capacity</label>
+                                </div>
                             </div>
 
                             <button type="button" className="btn btn-primary" onClick={handleSearch}>
@@ -250,7 +310,7 @@ const CarSearch = () => {
             <div className={`search-results col-lg-8 col-md-12 `}>
                 <ul style={{ listStyleType: 'none' }}>
                     {results.map((car, index) => (
-                        <li key={index}>
+                        <li key={index} id={`result-${index}`}>
                             <CarProfile {...car} />
                         </li>
                     ))}

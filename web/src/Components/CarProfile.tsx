@@ -25,7 +25,7 @@ const CarProfile: React.FC<CarWithImageData> = (CarResponse ) => {
                 </div>
                 <div className="product-details card-body col-auto">
                     <h5 className="product-name">
-                        {CarResponse.mark + " " + CarResponse.model}
+                        {CarResponse.mark.toUpperCase() + " " + CarResponse.model.toUpperCase()}
                     </h5>
                     <h6>
                         {"Year: " + CarResponse.year + "   Status:" + CarResponse.carState.status}

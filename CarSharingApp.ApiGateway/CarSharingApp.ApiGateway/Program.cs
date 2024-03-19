@@ -1,19 +1,9 @@
+using CarSharingApp.ApiGateway;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
-var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: MyAllowSpecificOrigins,
-        policy =>
-        {
-            policy.WithOrigins("http://localhost:3000")
-                .AllowAnyHeader()
-                .AllowAnyMethod()
-                .AllowCredentials();
-        });
-});
+Startup.ConfigureCors(builder.Services);
 builder.Configuration.SetBasePath(builder.Environment.ContentRootPath)
     .AddJsonFile("ocelot.json", optional: false, reloadOnChange: true)
     .AddEnvironmentVariables();
@@ -29,7 +19,7 @@ app.UseRouting();
 app.UseSwaggerForOcelotUI(options =>
     options.PathToSwaggerGenerator = "/swagger/docs");
 await app.UseOcelot();
-app.UseCors(MyAllowSpecificOrigins);
+Startup.ConfigureApp(app);
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
