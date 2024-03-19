@@ -58,7 +58,7 @@ public class CreateDealHandler : IRequestHandler<CreateDealCommand, DealDto>
         
         if (!carResponse.IsAvailable)
         {
-            throw new NotFoundException("User");
+            throw new NotFoundException("Car");
         }
         
         var deal = _mapper.Map<Deal>(request);

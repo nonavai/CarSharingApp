@@ -18,11 +18,11 @@ public class UserService : User.UserBase
     public override async Task<UserExistResponse> IsUserExist(UserRequest request, ServerCallContext context)
     {
         var result = await _userManageService.IsUserExits(request.UserId);
-        
-        return await Task.FromResult(new UserExistResponse
+
+        return new UserExistResponse
         {
             Exists = result
-        });
+        };
     }
 
     public override async Task<GetUserRolesResponse> GetUserRoles(UserRequest request, ServerCallContext context)
@@ -32,6 +32,6 @@ public class UserService : User.UserBase
         var stringResult = result.Select(role => role.Name); 
         response.Roles.AddRange(stringResult);
 
-        return await Task.FromResult(response);
+        return response;
     }
 }

@@ -22,17 +22,10 @@ public class CarService : Car.CarBase
             CarId = request.UserId
         });
 
-        if (carStateDto.Status == Status.Free)
+        return new CarAvailableResponse
         {
-            return await Task.FromResult(new CarAvailableResponse
-            {
-                IsAvailable = true
-            });
-        }
-        
-        return await Task.FromResult(new CarAvailableResponse
-        {
-            IsAvailable = false
-        });
+            IsAvailable = carStateDto.Status == Status.Free
+        };
+
     }
 }
