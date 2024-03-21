@@ -2039,11 +2039,22 @@
           "lib/net7.0/ZstdSharp.dll": {}
         }
       },
+      "CarSharingApp.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/CarSharingApp.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarSharingApp.Common.dll": {}
+        }
+      },
       "CarSharingApp.DealService.BusinessLogic/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "AutoMapper": "12.0.1",
+          "CarSharingApp.Common": "1.0.0",
           "CarSharingApp.DealService.DataAccess": "1.0.0",
           "FluentValidation": "11.5.1",
           "Hangfire": "1.8.10",
@@ -5382,6 +5393,11 @@
         "zstdsharp.port.0.7.3.nupkg.sha512",
         "zstdsharp.port.nuspec"
       ]
+    },
+    "CarSharingApp.Common/1.0.0": {
+      "type": "project",
+      "path": "../../CarSharingApp.Common/CarSharingApp.Common/CarSharingApp.Common.csproj",
+      "msbuildProject": "../../CarSharingApp.Common/CarSharingApp.Common/CarSharingApp.Common.csproj"
     },
     "CarSharingApp.DealService.BusinessLogic/1.0.0": {
       "type": "project",

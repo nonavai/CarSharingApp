@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "eGeNaQZmOCKQ116BZK1etbc0bnK7ZUDj50hi3tjC3tbwyetu3n9A6jm/eIcXCJsaeepp/M+p88QILTBd3bdAvw==",
+  "dgSpecHash": "SMRIYZMk4jmbgM+9G2y7XI6vN5eJTj9Mdvhzm9YjLTArRIrV2yQIFvRoKXgkEtupIE5WSehWWzUNHnE+TF8peg==",
   "success": true,
   "projectFilePath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.Identity\\CarSharingApp.Identity.API\\CarSharingApp.Identity.API.csproj",
   "expectedPackageFiles": [

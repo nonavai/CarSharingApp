@@ -1,17 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.5.33502.453
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSharingApp.CarService.Application", "CarSharingApp.CarService.Application\CarSharingApp.CarService.Application.csproj", "{EE967296-28E9-476B-B8EF-BD48EC1185A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.CarService.Application", "CarSharingApp.CarService.Application\CarSharingApp.CarService.Application.csproj", "{EE967296-28E9-476B-B8EF-BD48EC1185A8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSharingApp.CarService.Domain", "CarSharingApp.CarService.Domain\CarSharingApp.CarService.Domain.csproj", "{C7BE1D1F-2D43-4A00-A348-12A589480127}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.CarService.Domain", "CarSharingApp.CarService.Domain\CarSharingApp.CarService.Domain.csproj", "{C7BE1D1F-2D43-4A00-A348-12A589480127}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSharingApp.CarService.Infrastructure", "CarSharingApp.CarService.Infrastructure\CarSharingApp.CarService.Infrastructure.csproj", "{DDDB34FE-84C7-45F6-A1BC-E16B304C2099}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.CarService.Infrastructure", "CarSharingApp.CarService.Infrastructure\CarSharingApp.CarService.Infrastructure.csproj", "{DDDB34FE-84C7-45F6-A1BC-E16B304C2099}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSharingApp.CarService.WebAPI", "CarSharingApp.CarService.WebAPI\CarSharingApp.CarService.WebAPI.csproj", "{B490E199-8D5A-4AF0-B4DC-6F7654CA413D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.CarService.WebAPI", "CarSharingApp.CarService.WebAPI\CarSharingApp.CarService.WebAPI.csproj", "{B490E199-8D5A-4AF0-B4DC-6F7654CA413D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSharingApp.Common", "..\CarSharingApp.Common\CarSharingApp.Common\CarSharingApp.Common.csproj", "{86777565-3C60-4D63-8284-FE5530FE3ED5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.Common", "..\CarSharingApp.Common\CarSharingApp.Common\CarSharingApp.Common.csproj", "{33FBA56F-87A5-462B-808F-C2AA9ECAF605}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,15 +32,9 @@ Global
 		{B490E199-8D5A-4AF0-B4DC-6F7654CA413D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B490E199-8D5A-4AF0-B4DC-6F7654CA413D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B490E199-8D5A-4AF0-B4DC-6F7654CA413D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{86777565-3C60-4D63-8284-FE5530FE3ED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{86777565-3C60-4D63-8284-FE5530FE3ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{86777565-3C60-4D63-8284-FE5530FE3ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{86777565-3C60-4D63-8284-FE5530FE3ED5}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B99479F9-9D20-45E1-BB5F-193B61AC153D}
+		{33FBA56F-87A5-462B-808F-C2AA9ECAF605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33FBA56F-87A5-462B-808F-C2AA9ECAF605}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33FBA56F-87A5-462B-808F-C2AA9ECAF605}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33FBA56F-87A5-462B-808F-C2AA9ECAF605}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

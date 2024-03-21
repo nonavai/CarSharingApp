@@ -1,13 +1,13 @@
 ﻿using CarSharingApp.CarService.Application.Commands.CarStateCommands;
 using CarSharingApp.CarService.WebAPI.Hubs;
+using CarSharingApp.Common.Messages;
 using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.SignalR;
-using Newtonsoft.Json;
 
 namespace CarSharingApp.CarService.WebAPI.Consumers;
 
-public class UpdateCarStatusConsumer : IConsumer<string>
+public class UpdateCarStatusConsumer : IConsumer<CarStatusMessage>
 {
     private readonly IHubContext<CarStateHub> _hubContext;
     private readonly IMediator _mediator;
@@ -18,10 +18,9 @@ public class UpdateCarStatusConsumer : IConsumer<string>
         _mediator = mediator;
     }
 
-    public async Task Consume(ConsumeContext<string> context)
+    public async Task Consume(ConsumeContext<CarStatusMessage> context)
     {
-        var command = JsonConvert.DeserializeObject<UpdateCarStatusCommand>(context.Message);
-        await _mediator.Send(command);
-        await _hubContext.Clients.Group($"{command.CarId}/status").SendAsync("ReceiveCarStatusUpdate", command.Status);
+        await _mediator.Send(context.Message);
+        await _hubContext.Clients.Group($"{context.Message.CarId}/status").SendAsync("ReceiveCarStatusUpdate", context.Message.Status);
     }
 }

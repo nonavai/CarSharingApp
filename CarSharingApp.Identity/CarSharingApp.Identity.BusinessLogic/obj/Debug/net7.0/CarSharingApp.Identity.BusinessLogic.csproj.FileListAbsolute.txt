@@ -15,3 +15,5 @@ C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Id
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.BusinessLogic\obj\Debug\net7.0\refint\CarSharingApp.Identity.BusinessLogic.dll
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.BusinessLogic\obj\Debug\net7.0\CarSharingApp.Identity.BusinessLogic.pdb
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.BusinessLogic\obj\Debug\net7.0\ref\CarSharingApp.Identity.BusinessLogic.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.BusinessLogic\bin\Debug\net7.0\CarSharingApp.Common.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.BusinessLogic\bin\Debug\net7.0\CarSharingApp.Common.pdb

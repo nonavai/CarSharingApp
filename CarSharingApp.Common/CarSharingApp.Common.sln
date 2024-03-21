@@ -1,9 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.5.33502.453
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSharingApp.Common", "CarSharingApp.Common\CarSharingApp.Common.csproj", "{95A58384-9895-4D0F-81CE-920740906C22}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.Common", "CarSharingApp.Common\CarSharingApp.Common.csproj", "{95A58384-9895-4D0F-81CE-920740906C22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,11 +12,5 @@ Global
 		{95A58384-9895-4D0F-81CE-920740906C22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95A58384-9895-4D0F-81CE-920740906C22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95A58384-9895-4D0F-81CE-920740906C22}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3B3914F5-1B0F-463A-AE7B-A63FC8F30A1A}
 	EndGlobalSection
 EndGlobal

@@ -1,10 +1,10 @@
-﻿using CarSharingApp.DealService.Shared.Enums;
+﻿using CarSharingApp.Common.Enums;
+using CarSharingApp.Common.Messages;
 using MassTransit;
-using Newtonsoft.Json;
 
 namespace CarSharingApp.DealService.BusinessLogic.Producers;
 
-public class UpdateCarStatusProducer 
+public class UpdateCarStatusProducer
 {
     private readonly IBus _bus;
 
@@ -13,14 +13,13 @@ public class UpdateCarStatusProducer
         _bus = bus;
     }
 
-    public async Task UpdateCarStatusAsync(string carId, Status newStatus)
+    public async Task UpdateCarStatus(string carId, Status newStatus)
     {
-        var newCarState = new
+        var newCarState = new CarStatusMessage
         {
             CarId = carId,
             Status = newStatus
         };
-        var data = JsonConvert.SerializeObject(newCarState);
         
         await _bus.Publish(newCarState);
     }
