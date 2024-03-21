@@ -42,8 +42,9 @@ public class CompleteDealHandler : IRequestHandler<CompleteDealCommand, DealDto>
         deal.Finished = DateTime.Now;
         var difference = deal.Finished - deal.Requested;
         deal.TotalPrice = (float)(deal.TotalPrice * difference.Value.TotalHours);
-        var confirmed = _dealRepository.UpdateAsync(deal.Id, deal, cancellationToken: cancellationToken);
-        var result = _mapper.Map<DealDto>(confirmed);
+        await _dealRepository.UpdateAsync(deal.Id, deal, cancellationToken: cancellationToken);
+        var updatedDeal = await _dealRepository.GetByIdAsync(request.Id, cancellationToken);
+        var result = _mapper.Map<DealDto>(updatedDeal);
         BackgroundJob.Enqueue<Car.CarClient>(x =>
             x.ChangeCarStatus(new ChangeStatus
             {

@@ -105,6 +105,9 @@ async function apiRequest<T>(
 export function GetCar(GetById: GetByID) {
     return apiRequest<CarFullData | null>('GET', `api/car?Id=${GetById.Id}`);
 }
+export function GetPrimaryImage(GetById: GetByID) {
+    return apiRequest<ImageData | null>('GET', `api/image/primary?CarId=${GetById.Id}`);
+}
 export function LogIn(logInData: LoginData) {
     return apiRequest<UserAuthorizedData | null>('POST', `api/user/login`, logInData);
 }
@@ -119,6 +122,17 @@ export function GetImages(GetById: GetByID) {
 }
 export function GetDeal(id: string){
     return apiRequest<DealData | null>('GET', `api/deal?Id=${id}`)
+}
+export function GetDealsByUser(id: string, currPage: number | null = null, pageSize: number | null = null){
+    let pageRequestString: string = ''
+    if (currPage !== null){
+        pageRequestString += `&CurrentPage=${currPage}`
+    }
+    if (pageSize !== null){
+        pageRequestString += `&PageSize=${pageSize}`
+    }
+
+    return apiRequest<DealData[] | null>('GET', `api/deal/user?UserId=${id}${pageRequestString}`)
 }
 export function AddDeal(CreateDeal: CreateDeal){
     return apiRequest<DealData | null>('POST', 'api/deal', CreateDeal)

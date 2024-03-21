@@ -24,20 +24,17 @@ const DealPage: React.FC = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                // Запрос на получение данных сделки
                 const dealResult = await GetDeal(idString);
                 if (dealResult !== null) {
                     setCarId(dealResult.carId);
                     setUserId(dealResult.userId);
                     setDealData(dealResult);
 
-                    // Запрос на получение данных машины
                     const carResult = await GetCar({ Id: dealResult.carId });
                     if (carResult !== null) {
                         setCarData(carResult);
                     }
 
-                    // Запрос на получение данных пользователя
                     const userResult = await GetUser(dealResult.userId);
                     if (userResult !== null) {
                         setUserData(userResult);
@@ -59,15 +56,12 @@ const DealPage: React.FC = () => {
         }
         switch (dealData?.state) {
             case DealState.booking:
-                // Вызовите метод для подтверждения сделки
                 await ConfirmDeal(GetByID);
                 break;
             case DealState.active:
-                // Вызовите метод для возврата автомобиля
                 await CompleteDeal(GetByID);
                 break;
             default:
-                // Действия для других статусов сделки
                 break;
     }};
 
@@ -79,12 +73,14 @@ const DealPage: React.FC = () => {
                 <p>Car Mark: {carData?.mark}</p>
                 <p>Car Model: {carData?.model}</p>
                 <p>Year: {carData?.year}</p>
+                <p>Color: {carData?.color}</p>
             </div>
             <div className="user-info">
                 <h3>User Information</h3>
                 <p>Name: {userData?.firstName} {userData?.lastName}</p>
                 <p>Username: {userData?.userName}</p>
                 <p>Email: {userData?.email}</p>
+                <p>Phone: {userData?.phoneNumber}</p>
             </div>
             <div className="order-info">
                 <h3>Order Summary</h3>

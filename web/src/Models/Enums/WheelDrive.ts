@@ -1,6 +1,6 @@
 export enum WheelDrive{
-    FourWD = 0,
-    RWD = 1,
-    AWD = 2,
-    FWD =3
+    fourWD = 0,
+    rwd = 1,
+    awd = 2,
+    fwd =3
 }

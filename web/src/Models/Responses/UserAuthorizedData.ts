@@ -1,9 +1,9 @@
 export interface UserAuthorizedData{
-    Id: string
-    FirstName: string
-    LastName: string
-    Email: string
-    PhoneNumber: string
-    UserName: string
-    AccessToken: string
+    id: string
+    firstName: string
+    lastName: string
+    email: string
+    phoneNumber: string
+    userName: string
+    accessToken: string
 }

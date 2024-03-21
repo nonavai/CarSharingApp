@@ -1,6 +1,6 @@
 export enum LicenceType{
-    None,
-    A,
-    B,
-    Both
+    none,
+    a,
+    b,
+    both
 }

@@ -116,8 +116,7 @@ const CarPage = ()=> {
             try {
                 await addDeal();
                 const deallink = `/deal/${DealData?.id}`
-                console.log(deallink)
-                //navigate(deallink);
+                navigate(deallink);
             } catch (error) {
                 console.error('Error adding deal:', error);
             }

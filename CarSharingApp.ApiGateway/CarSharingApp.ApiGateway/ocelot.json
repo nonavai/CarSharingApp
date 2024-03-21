@@ -274,6 +274,19 @@
       "SwaggerKey" : "car"
     },
     {
+      "UpstreamPathTemplate": "/api/image/primary",
+      "UpstreamHttpMethod": ["Get", "Options"],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host" : "localhost",
+          "Port" : 7198
+        }
+      ],
+      "DownstreamPathTemplate": "/api/image/primary",
+      "SwaggerKey" : "car"
+    },
+    {
       "UpstreamPathTemplate": "/car-state",
       "DownstreamScheme": "wss",
       "DownstreamHostAndPorts": [

@@ -6,6 +6,7 @@ import RegistrationPage from "./Pages/RegistrationPage";
 import SearchPage from "./Pages/SearchPage";
 import CarPage from "./Pages/CarPage";
 import DealPage from "./Pages/DealPage";
+import UserPage from "./Pages/UserPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<SearchPage />}/>
           <Route path="/car-profile/:id" element={<CarPage />} />
           <Route path="/deal/:id" element={<DealPage />} />
+          <Route path="/profile/:id" element={<UserPage />} />
         </Routes>
       </div>
     </Router>

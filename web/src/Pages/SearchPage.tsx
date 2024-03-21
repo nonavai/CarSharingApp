@@ -42,41 +42,18 @@ const CarSearch = () => {
 
     const [results, setResults] = useState<CarWithImageData[]>([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Состояние для открытия/закрытия sidebar
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Состояние для открытия/закрытия sidebar
     useEffect(() => {
-        const loadMoreResults = async () => {
-            try {
-                let searchData = searchCriteria
-                searchData.CurrentPage = currentPage
-                setSearchCriteria(searchData);
-                const newResults = await SearchCars(searchCriteria);
-                if (newResults !== null) {
-                    setResults(prevResults => [...prevResults, ...newResults]);
-                    setCurrentPage(prevPage => prevPage + 1);
-                }
-            } catch (error) {
-                console.error('Error loading more results:', error);
+        const handleSearch = async () => {
+            let updatedCriteria = searchCriteria
+            updatedCriteria.CurrentPage = currentPage
+            const searchResults = await SearchCars(updatedCriteria);
+            if (searchResults !== null){
+                setResults(searchResults);
+
             }
         };
-
-        // Создание нового экземпляра Intersection Observer
-        const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                loadMoreResults();
-            }
-        }, { threshold: 0.1 });
-
-
-        const ninthElement = document.querySelector(`#result-${9}`);
-        if (ninthElement) {
-            observer.observe(ninthElement);
-        }
-
-        return () => {
-            if (ninthElement) {
-                observer.unobserve(ninthElement);
-            }
-        };
+        handleSearch()
     }, [currentPage]);
 
 
@@ -89,7 +66,15 @@ const CarSearch = () => {
         const searchResults = await SearchCars(searchCriteria);
         if (searchResults !== null){
             setResults(searchResults);
-        }// Update results with the search results
+        }
+    };
+
+    const nextPage = () => {
+        setCurrentPage(currentPage + 1);
+    };
+
+    const prevPage = () => {
+        setCurrentPage(currentPage - 1);
     };
 
 
@@ -101,9 +86,9 @@ const CarSearch = () => {
             </header>
         <div style={{ display: 'flex', minHeight: '100vh', overflow: 'scroll initial', marginTop: '8vh' }}>
             <CDBSidebar
-                className="search-bar  " // Пример className
+                className="search-bar " // Пример className
                 breakpoint={1} // Пример breakpoint
-                toggled={true} // Пример toggled (может быть true или false)
+                toggled={false} // Пример toggled (может быть true или false)
                 minWidth="5rem" // Пример minWidth
                 maxWidth="20rem" // Пример maxWidth
                 textColor="#fff"
@@ -173,10 +158,10 @@ const CarSearch = () => {
                                     }}
                                 >
                                     <option value="" hidden>Select Wheel Drive</option>
-                                    <option value={WheelDrive.AWD}>AWD</option>
-                                    <option value={WheelDrive.FWD}>FWD</option>
-                                    <option value={WheelDrive.RWD}>RWD</option>
-                                    <option value={WheelDrive.FourWD}>FourWD</option>
+                                    <option value={WheelDrive.awd}>AWD</option>
+                                    <option value={WheelDrive.fwd}>FWD</option>
+                                    <option value={WheelDrive.rwd}>RWD</option>
+                                    <option value={WheelDrive.fourWD}>FourWD</option>
                                 </select>
                             </div>
                             <div>
@@ -307,6 +292,11 @@ const CarSearch = () => {
                     )}
                 </CDBSidebarFooter>
             </CDBSidebar>
+            <div>
+                <button className={currentPage === 1 ? 'disabled' : 'active'} onClick={prevPage} disabled={currentPage === 1}>Previous</button>
+                <span>Page: {currentPage}</span>
+                <button className={results.length < 10 ? 'disabled' : 'active'} onClick={nextPage} disabled={results.length < 10}>Next</button>
+            </div>
             <div className={`search-results col-lg-8 col-md-12 `}>
                 <ul style={{ listStyleType: 'none' }}>
                     {results.map((car, index) => (

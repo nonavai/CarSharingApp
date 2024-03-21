@@ -26,6 +26,15 @@ public class ImageController : ControllerBase
         return Ok(response);
     }
     
+    [HttpGet]
+    [Route("primary")]
+    public async Task<IActionResult> GetAsync([FromQuery] GetPrimaryImageByCarQuery query, CancellationToken token = default)
+    {
+        var response = await _mediator.Send(query, token);
+        
+        return Ok(response);
+    }
+    
     [DisableRequestSizeLimit]
     [HttpPost]
     [Authorize(Roles = RoleNames.Lender)]

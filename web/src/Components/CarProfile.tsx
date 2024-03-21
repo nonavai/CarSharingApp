@@ -4,6 +4,7 @@ import React from 'react';
 import {Link, useNavigate, useParams} from "react-router-dom";
 import '../Styles/CarProfile.css';
 import {CarWithImageData} from "../Models/Responses/CarWithImageData";
+import {Status} from "../Models/Enums/Status";
 
 const CarProfile: React.FC<CarWithImageData> = (CarResponse ) => {
     console.log(CarResponse)
@@ -28,14 +29,13 @@ const CarProfile: React.FC<CarWithImageData> = (CarResponse ) => {
                         {CarResponse.mark.toUpperCase() + " " + CarResponse.model.toUpperCase()}
                     </h5>
                     <h6>
-                        {"Year: " + CarResponse.year + "   Status:" + CarResponse.carState.status}
+                        {"Year: " + CarResponse.year + "   Status:" + Status[CarResponse.carState.status]}
                     </h6>
                     <span className="product-bottom">
                         {CarResponse.price}
                     </span>
                 </div>
             </div>
-
         </div>
     );
 };
