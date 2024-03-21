@@ -1,0 +1,15 @@
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\bin\Debug\net7.0\CarSharingApp.CarService.Application.deps.json
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\bin\Debug\net7.0\CarSharingApp.CarService.Application.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\bin\Debug\net7.0\CarSharingApp.CarService.Application.pdb
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\bin\Debug\net7.0\CarSharingApp.CarService.Domain.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\bin\Debug\net7.0\CarSharingApp.CarService.Domain.pdb
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\obj\Debug\net7.0\CarSharingApp.CarService.Application.csproj.AssemblyReference.cache
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\obj\Debug\net7.0\CarSharingApp.CarService.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\obj\Debug\net7.0\CarSharingApp.CarService.Application.AssemblyInfoInputs.cache
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\obj\Debug\net7.0\CarSharingApp.CarService.Application.AssemblyInfo.cs
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\obj\Debug\net7.0\CarSharingApp.CarService.Application.csproj.CoreCompileInputs.cache
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\obj\Debug\net7.0\CarSharingApp.CarService.Application.csproj.CopyComplete
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\obj\Debug\net7.0\CarSharingApp.CarService.Application.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\obj\Debug\net7.0\refint\CarSharingApp.CarService.Application.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\obj\Debug\net7.0\CarSharingApp.CarService.Application.pdb
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Application\obj\Debug\net7.0\ref\CarSharingApp.CarService.Application.dll

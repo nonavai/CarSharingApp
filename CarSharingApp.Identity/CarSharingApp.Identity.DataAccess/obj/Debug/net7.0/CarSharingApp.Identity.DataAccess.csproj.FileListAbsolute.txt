@@ -1,0 +1,17 @@
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.DataAccess\bin\Debug\net7.0\CarSharingApp.Identity.DataAccess.deps.json
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.DataAccess\bin\Debug\net7.0\CarSharingApp.Identity.DataAccess.runtimeconfig.json
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.DataAccess\bin\Debug\net7.0\CarSharingApp.Identity.DataAccess.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.DataAccess\bin\Debug\net7.0\CarSharingApp.Identity.DataAccess.pdb
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.DataAccess\bin\Debug\net7.0\CarSharingApp.Identity.Shared.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.DataAccess\bin\Debug\net7.0\CarSharingApp.Identity.Shared.pdb
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.DataAccess\obj\Debug\net7.0\CarSharingApp.Identity.DataAccess.csproj.AssemblyReference.cache
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.DataAccess\obj\Debug\net7.0\CarSharingApp.Identity.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.DataAccess\obj\Debug\net7.0\CarSharingApp.Identity.DataAccess.AssemblyInfoInputs.cache
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.DataAccess\obj\Debug\net7.0\CarSharingApp.Identity.DataAccess.AssemblyInfo.cs
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.DataAccess\obj\Debug\net7.0\CarSharingApp.Identity.DataAccess.csproj.CoreCompileInputs.cache
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.DataAccess\obj\Debug\net7.0\CarSharingApp.Identity.DataAccess.csproj.CopyComplete
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.DataAccess\obj\Debug\net7.0\CarSharingApp.Identity.DataAccess.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.DataAccess\obj\Debug\net7.0\refint\CarSharingApp.Identity.DataAccess.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.DataAccess\obj\Debug\net7.0\CarSharingApp.Identity.DataAccess.pdb
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.DataAccess\obj\Debug\net7.0\CarSharingApp.Identity.DataAccess.genruntimeconfig.cache
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.DataAccess\obj\Debug\net7.0\ref\CarSharingApp.Identity.DataAccess.dll

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "9Q4TfgLrQvAgQnObaaOmM4etBiBgfNh0T+odNoNdDtc=",
+  "Source": "CarSharingApp.DealService.API",
+  "BasePath": "_content/CarSharingApp.DealService.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

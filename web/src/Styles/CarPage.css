@@ -1,0 +1,54 @@
+
+.Page {
+    margin-top: 60px;
+}
+.image-group {
+    max-width: 40rem;
+    background-color: white;
+}
+
+.info {
+    width: 100%;
+    height: 100%;
+}
+
+.price {
+    font-size: 18px;
+    color: #333; /* Цвет текста */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.order-car button {
+    width: 100%; /* Растянуть кнопку на всю доступную ширину */
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста кнопки */
+    border: none; /* Убрать границу */
+    padding: 10px 0; /* Отступы внутри кнопки (верх/низ) */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Изменить курсор при наведении */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета фона при наведении */
+}
+
+.order-car button:hover {
+    background-color: #0056b3; /* Цвет фона кнопки при наведении */
+}
+
+
+
+.whole-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Центрируем элементы по вертикали */
+    padding: 8px 0; /* Добавляем внутренний отступ по вертикали */
+    border-bottom: 1px solid #ccc; /* Добавляем разделяющую полосу */
+}
+
+.field {
+    font-weight: bold;
+    margin-right: 8px;
+}

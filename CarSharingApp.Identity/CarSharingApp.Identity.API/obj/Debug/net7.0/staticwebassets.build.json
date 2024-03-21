@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "LD04dmARloVZd7LRjHcjff36u4fjT6Vdf0kFFqAa/AQ=",
+  "Source": "CarSharingApp.Identity.API",
+  "BasePath": "_content/CarSharingApp.Identity.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

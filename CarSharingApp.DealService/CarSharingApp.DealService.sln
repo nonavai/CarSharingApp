@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.DealService.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.DealService.API", "CarSharingApp.DealService.API\CarSharingApp.DealService.API.csproj", "{9B74F79F-0BCF-49CC-930B-C1431E079FEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSharingApp.Common", "..\CarSharingApp.Common\CarSharingApp.Common\CarSharingApp.Common.csproj", "{273323A8-0DE4-4A51-9518-326061556C80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{9B74F79F-0BCF-49CC-930B-C1431E079FEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B74F79F-0BCF-49CC-930B-C1431E079FEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B74F79F-0BCF-49CC-930B-C1431E079FEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{273323A8-0DE4-4A51-9518-326061556C80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{273323A8-0DE4-4A51-9518-326061556C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{273323A8-0DE4-4A51-9518-326061556C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{273323A8-0DE4-4A51-9518-326061556C80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

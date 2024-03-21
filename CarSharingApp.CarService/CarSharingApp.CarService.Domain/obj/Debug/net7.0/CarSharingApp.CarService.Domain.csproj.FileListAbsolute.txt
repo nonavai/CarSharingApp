@@ -1,0 +1,12 @@
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Domain\bin\Debug\net7.0\CarSharingApp.CarService.Domain.deps.json
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Domain\bin\Debug\net7.0\CarSharingApp.CarService.Domain.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Domain\bin\Debug\net7.0\CarSharingApp.CarService.Domain.pdb
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Domain\obj\Debug\net7.0\CarSharingApp.CarService.Domain.csproj.AssemblyReference.cache
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Domain\obj\Debug\net7.0\CarSharingApp.CarService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Domain\obj\Debug\net7.0\CarSharingApp.CarService.Domain.AssemblyInfoInputs.cache
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Domain\obj\Debug\net7.0\CarSharingApp.CarService.Domain.AssemblyInfo.cs
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Domain\obj\Debug\net7.0\CarSharingApp.CarService.Domain.csproj.CoreCompileInputs.cache
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Domain\obj\Debug\net7.0\CarSharingApp.CarService.Domain.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Domain\obj\Debug\net7.0\refint\CarSharingApp.CarService.Domain.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Domain\obj\Debug\net7.0\CarSharingApp.CarService.Domain.pdb
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.CarService\CarSharingApp.CarService.Domain\obj\Debug\net7.0\ref\CarSharingApp.CarService.Domain.dll

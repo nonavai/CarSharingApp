@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package carService;
+
+service Car {
+  rpc IsCarAvailable (CarAvailableRequest) returns (CarAvailableResponse) {}
+  rpc ChangeCarStatus (ChangeStatus) returns (ChangeCarStatusResponse) {}
+}
+
+message CarAvailableRequest {
+  string userId = 1;
+}
+
+message CarAvailableResponse {
+  bool isAvailable = 1;
+}
+message ChangeCarStatusResponse {
+  bool isChanged = 1;
+}
+
+enum Status{
+  free = 0;
+  taken = 1;
+  booking = 2;
+  notAvailable = 3;
+}
+
+message ChangeStatus{
+  string carId = 1;
+  Status status = 2;
+}

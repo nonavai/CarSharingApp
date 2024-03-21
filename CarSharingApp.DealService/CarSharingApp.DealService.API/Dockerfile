@@ -6,6 +6,9 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["CarSharingApp.DealService.API/CarSharingApp.DealService.API.csproj", "CarSharingApp.DealService.API/"]
+COPY ["CarSharingApp.DealService.BusinessLogic/CarSharingApp.DealService.BusinessLogic.csproj", "CarSharingApp.DealService.BusinessLogic/"]
+COPY ["CarSharingApp.DealService.DataAccess/CarSharingApp.DealService.DataAccess.csproj", "CarSharingApp.DealService.DataAccess/"]
+COPY ["CarSharingApp.DealService.Shared/CarSharingApp.DealService.Shared.csproj", "CarSharingApp.DealService.Shared/"]
 RUN dotnet restore "CarSharingApp.DealService.API/CarSharingApp.DealService.API.csproj"
 COPY . .
 WORKDIR "/src/CarSharingApp.DealService.API"

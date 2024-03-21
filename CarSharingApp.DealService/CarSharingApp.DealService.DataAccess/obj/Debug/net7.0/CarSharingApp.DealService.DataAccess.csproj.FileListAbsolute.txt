@@ -1,0 +1,17 @@
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\bin\Debug\net7.0\CarSharingApp.DealService.DataAccess.deps.json
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\bin\Debug\net7.0\CarSharingApp.DealService.DataAccess.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\bin\Debug\net7.0\CarSharingApp.DealService.DataAccess.pdb
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\bin\Debug\net7.0\CarSharingApp.DealService.Shared.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\bin\Debug\net7.0\CarSharingApp.DealService.Shared.pdb
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\obj\Debug\net7.0\CarSharingApp.DealService.DataAccess.csproj.AssemblyReference.cache
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\obj\Debug\net7.0\CarSharingApp.DealService.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\obj\Debug\net7.0\CarSharingApp.DealService.DataAccess.AssemblyInfoInputs.cache
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\obj\Debug\net7.0\CarSharingApp.DealService.DataAccess.AssemblyInfo.cs
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\obj\Debug\net7.0\CarSharingApp.DealService.DataAccess.csproj.CoreCompileInputs.cache
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\obj\Debug\net7.0\CarSharingApp.DealService.DataAccess.csproj.CopyComplete
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\obj\Debug\net7.0\CarSharingApp.DealService.DataAccess.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\obj\Debug\net7.0\refint\CarSharingApp.DealService.DataAccess.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\obj\Debug\net7.0\CarSharingApp.DealService.DataAccess.pdb
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\obj\Debug\net7.0\ref\CarSharingApp.DealService.DataAccess.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\bin\Debug\net7.0\CarSharingApp.DealService.DataAccess.runtimeconfig.json
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.DealService\CarSharingApp.DealService.DataAccess\obj\Debug\net7.0\CarSharingApp.DealService.DataAccess.genruntimeconfig.cache
