@@ -1,0 +1,337 @@
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/api/answer",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "deal",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/answer",
+      "SwaggerKey": "deal"
+    },
+    {
+      "UpstreamPathTemplate": "/api/deal",
+      "UpstreamHttpMethod": [ "Get", "Post", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "deal",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/deal",
+      "SwaggerKey": "deal"
+    },
+    {
+      "UpstreamPathTemplate": "/api/deal/car",
+      "UpstreamHttpMethod": [ "Get", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "deal",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/deal/car",
+      "SwaggerKey": "deal"
+    },
+    {
+      "UpstreamPathTemplate": "/api/deal/user",
+      "UpstreamHttpMethod": [ "Get", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "deal",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/deal/user",
+      "SwaggerKey": "deal"
+    },
+    {
+      "UpstreamPathTemplate": "/api/deal/complete",
+      "UpstreamHttpMethod": [ "Put", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "deal",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/deal/complete",
+      "SwaggerKey": "deal"
+    },
+    {
+      "UpstreamPathTemplate": "/api/deal/confirm",
+      "UpstreamHttpMethod": [ "Put", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "deal",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/deal/confirm",
+      "SwaggerKey": "deal"
+    },
+    {
+      "UpstreamPathTemplate": "/api/deal/cancel",
+      "UpstreamHttpMethod": [ "Put", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "deal",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/deal/cancel",
+      "SwaggerKey": "deal"
+    },
+    {
+      "UpstreamPathTemplate": "/api/feedback",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "deal",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/feedback",
+      "SwaggerKey": "deal"
+    },
+    {
+      "UpstreamPathTemplate": "/api/user",
+      "UpstreamHttpMethod": [ "Get", "Post", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "identity",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/user",
+      "SwaggerKey": "identity"
+    },
+    {
+      "UpstreamPathTemplate": "/api/user/login",
+      "UpstreamHttpMethod": [ "Post", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "identity",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/user/login",
+      "SwaggerKey": "identity"
+    },
+    {
+      "UpstreamPathTemplate": "/api/user/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "identity",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/user/{id}",
+      "SwaggerKey": "identity"
+    },
+    {
+      "UpstreamPathTemplate": "/api/user/{userId}/info",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "identity",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/user/{userId}/info",
+      "SwaggerKey": "identity"
+    },
+    {
+      "UpstreamPathTemplate": "/api/user/expired",
+      "UpstreamHttpMethod": [ "Get", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "identity",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/user/expired",
+      "SwaggerKey": "identity"
+    },
+    {
+      "UpstreamPathTemplate": "/api/roles/{userId}",
+      "UpstreamHttpMethod": [ "Get", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "identity",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/roles/{userId}",
+      "SwaggerKey": "identity"
+    },
+    {
+      "UpstreamPathTemplate": "/api/roles/{userId}/{role}",
+      "UpstreamHttpMethod": [ "Post", "Delete", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "identity",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/roles/{userId}/{role}",
+      "SwaggerKey": "identity"
+    },
+    {
+      "UpstreamPathTemplate": "/api/car",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "car",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/car",
+      "SwaggerKey": "car"
+    },
+    {
+      "UpstreamPathTemplate": "/api/car/search",
+      "UpstreamHttpMethod": [ "Get", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "car",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/car/search",
+      "SwaggerKey": "car"
+    },
+    {
+      "UpstreamPathTemplate": "/api/car/user",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "car",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/car/user",
+      "SwaggerKey": "car"
+    },
+    {
+      "UpstreamPathTemplate": "/api/comments",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "car",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/comments",
+      "SwaggerKey": "car"
+    },
+    {
+      "UpstreamPathTemplate": "/api/comments/car",
+      "UpstreamHttpMethod": [ "Get", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "car",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/comments/car",
+      "SwaggerKey": "car"
+    },
+    {
+      "UpstreamPathTemplate": "/api/image",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "car",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/image",
+      "SwaggerKey": "car"
+    },
+    {
+      "UpstreamPathTemplate": "/api/image/primary",
+      "UpstreamHttpMethod": [ "Get", "Options" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "car",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/image/primary",
+      "SwaggerKey": "car"
+    },
+    {
+      "UpstreamPathTemplate": "/car-state",
+      "DownstreamScheme": "wss",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "car",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/car-state",
+      "SwaggerKey": "car"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "identity",
+      "Config": [
+        {
+          "Name": "Identity API v1",
+          "Version": "v1",
+          "Url": "http://identity:80/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "car",
+      "Config": [
+        {
+          "Name": "Car-Service API v1",
+          "Version": "v1",
+          "Url": "http://car:80/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "deal",
+      "Config": [
+        {
+          "Name": "Deal-Service API v1",
+          "Version": "v1",
+          "Url": "http://deal:80/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7231"
+  }
+}

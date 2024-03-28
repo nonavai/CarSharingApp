@@ -5,10 +5,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["CarSharingApp.ApiGateway/CarSharingApp.ApiGateway.csproj", "CarSharingApp.ApiGateway/"]
-RUN dotnet restore "CarSharingApp.ApiGateway/CarSharingApp.ApiGateway.csproj"
+COPY ["CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/CarSharingApp.ApiGateway.csproj", "CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/"]
+RUN dotnet restore "CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/CarSharingApp.ApiGateway.csproj"
 COPY . .
-WORKDIR "/src/CarSharingApp.ApiGateway"
+WORKDIR "/src/CarSharingApp.ApiGateway/CarSharingApp.ApiGateway"
 RUN dotnet build "CarSharingApp.ApiGateway.csproj" -c Release -o /app/build
 
 FROM build AS publish

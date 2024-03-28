@@ -24,6 +24,7 @@ Startup.ConfigureRedis(builder.Services, config);
 Startup.ConfigureCors(builder.Services);
 
 var app = builder.Build();
+Startup.UseMigrations(app);
 
 Startup.ConfigureCors(app);
 Startup.ConfigureMiddlewares(app);

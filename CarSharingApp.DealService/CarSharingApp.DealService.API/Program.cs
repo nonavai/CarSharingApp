@@ -34,6 +34,7 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+Startup.UseMigrations(app);
 
 app.UseCors(MyAllowSpecificOrigins);
 Startup.ConfigureMiddlewares(app);

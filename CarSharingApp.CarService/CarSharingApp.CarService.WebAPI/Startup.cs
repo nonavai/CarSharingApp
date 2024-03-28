@@ -165,4 +165,13 @@ public class Startup
     {
         app.UseCors(MyAllowSpecificOrigins);
     }
+    
+    public static void UseMigrations(WebApplication app)
+    {
+        var helperContext = app.Services.GetService<HelperContext>();
+        var dbContext = app.Services.GetService<CarsContext>();
+        dbContext.Database.Migrate();
+        helperContext.Database.Migrate();
+    }
+
 }

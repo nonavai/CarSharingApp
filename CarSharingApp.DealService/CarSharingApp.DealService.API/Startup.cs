@@ -10,6 +10,7 @@ using CarSharingApp.DealService.DataAccess.DataBase;
 using CarSharingApp.DealService.DataAccess.DataBase.AdditionalDB;
 using CarSharingApp.DealService.DataAccess.Repositories;
 using CarSharingApp.DealService.DataAccess.Repositories.Implementations;
+using Google.Protobuf;
 using Hangfire;
 using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -176,5 +177,11 @@ public class Startup
     public static void ConfigureCors(WebApplication app)
     {
         app.UseCors(MyAllowSpecificOrigins);
+    }
+
+    public static void UseMigrations(WebApplication app)
+    {
+        var helperContext = app.Services.GetService<HelperContext>();
+        helperContext.Database.Migrate();
     }
 }

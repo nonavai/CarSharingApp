@@ -77,3 +77,6 @@ C:\rider\c#projects\CarSharingAplication\CarSharingApp.ApiGateway\CarSharingApp.
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.ApiGateway\CarSharingApp.ApiGateway\obj\Debug\net7.0\CarSharingApp.ApiGateway.pdb
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.ApiGateway\CarSharingApp.ApiGateway\obj\Debug\net7.0\CarSharingApp.ApiGateway.genruntimeconfig.cache
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.ApiGateway\CarSharingApp.ApiGateway\obj\Debug\net7.0\ref\CarSharingApp.ApiGateway.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.ApiGateway\CarSharingApp.ApiGateway\bin\Debug\net7.0\appsettings.Docker.json
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.ApiGateway\CarSharingApp.ApiGateway\bin\Debug\net7.0\ocelot.Development.json
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.ApiGateway\CarSharingApp.ApiGateway\bin\Debug\net7.0\ocelot.Docker.json

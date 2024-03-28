@@ -18,6 +18,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using Google.Protobuf;
 
 namespace CarSharingApp.Identity.API;
 
@@ -197,5 +198,13 @@ public class Startup
     public static void ConfigureCors(WebApplication app)
     {
         app.UseCors(MyAllowSpecificOrigins);
+    }
+
+    public static void UseMigrations(WebApplication app)
+    {
+        var helperContext = app.Services.GetService<HelperContext>();
+        var dbContext = app.Services.GetService<CarSharingContext>();
+        dbContext.Database.Migrate();
+        helperContext.Database.Migrate();
     }
 }

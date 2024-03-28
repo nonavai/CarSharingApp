@@ -96,3 +96,13 @@ select option{
 .btn{
     width: 100%;
 }
+
+.pagination-button{
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 1px;
+    border-color: #ccc;
+    cursor: pointer;
+    background-color: transparent;
+}

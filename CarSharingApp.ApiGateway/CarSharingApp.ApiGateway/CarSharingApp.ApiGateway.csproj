@@ -7,6 +7,10 @@
         <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
     </PropertyGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="ocelot.Docker.json" />
+    </ItemGroup>
+
 
     <ItemGroup>
         <PackageReference Include="MMLib.SwaggerForOcelot" Version="7.0.1" />

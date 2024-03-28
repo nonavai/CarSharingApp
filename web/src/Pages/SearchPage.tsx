@@ -292,12 +292,23 @@ const CarSearch = () => {
                     )}
                 </CDBSidebarFooter>
             </CDBSidebar>
-            <div>
-                <button className={currentPage === 1 ? 'disabled' : 'active'} onClick={prevPage} disabled={currentPage === 1}>Previous</button>
+            <div style={{
+                position: 'absolute',
+                right: 0,
+                top: 0,
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                marginTop: '50px'
+            }}>
+                <button className={currentPage === 1 ? 'disabled pagination-button' : 'active pagination-button'} onClick={prevPage} disabled={currentPage === 1}>{'<'}</button>
                 <span>Page: {currentPage}</span>
-                <button className={results.length < 10 ? 'disabled' : 'active'} onClick={nextPage} disabled={results.length < 10}>Next</button>
+                <button className={results.length < 10 ? 'disabled pagination-button' : 'active pagination-button'} onClick={nextPage} disabled={results.length < 10}>{'>'}</button>
             </div>
-            <div className={`search-results col-lg-8 col-md-12 `}>
+            <div className={`search-results col-lg-8 col-md-12 `} style={{
+                marginTop: '35px'
+            }}>
                 <ul style={{ listStyleType: 'none' }}>
                     {results.map((car, index) => (
                         <li key={index} id={`result-${index}`}>

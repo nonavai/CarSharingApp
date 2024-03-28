@@ -68,9 +68,9 @@ const UserPage: React.FC = () => {
                     </ul>
                 </div>
                 <div>
-                    <button className={currentPage === 1 ? 'disabled' : ''} onClick={prevPage} disabled={currentPage === 1}>Previous</button>
+                    <button className={currentPage === 1 ? 'disabled pagination-button' : 'pagination-button'} onClick={prevPage} disabled={currentPage === 1}>{'<'}</button>
                     <span>Page: {currentPage}</span>
-                    <button className={dealData.length < 10 ? 'disabled' : ''} onClick={nextPage} disabled={dealData.length < 10}>Next</button>
+                    <button className={dealData.length < 10 ? 'disabled pagination-button' : 'pagination-button'} onClick={nextPage} disabled={dealData.length < 10}>{'>'}</button>
                 </div>
             </div>
         </body>
