@@ -202,9 +202,13 @@ public class Startup
 
     public static void UseMigrations(WebApplication app)
     {
-        var helperContext = app.Services.GetService<HelperContext>();
-        var dbContext = app.Services.GetService<CarSharingContext>();
-        dbContext.Database.Migrate();
-        helperContext.Database.Migrate();
+        using (var scope = app.Services.CreateScope())
+        {
+            var serviceProvider = scope.ServiceProvider;
+            var helperContext = serviceProvider.GetService<HelperContext>();
+            var dbContext = serviceProvider.GetService<CarSharingContext>();
+            dbContext.Database.Migrate();
+            helperContext.Database.Migrate();
+        }
     }
 }

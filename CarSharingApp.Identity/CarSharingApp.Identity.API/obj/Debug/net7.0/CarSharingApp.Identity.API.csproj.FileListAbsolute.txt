@@ -133,3 +133,4 @@ C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Id
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.API\bin\Debug\net7.0\Grpc.Net.Common.dll
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.API\bin\Debug\net7.0\CarSharingApp.Common.dll
 C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.API\bin\Debug\net7.0\CarSharingApp.Common.pdb
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Identity\CarSharingApp.Identity.API\bin\Debug\net7.0\appsettings.Docker.json

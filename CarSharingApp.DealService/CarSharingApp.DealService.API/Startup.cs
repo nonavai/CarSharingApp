@@ -181,7 +181,11 @@ public class Startup
 
     public static void UseMigrations(WebApplication app)
     {
-        var helperContext = app.Services.GetService<HelperContext>();
-        helperContext.Database.Migrate();
+        using (var scope = app.Services.CreateScope())
+        {
+            var serviceProvider = scope.ServiceProvider;
+            var helperContext = serviceProvider.GetService<HelperContext>();
+            helperContext.Database.Migrate();
+        }
     }
 }

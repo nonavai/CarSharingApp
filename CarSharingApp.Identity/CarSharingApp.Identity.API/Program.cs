@@ -21,11 +21,11 @@ Startup.ConfigureMassTransit(builder.Services, config);
 
 var app = builder.Build();
 Startup.UseMigrations(app);
-//Startup.InitializeRoles(builder.Services).Wait();
+Startup.InitializeRoles(builder.Services).Wait();
 Startup.ConfigureCors(app);
 Startup.ConfigureMiddlewares(app);
 Startup.ConfigureHangfire(app, config);
-//Startup.ScheduleLicenceCheck(builder.Services);
+Startup.ScheduleLicenceCheck(builder.Services);
 Startup.ConfigureGRPC(app);
 if (app.Environment.IsDevelopment())
 {
