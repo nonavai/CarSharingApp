@@ -6,117 +6,62 @@ services:
     ports:
       - 5672:5672
       - 15672:15672
-    restart: unless-stopped
-    environment:
-      RABBITMQ_DEFAULT_USER: guest
-      RABBITMQ_DEFAULT_PASS: guest
   
   sqlserver:
     container_name: sql-server
     image: mcr.microsoft.com/mssql/server:latest
-    user: root
-    volumes: 
-      - mssql_data:/var/opt/mssql/data
     ports:
       - 1433:1433
-    environment:
-      - ACCEPT_EULA=Y
-      - MSSQL_SA_PASSWORD=YourStrongPassword123
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "sqlcmd", "-U", "sa", "-P", "YourStrongPassword123", "-Q", "SELECT 1"]
-      interval: 10s
-      retries: 5
     
   minio:
     container_name: minio
     image: minio/minio:latest
-    restart: always
     ports:
       - 9000:9000
       - 9001:9001
-    environment:
-      - MINIO_ROOT_USER=new-user
-      - MINIO_ROOT_PASSWORD=new-user
-      - MINIO_ACCESS_KEY=Mr2DM6A3hvCnQwCSTP0J
-      - MINIO_SECRET_KEY=QJrsVFkR5fwYSXROGwfPjQ4eVeOerRLQR9zj9Iyz
-    command: server /data
-    volumes:
-      - minio_data:/data
 
   mongo:
     container_name: mongodb
     image: mongo:latest
-    restart: unless-stopped
     ports:
         - 27017:27017
-    volumes:
-        - mongo_data:/data
   
   redis:
     container_name: redis-container
     image: redis:latest
     ports:
       - 6379:6379
-    restart: unless-stopped
         
   identity:
     container_name: identity-service
     build:
       context: "."
       dockerfile: "/CarSharingApp.Identity/CarSharingApp.Identity.API/Dockerfile"
-    depends_on:
-      - sqlserver
-      - rabbitmq
     ports:
-      - 8003:80
-    environment:
-        - ASPNETCORE_ENVIRONMENT=Docker
-    restart: unless-stopped
+      - 8080:7070
 
   car:
     container_name: car-service
     build:
         context: "."
         dockerfile: "/CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/Dockerfile"
-    depends_on:
-        - sqlserver
-        - rabbitmq
-        - minio
-        - redis
     ports:
-        - 8002:80
-    environment:
-        - ASPNETCORE_ENVIRONMENT=Docker
-    restart: unless-stopped
+        - 8082:7198
 
   deal:
     container_name: deal-service
     build:
         context: "."
         dockerfile: "/CarSharingApp.DealService/CarSharingApp.DealService.API/Dockerfile"
-    depends_on:
-        - sqlserver
-        - rabbitmq
-        - redis
     ports:
-        - 8001:80
-    environment:
-        - ASPNETCORE_ENVIRONMENT=Docker  
-    restart: unless-stopped 
+        - 8081:7043
     
   gateway:
     container_name: api-gateway
+    ports:
+        - 8083:7231
     build:
         context: "."
         dockerfile: "/CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/Dockerfile"
-    environment:
-        - ASPNETCORE_ENVIRONMENT=Docker
-    restart: unless-stopped
     
-
-volumes:
-    mssql_data:
-    mongo_data:
-    minio_data:
         
