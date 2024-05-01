@@ -13,4 +13,8 @@
       <Folder Include="Validators" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CarSharingApp.NotificationService.DataAccess\CarSharingApp.NotificationService.DataAccess.csproj" />
+    </ItemGroup>
+
 </Project>

@@ -1,0 +1,12 @@
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Common\CarSharingApp.Common\bin\Debug\net7.0\CarSharingApp.Common.deps.json
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Common\CarSharingApp.Common\bin\Debug\net7.0\CarSharingApp.Common.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Common\CarSharingApp.Common\bin\Debug\net7.0\CarSharingApp.Common.pdb
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Common\CarSharingApp.Common\obj\Debug\net7.0\CarSharingApp.Common.csproj.AssemblyReference.cache
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Common\CarSharingApp.Common\obj\Debug\net7.0\CarSharingApp.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Common\CarSharingApp.Common\obj\Debug\net7.0\CarSharingApp.Common.AssemblyInfoInputs.cache
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Common\CarSharingApp.Common\obj\Debug\net7.0\CarSharingApp.Common.AssemblyInfo.cs
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Common\CarSharingApp.Common\obj\Debug\net7.0\CarSharingApp.Common.csproj.CoreCompileInputs.cache
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Common\CarSharingApp.Common\obj\Debug\net7.0\CarSharingApp.Common.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Common\CarSharingApp.Common\obj\Debug\net7.0\refint\CarSharingApp.Common.dll
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Common\CarSharingApp.Common\obj\Debug\net7.0\CarSharingApp.Common.pdb
+C:\rider\c#projects\CarSharingAplication\CarSharingApp.Common\CarSharingApp.Common\obj\Debug\net7.0\ref\CarSharingApp.Common.dll

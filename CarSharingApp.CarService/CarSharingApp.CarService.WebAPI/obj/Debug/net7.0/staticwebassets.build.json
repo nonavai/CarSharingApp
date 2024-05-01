@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "3RUrPnSyeybm8DhjIGAKO3gJcNLQ5Eh5Hotjw5q4sQo=",
+  "Source": "CarSharingApp.CarService.WebAPI",
+  "BasePath": "_content/CarSharingApp.CarService.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

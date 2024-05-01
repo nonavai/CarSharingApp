@@ -1,0 +1,67 @@
+services:
+  
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:latest
+    ports:
+      - 5672:5672
+      - 15672:15672
+  
+  sqlserver:
+    container_name: sql-server
+    image: mcr.microsoft.com/mssql/server:latest
+    ports:
+      - 1433:1433
+    
+  minio:
+    container_name: minio
+    image: minio/minio:latest
+    ports:
+      - 9000:9000
+      - 9001:9001
+
+  mongo:
+    container_name: mongodb
+    image: mongo:latest
+    ports:
+        - 27017:27017
+  
+  redis:
+    container_name: redis-container
+    image: redis:latest
+    ports:
+      - 6379:6379
+        
+  identity:
+    container_name: identity-service
+    build:
+      context: "."
+      dockerfile: "/CarSharingApp.Identity/CarSharingApp.Identity.API/Dockerfile"
+    ports:
+      - 8080:7070
+
+  car:
+    container_name: car-service
+    build:
+        context: "."
+        dockerfile: "/CarSharingApp.CarService/CarSharingApp.CarService.WebAPI/Dockerfile"
+    ports:
+        - 8082:7198
+
+  deal:
+    container_name: deal-service
+    build:
+        context: "."
+        dockerfile: "/CarSharingApp.DealService/CarSharingApp.DealService.API/Dockerfile"
+    ports:
+        - 8081:7043
+    
+  gateway:
+    container_name: api-gateway
+    ports:
+        - 8083:7231
+    build:
+        context: "."
+        dockerfile: "/CarSharingApp.ApiGateway/CarSharingApp.ApiGateway/Dockerfile"
+    
+        

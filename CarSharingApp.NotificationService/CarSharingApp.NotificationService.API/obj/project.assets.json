@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "CarSharingApp.NotificationService.BusinessLogic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "CarSharingApp.NotificationService.DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CarSharingApp.NotificationService.BusinessLogic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarSharingApp.NotificationService.BusinessLogic.dll": {}
+        }
+      },
+      "CarSharingApp.NotificationService.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/CarSharingApp.NotificationService.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarSharingApp.NotificationService.DataAccess.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "CarSharingApp.NotificationService.BusinessLogic/1.0.0": {
+      "type": "project",
+      "path": "../CarSharingApp.NotificationService.BusinessLogic/CarSharingApp.NotificationService.BusinessLogic.csproj",
+      "msbuildProject": "../CarSharingApp.NotificationService.BusinessLogic/CarSharingApp.NotificationService.BusinessLogic.csproj"
+    },
+    "CarSharingApp.NotificationService.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../CarSharingApp.NotificationService.DataAccess/CarSharingApp.NotificationService.DataAccess.csproj",
+      "msbuildProject": "../CarSharingApp.NotificationService.DataAccess/CarSharingApp.NotificationService.DataAccess.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "CarSharingApp.NotificationService.BusinessLogic >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Anton\\.nuget\\packages\\": {},
@@ -39,7 +76,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.NotificationService\\CarSharingApp.NotificationService.BusinessLogic\\CarSharingApp.NotificationService.BusinessLogic.csproj": {
+              "projectPath": "C:\\rider\\c#projects\\CarSharingAplication\\CarSharingApp.NotificationService\\CarSharingApp.NotificationService.BusinessLogic\\CarSharingApp.NotificationService.BusinessLogic.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -1,0 +1,78 @@
+services:
+  
+  rabbitmq:
+    restart: unless-stopped
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+  
+  sqlserver:
+    user: root
+    volumes: 
+      - mssql_data:/var/opt/mssql/data
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=YourStrongPassword123
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "sqlcmd", "-U", "sa", "-P", "YourStrongPassword123", "-Q", "SELECT 1"]
+      interval: 10s
+      retries: 5
+    
+  minio:
+    restart: unless-stopped
+    environment:
+      - MINIO_ROOT_USER=new-user
+      - MINIO_ROOT_PASSWORD=new-user
+      - MINIO_ACCESS_KEY=Mr2DM6A3hvCnQwCSTP0J
+      - MINIO_SECRET_KEY=QJrsVFkR5fwYSXROGwfPjQ4eVeOerRLQR9zj9Iyz
+    command: server /data
+    volumes:
+      - minio_data:/data
+
+  mongo:
+    restart: unless-stopped
+    volumes:
+        - mongo_data:/data
+  
+  redis:
+    restart: unless-stopped
+        
+  identity:
+    depends_on:
+      - sqlserver
+      - rabbitmq
+    environment:
+        - ASPNETCORE_ENVIRONMENT=Docker
+    restart: unless-stopped
+
+  car:
+    depends_on:
+        - sqlserver
+        - rabbitmq
+        - minio
+        - redis
+    environment:
+        - ASPNETCORE_ENVIRONMENT=Docker
+    restart: unless-stopped
+
+  deal:
+    depends_on:
+        - sqlserver
+        - rabbitmq
+        - redis
+    environment:
+        - ASPNETCORE_ENVIRONMENT=Docker  
+    restart: unless-stopped 
+    
+  gateway:
+    environment:
+        - ASPNETCORE_ENVIRONMENT=Docker
+    restart: unless-stopped
+    
+
+volumes:
+    mssql_data:
+    mongo_data:
+    minio_data:
+        

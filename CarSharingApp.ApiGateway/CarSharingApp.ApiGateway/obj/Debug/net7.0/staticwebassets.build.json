@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ZkMzzBp/selhWFcPe8BFcfnzrnWYjN6dhQis3qypEkA=",
+  "Source": "CarSharingApp.ApiGateway",
+  "BasePath": "_content/CarSharingApp.ApiGateway",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
